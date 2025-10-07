@@ -4,7 +4,7 @@ import { getAllEvents } from '@/lib/content'
 import { sortByDate } from '@/lib/date'
 
 export default function MeetupsPage() {
-  const meetups = sortByDate(getAllEvents().filter(event => event.type === 'meetup'))
+  const meetups = sortByDate(getAllEvents().filter(event => event.eventType === 'meetup'))
 
   return (
     <Section className="pt-8">
