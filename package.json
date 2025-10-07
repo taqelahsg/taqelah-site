@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "lsof -ti:3000 | xargs kill -9 2>/dev/null; next dev",
     "build": "next build",
-    "export": "next build",
-    "deploy": "NODE_OPTIONS=--max_old_space_size=4096 next build",
+    "export": "next export",
+    "deploy": "next build && touch out/.nojekyll",
     "start": "next start",
     "lint": "next lint",
     "typecheck": "tsc --noEmit"

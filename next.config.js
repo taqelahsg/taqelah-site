@@ -5,8 +5,8 @@ const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX || ''
 
 const nextConfig = {
   output: 'export',
-  basePath,
-  assetPrefix,
+  basePath: '/taqelah-site',
+  assetPrefix: '/taqelah-site/',
   images: {
     unoptimized: true,
   },
