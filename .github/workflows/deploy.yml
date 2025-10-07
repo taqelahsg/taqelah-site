@@ -30,18 +30,16 @@ jobs:
       - name: Install deps
         run: npm ci
 
-      # Next.js static export requires this:
-      - name: Build & Export
+      - name: Build & Export (Next.js → ./out)
         run: |
-          # ensure Next exports static site to ./out
           npm run build
+          npm run export
+          test -d out && ls -la out || (echo "❌ 'out/' not found" && exit 1)
 
-      # Make sure the custom domain is included in the published artifact
       - name: Add CNAME
         run: echo taqelah.sg > out/CNAME
 
-      # Optional but helpful to avoid Jekyll processing
-      - name: Add .nojekyll
+      - name: Disable Jekyll
         run: touch out/.nojekyll
 
       - name: Upload artifact
