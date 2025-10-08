@@ -2,10 +2,10 @@
   "testimonials": [
     {
       "id": 1,
-      "name": "Priya Sharma",
-      "role": "Senior QA Engineer",
-      "company": "Grab",
-      "avatar": "/assets/images/avatars/priya.jpg",
+      "name": "Abhijeet Vaikar",
+      "role": "Lead QA Engineer",
+      "company": "Cognizant",
+      "avatar": "/assets/images/avatars/abhijeet.jepg",
       "quote": "TAQELAH has been instrumental in connecting me with like-minded QA professionals in Singapore. The workshops are top-notch!",
       "rating": 5
     },

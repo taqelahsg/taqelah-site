@@ -300,158 +300,25 @@
             <div class="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2" aria-hidden="true"></div>
         </section>
 
-        <!-- Upcoming Events Section -->
+        <!-- Companies Section - Where Our Members Work -->
         <section class="py-12 sm:py-16 lg:py-20 bg-white">
             <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 
                 <!-- Section Header -->
                 <div class="text-center mb-8 sm:mb-12">
                     <h2 class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0B0B0B] mb-4">
-                        Upcoming Events
+                        Where Our Members Work
                     </h2>
                     <p class="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                        Join our workshops, meetups, and panel discussions with industry experts
+                        Our community members are making an impact at leading companies across Singapore
                     </p>
                 </div>
 
-                <!-- Filter Buttons - Horizontal scroll on mobile -->
-                <div class="mb-8 overflow-x-auto no-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0" x-data="{ activeFilter: 'all' }">
-                    <div class="flex space-x-3 sm:justify-center min-w-max sm:min-w-0 pb-2">
-                        <button @click="activeFilter = 'all'"
-                                :class="activeFilter === 'all' ? 'bg-[#E10600] text-white' : 'bg-white text-gray-700 border border-gray-300 hover:border-[#E10600] hover:text-[#E10600]'"
-                                class="px-6 py-2.5 rounded-lg font-medium text-sm sm:text-base transition-all whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 min-h-[44px]">
-                            All Events
-                        </button>
-                        <button @click="activeFilter = 'workshop'"
-                                :class="activeFilter === 'workshop' ? 'bg-[#E10600] text-white' : 'bg-white text-gray-700 border border-gray-300 hover:border-[#E10600] hover:text-[#E10600]'"
-                                class="px-6 py-2.5 rounded-lg font-medium text-sm sm:text-base transition-all whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 min-h-[44px]">
-                            Workshops
-                        </button>
-                        <button @click="activeFilter = 'meetup'"
-                                :class="activeFilter === 'meetup' ? 'bg-[#E10600] text-white' : 'bg-white text-gray-700 border border-gray-300 hover:border-[#E10600] hover:text-[#E10600]'"
-                                class="px-6 py-2.5 rounded-lg font-medium text-sm sm:text-base transition-all whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 min-h-[44px]">
-                            Meetups
-                        </button>
-                        <button @click="activeFilter = 'panel'"
-                                :class="activeFilter === 'panel' ? 'bg-[#E10600] text-white' : 'bg-white text-gray-700 border border-gray-300 hover:border-[#E10600] hover:text-[#E10600]'"
-                                class="px-6 py-2.5 rounded-lg font-medium text-sm sm:text-base transition-all whitespace-nowrap focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 min-h-[44px]">
-                            Panels
-                        </button>
+                <!-- Companies Logo Slider -->
+                <div class="swiper companies-swiper">
+                    <div class="swiper-wrapper items-center" id="companies-container">
+                        <!-- Company logos will be loaded dynamically from JSON -->
                     </div>
-                </div>
-
-                <!-- Events Grid - Responsive columns -->
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-
-                    <!-- Event Card 1 -->
-                    <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-100">
-                        <div class="relative h-48 sm:h-56 overflow-hidden">
-                            <img src="/assets/images/events/workshop-automation.jpg"
-                                 alt="QA Automation Workshop"
-                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                 width="400"
-                                 height="224"
-                                 loading="lazy"
-                                 decoding="async">
-                            <div class="absolute top-4 left-4">
-                                <span class="inline-block px-3 py-1 bg-[#E10600] text-white text-xs sm:text-sm font-semibold rounded-full">Workshop</span>
-                            </div>
-                        </div>
-                        <div class="p-4 sm:p-6">
-                            <div class="flex items-center text-sm text-gray-600 mb-3">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                                <span class="text-sm text-gray-600">32/50 spots</span>
-                                <a href="/events/qa-automation-workshop-2025.html"
-                                   class="inline-flex items-center text-sm font-semibold text-[#E10600] hover:text-[#C20500] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 rounded min-h-[44px]">
-                                    Learn More
-                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Event Card 2 -->
-                    <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-100">
-                        <div class="relative h-48 sm:h-56 overflow-hidden">
-                            <img src="/assets/images/events/mobile-testing.jpg"
-                                 alt="Mobile Testing Meetup"
-                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                 width="400"
-                                 height="224"
-                                 loading="lazy"
-                                 decoding="async">
-                            <div class="absolute top-4 left-4">
-                                <span class="inline-block px-3 py-1 bg-[#E10600] text-white text-xs sm:text-sm font-semibold rounded-full">Meetup</span>
-                            </div>
-                        </div>
-                        <div class="p-4 sm:p-6">
-                            <div class="flex items-center text-sm text-gray-600 mb-3">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                                <span class="text-sm text-gray-600">45/80 spots</span>
-                                <a href="/events/mobile-testing-meetup-dec.html"
-                                   class="inline-flex items-center text-sm font-semibold text-[#E10600] hover:text-[#C20500] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 rounded min-h-[44px]">
-                                    Learn More
-                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <!-- Event Card 3 -->
-                    <article class="bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow overflow-hidden border border-gray-100">
-                        <div class="relative h-48 sm:h-56 overflow-hidden">
-                            <img src="/assets/images/events/ai-testing.jpg"
-                                 alt="AI in Testing Panel"
-                                 class="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-                                 width="400"
-                                 height="224"
-                                 loading="lazy"
-                                 decoding="async">
-                            <div class="absolute top-4 left-4">
-                                <span class="inline-block px-3 py-1 bg-[#E10600] text-white text-xs sm:text-sm font-semibold rounded-full">Panel</span>
-                            </div>
-                        </div>
-                        <div class="p-4 sm:p-6">
-                            <div class="flex items-center text-sm text-gray-600 mb-3">
-                                <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                                </svg>
-                            </div>
-                            <div class="flex items-center justify-between pt-4 border-t border-gray-100">
-                                <span class="text-sm text-gray-600">23/100 spots</span>
-                                <a href="/events/ai-in-testing-panel.html"
-                                   class="inline-flex items-center text-sm font-semibold text-[#E10600] hover:text-[#C20500] transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 rounded min-h-[44px]">
-                                    Learn More
-                                    <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                                    </svg>
-                                </a>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-
-                <!-- View All Events CTA -->
-                <div class="text-center mt-10 sm:mt-12">
-                    <a href="/events.html"
-                       class="inline-flex items-center justify-center w-full sm:w-auto px-8 py-4 text-base sm:text-lg font-semibold text-white bg-[#E10600] hover:bg-[#C20500] rounded-lg transition-all shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 min-h-[44px]">
-                        View All Events
-                        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                        </svg>
-                    </a>
                 </div>
             </div>
         </section>
@@ -472,122 +339,8 @@
 
                 <!-- Swiper Container -->
                 <div class="swiper testimonials-swiper">
-                    <div class="swiper-wrapper pb-12">
-
-                        <!-- Testimonial 1 -->
-                        <div class="swiper-slide">
-                            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md h-full">
-                                <div class="flex items-center mb-4">
-                                    <svg class="w-8 h-8 text-[#E10600]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                    </svg>
-                                </div>
-                                <p class="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">
-                                    "TAQELAH has been instrumental in connecting me with like-minded QA professionals in Singapore. The workshops are top-notch!"
-                                </p>
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-[#E10600] rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                                        P
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold text-[#0B0B0B]">Priya Sharma</div>
-                                        <div class="text-sm text-gray-600">Senior QA Engineer, Grab</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 2 -->
-                        <div class="swiper-slide">
-                            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md h-full">
-                                <div class="flex items-center mb-4">
-                                    <svg class="w-8 h-8 text-[#E10600]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                    </svg>
-                                </div>
-                                <p class="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">
-                                    "The mobile testing meetup changed how I approach automation. The community here is incredibly supportive and knowledgeable."
-                                </p>
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-[#E10600] rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                                        D
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold text-[#0B0B0B]">David Lim</div>
-                                        <div class="text-sm text-gray-600">Test Automation Lead, Shopee</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 3 -->
-                        <div class="swiper-slide">
-                            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md h-full">
-                                <div class="flex items-center mb-4">
-                                    <svg class="w-8 h-8 text-[#E10600]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                    </svg>
-                                </div>
-                                <p class="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">
-                                    "I've hired two amazing QA engineers through TAQELAH's job board. It's become my go-to resource for talent in Singapore."
-                                </p>
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-[#E10600] rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                                        M
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold text-[#0B0B0B]">Michelle Tan</div>
-                                        <div class="text-sm text-gray-600">QA Manager, Sea Group</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 4 -->
-                        <div class="swiper-slide">
-                            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md h-full">
-                                <div class="flex items-center mb-4">
-                                    <svg class="w-8 h-8 text-[#E10600]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                    </svg>
-                                </div>
-                                <p class="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">
-                                    "Great talks, great people, and always learning something new. TAQELAH is a must-attend for anyone in QA."
-                                </p>
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-[#E10600] rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                                        A
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold text-[#0B0B0B]">Ahmed Hassan</div>
-                                        <div class="text-sm text-gray-600">DevOps Engineer, Carousell</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 5 -->
-                        <div class="swiper-slide">
-                            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md h-full">
-                                <div class="flex items-center mb-4">
-                                    <svg class="w-8 h-8 text-[#E10600]" fill="currentColor" viewBox="0 0 24 24">
-                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                                    </svg>
-                                </div>
-                                <p class="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">
-                                    "As someone new to QA, TAQELAH has been an incredible resource. The mentorship and community support are unmatched."
-                                </p>
-                                <div class="flex items-center">
-                                    <div class="w-12 h-12 bg-[#E10600] rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
-                                        S
-                                    </div>
-                                    <div>
-                                        <div class="font-semibold text-[#0B0B0B]">Sarah Wong</div>
-                                        <div class="text-sm text-gray-600">Junior QA Engineer, GovTech</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="swiper-wrapper pb-12" id="testimonials-container">
+                        <!-- Testimonials will be loaded dynamically from JSON -->
                     </div>
 
                     <!-- Pagination dots - large enough for touch -->
@@ -719,6 +472,120 @@
     <!-- Initialize Swiper -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Load company logos from JSON
+            fetch('/data/companies.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('companies-container');
+
+                    data.companies.forEach(company => {
+                        const slide = document.createElement('div');
+                        slide.className = 'swiper-slide';
+                        slide.innerHTML = `
+                            <div class="flex items-center justify-center p-4 grayscale hover:grayscale-0 transition-all duration-300">
+                                <img src="${company.logo}"
+                                     alt="${company.name}"
+                                     class="h-12 sm:h-16 w-auto object-contain"
+                                     onerror="this.onerror=null; this.outerHTML='<div class=\\'h-12 sm:h-16 flex items-center justify-center text-gray-400 font-semibold\\'>${company.name}</div>';">
+                            </div>
+                        `;
+                        container.appendChild(slide);
+                    });
+
+                    // Initialize companies slider after content is loaded
+                    const companiesSwiper = new Swiper('.companies-swiper', {
+                        slidesPerView: 2,
+                        spaceBetween: 20,
+                        loop: true,
+                        autoplay: {
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        },
+                        breakpoints: {
+                            640: {
+                                slidesPerView: 3,
+                                spaceBetween: 30,
+                            },
+                            768: {
+                                slidesPerView: 4,
+                                spaceBetween: 40,
+                            },
+                            1024: {
+                                slidesPerView: 5,
+                                spaceBetween: 50,
+                            },
+                        },
+                    });
+                })
+                .catch(error => console.error('Error loading companies:', error));
+
+            // Load testimonials from JSON
+            fetch('/data/testimonials.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('testimonials-container');
+
+                    data.testimonials.forEach(testimonial => {
+                        const initial = testimonial.name.charAt(0).toUpperCase();
+                        const slide = document.createElement('div');
+                        slide.className = 'swiper-slide';
+
+                        // Check if avatar exists, otherwise use initial
+                        const avatarHtml = testimonial.avatar
+                            ? `<img src="${testimonial.avatar}" alt="${testimonial.name}" class="w-12 h-12 rounded-full object-cover mr-4" onerror="this.onerror=null; this.outerHTML='<div class=\\'w-12 h-12 bg-[#E10600] rounded-full flex items-center justify-center text-white font-bold text-lg mr-4\\'>${initial}</div>';">`
+                            : `<div class="w-12 h-12 bg-[#E10600] rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">${initial}</div>`;
+
+                        slide.innerHTML = `
+                            <div class="bg-white p-6 sm:p-8 rounded-xl shadow-md h-full">
+                                <div class="flex items-center mb-4">
+                                    <svg class="w-8 h-8 text-[#E10600]" fill="currentColor" viewBox="0 0 24 24">
+                                        <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-base sm:text-lg text-gray-700 mb-6 leading-relaxed">
+                                    "${testimonial.quote}"
+                                </p>
+                                <div class="flex items-center">
+                                    ${avatarHtml}
+                                    <div>
+                                        <div class="font-semibold text-[#0B0B0B]">${testimonial.name}</div>
+                                        <div class="text-sm text-gray-600">${testimonial.role}, ${testimonial.company}</div>
+                                    </div>
+                                </div>
+                            </div>
+                        `;
+                        container.appendChild(slide);
+                    });
+
+                    // Initialize testimonials slider after content is loaded
+                    const testimonialSwiper = new Swiper('.testimonials-swiper', {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                        loop: true,
+                        autoplay: {
+                            delay: 5000,
+                            disableOnInteraction: false,
+                        },
+                        pagination: {
+                            el: '.swiper-pagination',
+                            clickable: true,
+                            bulletClass: 'swiper-pagination-bullet',
+                            bulletActiveClass: 'swiper-pagination-bullet-active',
+                        },
+                        breakpoints: {
+                            640: {
+                                slidesPerView: 2,
+                                spaceBetween: 24,
+                            },
+                            1024: {
+                                slidesPerView: 3,
+                                spaceBetween: 32,
+                            },
+                        },
+                    });
+                })
+                .catch(error => console.error('Error loading testimonials:', error));
+
             // Hero photo slider
             const heroSwiper = new Swiper('.hero-swiper', {
                 slidesPerView: 1,
@@ -739,33 +606,6 @@
                 pagination: {
                     el: '.swiper-pagination',
                     clickable: true,
-                },
-            });
-
-            // Testimonials slider
-            const testimonialSwiper = new Swiper('.testimonials-swiper', {
-                slidesPerView: 1,
-                spaceBetween: 20,
-                loop: true,
-                autoplay: {
-                    delay: 5000,
-                    disableOnInteraction: false,
-                },
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                    bulletClass: 'swiper-pagination-bullet',
-                    bulletActiveClass: 'swiper-pagination-bullet-active',
-                },
-                breakpoints: {
-                    640: {
-                        slidesPerView: 2,
-                        spaceBetween: 24,
-                    },
-                    1024: {
-                        slidesPerView: 3,
-                        spaceBetween: 32,
-                    },
                 },
             });
         });

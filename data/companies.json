@@ -1,0 +1,209 @@
+{
+  "companies": [
+    {
+      "id": 1,
+      "name": "Grab",
+      "logo": "/assets/images/companies/grab.png"
+    },
+    {
+      "id": 2,
+      "name": "Shopee",
+      "logo": "/assets/images/companies/shopee.png"
+    },
+    {
+      "id": 3,
+      "name": "Sea Group",
+      "logo": "/assets/images/companies/sea-group.png"
+    },
+    {
+      "id": 4,
+      "name": "Carousell",
+      "logo": "/assets/images/companies/carousell.png"
+    },
+    {
+      "id": 5,
+      "name": "GovTech",
+      "logo": "/assets/images/companies/govtech.png"
+    },
+    {
+      "id": 6,
+      "name": "Cognizant",
+      "logo": "/assets/images/companies/cognizant.png"
+    },
+    {
+      "id": 7,
+      "name": "Lazada",
+      "logo": "/assets/images/companies/lazada.png"
+    },
+    {
+      "id": 8,
+      "name": "DBS",
+      "logo": "/assets/images/companies/dbs.png"
+    },
+    {
+      "id": 9,
+      "name": "99.co",
+      "logo": "/assets/images/companies/99co.png"
+    },
+    {
+      "id": 10,
+      "name": "NinjaVan",
+      "logo": "/assets/images/companies/ninjavan.png"
+    },
+    {
+      "id": 11,
+      "name": "GetGo",
+      "logo": "/assets/images/companies/getgo.png"
+    },
+    {
+      "id": 12,
+      "name": "Shopback",
+      "logo": "/assets/images/companies/shopback.png"
+    },
+    {
+      "id": 13,
+      "name": "Circle.Life",
+      "logo": "/assets/images/companies/circlelife.png"
+    },
+    {
+      "id": 14,
+      "name": "Agoda",
+      "logo": "/assets/images/companies/agoda.png"
+    },
+    {
+      "id": 15,
+      "name": "Traveloka",
+      "logo": "/assets/images/companies/traveloka.png"
+    },
+    {
+      "id": 16,
+      "name": "Dyson",
+      "logo": "/assets/images/companies/dyson.png"
+    },
+    {
+      "id": 17,
+      "name": "Rakuten",
+      "logo": "/assets/images/companies/rakuten.png"
+    },
+    {
+      "id": 18,
+      "name": "TikTok",
+      "logo": "/assets/images/companies/tiktok.png"
+    },
+    {
+      "id": 19,
+      "name": "Apple",
+      "logo": "/assets/images/companies/apple.png"
+    },
+    {
+      "id": 20,
+      "name": "Meta",
+      "logo": "/assets/images/companies/meta.png"
+    },
+    {
+      "id": 21,
+      "name": "Dell",
+      "logo": "/assets/images/companies/dell.png"
+    },
+    {
+      "id": 22,
+      "name": "Palo IT",
+      "logo": "/assets/images/companies/paloit.png"
+    },
+    {
+      "id": 23,
+      "name": "WSA",
+      "logo": "/assets/images/companies/wsa.png"
+    },
+    {
+      "id": 24,
+      "name": "NCS",
+      "logo": "/assets/images/companies/ncs.png"
+    },
+    {
+      "id": 25,
+      "name": "Credit Agricole",
+      "logo": "/assets/images/companies/credit-agricole.png"
+    },
+    {
+      "id": 26,
+      "name": "NETS",
+      "logo": "/assets/images/companies/nets.png"
+    },
+    {
+      "id": 27,
+      "name": "Nsearch Global",
+      "logo": "/assets/images/companies/nsearch-global.png"
+    },
+    {
+      "id": 28,
+      "name": "Rohde & Schwarz",
+      "logo": "/assets/images/companies/rohdeschwarz.png"
+    },
+    {
+      "id": 29,
+      "name": "Screening Eagle",
+      "logo": "/assets/images/companies/screening-eagle.png"
+    },
+    {
+      "id": 30,
+      "name": "8x8",
+      "logo": "/assets/images/companies/8x8.png"
+    },
+    {
+      "id": 31,
+      "name": "Standard Chartered Bank",
+      "logo": "/assets/images/companies/sc.png"
+    },
+    {
+      "id": 32,
+      "name": "SGX Group",
+      "logo": "/assets/images/companies/sgx-group.png"
+    },
+    {
+      "id": 33,
+      "name": "AutoDesk",
+      "logo": "/assets/images/companies/autodesk.png"
+    },
+    {
+      "id": 34,
+      "name": "Epam",
+      "logo": "/assets/images/companies/epam.png"
+    },
+    {
+      "id": 35,
+      "name": "Singtel",
+      "logo": "/assets/images/companies/singtel.png"
+    },
+    {
+      "id": 36,
+      "name": "Rightship",
+      "logo": "/assets/images/companies/rightship.png"
+    },
+    {
+      "id": 37,
+      "name": "Revivo Bio Systems",
+      "logo": "/assets/images/companies/revivo.png"
+    },
+    {
+      "id": 38,
+      "name": "Fiserv",
+      "logo": "/assets/images/companies/fiserv.png"
+    },
+    {
+      "id": 39,
+      "name": "Wavescan",
+      "logo": "/assets/images/companies/wavescan.png"
+    },
+    {
+      "id": 40,
+      "name": "Telemed C",
+      "logo": "/assets/images/companies/telemed-c.png"
+    },
+    {
+      "id": 41,
+      "name": "ATT INFOSOFT PTE LTD",
+      "logo": "/assets/images/companies/att.png"
+    }
+  ]
+}

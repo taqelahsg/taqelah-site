@@ -1,0 +1,58 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Abhijeet Vaikar",
+      "role": "Lead Sofrware Engineer",
+      "company": "Carousell",
+      "avatar": "/assets/images/avatars/abhijeet.jpeg",
+      "quote": "TAQELAH has been instrumental in connecting me with like-minded QA professionals in Singapore. The workshops are top-notch!",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "Akshay Maldhure",
+      "role": "Lead SDET",
+      "company": "GoJek",
+      "avatar": "/assets/images/avatars/akshay.png",
+      "quote": "The mobile testing meetup changed how I approach automation. The community here is incredibly supportive and knowledgeable.",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Taqueem Javed",
+      "role": "Quality Lead",
+      "company": "PayPal",
+      "avatar": "/assets/images/avatars/taqueem.jpeg",
+      "quote": "Being part of TAQELAH helped me connect with passionate QA professionals, learn the latest testing trends, and gain hands-on exposure through meetups and workshops that truly leveled up my testing journey",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "Keng Hun Koh",
+      "role": "Principal Quality Engineer",
+      "company": "GovTech",
+      "avatar": "/assets/images/avatars/kenghun.png",
+      "quote": "Great talks, great people, and always learning something new. TAQELAH is a must-attend for anyone in QA.",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "Premraj Murugaraj",
+      "role": "Senior QA Engineer",
+      "company": "SingTel",
+      "avatar": "/assets/images/avatars/prem.jpeg",
+      "quote": "TAQELAH helped me build confidence as a tester — from learning new tools and AI-driven testing ideas to networking with experts who genuinely inspire continuous growth.",
+      "rating": 5
+    },
+    {
+      "id": 6,
+      "name": "Praveen MS",
+      "role": "QA Engineer",
+      "company": "Apple",
+      "avatar": "/assets/images/avatars/praveen.jpeg",
+      "quote": "Joining TAQELAH gave me a supportive space to share knowledge, discover new testing practices, and connect with like-minded QA professionals who motivate me to keep improving.",
+      "rating": 5
+    }
+  ]
+}
