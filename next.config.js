@@ -1,18 +1,10 @@
 const { withContentlayer } = require('next-contentlayer')
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ''
-const assetPrefix = process.env.NEXT_PUBLIC_ASSET_PREFIX || ''
-
-const isProd = process.env.NODE_ENV === 'production'
-
 const nextConfig = {
-  output: isProd ? 'export' : undefined,
-  basePath: isProd ? '/taqelah-site' : '',
-  assetPrefix: isProd ? '/taqelah-site/' : '',
-  images: {
-    unoptimized: true,
-  },
-  trailingSlash: true,
+  output: 'export',          // required for static export
+  images: { unoptimized: true }, // GH Pages is static; disable Image Optimization
+  // basePath: '',          // keep empty since you're on a custom domain root
+  trailingSlash: true,      // optional; helps when serving pure static hosting
   eslint: {
     ignoreDuringBuilds: true,
   },
