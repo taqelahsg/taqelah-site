@@ -176,6 +176,28 @@
                         </div>
                     </div>
 
+                    <!-- Pagination Controls (Top) -->
+                    <div id="paginationControlsTop" class="flex flex-col sm:flex-row items-center justify-between gap-4 mb-6 pb-6 border-b border-gray-200">
+                        <div class="text-sm text-gray-600">
+                            Showing <span id="showingStartTop">1</span>-<span id="showingEndTop">6</span> of <span id="totalEventsTop">0</span> events
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button id="prevPageTop" onclick="changePage(-1)" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-[#F5F5F5] hover:border-[#E10600] hover:text-[#E10600] transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:border-gray-300 disabled:hover:text-gray-700" disabled>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                </svg>
+                            </button>
+                            <div id="pageNumbersTop" class="flex gap-2">
+                                <!-- Page numbers will be inserted here -->
+                            </div>
+                            <button id="nextPageTop" onclick="changePage(1)" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-[#F5F5F5] hover:border-[#E10600] hover:text-[#E10600] transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:border-gray-300 disabled:hover:text-gray-700">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
                     <!-- Video Player Modal -->
                     <div id="videoModal" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden items-center justify-center p-4" onclick="closeVideo(event)">
                         <div class="relative w-full max-w-5xl" onclick="event.stopPropagation()">
@@ -212,6 +234,28 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.172 16.172a4 4 0 015.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                         </svg>
                         <p class="text-gray-600 text-lg">No events found matching your search.</p>
+                    </div>
+
+                    <!-- Pagination Controls -->
+                    <div id="paginationControls" class="flex flex-col sm:flex-row items-center justify-between gap-4 mt-8 pt-6 border-t border-gray-200">
+                        <div class="text-sm text-gray-600">
+                            Showing <span id="showingStart">1</span>-<span id="showingEnd">6</span> of <span id="totalEvents">0</span> events
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button id="prevPage" onclick="changePage(-1)" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-[#F5F5F5] hover:border-[#E10600] hover:text-[#E10600] transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:border-gray-300 disabled:hover:text-gray-700" disabled>
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                                </svg>
+                            </button>
+                            <div id="pageNumbers" class="flex gap-2">
+                                <!-- Page numbers will be inserted here -->
+                            </div>
+                            <button id="nextPage" onclick="changePage(1)" class="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 hover:bg-[#F5F5F5] hover:border-[#E10600] hover:text-[#E10600] transition-colors disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-white disabled:hover:border-gray-300 disabled:hover:text-gray-700">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -267,30 +311,46 @@
     <!-- JavaScript for Past Events -->
     <script>
         let allPastEvents = [];
+        let currentPage = 1;
+        const eventsPerPage = 6;
+        let filteredEvents = [];
 
         // Load past events from JSON
         fetch('/data/past-events.json')
             .then(response => response.json())
             .then(data => {
                 allPastEvents = data.events;
-                displayPastEvents(allPastEvents);
+                filteredEvents = allPastEvents;
+                displayPastEvents();
             })
             .catch(error => console.error('Error loading past events:', error));
 
-        function displayPastEvents(events) {
+        function displayPastEvents() {
             const container = document.getElementById('pastEventsContainer');
             const noResults = document.getElementById('noResults');
+            const paginationControls = document.getElementById('paginationControls');
+            const paginationControlsTop = document.getElementById('paginationControlsTop');
 
-            if (events.length === 0) {
+            if (filteredEvents.length === 0) {
                 container.innerHTML = '';
                 noResults.classList.remove('hidden');
+                paginationControls.classList.add('hidden');
+                paginationControlsTop.classList.add('hidden');
                 return;
             }
 
             noResults.classList.add('hidden');
+            paginationControls.classList.remove('hidden');
+            paginationControlsTop.classList.remove('hidden');
             container.innerHTML = '';
 
-            events.forEach(event => {
+            // Calculate pagination
+            const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
+            const startIndex = (currentPage - 1) * eventsPerPage;
+            const endIndex = Math.min(startIndex + eventsPerPage, filteredEvents.length);
+            const eventsToDisplay = filteredEvents.slice(startIndex, endIndex);
+
+            eventsToDisplay.forEach(event => {
                 const eventDate = new Date(event.date);
                 const formattedDate = eventDate.toLocaleDateString('en-US', {
                     year: 'numeric',
@@ -350,19 +410,90 @@
 
                 container.appendChild(card);
             });
+
+            // Update pagination controls
+            updatePaginationControls(totalPages, startIndex, endIndex);
+        }
+
+        function updatePaginationControls(totalPages, startIndex, endIndex) {
+            // Update both top and bottom pagination controls
+            updateSinglePaginationControl('', totalPages, startIndex, endIndex);
+            updateSinglePaginationControl('Top', totalPages, startIndex, endIndex);
+        }
+
+        function updateSinglePaginationControl(suffix, totalPages, startIndex, endIndex) {
+            const prevButton = document.getElementById('prevPage' + suffix);
+            const nextButton = document.getElementById('nextPage' + suffix);
+            const showingStart = document.getElementById('showingStart' + suffix);
+            const showingEnd = document.getElementById('showingEnd' + suffix);
+            const totalEventsSpan = document.getElementById('totalEvents' + suffix);
+            const pageNumbers = document.getElementById('pageNumbers' + suffix);
+
+            // Update showing text
+            showingStart.textContent = startIndex + 1;
+            showingEnd.textContent = endIndex;
+            totalEventsSpan.textContent = filteredEvents.length;
+
+            // Update button states
+            prevButton.disabled = currentPage === 1;
+            nextButton.disabled = currentPage === totalPages;
+
+            // Generate page numbers
+            pageNumbers.innerHTML = '';
+            const maxVisiblePages = 5;
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+
+            if (endPage - startPage < maxVisiblePages - 1) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+
+            for (let i = startPage; i <= endPage; i++) {
+                const pageButton = document.createElement('button');
+                pageButton.textContent = i;
+                pageButton.onclick = () => goToPage(i);
+                pageButton.className = `px-4 py-2 border rounded-lg transition-colors ${
+                    i === currentPage
+                        ? 'bg-[#E10600] text-white border-[#E10600]'
+                        : 'border-gray-300 text-gray-700 hover:bg-[#F5F5F5] hover:border-[#E10600] hover:text-[#E10600]'
+                }`;
+                pageNumbers.appendChild(pageButton);
+            }
+        }
+
+        function changePage(direction) {
+            const totalPages = Math.ceil(filteredEvents.length / eventsPerPage);
+            const newPage = currentPage + direction;
+
+            if (newPage >= 1 && newPage <= totalPages) {
+                currentPage = newPage;
+                displayPastEvents();
+                scrollToTop();
+            }
+        }
+
+        function goToPage(page) {
+            currentPage = page;
+            displayPastEvents();
+            scrollToTop();
+        }
+
+        function scrollToTop() {
+            document.getElementById('past-events').scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
 
         function searchEvents() {
             const searchTerm = document.getElementById('searchInput').value.toLowerCase();
 
-            const filteredEvents = allPastEvents.filter(event => {
+            filteredEvents = allPastEvents.filter(event => {
                 return event.title.toLowerCase().includes(searchTerm) ||
                        event.description.toLowerCase().includes(searchTerm) ||
                        event.speaker.toLowerCase().includes(searchTerm) ||
                        event.tags.some(tag => tag.toLowerCase().includes(searchTerm));
             });
 
-            displayPastEvents(filteredEvents);
+            currentPage = 1; // Reset to first page when searching
+            displayPastEvents();
         }
 
         function playVideo(event) {
