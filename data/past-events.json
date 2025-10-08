@@ -2,112 +2,92 @@
   "events": [
     {
       "id": 1,
-      "title": "Supercharging Test Engineering with n8n Workflows by Praveen Sanap, Lead Engineer @ Carousell",
+      "title": "Supercharging Test Engineering with n8n Workflows",
       "date": "2025-09-25",
       "type": "meetup",
-      "speaker": "Praveen Sanap, Lead Engineer @ Carousell",
+      "speaker": "Praveen Sanap",
       "description": "",
       "youtubeId": "eyYP4T7pz_c",
       "tags": [
         "carousell",
-        "engineer",
-        "engineering",
-        "lead",
         "n8n",
         "praveen",
         "sanap",
-        "supercharging",
-        "test",
-        "with",
         "workflows"
       ]
     },
     {
       "id": 2,
-      "title": "Breaking Things to Build Trust by Priyangka John Jayaraj, Product evangelist @ MagicPod",
+      "title": "Breaking Things to Build Trust",
       "date": "2025-09-25",
       "type": "meetup",
-      "speaker": "Priyangka John Jayaraj, Product evangelist @ MagicPod",
+      "speaker": "Priyangka John Jayaraj",
       "description": "",
       "youtubeId": "GSgPfHRntZE",
       "tags": [
-        "breaking",
-        "build",
-        "evangelist",
         "jayaraj",
         "john",
         "magicpod",
         "priyangka",
         "product",
-        "things",
         "trust"
       ]
     },
     {
       "id": 3,
-      "title": "Taqelah Meetup July 2024 - Culture of dogfooding at Carousell - Abhijeet Vaikar",
+      "title": "Culture of dogfooding at Carousell",
       "date": "2024-07-21",
       "type": "meetup",
-      "speaker": "",
+      "speaker": "Abhijeet Vaikar",
       "description": "",
       "youtubeId": "4zxeDkef7Rw",
       "tags": [
-        "2024",
         "abhijeet",
         "carousell",
         "culture",
         "dogfooding",
-        "july",
         "meetup",
-        "taqelah",
         "vaikar"
       ]
     },
     {
       "id": 4,
-      "title": "Taqelah Meetup March 2024  - AI Copilot Impact to QE Work",
+      "title": "AI Copilot Impact to QE Work",
       "date": "2024-03-29",
       "type": "meetup",
-      "speaker": "Ada Lo - Lead QE Engineer @Govtech",
+      "speaker": "Ada Lo",
       "description": "",
       "youtubeId": "STEzR45Ra_c",
       "tags": [
-        "2024",
         "copilot",
         "impact",
-        "march",
         "meetup",
-        "taqelah",
-        "work"
+        "taqelah"
       ]
     },
     {
       "id": 5,
-      "title": "Taqelah Meetup March 2024 - Google Looker Studio for test engineers",
+      "title": "Google Looker Studio for test engineers",
       "date": "2024-03-29",
       "type": "meetup",
-      "speaker": "Syam Sasi - Lead Test Engineer @Carousell",
+      "speaker": "Syam Sasi",
       "description": "",
       "youtubeId": "BK_1wJ4dgQw",
       "tags": [
-        "2024",
-        "engineers",
-        "for",
         "google",
         "looker",
-        "march",
         "meetup",
         "studio",
-        "taqelah",
-        "test"
+        "data",
+        "visualisation"
       ]
     },
     {
       "id": 6,
-      "title": "[TAQELAH WEBINAR] - Chaos Engineering & Testing",
+      "title": "Chaos Engineering & Testing",
       "date": "2021-12-22",
       "type": "webinar",
-      "speaker": "Unmesh Gundescha - https://www.linkedin.com/in/upgundecha/",
+      "speaker": "Unmesh Gundescha",
       "description": "",
       "youtubeId": "FcNNSrml0BM",
       "tags": [
@@ -120,20 +100,17 @@
     },
     {
       "id": 7,
-      "title": "Taqelah Webinar    Mocking APIs for more efficient testing and automation",
+      "title": "Mocking APIs for more efficient testing and automation",
       "date": "2021-04-10",
       "type": "webinar",
-      "speaker": "",
+      "speaker": "Bas Dijkstra",
       "description": "",
       "youtubeId": "rUugnLaAKIM",
       "tags": [
-        "and",
         "apis",
         "automation",
         "efficient",
-        "for",
         "mocking",
-        "more",
         "taqelah",
         "testing",
         "webinar"
@@ -141,16 +118,14 @@
     },
     {
       "id": 8,
-      "title": "[Taqelah Webinar] Just Pass is Not Quality by Ramit M Kaul",
+      "title": "Just Pass is Not Quality by Ramit M Kaul",
       "date": "2021-01-10",
       "type": "webinar",
       "speaker": "Ramit M Kaul",
       "description": "",
       "youtubeId": "PhGrJZUNbUU",
       "tags": [
-        "just",
         "kaul",
-        "not",
         "pass",
         "quality",
         "ramit",
@@ -160,10 +135,10 @@
     },
     {
       "id": 9,
-      "title": "[TAQELAH WEBINAR] Integrating E2E tests into CI pipeline",
+      "title": "Integrating E2E tests into CI pipeline",
       "date": "2020-10-29",
       "type": "webinar",
-      "speaker": "",
+      "speaker": "Lay Mui",
       "description": "",
       "youtubeId": "5M2HDEo5Osw",
       "tags": [
@@ -178,11 +153,11 @@
     },
     {
       "id": 10,
-      "title": "[24th TAQELAH WEBINAR] Catching bugs in backend services without writing tests.",
+      "title": "Catching bugs in backend services without writing tests",
       "date": "2020-10-17",
       "type": "webinar",
       "speaker": "",
-      "description": "",
+      "description": "Puneet Khanduri",
       "youtubeId": "H083fxYfbfc",
       "tags": [
         "24th",
@@ -199,10 +174,10 @@
     },
     {
       "id": 11,
-      "title": "[23rd TAQELAH WEBINAR] Next-Generation Functional Testing Using Visual AI",
+      "title": "Next-Generation Functional Testing Using Visual AI",
       "date": "2020-09-17",
       "type": "webinar",
-      "speaker": "ADAM CARMI",
+      "speaker": "Adam Carmi",
       "description": "",
       "youtubeId": "8w7kzELJYAE",
       "tags": [
@@ -523,10 +498,10 @@
     },
     {
       "id": 28,
-      "title": "[21st TAQELAH WEBINAR] - iOS App Dev Integration Tests: API Contract Tests & Localhost UI Tests",
+      "title": "iOS App Dev Integration Tests: API Contract Tests & Localhost UI Tests",
       "date": "2020-07-04",
       "type": "webinar",
-      "speaker": "",
+      "speaker": "Kenneth Poon",
       "description": "",
       "youtubeId": "1Jpj2jy9W7A",
       "tags": [
@@ -545,10 +520,10 @@
     },
     {
       "id": 29,
-      "title": "[20th TAQELAH WEBINAR]-Test Lean & Ship Healthy:Delivering High Quality Software in the DevOps World",
+      "title": "Test Lean & Ship Healthy:Delivering High Quality Software in the DevOps World",
       "date": "2020-05-20",
       "type": "webinar",
-      "speaker": "",
+      "speaker": "Asankhaya Sharma",
       "description": "",
       "youtubeId": "sqtmcYKpy-A",
       "tags": [
@@ -570,7 +545,25 @@
     },
     {
       "id": 30,
-      "title": "[18th TAQELAH WEBINAR] -  METS by Greg Paskal",
+      "title": "How to Get Automation Included in Your Definition of Done",
+      "date": "2020-12-20",
+      "type": "webinar",
+      "speaker": "Angie Jones",
+      "description": "",
+      "youtubeId": "sqtmcYKpy-A",
+      "tags": [
+        "dod",
+        "automation",
+        "devops",
+        "angie",
+        "jones",
+        "lean",
+        "webinar"
+      ]
+    },
+    {
+      "id": 31,
+      "title": "METS by Greg Paskal",
       "date": "2020-04-25",
       "type": "webinar",
       "speaker": "Greg Paskal",
@@ -586,8 +579,8 @@
       ]
     },
     {
-      "id": 31,
-      "title": "[19th TAQELAH WEBINAR] - Test Automation of Real-time, Multi-user Games by Anand Bagmar",
+      "id": 32,
+      "title": "Test Automation of Real-time, Multi-user Games by Anand Bagmar",
       "date": "2020-04-23",
       "type": "webinar",
       "speaker": "Anand Bagmar",
@@ -609,8 +602,8 @@
       ]
     },
     {
-      "id": 32,
-      "title": "14th TAQELAH Meetup @ Facebook -  TAQELAH (Test Automation & Quality Engineering LAH)",
+      "id": 33,
+      "title": "Testing @ Facebook",
       "date": "2019-12-02",
       "type": "meetup",
       "speaker": "Raj Kamal",
@@ -629,11 +622,11 @@
       ]
     },
     {
-      "id": 33,
-      "title": "New World of Testing - TAQELAH (Test Automation & Quality Engineering LAH)",
+      "id": 34,
+      "title": "New World of Testing",
       "date": "2019-08-05",
       "type": "meetup",
-      "speaker": "Pradeep Soundararajan, Founder CEO of Moolya Testing and AppAchhi",
+      "speaker": "Pradeep Soundararajan",
       "description": "",
       "youtubeId": "gb1yUQJrN04",
       "tags": [
@@ -649,11 +642,11 @@
       ]
     },
     {
-      "id": 34,
-      "title": "Consumer driven contract testing - TAQELAH (Test Automation & Quality Engineering LAH)",
+      "id": 35,
+      "title": "Consumer driven contract testing",
       "date": "2019-06-12",
       "type": "meetup",
-      "speaker": "Lavanya Mohan, QA Engineer at Grab",
+      "speaker": "Lavanya Mohan",
       "description": "",
       "youtubeId": "CPwjGWRCZk0",
       "tags": [
@@ -670,11 +663,11 @@
       ]
     },
     {
-      "id": 35,
-      "title": "Adding the chrome dev-tools flavor to your selenium scripts - TAQELAH",
+      "id": 36,
+      "title": "Adding the chrome dev-tools flavor to your selenium scripts",
       "date": "2019-06-12",
       "type": "meetup",
-      "speaker": "Amit Rawat, Test Automation Architect at a leading bank",
+      "speaker": "Amit Rawat",
       "description": "",
       "youtubeId": "mE0zUZdoeBw",
       "tags": [
@@ -691,11 +684,11 @@
       ]
     },
     {
-      "id": 36,
-      "title": "Creating Test Stability To Achieve Continuous Delivery - TAQELAH",
+      "id": 37,
+      "title": "Creating Test Stability To Achieve Continuous Delivery",
       "date": "2019-05-02",
       "type": "meetup",
-      "speaker": "Trisha Chetani, QA Evangelist",
+      "speaker": "Trisha Chetani",
       "description": "",
       "youtubeId": "-GLOrXJG59s",
       "tags": [
@@ -709,11 +702,11 @@
       ]
     },
     {
-      "id": 37,
-      "title": "Let’s Know Mobile Security - TAQELAH",
+      "id": 38,
+      "title": "Let’s Know Mobile Security",
       "date": "2019-05-02",
       "type": "meetup",
-      "speaker": "Anandh Kumar, Senior Associate at Cognizant Technology Solutions",
+      "speaker": "Anandh Kumar",
       "description": "",
       "youtubeId": "ADmP0WbfNC8",
       "tags": [
@@ -725,11 +718,11 @@
       ]
     },
     {
-      "id": 38,
-      "title": "Appium Pro Tips - TAQELAH",
+      "id": 39,
+      "title": "Appium Pro Tips",
       "date": "2019-03-27",
       "type": "meetup",
-      "speaker": "Syam Sasi, Senior Software Engineer, Carousell",
+      "speaker": "Syam Sasi",
       "description": "",
       "youtubeId": "Q9d2qM14MXM",
       "tags": [
@@ -740,11 +733,11 @@
       ]
     },
     {
-      "id": 39,
-      "title": "Cypress - Intro to a modern web automation tool - TAQELAH",
+      "id": 40,
+      "title": "Cypress - Intro to a modern web automation tool",
       "date": "2019-03-27",
       "type": "meetup",
-      "speaker": "Praveen MS, Lead QA Engineer, Tectus Dreamlab",
+      "speaker": "Praveen MS",
       "description": "",
       "youtubeId": "5ZOZgw_qeO8",
       "tags": [
@@ -758,11 +751,11 @@
       ]
     },
     {
-      "id": 40,
-      "title": "How to write testable UI code - TAQELAH",
+      "id": 41,
+      "title": "How to write testable UI code",
       "date": "2019-01-27",
       "type": "meetup",
-      "speaker": "Shi Ling Tai - Co-founder at UI-licious",
+      "speaker": "Shi Ling Tai",
       "description": "",
       "youtubeId": "5xzcC7dgXe4",
       "tags": [
@@ -774,11 +767,11 @@
       ]
     },
     {
-      "id": 41,
-      "title": "Intro to testcafe - TAQELAH",
+      "id": 42,
+      "title": "Intro to testcafe",
       "date": "2019-01-27",
       "type": "meetup",
-      "speaker": "Wendy Soh - Software Engineer @ GovTech",
+      "speaker": "Wendy Soh",
       "description": "",
       "youtubeId": "JDy614IGDY0",
       "tags": [
@@ -788,11 +781,11 @@
       ]
     },
     {
-      "id": 42,
-      "title": "Breaking free from static abuse in test automation frameworks - Singapore Appium Meetup",
+      "id": 43,
+      "title": "Breaking free from static abuse in test automation frameworks",
       "date": "2018-11-28",
       "type": "meetup",
-      "speaker": "Abhijeet Vaikar, Software Engineer Test @ Carousell",
+      "speaker": "Abhijeet Vaikar",
       "description": "",
       "youtubeId": "SQAKDzjbBSo",
       "tags": [
@@ -810,11 +803,11 @@
       ]
     },
     {
-      "id": 43,
-      "title": "LOCUST - A modern load testing tool - Singapore Appium Meetup",
+      "id": 44,
+      "title": "LOCUST",
       "date": "2018-11-28",
       "type": "meetup",
-      "speaker": "Akash Srivastava , Senior Software Engineer in Test @ Autodesk",
+      "speaker": "Akash Srivastava",
       "description": "",
       "youtubeId": "Qu2Oj-eGmtk",
       "tags": [
@@ -829,11 +822,11 @@
       ]
     },
     {
-      "id": 44,
-      "title": "Building Your Own Device Farm - Singapore Appium Meetup",
+      "id": 45,
+      "title": "Building Your Own Device Farm ",
       "date": "2018-11-28",
       "type": "meetup",
-      "speaker": "Zui Young Lim , Associate Quality Engineer @ GovTech",
+      "speaker": "Zui Young Lim",
       "description": "",
       "youtubeId": "MZhxE6NbvoI",
       "tags": [
@@ -848,11 +841,11 @@
       ]
     },
     {
-      "id": 45,
-      "title": "Appium - Back To The Basics - Singapore Appium Meetup",
+      "id": 46,
+      "title": "Appium - Back To The Basics",
       "date": "2018-07-31",
       "type": "meetup",
-      "speaker": "Pavel Strongin @ Circles.Life",
+      "speaker": "Pavel Strongin",
       "description": "",
       "youtubeId": "6GRo8KoBHKk",
       "tags": [
@@ -865,8 +858,8 @@
       ]
     },
     {
-      "id": 46,
-      "title": "Learnings from our cloud automation journey (so far) - Singapore Appium Meetup",
+      "id": 47,
+      "title": "Learnings from our cloud automation journey (so far)",
       "date": "2018-06-28",
       "type": "meetup",
       "speaker": "Martin Schneider",
@@ -886,8 +879,8 @@
       ]
     },
     {
-      "id": 47,
-      "title": "Quick and dirty test statistics with Python and Google Sheets - Singapore Appium Meetup",
+      "id": 48,
+      "title": "Quick and dirty test statistics with Python and Google Sheets",
       "date": "2018-06-28",
       "type": "meetup",
       "speaker": "Syam Sasi",
@@ -909,11 +902,11 @@
       ]
     },
     {
-      "id": 48,
-      "title": "Android, iOS and Web testing in a single framework & Image-based testing - Singapore Appium Meetup",
+      "id": 49,
+      "title": "Android, iOS and Web testing in a single framework & Image-based testing",
       "date": "2018-04-12",
       "type": "meetup",
-      "speaker": "Hello Friends, Martin Schneider from Carousell will be sharing his experience in image based testing with appium and the best practices to apply polymorphism while designing the test framework. Agenda 6:00pm - Networking and food 6.30pm - Android, iOS and Web testing in a single framework 7.30pm - Image-based testing with Appium and Sikuli 8:15pm - Q &amp; A 9:00pm - End",
+      "speaker": "Martin Schneider",
       "description": "",
       "youtubeId": "maJkvP_qk4A",
       "tags": [
@@ -933,10 +926,10 @@
     },
     {
       "id": 49,
-      "title": "Android, iOS and Web testing in a single framework & Image-based testing - Singapore Appium Meetup",
+      "title": "Android, iOS and Web testing in a single framework & Image-based testing",
       "date": "2018-04-12",
       "type": "meetup",
-      "speaker": "Hello Friends, Martin Schneider from Carousell will be sharing his experience in image based testing with appium and the best practices to apply polymorphism while designing the test framework. Agenda 6:00pm - Networking and food 6.30pm - Android, iOS and Web testing in a single framework 7.30pm - Image-based testing with Appium and Sikuli 8:15pm - Q &amp; A 9:00pm - End",
+      "speaker": "Martin Schneider",
       "description": "",
       "youtubeId": "OyAMnBEbT20",
       "tags": [
@@ -956,7 +949,7 @@
     },
     {
       "id": 50,
-      "title": "1 Day Workshop - Singapore Appium Meetup",
+      "title": "1 Day Appium Workshop",
       "date": "2018-02-11",
       "type": "meetup",
       "speaker": "Syam Sasi and Jerry Zhao",
