@@ -1,64 +1,145 @@
 {
   "events": [
-    {
-      "id": 1,
-      "title": "Introduction to Test Automation",
-      "date": "2024-09-15",
-      "type": "workshop",
-      "speaker": "John Doe",
-      "description": "A comprehensive workshop on getting started with test automation using Selenium and Python.",
-      "youtubeId": "dQw4w9WgXcQ",
-      "tags": ["automation", "selenium", "python", "beginner"]
-    },
-    {
-      "id": 2,
-      "title": "Mobile Testing Best Practices",
-      "date": "2024-08-20",
-      "type": "meetup",
-      "speaker": "Jane Smith",
-      "description": "Learn the best practices for mobile app testing on iOS and Android platforms.",
-      "youtubeId": "dQw4w9WgXcQ",
-      "tags": ["mobile", "ios", "android", "testing"]
-    },
-    {
-      "id": 3,
-      "title": "AI in Software Testing Panel",
-      "date": "2024-07-10",
-      "type": "panel",
-      "speaker": "Multiple Speakers",
-      "description": "Industry experts discuss the impact of AI and machine learning on software testing.",
-      "youtubeId": "dQw4w9WgXcQ",
-      "tags": ["ai", "machine learning", "future", "panel"]
-    },
-    {
-      "id": 4,
-      "title": "API Testing with Postman",
-      "date": "2024-06-05",
-      "type": "workshop",
-      "speaker": "Mike Chen",
-      "description": "Hands-on workshop covering API testing strategies and Postman automation.",
-      "youtubeId": "dQw4w9WgXcQ",
-      "tags": ["api", "postman", "automation", "rest"]
-    },
-    {
-      "id": 5,
-      "title": "Performance Testing Fundamentals",
-      "date": "2024-05-18",
-      "type": "workshop",
-      "speaker": "Sarah Lee",
-      "description": "Understanding performance testing concepts and tools like JMeter and K6.",
-      "youtubeId": "dQw4w9WgXcQ",
-      "tags": ["performance", "jmeter", "load testing", "k6"]
-    },
-    {
-      "id": 6,
-      "title": "CI/CD for Test Automation",
-      "date": "2024-04-22",
-      "type": "meetup",
-      "speaker": "David Kumar",
-      "description": "Integrating automated tests into CI/CD pipelines with Jenkins and GitHub Actions.",
-      "youtubeId": "dQw4w9WgXcQ",
-      "tags": ["cicd", "jenkins", "github actions", "devops"]
-    }
-  ]
+  {    
+    "id": 1,
+    "title": "Test Automation of Real-time, Multi-user Games by Anand Bagmar",
+    "date":"2020-04-23",
+    "type": "talk",
+    "speaker": "Anand Bagmar",
+    "description": "",
+    "youtubeId": "drb6DRG768k",
+    "tags": ["test automation", "real-time", "games", "multi-user", "Anand Bagmar"]
+  },
+  {
+    "id": 2,
+    "title": "METS by Greg Paskal",
+    "date": "2020-04-25",
+    "type": "talk",
+    "speaker": "Greg Paskal",
+    "description": "",
+    "youtubeId": "P4yQV7EhdqA",
+    "tags": ["METS", "testing strategy", "Greg Paskal"]
+  },
+  {
+    "id": 3,
+    "title": "Test Lean & Ship Healthy: Delivering High Quality Software in the DevOps World",
+    "date": "2020-05-20",
+    "type": "talk",
+    "speaker": "",
+    "description": "",
+    "youtubeId": "sqtmcYKpy-A",
+    "tags": ["lean testing", "DevOps", "quality", "software delivery"]
+  },
+  {
+    "id": 4,
+    "title": "iOS App Dev Integration Tests: API Contract Tests & Localhost UI Tests",
+    "date": "2020-07-04",
+    "type": "talk",
+    "speaker": "",
+    "description": "",
+    "youtubeId": "1Jpj2jy9W7A",
+    "tags": ["iOS", "integration testing", "API contract", "UI testing"]
+  },
+  {
+    "id": 5,
+    "title": "Untested code is broken Code - Vaibhav Bajpai",
+    "date":"2020-08-08",
+    "type": "talk",
+    "speaker": "Vaibhav Bajpai",
+    "description": "",
+    "youtubeId": "3icQM_aoAAo",
+    "tags": ["untested code", "code quality", "best practices", "Vaibhav Bajpai"]
+  },
+  {
+    "id": 6,
+    "title": "Next-Generation Functional Testing Using Visual AI",
+    "date":"2020-09-17",
+    "type": "talk",
+    "speaker": "",
+    "description": "",
+    "youtubeId": "8w7kzELJYAE",
+    "tags": ["functional testing", "visual AI", "next generation testing", "automation"]
+  },
+  {
+    "id": 7,
+    "title": "Catching bugs in backend services without writing tests.",
+    "date":"2020-10-17",
+    "type": "talk",
+    "speaker": "",
+    "description": "",
+    "youtubeId": "H083fxYfbfc",
+    "tags": ["backend", "bug detection", "testing", "observability"]
+  },
+  {
+    "id": 8,
+    "title": "Integrating E2E tests into CI pipeline",
+    "date":"2020-10-29",
+    "type": "talk",
+    "speaker": "",
+    "description": "",
+    "youtubeId": "5M2HDEo5Osw",
+    "tags": ["E2E testing", "CI/CD", "pipeline", "automation integration"]
+  },
+  {
+    "id": 9,
+    "title": "Just Pass is Not Quality by Ramit M Kaul",
+    "date": "2021-01-10",
+    "type": "talk",
+    "speaker": "Ramit M Kaul",
+    "description": "",
+    "youtubeId": "PhGrJZUNbUU",
+    "tags": ["quality", "testing mindset", "Ramit M Kaul"]
+  },
+  {
+    "id": 10,
+    "title": "Mocking APIs for more efficient testing and automation",
+    "date": "2021-04-10",
+    "type": "talk",
+    "speaker": "",
+    "description": "",
+    "youtubeId": "rUugnLaAKIM",
+    "tags": ["mocking", "API testing", "automation", "efficiency"]
+  },
+  {
+    "id": 11,
+    "title": "How to Get Automation Included in Your Definition of Done by Angie Jones",
+    "date":"2021-08-27",
+    "type": "talk",
+    "speaker": "Angie Jones",
+    "description": "",
+    "youtubeId": "fHHdgA583mY",
+    "tags": ["definition of done", "automation adoption", "Agile", "Angie Jones"]
+  },
+  {
+    "id": 12,
+    "title": "Chaos Engineering & Testing",
+    "date":"2021-12-22",
+    "type": "talk",
+    "speaker": "",
+    "description": "",
+    "youtubeId": "FcNNSrml0BM",
+    "tags": ["chaos engineering", "resilience testing", "site reliability"]
+  },
+  {
+    "id": 13,
+    "title": "Modern Software Testing Best Practices",
+    "date": "2022-04-14",
+    "type": "talk",
+    "speaker": "",
+    "description": "",
+    "youtubeId": "2QQpeNdPaXA",
+    "tags": ["modern testing", "best practices", "QA trends"]
+  },
+  {
+    "id": 14,
+    "title": "Testing a Conversational AI (Chatbots)",
+    "date": "2022-05-01",
+    "type": "talk",
+    "speaker": "",
+    "description": "",
+    "youtubeId": "IeE2jKBFHzY",
+    "tags": ["conversational AI", "chatbots", "AI testing"]
+  }
+]
 }
+
