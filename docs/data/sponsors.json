@@ -1,0 +1,58 @@
+{
+  "sponsors": [
+    {
+      "id": 1,
+      "name": "Google Singapore",
+      "tier": "Platinum",
+      "logo": "/assets/images/sponsors/google.svg",
+      "website": "https://www.google.com.sg",
+      "description": "Google provides venue and resources for our community events.",
+      "since": "2023"
+    },
+    {
+      "id": 2,
+      "name": "Grab",
+      "tier": "Platinum",
+      "logo": "/assets/images/sponsors/grab.svg",
+      "website": "https://www.grab.com",
+      "description": "Grab supports our automation workshops and speaker programs.",
+      "since": "2023"
+    },
+    {
+      "id": 3,
+      "name": "Shopee",
+      "tier": "Gold",
+      "logo": "/assets/images/sponsors/shopee.svg",
+      "website": "https://www.shopee.sg",
+      "description": "Shopee hosts our monthly meetups and provides engineering mentors.",
+      "since": "2024"
+    },
+    {
+      "id": 4,
+      "name": "Sea Group",
+      "tier": "Gold",
+      "logo": "/assets/images/sponsors/sea.svg",
+      "website": "https://www.sea.com",
+      "description": "Sea Group sponsors our mobile testing initiatives.",
+      "since": "2024"
+    },
+    {
+      "id": 5,
+      "name": "Microsoft",
+      "tier": "Silver",
+      "logo": "/assets/images/sponsors/microsoft.svg",
+      "website": "https://www.microsoft.com/en-sg",
+      "description": "Microsoft provides Azure credits for our testing infrastructure.",
+      "since": "2024"
+    },
+    {
+      "id": 6,
+      "name": "ThoughtWorks",
+      "tier": "Silver",
+      "logo": "/assets/images/sponsors/thoughtworks.svg",
+      "website": "https://www.thoughtworks.com",
+      "description": "ThoughtWorks supports our technical content and speaker training.",
+      "since": "2025"
+    }
+  ]
+}

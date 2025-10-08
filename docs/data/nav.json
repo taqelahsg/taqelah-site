@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "label": "Home",
+      "href": "/",
+      "icon": "home"
+    },
+    {
+      "label": "Events",
+      "href": "/events.html",
+      "icon": "calendar"
+    },
+    {
+      "label": "Community",
+      "href": "/community.html",
+      "icon": "users"
+    },
+    {
+      "label": "Blog",
+      "href": "/blog.html",
+      "icon": "book"
+    },
+    {
+      "label": "Jobs",
+      "href": "/jobs.html",
+      "icon": "briefcase"
+    },
+    {
+      "label": "Sponsors",
+      "href": "/sponsors.html",
+      "icon": "heart"
+    },
+    {
+      "label": "About",
+      "href": "/about.html",
+      "icon": "info"
+    },
+    {
+      "label": "Contact",
+      "href": "/contact.html",
+      "icon": "mail"
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Priya Sharma",
+      "role": "Senior QA Engineer",
+      "company": "Grab",
+      "avatar": "/assets/images/avatars/priya.jpg",
+      "quote": "TAQELAH has been instrumental in connecting me with like-minded QA professionals in Singapore. The workshops are top-notch!",
+      "rating": 5
+    },
+    {
+      "id": 2,
+      "name": "David Lim",
+      "role": "Test Automation Lead",
+      "company": "Shopee",
+      "avatar": "/assets/images/avatars/david.jpg",
+      "quote": "The mobile testing meetup changed how I approach automation. The community here is incredibly supportive and knowledgeable.",
+      "rating": 5
+    },
+    {
+      "id": 3,
+      "name": "Michelle Tan",
+      "role": "QA Manager",
+      "company": "Sea Group",
+      "avatar": "/assets/images/avatars/michelle.jpg",
+      "quote": "I've hired two amazing QA engineers through TAQELAH's job board. It's become my go-to resource for talent in Singapore.",
+      "rating": 5
+    },
+    {
+      "id": 4,
+      "name": "Ahmed Hassan",
+      "role": "DevOps Engineer",
+      "company": "Carousell",
+      "avatar": "/assets/images/avatars/ahmed.jpg",
+      "quote": "Great talks, great people, and always learning something new. TAQELAH is a must-attend for anyone in QA.",
+      "rating": 5
+    },
+    {
+      "id": 5,
+      "name": "Sarah Wong",
+      "role": "Junior QA Engineer",
+      "company": "GovTech",
+      "avatar": "/assets/images/avatars/sarah.jpg",
+      "quote": "As someone new to QA, TAQELAH has been an incredible resource. The mentorship and community support are unmatched.",
+      "rating": 5
+    }
+  ]
+}
