@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+      TAQELAH Contact Page
+      Mobile-optimized contact form with validation
+      16px+ inputs to prevent iOS zoom, 44px+ tap targets
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Get in touch with TAQELAH. Contact us for sponsorships, speaking opportunities, or general inquiries.">
+    <meta name="keywords" content="contact, TAQELAH, QA community Singapore, sponsorship">
+    <meta name="author" content="TAQELAH">
+    <meta name="theme-color" content="#E10600">
+
+    <title>Contact Us | TAQELAH - Singapore QA Community</title>
+
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css">
+</head>
+<body class="font-sans antialiased text-[#0B0B0B] bg-white">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#E10600] focus:text-white focus:rounded-lg">
+        Skip to main content
+    </a>
+
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm safe" x-data="{ mobileMenuOpen: false }">
+        <nav class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 rounded-lg">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-[#E10600] rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl sm:text-2xl">T</span>
+                        </div>
+                        <span class="text-xl sm:text-2xl font-bold text-[#E10600]">TAQELAH</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex md:items-center md:space-x-1 lg:space-x-2">
+                    <a href="/" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Home</a>
+                    <a href="/events.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Events</a>
+                    <a href="/community.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Community</a>
+                    <a href="/blog.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Blog</a>
+                    <a href="/jobs.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Jobs</a>
+                    <a href="/sponsors.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Sponsors</a>
+                    <a href="/about.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">About</a>
+                    <a href="/contact.html" class="ml-4 px-6 py-2 text-sm lg:text-base font-semibold text-white bg-[#E10600] hover:bg-[#C20500] rounded-lg transition-colors shadow-md" aria-current="page">Contact</a>
+                </div>
+
+                <button @click="mobileMenuOpen = true" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5]" aria-label="Open menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu -->
+        <div x-show="mobileMenuOpen" x-cloak @keydown.escape.window="mobileMenuOpen = false" class="fixed inset-0 z-50 md:hidden">
+            <div x-show="mobileMenuOpen" @click="mobileMenuOpen = false" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm" x-transition></div>
+            <div x-show="mobileMenuOpen" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl overflow-y-auto safe" x-transition>
+                <div class="px-4 py-6">
+                    <div class="flex items-center justify-between mb-8">
+                        <span class="text-xl font-bold text-[#E10600]">Menu</span>
+                        <button @click="mobileMenuOpen = false" class="p-2 rounded-lg text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5]" aria-label="Close menu">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav class="space-y-2">
+                        <a href="/" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Home</a>
+                        <a href="/events.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Events</a>
+                        <a href="/community.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Community</a>
+                        <a href="/blog.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Blog</a>
+                        <a href="/jobs.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Jobs</a>
+                        <a href="/sponsors.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Sponsors</a>
+                        <a href="/about.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">About</a>
+                        <a href="/contact.html" class="block px-4 py-3 mt-4 text-base font-semibold text-center text-white bg-[#E10600] hover:bg-[#C20500] rounded-lg shadow-md" aria-current="page">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <!-- Page Hero -->
+        <section class="bg-gradient-to-br from-[#E10600] to-[#C20500] text-white py-12 sm:py-16 lg:py-20">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Get in Touch</h1>
+                <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+                    We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Form Section -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12">
+
+                    <!-- Contact Form -->
+                    <div class="lg:col-span-2">
+                        <div class="bg-white rounded-xl shadow-lg p-6 sm:p-8 border border-gray-100">
+                            <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-6">Send us a Message</h2>
+
+                            <form action="#" method="POST" class="space-y-6"
+                                  x-data="{
+                                      formData: { name: '', email: '', subject: '', message: '' },
+                                      errors: {},
+                                      submitted: false,
+                                      submitForm() {
+                                          this.errors = {};
+                                          if (!this.formData.name) this.errors.name = 'Name is required';
+                                          if (!this.formData.email) this.errors.email = 'Email is required';
+                                          if (!this.formData.subject) this.errors.subject = 'Subject is required';
+                                          if (!this.formData.message) this.errors.message = 'Message is required';
+                                          if (Object.keys(this.errors).length === 0) {
+                                              this.submitted = true;
+                                          }
+                                      }
+                                  }"
+                                  @submit.prevent="submitForm">
+
+                                <!-- Success Message -->
+                                <div x-show="submitted" x-cloak
+                                     class="p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
+                                    <p class="font-semibold">Thank you for your message!</p>
+                                    <p class="text-sm">We'll get back to you within 24 hours.</p>
+                                </div>
+
+                                <!-- Name Field -->
+                                <div>
+                                    <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Your Name <span class="text-[#E10600]">*</span>
+                                    </label>
+                                    <input type="text"
+                                           id="name"
+                                           name="name"
+                                           x-model="formData.name"
+                                           required
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E10600] focus:border-transparent text-base min-h-[44px]"
+                                           placeholder="John Doe">
+                                    <p x-show="errors.name" x-text="errors.name" class="mt-2 text-sm text-[#E10600]" x-cloak></p>
+                                </div>
+
+                                <!-- Email Field -->
+                                <div>
+                                    <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Email Address <span class="text-[#E10600]">*</span>
+                                    </label>
+                                    <input type="email"
+                                           id="email"
+                                           name="email"
+                                           x-model="formData.email"
+                                           required
+                                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E10600] focus:border-transparent text-base min-h-[44px]"
+                                           placeholder="john@example.com">
+                                    <p x-show="errors.email" x-text="errors.email" class="mt-2 text-sm text-[#E10600]" x-cloak></p>
+                                </div>
+
+                                <!-- Subject Field -->
+                                <div>
+                                    <label for="subject" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Subject <span class="text-[#E10600]">*</span>
+                                    </label>
+                                    <select id="subject"
+                                            name="subject"
+                                            x-model="formData.subject"
+                                            required
+                                            class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E10600] focus:border-transparent text-base min-h-[44px]">
+                                        <option value="">Select a subject</option>
+                                        <option value="general">General Inquiry</option>
+                                        <option value="sponsorship">Sponsorship</option>
+                                        <option value="speaking">Speaking Opportunity</option>
+                                        <option value="partnership">Partnership</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                    <p x-show="errors.subject" x-text="errors.subject" class="mt-2 text-sm text-[#E10600]" x-cloak></p>
+                                </div>
+
+                                <!-- Message Field -->
+                                <div>
+                                    <label for="message" class="block text-sm font-semibold text-gray-700 mb-2">
+                                        Message <span class="text-[#E10600]">*</span>
+                                    </label>
+                                    <textarea id="message"
+                                              name="message"
+                                              x-model="formData.message"
+                                              required
+                                              rows="6"
+                                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#E10600] focus:border-transparent text-base resize-none"
+                                              placeholder="Tell us about your inquiry..."></textarea>
+                                    <p x-show="errors.message" x-text="errors.message" class="mt-2 text-sm text-[#E10600]" x-cloak></p>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <button type="submit"
+                                        class="w-full sm:w-auto px-8 py-4 text-base sm:text-lg font-semibold text-white bg-[#E10600] hover:bg-[#C20500] rounded-lg transition-all shadow-md hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 min-h-[44px]">
+                                    Send Message
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+
+                    <!-- Contact Info Sidebar -->
+                    <div class="lg:col-span-1">
+                        <div class="bg-[#F5F5F5] rounded-xl p-6 sm:p-8 space-y-8">
+                            <div>
+                                <h3 class="text-xl font-bold text-[#0B0B0B] mb-4">Contact Information</h3>
+                                <p class="text-gray-600 leading-relaxed">
+                                    Reach out to us through any of these channels. We're here to help!
+                                </p>
+                            </div>
+
+                            <!-- Email -->
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-[#E10600] rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-[#0B0B0B] mb-1">Email</h4>
+                                    <a href="mailto:hello@taqelah.sg" class="text-gray-600 hover:text-[#E10600] transition-colors">
+                                        hello@taqelah.sg
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Social Media -->
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-[#E10600] rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-[#0B0B0B] mb-2">Follow Us</h4>
+                                    <div class="space-y-2">
+                                        <a href="https://twitter.com/taqelahsg" class="block text-gray-600 hover:text-[#E10600] transition-colors text-sm">
+                                            Twitter
+                                        </a>
+                                        <a href="https://linkedin.com/company/taqelah" class="block text-gray-600 hover:text-[#E10600] transition-colors text-sm">
+                                            LinkedIn
+                                        </a>
+                                        <a href="https://github.com/taqelahsg" class="block text-gray-600 hover:text-[#E10600] transition-colors text-sm">
+                                            GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Office Hours -->
+                            <div class="flex items-start space-x-4">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-[#E10600] rounded-lg flex items-center justify-center">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                        </svg>
+                                    </div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-[#0B0B0B] mb-1">Response Time</h4>
+                                    <p class="text-gray-600 text-sm">
+                                        Within 24 hours on business days
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ Link -->
+                        <div class="mt-6 p-6 bg-white rounded-xl border-2 border-[#E10600] border-dashed">
+                            <h4 class="font-semibold text-[#0B0B0B] mb-2">Have a quick question?</h4>
+                            <p class="text-gray-600 text-sm mb-4">
+                                Check out our FAQ section for instant answers
+                            </p>
+                            <a href="/about.html#faq" class="inline-flex items-center text-sm font-semibold text-[#E10600] hover:text-[#C20500] transition-colors">
+                                Visit FAQ
+                                <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B0B0B] text-white pt-12 pb-8 safe">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <div class="w-10 h-10 bg-[#E10600] rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-xl">T</span>
+                        </div>
+                        <span class="text-xl font-bold">TAQELAH</span>
+                    </div>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed">
+                        Singapore's premier QA and software testing community
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/events.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Events</a></li>
+                        <li><a href="/community.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Community</a></li>
+                        <li><a href="/blog.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">About Us</a></li>
+                        <li><a href="/sponsors.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Sponsors</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Newsletter</h3>
+                    <form class="space-y-3">
+                        <input type="email" placeholder="Enter your email" required
+                               class="w-full px-4 py-3 bg-gray-800 text-white rounded-lg border border-gray-700 focus:border-[#E10600] text-base min-h-[44px]">
+                        <button type="submit" class="w-full px-6 py-3 bg-[#E10600] hover:bg-[#C20500] text-white font-semibold rounded-lg min-h-[44px]">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center sm:text-left">
+                <p class="text-gray-400 text-sm">&copy; 2025 TAQELAH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
