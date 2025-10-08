@@ -1,0 +1,64 @@
+{
+  "events": [
+    {
+      "id": 1,
+      "title": "Introduction to Test Automation",
+      "date": "2024-09-15",
+      "type": "workshop",
+      "speaker": "John Doe",
+      "description": "A comprehensive workshop on getting started with test automation using Selenium and Python.",
+      "youtubeId": "dQw4w9WgXcQ",
+      "tags": ["automation", "selenium", "python", "beginner"]
+    },
+    {
+      "id": 2,
+      "title": "Mobile Testing Best Practices",
+      "date": "2024-08-20",
+      "type": "meetup",
+      "speaker": "Jane Smith",
+      "description": "Learn the best practices for mobile app testing on iOS and Android platforms.",
+      "youtubeId": "dQw4w9WgXcQ",
+      "tags": ["mobile", "ios", "android", "testing"]
+    },
+    {
+      "id": 3,
+      "title": "AI in Software Testing Panel",
+      "date": "2024-07-10",
+      "type": "panel",
+      "speaker": "Multiple Speakers",
+      "description": "Industry experts discuss the impact of AI and machine learning on software testing.",
+      "youtubeId": "dQw4w9WgXcQ",
+      "tags": ["ai", "machine learning", "future", "panel"]
+    },
+    {
+      "id": 4,
+      "title": "API Testing with Postman",
+      "date": "2024-06-05",
+      "type": "workshop",
+      "speaker": "Mike Chen",
+      "description": "Hands-on workshop covering API testing strategies and Postman automation.",
+      "youtubeId": "dQw4w9WgXcQ",
+      "tags": ["api", "postman", "automation", "rest"]
+    },
+    {
+      "id": 5,
+      "title": "Performance Testing Fundamentals",
+      "date": "2024-05-18",
+      "type": "workshop",
+      "speaker": "Sarah Lee",
+      "description": "Understanding performance testing concepts and tools like JMeter and K6.",
+      "youtubeId": "dQw4w9WgXcQ",
+      "tags": ["performance", "jmeter", "load testing", "k6"]
+    },
+    {
+      "id": 6,
+      "title": "CI/CD for Test Automation",
+      "date": "2024-04-22",
+      "type": "meetup",
+      "speaker": "David Kumar",
+      "description": "Integrating automated tests into CI/CD pipelines with Jenkins and GitHub Actions.",
+      "youtubeId": "dQw4w9WgXcQ",
+      "tags": ["cicd", "jenkins", "github actions", "devops"]
+    }
+  ]
+}
