@@ -53,7 +53,7 @@
       "@type": "Organization",
       "name": "TAQELAH",
       "url": "https://taqelah.sg",
-      "logo": "https://taqelah.sg/assets/images/logo.svg",
+      "logo": "https://taqelah.sg/assets/images/logo.png",
       "description": "Singapore's premier QA and software testing community",
       "sameAs": [
         "https://twitter.com/taqelahsg",
@@ -85,9 +85,11 @@
                 <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="/" class="flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 rounded-lg">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 bg-[#E10600] rounded-lg flex items-center justify-center">
-                            <span class="text-white font-bold text-xl sm:text-2xl">T</span>
-                        </div>
+                        <img src="/assets/images/logo.png"
+                             alt="TAQELAH Logo"
+                             class="w-10 h-10 sm:w-12 sm:h-12"
+                             width="48"
+                             height="48">
                         <span class="text-xl sm:text-2xl font-bold text-[#E10600]">TAQELAH</span>
                     </a>
                 </div>
@@ -190,10 +192,10 @@
                     <!-- Hero Content -->
                     <div class="text-center lg:text-left space-y-6">
                         <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                            Singapore's QA Community
+                            Singapore's Own Vibrant Testing Community
                         </h1>
                         <p class="text-lg sm:text-xl lg:text-2xl text-white/90 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                            Connect, learn, and grow with testing professionals across Southeast Asia
+                            TAQELAH (Test Automation & Quality Engineering LAH) is a community to connect, learn, and grow with testing professionals.
                         </p>
 
                         <!-- CTAs - Stack on mobile, row on desktop -->
@@ -214,7 +216,7 @@
                         <!-- Stats - Responsive grid -->
                         <div class="grid grid-cols-3 gap-4 pt-8 border-t border-white/20">
                             <div class="text-center">
-                                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold">1,200+</div>
+                                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold">200+</div>
                                 <div class="text-sm sm:text-base text-white/80 mt-1">Members</div>
                             </div>
                             <div class="text-center">
@@ -222,21 +224,72 @@
                                 <div class="text-sm sm:text-base text-white/80 mt-1">Events</div>
                             </div>
                             <div class="text-center">
-                                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold">15+</div>
-                                <div class="text-sm sm:text-base text-white/80 mt-1">Sponsors</div>
+                                <div class="text-2xl sm:text-3xl lg:text-4xl font-bold">50+</div>
+                                <div class="text-sm sm:text-base text-white/80 mt-1">Speakers</div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Hero Image - Hidden on small mobile, shown on tablet+ -->
+                    <!-- Hero Photo Slider - Hidden on small mobile, shown on tablet+ -->
                     <div class="hidden sm:block">
                         <div class="relative">
-                            <img src="/assets/images/hero-community.svg"
-                                 alt="QA community collaboration illustration"
-                                 class="w-full h-auto rounded-xl shadow-2xl"
-                                 width="600"
-                                 height="450"
-                                 loading="eager">
+                            <div class="swiper hero-swiper rounded-xl shadow-2xl overflow-hidden">
+                                <div class="swiper-wrapper">
+                                    <!-- Slide 1 -->
+                                    <div class="swiper-slide">
+                                        <div class="w-full h-[450px] bg-gradient-to-br from-[#E10600] via-[#C20500] to-[#A00400] flex items-center justify-center">
+                                            <div class="text-center text-white p-8">
+                                                <svg class="w-32 h-32 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                                </svg>
+                                                <h3 class="text-2xl font-bold mb-2">Community Workshop</h3>
+                                                <p class="text-white/80">QA professionals learning together</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 2 -->
+                                    <div class="swiper-slide">
+                                        <div class="w-full h-[450px] bg-gradient-to-br from-[#C20500] via-[#A00400] to-[#800300] flex items-center justify-center">
+                                            <div class="text-center text-white p-8">
+                                                <svg class="w-32 h-32 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"/>
+                                                </svg>
+                                                <h3 class="text-2xl font-bold mb-2">Networking Meetup</h3>
+                                                <p class="text-white/80">Connect with industry experts</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 3 -->
+                                    <div class="swiper-slide">
+                                        <div class="w-full h-[450px] bg-gradient-to-br from-[#E10600] via-[#E10600] to-[#C20500] flex items-center justify-center">
+                                            <div class="text-center text-white p-8">
+                                                <svg class="w-32 h-32 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                                </svg>
+                                                <h3 class="text-2xl font-bold mb-2">Innovation & Ideas</h3>
+                                                <p class="text-white/80">Exploring the future of testing</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Slide 4 -->
+                                    <div class="swiper-slide">
+                                        <div class="w-full h-[450px] bg-gradient-to-br from-[#A00400] via-[#C20500] to-[#E10600] flex items-center justify-center">
+                                            <div class="text-center text-white p-8">
+                                                <svg class="w-32 h-32 mx-auto mb-4 opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                                </svg>
+                                                <h3 class="text-2xl font-bold mb-2">Knowledge Sharing</h3>
+                                                <p class="text-white/80">Learn from the best in QA</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Navigation arrows -->
+                                <div class="swiper-button-next !text-white !w-10 !h-10 after:!text-xl"></div>
+                                <div class="swiper-button-prev !text-white !w-10 !h-10 after:!text-xl"></div>
+                                <!-- Pagination -->
+                                <div class="swiper-pagination !bottom-4"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -693,6 +746,30 @@
     <!-- Initialize Swiper -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Hero photo slider
+            const heroSwiper = new Swiper('.hero-swiper', {
+                slidesPerView: 1,
+                spaceBetween: 0,
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                },
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                },
+                pagination: {
+                    el: '.swiper-pagination',
+                    clickable: true,
+                },
+            });
+
+            // Testimonials slider
             const testimonialSwiper = new Swiper('.testimonials-swiper', {
                 slidesPerView: 1,
                 spaceBetween: 20,
