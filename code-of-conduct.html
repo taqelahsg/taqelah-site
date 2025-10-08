@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#E10600">
+    <meta name="description" content="TAQELAH Code of Conduct - Creating a safe, inclusive, and respectful environment for Singapore's QA community">
+    <title>Code of Conduct | TAQELAH</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css">
+</head>
+<body class="font-sans antialiased text-[#0B0B0B] bg-white">
+
+    <!-- HEADER -->
+    <header class="sticky top-0 z-40 bg-white border-b border-gray-200 shadow-sm" x-data="{ mobileMenuOpen: false }">
+        <nav class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <div class="flex-shrink-0">
+                    <a href="/" class="flex items-center space-x-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2 rounded-lg">
+                        <img src="/assets/images/logo.png"
+                             alt="TAQELAH Logo"
+                             class="w-10 h-10 sm:w-12 sm:h-12"
+                             width="48"
+                             height="48">
+                        <span class="text-xl sm:text-2xl font-bold text-[#E10600]">TAQELAH</span>
+                    </a>
+                </div>
+                <div class="hidden md:flex md:items-center md:space-x-1 lg:space-x-2">
+                    <a href="/" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Home</a>
+                    <a href="/events.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Events</a>
+                    <a href="/community.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Community</a>
+                    <a href="/jobs.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Jobs</a>
+                    <a href="/sponsors.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">Sponsors</a>
+                    <a href="/about.html" class="px-3 py-2 text-sm lg:text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-colors">About</a>
+                    <a href="/contact.html" class="ml-4 px-6 py-2 text-sm lg:text-base font-semibold text-white bg-[#E10600] hover:bg-[#C20500] rounded-lg transition-colors shadow-md">Contact</a>
+                </div>
+                <button @click="mobileMenuOpen = true" class="md:hidden p-2 rounded-lg text-gray-700 hover:text-[#E10600]" aria-label="Open menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- MOBILE MENU -->
+        <div x-show="mobileMenuOpen" x-cloak @keydown.escape.window="mobileMenuOpen = false" class="fixed inset-0 z-50 md:hidden">
+            <div x-show="mobileMenuOpen" @click="mobileMenuOpen = false" class="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm"></div>
+            <div x-show="mobileMenuOpen" class="fixed inset-y-0 right-0 w-full max-w-sm bg-white shadow-2xl overflow-y-auto">
+                <div class="px-4 py-6">
+                    <div class="flex items-center justify-between mb-8">
+                        <span class="text-xl font-bold text-[#E10600]">Menu</span>
+                        <button @click="mobileMenuOpen = false" class="p-2 rounded-lg" aria-label="Close menu">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <nav class="space-y-2">
+                        <a href="/" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Home</a>
+                        <a href="/events.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Events</a>
+                        <a href="/community.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Community</a>
+                        <a href="/jobs.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Jobs</a>
+                        <a href="/sponsors.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">Sponsors</a>
+                        <a href="/about.html" class="block px-4 py-3 text-base font-medium text-gray-700 hover:text-[#E10600] hover:bg-[#F5F5F5] rounded-lg">About</a>
+                        <a href="/contact.html" class="block px-4 py-3 mt-4 text-base font-semibold text-center text-white bg-[#E10600] hover:bg-[#C20500] rounded-lg shadow-md">Contact Us</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-[#E10600] to-[#C20500] text-white py-12 sm:py-16 lg:py-20">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">Code of Conduct</h1>
+                <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto">
+                    Building a safe, inclusive, and respectful community for all QA professionals
+                </p>
+            </div>
+        </section>
+
+        <!-- Code of Conduct Content -->
+        <section class="py-16 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+
+                <!-- Introduction -->
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-4">Our Commitment</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        TAQELAH is dedicated to providing a harassment-free, inclusive, and welcoming experience for everyone in Singapore's QA and testing community, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion, technology choices, or experience level.
+                    </p>
+                    <p class="text-gray-700 leading-relaxed">
+                        We do not tolerate harassment of community participants in any form. We expect all participants—attendees, speakers, sponsors, organizers, and volunteers—to abide by this Code of Conduct in all community spaces, both online and offline.
+                    </p>
+                </div>
+
+                <!-- Expected Behavior -->
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-4">Expected Behavior</h2>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span><strong>Be Respectful:</strong> Treat everyone with respect. Recognize that people have different perspectives, backgrounds, and expertise levels.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span><strong>Be Inclusive:</strong> Welcome and support people of all backgrounds and identities. Champion diversity in testing and quality engineering.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span><strong>Share Knowledge Generously:</strong> Help others learn. Share your experiences, tools, and insights openly with the community.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span><strong>Engage Constructively:</strong> Provide constructive feedback. Critique ideas, not people. Focus on helping each other grow as testing professionals.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span><strong>Ask for Help:</strong> Don't hesitate to ask questions. No question is too basic—we were all beginners once.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                            </svg>
+                            <span><strong>Respect Boundaries:</strong> Be mindful of personal space and professional boundaries, especially in physical meetups.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Unacceptable Behavior -->
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-4">Unacceptable Behavior</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        The following behaviors are considered harassment and are unacceptable within our community:
+                    </p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Discriminatory language or behavior based on gender, race, religion, disability, or any other protected characteristic</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Offensive comments, insults, or personal attacks</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Sexual harassment, unwelcome sexual attention, or inappropriate physical contact</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Intimidation, stalking, or following (online or in person)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Sustained disruption of talks, events, or online discussions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Publishing private information (doxxing) without explicit permission</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M6 18L18 6M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Advocating for, or encouraging, any of the above behavior</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Quality-Specific Guidelines -->
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-4">QA Community Values</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        As a community focused on quality engineering and testing, we hold ourselves to high standards:
+                    </p>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span><strong>Quality in Discourse:</strong> Apply the same rigor we use in testing to our conversations—be thorough, evidence-based, and fair.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span><strong>No Tool Shaming:</strong> Different tools and approaches work for different contexts. Avoid belittling others' technology choices or methodologies.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span><strong>Continuous Improvement:</strong> Embrace learning and growth. We're all on a journey to become better testers and engineers.</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-6 h-6 text-[#E10600] mr-3 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span><strong>Transparency:</strong> Be open about failures and challenges. The testing community learns most from honest discussions about what didn't work.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Reporting -->
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-4">Reporting Issues</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        If you experience or witness unacceptable behavior, or have any concerns, please report it immediately:
+                    </p>
+                    <div class="bg-[#F5F5F5] rounded-lg p-6 border-l-4 border-[#E10600]">
+                        <p class="text-gray-700 mb-2">
+                            <strong>Email:</strong> <a href="mailto:taqelahsg@gmail.com" class="text-[#E10600] hover:underline">taqelahsg@gmail.com</a>
+                        </p>
+                        <p class="text-gray-700 mb-4">
+                            <strong>In-person:</strong> Speak to any TAQELAH organizer at our events
+                        </p>
+                        <p class="text-gray-600 text-sm">
+                            All reports will be handled with discretion and confidentiality. We are committed to protecting the privacy and safety of reporters.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Consequences -->
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-4">Consequences</h2>
+                    <p class="text-gray-700 leading-relaxed mb-4">
+                        Participants asked to stop any harassing behavior are expected to comply immediately. If a participant engages in unacceptable behavior, organizers may take any action they deem appropriate, including:
+                    </p>
+                    <ul class="space-y-2 text-gray-700 list-disc pl-6">
+                        <li>Warning the offender</li>
+                        <li>Expulsion from the event or online space without refund</li>
+                        <li>Temporary or permanent ban from future TAQELAH events and platforms</li>
+                        <li>Reporting to relevant authorities if necessary</li>
+                    </ul>
+                </div>
+
+                <!-- Scope -->
+                <div>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-4">Scope</h2>
+                    <p class="text-gray-700 leading-relaxed">
+                        This Code of Conduct applies to all TAQELAH community spaces, including but not limited to:
+                    </p>
+                    <ul class="space-y-2 text-gray-700 list-disc pl-6 mt-4">
+                        <li>Physical meetups and events</li>
+                        <li>Online platforms (Telegram, LinkedIn, Twitter, etc.)</li>
+                        <li>Email communications</li>
+                        <li>Conference booths and sponsor tables</li>
+                        <li>Any other spaces where TAQELAH community members gather</li>
+                    </ul>
+                </div>
+
+                <!-- Closing -->
+                <div class="bg-gradient-to-br from-gray-50 to-gray-100 rounded-xl p-8 border border-gray-200">
+                    <h2 class="text-2xl font-bold text-[#0B0B0B] mb-4 text-center">Thank You</h2>
+                    <p class="text-gray-700 leading-relaxed text-center">
+                        Thank you for helping make TAQELAH a welcoming, friendly space for everyone. Together, we can build a thriving, inclusive QA community in Singapore.
+                    </p>
+                    <div class="text-center mt-6">
+                        <a href="/contact.html" class="inline-block px-8 py-3 bg-[#E10600] text-white font-semibold rounded-lg hover:bg-[#C20500] transition-colors shadow-md">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#0B0B0B] text-white pt-12 pb-8 safe">
+        <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:gap-12 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <img src="/assets/images/logo.png"
+                             alt="TAQELAH Logo"
+                             class="w-10 h-10"
+                             width="40"
+                             height="40">
+                        <span class="text-xl font-bold">TAQELAH</span>
+                    </div>
+                    <p class="text-gray-400 text-sm sm:text-base leading-relaxed mb-4">
+                        Singapore's own most vibrant testing community
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <a href="https://twitter.com/taqelahsg"
+                           class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-[#E10600] rounded-lg transition-colors"
+                           aria-label="Twitter">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="https://linkedin.com/company/taqelah"
+                           class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-[#E10600] rounded-lg transition-colors"
+                           aria-label="LinkedIn">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/taqelahsg"
+                           class="w-10 h-10 flex items-center justify-center bg-gray-800 hover:bg-[#E10600] rounded-lg transition-colors"
+                           aria-label="GitHub">
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/events.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Events</a></li>
+                        <li><a href="/community.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Community</a></li>
+                        <li><a href="/jobs.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Jobs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold mb-4">About</h3>
+                    <ul class="space-y-3">
+                        <li><a href="/about.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">About Us</a></li>
+                        <li><a href="/code-of-conduct.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Code of Conduct</a></li>
+                        <li><a href="/sponsors.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Sponsors</a></li>
+                        <li><a href="/contact.html" class="text-gray-400 hover:text-[#E10600] transition-colors text-sm sm:text-base">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-8 border-t border-gray-800 text-center sm:text-left">
+                <p class="text-gray-400 text-sm">&copy; 2025 TAQELAH. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
