@@ -1,6 +1,6 @@
 # TAQELAH - Singapore QA Community Website
 
-Mobile-first, responsive static website for Singapore's premier QA and software testing community. Built with pure HTML, Tailwind CSS (CDN), Alpine.js, and Swiper. Red & white themed, hosted via GitHub Pages from the `/docs` folder.
+Mobile-first, responsive static website for Singapore's own most vibrant testing community. Built with pure HTML, Tailwind CSS (CDN), Alpine.js, and Swiper. Red & white themed, hosted via GitHub Pages from the `/docs` folder.
 
 ## 🎯 Features
 
