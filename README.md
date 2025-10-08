@@ -1,6 +1,8 @@
 # TAQELAH - Singapore QA Community Website
 
-Mobile-first, responsive static website for Singapore's own most vibrant testing community. Built with pure HTML, Tailwind CSS (CDN), Alpine.js, and Swiper. Red & white themed, hosted via GitHub Pages from the `/docs` folder.
+Mobile-first, responsive static website for Singapore's own most vibrant testing community. Built with pure HTML, Tailwind CSS (CDN), Alpine.js, and Swiper. Red & white themed, hosted via GitHub Pages.
+
+**TAQELAH** stands for **Test Automation & Quality Engineering, Lah!** - a name that blends technical excellence with Singaporean charm.
 
 ## 🎯 Features
 
@@ -8,22 +10,25 @@ Mobile-first, responsive static website for Singapore's own most vibrant testing
 - **Pure Static**: No build step, no Node.js required
 - **Accessible**: WCAG 2.1 compliant with semantic HTML and ARIA labels
 - **Fast**: CDN-based libraries, lazy loading, optimized images
-- **SEO Ready**: JSON-LD structured data, sitemap, robots.txt
+- **SEO Ready**: JSON-LD structured data, sitemap, robots.txt, favicon support
 - **Touch-Friendly**: 44×44px minimum tap targets
 - **iOS Safe**: Support for notch/safe areas
+- **Code of Conduct**: Dedicated page for community guidelines
+- **Social Media Integration**: Links to Twitter, LinkedIn, GitHub, YouTube, Instagram, Facebook
+- **Contact Form**: FormSubmit.co integration with comprehensive social media links
 
 ## 📁 Project Structure
 
 ```
-docs/
+/
 ├── index.html                    # Home page
 ├── events.html                   # Events listing
 ├── community.html                # Community page
-├── blog.html                     # Blog listing
-├── jobs.html                     # Jobs board
+├── jobs.html                     # Jobs board (with Telegram link)
 ├── sponsors.html                 # Sponsors page
 ├── about.html                    # About us
-├── contact.html                  # Contact form
+├── code-of-conduct.html          # Community Code of Conduct
+├── contact.html                  # Contact form (with social media)
 ├── CNAME                         # Custom domain
 ├── robots.txt                    # SEO
 ├── sitemap.xml                   # SEO
@@ -33,21 +38,36 @@ docs/
 │   ├── js/
 │   │   └── (optional)
 │   └── images/
+│       ├── logo.png             # TAQELAH logo (also used as favicon)
 │       ├── events/
-│       ├── sponsors/
-│       └── avatars/
-├── data/
-│   ├── nav.json                 # Navigation items
-│   ├── events.json              # Events data
-│   ├── testimonials.json        # Testimonials
-│   └── sponsors.json            # Sponsors
-├── blog/
-│   ├── post-1.html
-│   └── post-2.html
-└── events/
-    ├── qa-automation-workshop-2025.html
-    └── mobile-testing-meetup-dec.html
+│       ├── companies/           # Company logos
+│       ├── gallery/             # Community photos
+│       └── avatars/             # Team member avatars
+└── data/
+    ├── events.json              # Events data
+    ├── companies.json           # Member companies
+    └── photo-gallery.json       # Gallery images
 ```
+
+## 📄 Pages Overview
+
+### Main Pages
+- **Home (index.html)**: Hero section with stats, events carousel, companies slider, photo gallery, and testimonials
+- **Events (events.html)**: Upcoming and past events with filtering
+- **Community (community.html)**: Community overview and member companies
+- **Jobs (jobs.html)**: Link to Telegram job board for QA & testing positions in Singapore
+- **Sponsors (sponsors.html)**: Sponsorship opportunities and benefits
+- **About (about.html)**: TAQELAH story, impact, goals, and Code of Conduct link
+- **Code of Conduct (code-of-conduct.html)**: Community guidelines and values for QA professionals
+- **Contact (contact.html)**: Contact form with FormSubmit.co and social media links
+
+### Navigation
+All pages include:
+- Consistent header with mobile hamburger menu
+- Navigation: Home → Events → Community → Jobs → Sponsors → About → Contact
+- Footer with social media links (Twitter, LinkedIn, GitHub, YouTube, Instagram, Facebook)
+- Footer links: Events, Community, Jobs, About Us, Code of Conduct, Sponsors, Contact
+- Favicon (TAQELAH logo)
 
 ## 🚀 GitHub Pages Deployment
 
@@ -65,7 +85,7 @@ git push origin main
 2. Click **Settings** → **Pages** (left sidebar)
 3. Under **Source**, select:
    - Branch: `main`
-   - Folder: `/docs`
+   - Folder: `/ (root)`
 4. Click **Save**
 5. Wait 1-2 minutes for deployment
 
@@ -112,7 +132,7 @@ TTL: 3600
 4. Wait for DNS check (can take 24-48 hours)
 5. Once verified, check **Enforce HTTPS**
 
-The `docs/CNAME` file is already created with `taqelah.sg`.
+The `CNAME` file is already created with `taqelah.sg`.
 
 ## 📱 Mobile QA Checklist
 
@@ -326,10 +346,10 @@ Since this is a static site with CDN dependencies, you can use any local server:
 
 ```bash
 # Python
-python3 -m http.server 8000 --directory docs
+python3 -m http.server 8000
 
 # Node.js (if you have it)
-npx serve docs
+npx serve
 
 # VS Code Live Server extension
 # Right-click index.html → "Open with Live Server"
@@ -339,11 +359,14 @@ Then visit: `http://localhost:8000`
 
 ## 🔧 Customization
 
-### Update Navigation
-Edit `docs/data/nav.json`
-
 ### Add Events
-Edit `docs/data/events.json` and create corresponding HTML pages in `docs/events/`
+Edit `data/events.json` and update the events page
+
+### Update Companies
+Edit `data/companies.json` to add member companies
+
+### Update Photo Gallery
+Edit `data/photo-gallery.json` to add community photos
 
 ### Change Colors
 Search and replace in HTML files:
@@ -366,6 +389,9 @@ Or use Tailwind config (add `<script>` block in `<head>`):
 </script>
 ```
 
+### Update Favicon
+Replace `/assets/images/logo.png` with your own logo (recommended size: 512x512px)
+
 ## 📄 License
 
 MIT License - Feel free to use this template for your own community!
@@ -378,11 +404,50 @@ MIT License - Feel free to use this template for your own community!
 4. Run through the Mobile QA Checklist
 5. Submit a pull request
 
-## 📞 Support
+## 📞 Support & Social Media
 
-- Email: taqelahsg@gmail.com
-- GitHub Issues: [Report a bug](https://github.com/taqelahsg/taqelah-site/issues)
-- Twitter: [@taqelahsg](https://twitter.com/taqelahsg)
+### Contact
+- **Email**: taqelahsg@gmail.com
+- **GitHub Issues**: [Report a bug](https://github.com/taqelahsg/taqelah-site/issues)
+
+### Follow Us
+- **Twitter**: [@taqelahsg](https://twitter.com/taqelahsg)
+- **LinkedIn**: [TAQELAH](https://linkedin.com/company/taqelah)
+- **GitHub**: [taqelahsg](https://github.com/taqelahsg)
+- **YouTube**: [@taqelahsingapore9510](https://www.youtube.com/@taqelahsingapore9510)
+- **Instagram**: [@taqelah](https://www.instagram.com/taqelah/)
+- **Facebook**: [TAQELAH Group](https://www.facebook.com/groups/148322462547482)
+- **Telegram**: [Job Board](https://t.me/+cEKbcW58WwpiN2Fl) - QA & Testing jobs in Singapore
+
+## 🌟 Key Features Implemented
+
+### Favicon Support
+- Logo appears in browser tabs across all pages
+- Uses `/assets/images/logo.png`
+- Properly linked in all HTML files
+
+### Code of Conduct
+- Dedicated page for community guidelines
+- QA-specific values (quality in discourse, no tool shaming, continuous improvement)
+- Reporting procedures and consequences
+- Linked from About page and all footer sections
+
+### Mobile Menu
+- Fully functional on all pages including Jobs page
+- Alpine.js powered hamburger menu
+- Proper z-index layering and backdrop
+- ESC key and click-outside to close
+
+### Navigation Consistency
+- All pages follow the same navigation order
+- Active page highlighting
+- Mobile-responsive with proper touch targets
+- Fixed positioning for easy access
+
+### Social Media Integration
+- Complete social media links in footer
+- All 6 platforms on Contact page
+- Proper external link handling (`target="_blank"`, `rel="noopener noreferrer"`)
 
 ---
 
