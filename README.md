@@ -380,7 +380,7 @@ MIT License - Feel free to use this template for your own community!
 
 ## 📞 Support
 
-- Email: hello@taqelah.sg
+- Email: taqelahsg@gmail.com
 - GitHub Issues: [Report a bug](https://github.com/taqelahsg/taqelah-site/issues)
 - Twitter: [@taqelahsg](https://twitter.com/taqelahsg)
 
