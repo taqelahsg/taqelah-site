@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+      TAQELAH Workshops Listing Page
+      Browse current, upcoming, and past workshops
+      Red & white theme, CDN-based, no build step
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Browse our QA and testing workshops in Singapore. Learn automation, AI-powered testing, and more from industry experts.">
+    <meta name="keywords" content="QA workshops, testing training, automation courses, Singapore, AI testing, Playwright">
+    <meta name="author" content="TAQELAH">
+    <meta name="theme-color" content="#E10600">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Workshops | TAQELAH">
+    <meta property="og:description" content="Browse our QA and testing workshops">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taqelah.sg/workshops.html">
+
+    <title>Workshops | TAQELAH - Singapore QA Community</title>
+
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <script src="/assets/js/analytics.js"></script>
+    <script src="/assets/js/components.js"></script>
+</head>
+<body class="font-sans antialiased text-[#0B0B0B] bg-white" data-page="workshops">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#E10600] focus:text-white focus:rounded-lg">
+        Skip to main content
+    </a>
+
+    <div id="header-container"></div>
+
+    <main id="main-content">
+
+        <!-- Page Hero -->
+        <section class="bg-gradient-to-br from-[#E10600] to-[#C20500] text-white py-12 sm:py-16 lg:py-20">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">TAQELAH Workshops</h1>
+                <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
+                    Level up your QA skills with hands-on workshops from industry experts
+                </p>
+            </div>
+        </section>
+
+        <!-- Now Enrolling -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-2">Serving Soon</h2>
+                    <p class="text-gray-600">Registration opening soon for our first batch of workshops</p>
+                </div>
+
+                <!-- Workshop Cards -->
+                <div id="servingSoonContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                    <!-- Workshops will be loaded from JSON -->
+                </div>
+
+                <!-- Empty State -->
+                <div id="servingSoonEmpty" class="hidden text-center py-16 px-4 bg-gray-50 rounded-xl border border-gray-200">
+                    <div class="inline-block p-4 bg-gray-100 rounded-full mb-4">
+                        <svg class="w-12 h-12 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-700 mb-2">No Workshops Available Yet</h3>
+                    <p class="text-gray-600">
+                        Check our upcoming workshops below for future learning opportunities.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Coming Up Next -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-12">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-2">Coming Up Next</h2>
+                    <p class="text-gray-600">Workshops we're planning for the future</p>
+                </div>
+
+                <!-- Workshop Cards -->
+                <div id="comingUpNextContainer" class="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
+                    <!-- Workshops will be loaded from JSON -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Attend Our Workshops -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Why Attend Our Workshops?</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Learn from the best with hands-on, practical training
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Expert Instructors</h3>
+                        <p class="text-gray-600 text-sm">Learn from industry professionals with real-world experience</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Hands-On Practice</h3>
+                        <p class="text-gray-600 text-sm">Get practical experience with real exercises and projects</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Comprehensive Materials</h3>
+                        <p class="text-gray-600 text-sm">Access to slides, code, and recordings after the workshop</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Community Network</h3>
+                        <p class="text-gray-600 text-sm">Connect with fellow QA professionals and expand your network</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#E10600] to-[#C20500] text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-bold mb-4">Have a Workshop Idea?</h2>
+                <p class="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+                    We're always looking for new workshop topics and expert instructors. Share your ideas with us!
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact.html" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#E10600] bg-white hover:bg-gray-100 rounded-lg transition-all shadow-lg hover:shadow-xl min-h-[44px]">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                        </svg>
+                        Suggest a Workshop
+                    </a>
+                    <a href="/community.html" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-all min-h-[44px]">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        Join Community
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-container"></div>
+
+    <script>
+        // Fetch and render workshops from JSON
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/data/workshops.json')
+                .then(response => response.json())
+                .then(data => {
+                    renderWorkshops(data.servingSoon, 'servingSoonContainer', true);
+                    renderWorkshops(data.comingUpNext, 'comingUpNextContainer', false);
+
+                    // Show empty state if no serving soon workshops
+                    if (!data.servingSoon || data.servingSoon.length === 0) {
+                        document.getElementById('servingSoonContainer').classList.add('hidden');
+                        document.getElementById('servingSoonEmpty').classList.remove('hidden');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading workshops:', error);
+                });
+        });
+
+        function renderWorkshops(workshops, containerId, showDetailsButton) {
+            const container = document.getElementById(containerId);
+            if (!workshops || workshops.length === 0) return;
+
+            workshops.forEach(workshop => {
+                const card = createWorkshopCard(workshop, showDetailsButton);
+                container.innerHTML += card;
+            });
+        }
+
+        function createWorkshopCard(workshop, showDetailsButton) {
+            const statusBgColor = getStatusBgColor(workshop.statusColor);
+            const tagsHTML = workshop.tags.map(tag => `<span class="px-3 py-1 bg-white/20 text-white text-sm font-medium rounded-full">${tag}</span>`).join('');
+
+            const buttonHTML = workshop.detailPageUrl && showDetailsButton
+                ? `<a href="${workshop.detailPageUrl}" class="inline-flex items-center justify-center w-full px-6 py-3 text-base font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-all">
+                    View Details
+                    <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                    </svg>
+                </a>`
+                : `<button class="inline-flex items-center justify-center w-full px-6 py-3 text-base font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-all cursor-not-allowed" disabled>
+                    Notify Me When Available
+                </button>`;
+
+            return `
+                <div class="bg-gradient-to-br ${workshop.gradient} rounded-2xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.02] hover:shadow-2xl">
+                    <div class="p-6 sm:p-8">
+                        <div class="flex items-start justify-between mb-4">
+                            <span class="px-4 py-2 ${statusBgColor} text-white text-xs font-bold rounded-full uppercase tracking-wide">
+                                ${workshop.status}
+                            </span>
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">
+                            ${workshop.title}
+                        </h3>
+                        <p class="text-white/90 text-base sm:text-lg mb-6 leading-relaxed">
+                            ${workshop.description}
+                        </p>
+                        <div class="flex flex-wrap items-center gap-4 mb-6 text-white/90">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                                <span class="font-medium">${workshop.duration}</span>
+                            </div>
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                                <span class="font-medium">${workshop.date}</span>
+                            </div>
+                            <div class="flex items-center text-[#E10600] bg-white px-3 py-1 rounded-full">
+                                <svg class="w-4 h-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                </svg>
+                                <span class="font-semibold text-sm">${workshop.location}</span>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mb-6">
+                            ${tagsHTML}
+                        </div>
+                        ${buttonHTML}
+                    </div>
+                </div>
+            `;
+        }
+
+        function getStatusBgColor(statusColor) {
+            const colorMap = {
+                'orange': 'bg-orange-500',
+                'blue': 'bg-blue-500',
+                'red': 'bg-red-500',
+                'green': 'bg-green-500',
+                'purple': 'bg-purple-500'
+            };
+            return colorMap[statusColor] || 'bg-gray-500';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,1097 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+      TAQELAH Workshop Detail Page
+      Agentic Playwright Framework Workshop
+      Red & white theme, CDN-based, no build step
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Learn AI-Powered Test Automation with Playwright & TypeScript. Master agentic coding, root cause analysis, and intelligent testing.">
+    <meta name="keywords" content="Playwright, TypeScript, AI testing, automation, workshop, Singapore, agentic coding">
+    <meta name="author" content="TAQELAH">
+    <meta name="theme-color" content="#E10600">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Agentic Playwright Framework Workshop | TAQELAH">
+    <meta property="og:description" content="2-Day intensive workshop on AI-Powered Test Automation with Playwright">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taqelah.sg/workshops/agentic-playwright-framework.html">
+
+    <title>Agentic Playwright Framework Workshop | TAQELAH</title>
+
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <script src="/assets/js/analytics.js"></script>
+    <script src="/assets/js/components.js"></script>
+</head>
+<body class="font-sans antialiased text-[#0B0B0B] bg-white" data-page="workshops">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#E10600] focus:text-white focus:rounded-lg">
+        Skip to main content
+    </a>
+
+    <div id="header-container"></div>
+
+    <main id="main-content">
+
+        <!-- Breadcrumb -->
+        <section class="bg-gray-50 py-4">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex items-center text-sm text-gray-600">
+                    <a href="/" class="hover:text-[#E10600] transition-colors">Home</a>
+                    <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    <a href="/workshops.html" class="hover:text-[#E10600] transition-colors">Workshops</a>
+                    <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    <span class="text-[#E10600] font-semibold">Agentic Playwright Framework</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-[#E10600] to-[#C20500] text-white py-16 sm:py-20 lg:py-24">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <div class="inline-block mb-4 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+                        <span class="text-sm sm:text-base font-semibold">2-Day Intensive Workshop</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                        Agentic Playwright Framework<br>
+                        <span class="text-white/90">with AI-Powered Testing</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+                        Master modern test automation with Playwright, TypeScript, and AI-driven testing. Build intelligent frameworks with agentic coding and root cause analysis.
+                    </p>
+
+                    <!-- Workshop Details -->
+                    <div class="max-w-2xl mx-auto mb-8">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-white">
+                                <div class="flex flex-col items-center">
+                                    <svg class="w-6 h-6 mb-2 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    <p class="text-sm text-white/80 mb-1">Date</p>
+                                    <p class="font-semibold">TBA</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <svg class="w-6 h-6 mb-2 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <p class="text-sm text-white/80 mb-1">Time</p>
+                                    <p class="font-semibold">TBA</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <svg class="w-6 h-6 mb-2 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    <p class="text-sm text-white/80 mb-1">Location</p>
+                                    <p class="font-semibold">TBA</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#register" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#E10600] bg-white hover:bg-gray-100 rounded-lg transition-all shadow-lg hover:shadow-xl min-h-[44px]">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                            Register Now
+                        </a>
+                        <a href="#curriculum" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-all min-h-[44px]">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                            View Curriculum
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Highlights -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100">
+                        <div class="w-12 h-12 bg-[#E10600]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">Hands-On Learning</h3>
+                        <p class="text-gray-600">Build a complete test automation framework from scratch with real-world examples and practical exercises.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100">
+                        <div class="w-12 h-12 bg-[#E10600]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">AI-Powered Testing</h3>
+                        <p class="text-gray-600">Learn to leverage LLMs for intelligent test generation, root cause analysis, and automated test optimization.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100">
+                        <div class="w-12 h-12 bg-[#E10600]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">Expert Instruction</h3>
+                        <p class="text-gray-600">Learn from industry leaders with experience in test automation and AI integration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Will Learn -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">What You Will Learn</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Gain practical skills and knowledge to build AI-powered test automation frameworks
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-[#E10600] rounded-lg flex items-center justify-center text-white font-bold">
+                                1
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Build Production-Ready Playwright Frameworks</h3>
+                            <p class="text-gray-600">Create scalable, maintainable test automation frameworks using TypeScript, Page Object Model, and modern best practices</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-[#E10600] rounded-lg flex items-center justify-center text-white font-bold">
+                                2
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Integrate AI into Your Testing Workflow</h3>
+                            <p class="text-gray-600">Leverage LLMs (Claude, OpenAI, Gemini) for intelligent test generation, smart locator strategies, and automated code suggestions</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-[#E10600] rounded-lg flex items-center justify-center text-white font-bold">
+                                3
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Master Agentic Coding Techniques</h3>
+                            <p class="text-gray-600">Transform plain English requirements into working Playwright tests using natural language to DSL conversion</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-[#E10600] rounded-lg flex items-center justify-center text-white font-bold">
+                                4
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Implement AI-Powered Root Cause Analysis</h3>
+                            <p class="text-gray-600">Automate failure detection, classify issues, and generate actionable bug reports using AI-driven RCA techniques</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-[#E10600] rounded-lg flex items-center justify-center text-white font-bold">
+                                5
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Optimize Test Execution & Reporting</h3>
+                            <p class="text-gray-600">Configure CI/CD integration, parallel execution, and automated reporting with tools like Jenkins, GitHub Actions, and BrowserStack</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-[#E10600] rounded-lg flex items-center justify-center text-white font-bold">
+                                6
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Build Your Own AI Testing Agent</h3>
+                            <p class="text-gray-600">Create a complete agentic test bot that performs RCA and generates intelligent test reports</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Curriculum Section -->
+        <section id="curriculum" class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Workshop Curriculum</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Comprehensive 2-day program covering modern test automation and AI-powered testing techniques
+                    </p>
+                </div>
+
+                <!-- Day 1 -->
+                <div class="mb-12">
+                    <div class="bg-gradient-to-r from-[#E10600] to-[#C20500] text-white rounded-t-xl p-6">
+                        <h3 class="text-2xl sm:text-3xl font-bold">
+                            Day 1 – Building the Agentic Playwright Framework
+                        </h3>
+                    </div>
+                    <div class="bg-white rounded-b-xl shadow-lg border border-gray-200" x-data="{ openModule: null }">
+
+                        <!-- Module 1 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 1 ? null : 1" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 1: TypeScript Fundamentals for Test Automation</h4>
+                                    <p class="text-gray-600 text-sm">Essential TypeScript concepts for Playwright testing</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 1" x-collapse class="px-6 pb-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>TypeScript introduction and project setup</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Variables, data types, and operators</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Control flow: conditionals, switch statements, and loops</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Arrays, tuples, objects, and functions</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Scope management and best practices</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Module 2 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 2 ? null : 2" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 2: Playwright Installation, Setup & Debugging</h4>
+                                    <p class="text-gray-600 text-sm">Getting started with Playwright test framework</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 2" x-collapse class="px-6 pb-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Prerequisites and environment setup</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Playwright installation methods and project initialization</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Writing and executing your first test</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Code generation with Codegen and advanced options</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Debugging with TraceViewer and Playwright Inspector</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Module 3 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 3 ? null : 3" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 3: Locator Strategies, Assertions & UI Elements</h4>
+                                    <p class="text-gray-600 text-sm">Mastering element interaction and validation</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 3 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 3" x-collapse class="px-6 pb-6">
+                                <div class="space-y-4">
+                                    <div>
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">Locator Strategies:</h5>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Playwright-supported locator strategies and best practices</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Recording locators with Playwright Inspector and browser plugins</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">Assertions & Validations:</h5>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Visibility, presence, and state assertions (enabled/disabled)</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Text matching, attribute validation, URL and title checks</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Screenshot comparison and visual testing</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">UI Elements Interaction:</h5>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Input fields, buttons, radio buttons, and checkboxes</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Static and dynamic dropdowns (single and multi-select)</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Alerts, frames, window handling, drag-and-drop</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>File upload and download handling</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 4 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 4 ? null : 4" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 4: Test Data Management & Feature Implementation</h4>
+                                    <p class="text-gray-600 text-sm">Data-driven testing and advanced features</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 4 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 4" x-collapse class="px-6 pb-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Screenshot capture and video recording</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Test parameterization and data-driven testing</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Reading test data from JSON and CSV files</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Module 5 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 5 ? null : 5" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 5: Framework Design with POM & Fixtures</h4>
+                                    <p class="text-gray-600 text-sm">Building scalable, maintainable test frameworks</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 5 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 5" x-collapse class="px-6 pb-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Page Object Model (POM) importance and implementation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Access modifiers and base page implementation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Playwright fixtures for test setup and teardown</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Module 6 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 6 ? null : 6" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 6: Reporting & API Testing</h4>
+                                    <p class="text-gray-600 text-sm">Test reporting and REST API automation</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 6 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 6" x-collapse class="px-6 pb-6">
+                                <div class="space-y-4">
+                                    <div>
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">Reporting:</h5>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Built-in Playwright reporters overview</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Allure report integration and configuration</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">API Testing with Playwright:</h5>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>GET, POST, PUT, and DELETE API requests</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>API response validation and assertion strategies</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 7 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 7 ? null : 7" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 7: Docker Integration & Containerization</h4>
+                                    <p class="text-gray-600 text-sm">Running tests in Docker containers</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 7 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 7" x-collapse class="px-6 pb-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Docker introduction and installation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Configuring Playwright project for Docker execution</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Dockerfile and Docker Compose implementation</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Volume mapping and container orchestration</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <!-- Day 2 -->
+                <div>
+                    <div class="bg-gradient-to-r from-[#E10600] to-[#C20500] text-white rounded-t-xl p-6">
+                        <h3 class="text-2xl sm:text-3xl font-bold">
+                            Day 2 – AI-Powered Testing & Root Cause Analysis
+                        </h3>
+                    </div>
+                    <div class="bg-white rounded-b-xl shadow-lg border border-gray-200" x-data="{ openModule: null }">
+
+                        <!-- Module 8 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 8 ? null : 8" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 8: CI/CD & AI-Powered Test Generation</h4>
+                                    <p class="text-gray-600 text-sm">Automation pipelines and generative AI integration</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 8 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 8" x-collapse class="px-6 pb-6">
+                                <div class="space-y-4">
+                                    <div>
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">CI/CD Integration:</h5>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>CI/CD fundamentals and pipeline overview</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Triggering tests with GitHub Actions and Jenkins</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">Generative AI Integration:</h5>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Playwright MCP (Model Context Protocol) introduction</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Automatic test script generation using AI</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Visual Studio Code + Claude Code integration</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Creating test scripts using AI-powered coding assistants</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 9 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 9 ? null : 9" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 9: Intelligent Test Generation & Prioritization</h4>
+                                    <p class="text-gray-600 text-sm">AI-driven test creation and optimization</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 9 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 9" x-collapse class="px-6 pb-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>AI-driven test generation using risk-based analysis</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Learning from past failures for predictive test selection</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Generating synthetic test data using LLMs</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Integrating Promptfoo / Gemini evaluations for test quality</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Module 10 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 10 ? null : 10" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 10: Root Cause Analysis (RCA) using AI</h4>
+                                    <p class="text-gray-600 text-sm">Automated failure analysis and intelligent debugging</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 10 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 10" x-collapse class="px-6 pb-6">
+                                <div class="space-y-4">
+                                    <div>
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">Core Concepts:</h5>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>What is Root Cause Analysis in testing</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>How AI assists RCA across functional, regression, and integration tests</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div>
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">Techniques:</h5>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Log and screenshot pattern recognition</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>AI-based failure classification (infrastructure vs script vs product issue)</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Summarizing error traces using LLMs</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>RCA agents that learn from historical bug patterns</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">Hands-On Exercise:</h5>
+                                        <ul class="space-y-2 text-gray-700">
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Feed failed test logs into an LLM</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Generate RCA summary → actionable Jira ticket</span>
+                                            </li>
+                                            <li class="flex items-start">
+                                                <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                                </svg>
+                                                <span>Evaluate accuracy using Promptfoo metrics</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Module 11 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 11 ? null : 11" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 11: AI-Driven Debugging, Anomaly Detection & Reporting</h4>
+                                    <p class="text-gray-600 text-sm">Intelligent debugging and automated reporting</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 11 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 11" x-collapse class="px-6 pb-6">
+                                <ul class="space-y-3 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Building anomaly-detection models for flaky tests</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Robust locator strategies and retry logic guided by AI feedback</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Using natural language generation for release notes & bug summaries</span>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Integrating Slack / Confluence bots for auto-reporting</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Module 12 -->
+                        <div class="border-b border-gray-200 last:border-b-0">
+                            <button @click="openModule = openModule === 12 ? null : 12" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                                <div>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 12: Capstone Project – Your First Agentic Test Bot</h4>
+                                    <p class="text-gray-600 text-sm">Build and present your AI-powered testing agent</p>
+                                </div>
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 12 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                                </svg>
+                            </button>
+                            <div x-show="openModule === 12" x-collapse class="px-6 pb-6">
+                                <div class="space-y-4">
+                                    <p class="text-gray-700">Add an AI agent to your framework that:</p>
+                                    <ul class="space-y-3 text-gray-700">
+                                        <li class="flex items-start">
+                                            <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span>Predicts test failures before execution</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span>Performs RCA post-run</span>
+                                        </li>
+                                        <li class="flex items-start">
+                                            <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            <span>Generates summary reports for CI/CD dashboards</span>
+                                        </li>
+                                    </ul>
+                                    <div class="bg-purple-50 border border-purple-200 rounded-lg p-4 mt-4">
+                                        <h5 class="font-semibold text-[#0B0B0B] mb-2 flex items-center">
+                                            <svg class="w-5 h-5 text-purple-600 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                                <path d="M9 2a1 1 0 000 2h2a1 1 0 100-2H9z"/>
+                                                <path fill-rule="evenodd" d="M4 5a2 2 0 012-2 3 3 0 003 3h2a3 3 0 003-3 2 2 0 012 2v11a2 2 0 01-2 2H6a2 2 0 01-2-2V5zm9.707 5.707a1 1 0 00-1.414-1.414L9 12.586l-1.293-1.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                            </svg>
+                                            Final Presentation
+                                        </h5>
+                                        <p class="text-gray-700">Group presentation: showcase automation + AI insight flow</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Who Should Attend -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Who Should Attend</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        This workshop is perfect for QA professionals looking to level up their automation skills
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#E10600]">
+                        <h4 class="text-lg font-bold text-[#0B0B0B] mb-2">Test Automation Engineers</h4>
+                        <p class="text-gray-600">Looking to integrate AI into their testing workflows</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#E10600]">
+                        <h4 class="text-lg font-bold text-[#0B0B0B] mb-2">QA Leads & Managers</h4>
+                        <p class="text-gray-600">Seeking to modernize their testing strategy</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#E10600]">
+                        <h4 class="text-lg font-bold text-[#0B0B0B] mb-2">Software Developers</h4>
+                        <p class="text-gray-600">Interested in quality engineering and test-driven development</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#E10600]">
+                        <h4 class="text-lg font-bold text-[#0B0B0B] mb-2">DevOps Engineers</h4>
+                        <p class="text-gray-600">Building or improving CI/CD pipelines with testing</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#E10600]">
+                        <h4 class="text-lg font-bold text-[#0B0B0B] mb-2">Manual Testers</h4>
+                        <p class="text-gray-600">Transitioning to automation and AI-powered testing</p>
+                    </div>
+                    <div class="bg-white rounded-lg shadow-md p-6 border-l-4 border-[#E10600]">
+                        <h4 class="text-lg font-bold text-[#0B0B0B] mb-2">Tech Enthusiasts</h4>
+                        <p class="text-gray-600">Curious about AI applications in software testing</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prerequisites -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-xl p-8 border border-blue-200">
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-6 flex items-center">
+                        <svg class="w-8 h-8 text-blue-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        Prerequisites
+                    </h2>
+                    <ul class="space-y-3 text-gray-700">
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Basic programming knowledge (JavaScript/TypeScript preferred)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Familiarity with software testing concepts</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Laptop with Node.js installed (v16 or higher)</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Access to an LLM API (Claude, OpenAI, or Gemini) - guidance will be provided</span>
+                        </li>
+                        <li class="flex items-start">
+                            <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span>Enthusiasm to learn cutting-edge testing techniques!</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You'll Get -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 to-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">What You'll Get</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Comprehensive learning materials and ongoing support
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 flex items-start">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Complete Framework Source Code</h4>
+                            <p class="text-gray-600">Production-ready Playwright framework with AI integration</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 flex items-start">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Comprehensive Documentation</h4>
+                            <p class="text-gray-600">Detailed guides, best practices, and reference materials</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 flex items-start">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Recording & Slides</h4>
+                            <p class="text-gray-600">Access to workshop recordings and presentation materials</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 flex items-start">
+                        <div class="w-12 h-12 bg-[#E10600]/10 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Certificate of Completion</h4>
+                            <p class="text-gray-600">Official certificate upon successful completion</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 flex items-start">
+                        <div class="w-12 h-12 bg-yellow-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-yellow-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Community Access</h4>
+                            <p class="text-gray-600">Join our exclusive community for ongoing learning and networking</p>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 flex items-start">
+                        <div class="w-12 h-12 bg-indigo-100 rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                            <svg class="w-6 h-6 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">30-Day Support</h4>
+                            <p class="text-gray-600">Post-workshop support via email and community channels</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration CTA -->
+        <section id="register" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-[#E10600] to-[#C20500] text-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-6">Ready to Transform Your Testing?</h2>
+                <p class="text-lg sm:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+                    Join us for this intensive 2-day workshop and take your test automation skills to the next level with AI-powered testing.
+                </p>
+                <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
+                    <div class="text-center mb-6">
+                        <p class="text-sm text-white/80 mb-2">Workshop dates to be announced</p>
+                        <p class="text-3xl sm:text-4xl font-bold mb-2">Coming Soon</p>
+                        <p class="text-white/90">Be the first to know when registration opens</p>
+                    </div>
+                </div>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="/contact.html" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#E10600] bg-white hover:bg-gray-100 rounded-lg transition-all shadow-lg hover:shadow-xl min-h-[44px]">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"/>
+                        </svg>
+                        Get Notified
+                    </a>
+                    <a href="/community.html" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-all min-h-[44px]">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                        </svg>
+                        Join Community
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-container"></div>
+
+</body>
+</html>
