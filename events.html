@@ -54,48 +54,134 @@
         <section class="py-12 sm:py-16 lg:py-20 bg-white" x-data="{ activeFilter: 'all' }">
             <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
 
-                <!-- No Upcoming Events Placeholder -->
-                <div class="text-center py-16 px-4 bg-gradient-to-br from-gray-50 to-white rounded-xl border-2 border-dashed border-gray-300">
-                    <div class="relative">
-                        <div class="absolute inset-0 flex items-center justify-center opacity-5">
-                            <svg class="w-64 h-64 text-[#E10600]" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
-                            </svg>
+                <!-- November 2025 Meetup Event Poster -->
+                <div class="relative overflow-hidden rounded-2xl shadow-2xl bg-gradient-to-br from-[#E10600] via-[#C20500] to-[#A10400]">
+                    <!-- Decorative Background Pattern -->
+                    <div class="absolute inset-0 opacity-10">
+                        <div class="absolute top-0 left-0 w-64 h-64 bg-white rounded-full -translate-x-1/2 -translate-y-1/2"></div>
+                        <div class="absolute bottom-0 right-0 w-64 h-64 bg-white rounded-full translate-x-1/2 translate-y-1/2"></div>
+                    </div>
+
+                    <div class="relative px-4 py-8 sm:px-8 sm:py-10 lg:px-12 lg:py-12">
+                        <!-- Header Badge -->
+                        <div class="flex justify-center mb-4">
+                            <div class="inline-flex items-center gap-2 bg-white/95 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
+                                <div class="w-2 h-2 bg-[#E10600] rounded-full animate-pulse"></div>
+                                <span class="text-[#E10600] font-bold text-xs sm:text-sm uppercase tracking-wide">Upcoming Event</span>
+                            </div>
                         </div>
-                        <div class="relative">
-                            <div class="inline-block p-4 bg-white rounded-full shadow-md mb-6">
-                                <svg class="w-16 h-16 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+
+                        <!-- Event Title -->
+                        <div class="text-center mb-6">
+                            <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white mb-2 leading-tight">
+                                TAQELAH Meetup
+                            </h2>
+                            <div class="inline-block bg-white/20 backdrop-blur-sm px-6 py-2 rounded-full">
+                                <p class="text-xl sm:text-2xl font-bold text-white">November 2025</p>
+                            </div>
+                        </div>
+
+                        <!-- Event Details Grid - Moved Up -->
+                        <div class="max-w-4xl mx-auto bg-white/95 backdrop-blur-sm rounded-xl p-4 sm:p-6 shadow-xl mb-6">
+                            <div class="grid sm:grid-cols-3 gap-4 sm:gap-6">
+                                <!-- Date & Time -->
+                                <div class="text-center">
+                                    <div class="inline-flex items-center justify-center w-12 h-12 bg-[#E10600] rounded-xl mb-2 shadow-lg">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-bold text-[#0B0B0B] mb-1 text-base">Date & Time</h4>
+                                    <p class="text-gray-700 font-semibold text-sm">Nov 20, 2025</p>
+                                    <p class="text-gray-600 text-xs">6:30 PM - 8:00 PM</p>
+                                </div>
+
+                                <!-- Location -->
+                                <div class="text-center">
+                                    <div class="inline-flex items-center justify-center w-12 h-12 bg-[#E10600] rounded-xl mb-2 shadow-lg">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-bold text-[#0B0B0B] mb-1 text-base">Venue</h4>
+                                    <p class="text-gray-700 font-semibold text-sm">Carousell HQ</p>
+                                    <p class="text-gray-600 text-xs">#03-00, 79 Ayer Rajah Crescent</p>
+                                    <p class="text-gray-600 text-xs">Singapore 139955</p>
+                                </div>
+
+                                <!-- Event Type -->
+                                <div class="text-center">
+                                    <div class="inline-flex items-center justify-center w-12 h-12 bg-[#E10600] rounded-xl mb-2 shadow-lg">
+                                        <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                        </svg>
+                                    </div>
+                                    <h4 class="font-bold text-[#0B0B0B] mb-1 text-base">Format</h4>
+                                    <p class="text-gray-700 font-semibold text-sm">In-Person Meetup</p>
+                                    <p class="text-gray-600 text-xs">Free Admission</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Speakers Section - More Compact -->
+                        <div class="max-w-5xl mx-auto mb-6">
+                            <h3 class="text-xl sm:text-2xl font-bold text-white text-center mb-4">Featured Speakers</h3>
+
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <!-- Speaker 1: Gowthamraj Palani -->
+                                <div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300">
+                                    <div class="flex items-start gap-3">
+                                        <div class="flex-shrink-0">
+                                            <img src="/assets/images/speakers/Gowthamraj.png"
+                                                 alt="Gowthamraj Palani"
+                                                 class="w-16 h-16 rounded-full object-cover border-3 border-[#E10600] shadow-lg">
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h4 class="text-lg font-bold text-[#0B0B0B] mb-1">Gowthamraj Palani</h4>
+                                            <p class="text-gray-500 text-xs mb-2 italic">Staff Quality Engineer at Agoda</p>
+                                            <p class="text-gray-700 text-sm leading-snug">
+                                                Accelerating Test Automation with Playwright MCP and Prompt-Driven Test Generation
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Speaker 2: Syam Sasi -->
+                                <div class="bg-white/95 backdrop-blur-sm rounded-xl p-4 shadow-xl hover:shadow-2xl transition-all duration-300">
+                                    <div class="flex items-start gap-3">
+                                        <div class="flex-shrink-0">
+                                            <img src="/assets/images/speakers/syam.png"
+                                                 alt="Syam Sasi"
+                                                 class="w-16 h-16 rounded-full object-cover border-3 border-[#E10600] shadow-lg">
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <h4 class="text-lg font-bold text-[#0B0B0B] mb-1">Syam Sasi</h4>
+                                            <p class="text-gray-500 text-xs mb-2 italic">Lead Test Engineer at Carousell</p>
+                                            <p class="text-gray-700 text-sm leading-snug">
+                                                Build Your First n8n AI Agent
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- CTA Buttons - More Compact -->
+                        <div class="flex flex-col sm:flex-row gap-3 justify-center">
+                            <a href="/nov-2025-meetup.html" class="inline-flex items-center justify-center px-8 py-3 text-base font-bold text-[#E10600] bg-white hover:bg-gray-50 rounded-lg transition-all shadow-lg hover:shadow-xl transform hover:scale-105">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
-                            </div>
-                            <h3 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">
-                                Something <span class="text-[#E10600]">Exciting</span> is Brewing!
-                            </h3>
-                            <p class="text-lg sm:text-xl text-gray-600 mb-6 max-w-2xl mx-auto leading-relaxed">
-                                We're cooking up our next batch of awesome workshops, meetups, and panel discussions.
-                                <span class="font-semibold text-[#E10600]">Great things take time!</span>
-                            </p>
-                            <div class="inline-flex items-center gap-2 bg-[#FFF4F4] text-[#E10600] px-6 py-3 rounded-full mb-8">
-                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                                    <path d="M10 2a6 6 0 00-6 6v3.586l-.707.707A1 1 0 004 14h12a1 1 0 00.707-1.707L16 11.586V8a6 6 0 00-6-6zM10 18a3 3 0 01-3-3h6a3 3 0 01-3 3z"/>
+                                View Details & Register
+                            </a>
+                            <a href="#past-events" class="inline-flex items-center justify-center px-8 py-3 text-base font-bold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm border-2 border-white rounded-lg transition-all shadow-lg">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                 </svg>
-                                <span class="font-semibold">Be the first to know when we announce!</span>
-                            </div>
-                            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                                <a href="/contact.html" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-[#E10600] hover:bg-[#C20500] rounded-lg transition-all shadow-md hover:shadow-lg min-h-[44px]">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                                    </svg>
-                                    Get Notified
-                                </a>
-                                <a href="#past-events" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-[#E10600] bg-white border-2 border-[#E10600] hover:bg-[#F5F5F5] rounded-lg transition-all min-h-[44px]">
-                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/>
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                    </svg>
-                                    Watch Past Events
-                                </a>
-                            </div>
+                                Watch Past Events
+                            </a>
                         </div>
                     </div>
                 </div>
