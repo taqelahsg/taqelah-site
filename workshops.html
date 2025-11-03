@@ -41,8 +41,13 @@
     <main id="main-content">
 
         <!-- Page Hero -->
-        <section class="bg-gradient-to-br from-[#E10600] to-[#C20500] text-white py-12 sm:py-16 lg:py-20">
-            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <section class="relative bg-gradient-to-br from-[#E10600] to-[#C20500] text-white py-12 sm:py-16 lg:py-20 overflow-hidden">
+            <!-- Background Image with Overlay -->
+            <div class="absolute inset-0 z-0">
+                <img src="/assets/images/gallery/photo-1.jpg" alt="Workshop background" class="w-full h-full object-cover opacity-20">
+                <div class="absolute inset-0 bg-gradient-to-br from-[#E10600]/90 to-[#C20500]/90"></div>
+            </div>
+            <div class="relative z-10 max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">TAQELAH Workshops</h1>
                 <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto leading-relaxed">
                     Level up your QA skills with hands-on workshops from industry experts
@@ -94,7 +99,7 @@
         </section>
 
         <!-- Why Attend Our Workshops -->
-        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
             <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center mb-12">
                     <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Why Attend Our Workshops?</h2>
@@ -103,41 +108,65 @@
                     </p>
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
-                            </svg>
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all group">
+                        <div class="absolute inset-0">
+                            <img src="/assets/images/gallery/photo-8.jpg" alt="Expert instructor" class="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity">
+                            <div class="absolute inset-0 bg-gradient-to-b from-white/95 to-white/90"></div>
                         </div>
-                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Expert Instructors</h3>
-                        <p class="text-gray-600 text-sm">Learn from industry professionals with real-world experience</p>
+                        <div class="relative p-6 text-center">
+                            <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Expert Instructors</h3>
+                            <p class="text-gray-600 text-sm">Learn from industry professionals with real-world experience</p>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
-                            </svg>
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all group">
+                        <div class="absolute inset-0">
+                            <img src="/assets/images/gallery/photo-9.jpg" alt="Hands-on practice" class="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity">
+                            <div class="absolute inset-0 bg-gradient-to-b from-white/95 to-white/90"></div>
                         </div>
-                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Hands-On Practice</h3>
-                        <p class="text-gray-600 text-sm">Get practical experience with real exercises and projects</p>
+                        <div class="relative p-6 text-center">
+                            <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Hands-On Practice</h3>
+                            <p class="text-gray-600 text-sm">Get practical experience with real exercises and projects</p>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-                            </svg>
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all group">
+                        <div class="absolute inset-0">
+                            <img src="/assets/images/gallery/photo-10.jpg" alt="Comprehensive materials" class="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity">
+                            <div class="absolute inset-0 bg-gradient-to-b from-white/95 to-white/90"></div>
                         </div>
-                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Comprehensive Materials</h3>
-                        <p class="text-gray-600 text-sm">Access to slides, code, and recordings after the workshop</p>
+                        <div class="relative p-6 text-center">
+                            <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Comprehensive Materials</h3>
+                            <p class="text-gray-600 text-sm">Access to slides, code, and recordings after the workshop</p>
+                        </div>
                     </div>
-                    <div class="text-center">
-                        <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                            <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
-                            </svg>
+                    <div class="relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all group">
+                        <div class="absolute inset-0">
+                            <img src="/assets/images/gallery/photo-11.jpg" alt="Community networking" class="w-full h-full object-cover opacity-30 group-hover:opacity-40 transition-opacity">
+                            <div class="absolute inset-0 bg-gradient-to-b from-white/95 to-white/90"></div>
                         </div>
-                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Community Network</h3>
-                        <p class="text-gray-600 text-sm">Connect with fellow QA professionals and expand your network</p>
+                        <div class="relative p-6 text-center">
+                            <div class="w-16 h-16 bg-[#E10600]/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                                <svg class="w-8 h-8 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Community Network</h3>
+                            <p class="text-gray-600 text-sm">Connect with fellow QA professionals and expand your network</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -216,9 +245,16 @@
                     Notify Me When Available
                 </button>`;
 
+            // Random photo for visual variety
+            const photoNum = Math.floor(Math.random() * 7) + 2; // photos 2-8
+            const photoPath = `/assets/images/gallery/photo-${photoNum}.jpg`;
+
             return `
-                <div class="bg-gradient-to-br ${workshop.gradient} rounded-2xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.02] hover:shadow-2xl">
-                    <div class="p-6 sm:p-8">
+                <div class="relative bg-gradient-to-br ${workshop.gradient} rounded-2xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.02] hover:shadow-2xl">
+                    <div class="absolute inset-0 opacity-10">
+                        <img src="${photoPath}" alt="Workshop background" class="w-full h-full object-cover">
+                    </div>
+                    <div class="relative p-6 sm:p-8">
                         <div class="flex items-start justify-between mb-4">
                             <span class="px-4 py-2 ${statusBgColor} text-white text-xs font-bold rounded-full uppercase tracking-wide">
                                 ${workshop.status}
