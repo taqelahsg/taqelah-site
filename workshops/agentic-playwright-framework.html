@@ -205,7 +205,7 @@
                             </svg>
                         </div>
                         <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">AI-Powered Testing</h3>
-                        <p class="text-gray-600">Learn to leverage LLMs for intelligent test generation, root cause analysis, and automated test optimization.</p>
+                        <p class="text-gray-600">Learn to leverage LLMs for intelligent test generation and automated test optimization.</p>
                     </div>
                     <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100">
                         <div class="w-12 h-12 bg-[#E10600]/10 rounded-lg flex items-center justify-center mb-4">
@@ -270,30 +270,8 @@
                             </div>
                         </div>
                         <div class="ml-4">
-                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Implement AI-Powered Root Cause Analysis</h3>
-                            <p class="text-gray-600">Automate failure detection, classify issues, and generate actionable bug reports using AI-driven RCA techniques</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0">
-                            <div class="w-10 h-10 bg-[#E10600] rounded-lg flex items-center justify-center text-white font-bold">
-                                5
-                            </div>
-                        </div>
-                        <div class="ml-4">
                             <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Optimize Test Execution & Reporting</h3>
-                            <p class="text-gray-600">Configure CI/CD integration, parallel execution, and automated reporting with tools like Jenkins, GitHub Actions, and BrowserStack</p>
-                        </div>
-                    </div>
-                    <div class="flex items-start">
-                        <div class="flex-shrink-0">
-                            <div class="w-10 h-10 bg-[#E10600] rounded-lg flex items-center justify-center text-white font-bold">
-                                6
-                            </div>
-                        </div>
-                        <div class="ml-4">
-                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Build Your Own AI Testing Agent</h3>
-                            <p class="text-gray-600">Create a complete agentic test bot that performs RCA and generates intelligent test reports</p>
+                            <p class="text-gray-600">Configure CI/CD integration, parallel execution, and automated reporting with tools like Jenkins and GitHub Actions</p>
                         </div>
                     </div>
                 </div>
@@ -678,7 +656,7 @@
                                                 <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                                 </svg>
-                                                <span>Using LLMs (Claude, OpenAI) to generate realistic test data</span>
+                                                <span>Using LLMs (Claude) to generate realistic test data</span>
                                             </li>
                                             <li class="flex items-start">
                                                 <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -914,8 +892,8 @@
                         <div class="border-b border-gray-200 last:border-b-0">
                             <button @click="openModule = openModule === 11 ? null : 11" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
                                 <div>
-                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 11: AI-Powered Test Generation</h4>
-                                    <p class="text-gray-600 text-sm">Generative AI for test automation</p>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 11: AI-Powered Test Generation, Debugging & Reporting</h4>
+                                    <p class="text-gray-600 text-sm">Generative AI for test automation, intelligent debugging and automated reporting</p>
                                 </div>
                                 <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 11 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
@@ -947,115 +925,6 @@
                                         </svg>
                                         <span>Creating test scripts using AI-powered coding assistants</span>
                                     </li>
-                                </ul>
-                            </div>
-                        </div>
-
-                        <!-- Module 12 -->
-                        <div class="border-b border-gray-200 last:border-b-0">
-                            <button @click="openModule = openModule === 12 ? null : 12" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
-                                <div>
-                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 12: Root Cause Analysis (RCA) using AI</h4>
-                                    <p class="text-gray-600 text-sm">Automated failure analysis and intelligent debugging</p>
-                                </div>
-                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 12 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                                </svg>
-                            </button>
-                            <div x-show="openModule === 12" x-collapse class="px-6 pb-6">
-                                <div class="space-y-4">
-                                    <div>
-                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">Core Concepts:</h5>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li class="flex items-start">
-                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                                </svg>
-                                                <span>What is Root Cause Analysis in testing</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                                </svg>
-                                                <span>How AI assists RCA across functional, regression, and integration tests</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div>
-                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">Techniques:</h5>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li class="flex items-start">
-                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                                </svg>
-                                                <span>Log and screenshot pattern recognition</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                                </svg>
-                                                <span>AI-based failure classification (infrastructure vs script vs product issue)</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                                </svg>
-                                                <span>Summarizing error traces using LLMs</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                                </svg>
-                                                <span>RCA agents that learn from historical bug patterns</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mt-4">
-                                        <h5 class="font-semibold text-[#0B0B0B] mb-2">Hands-On Exercise:</h5>
-                                        <ul class="space-y-2 text-gray-700">
-                                            <li class="flex items-start">
-                                                <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                                </svg>
-                                                <span>Feed failed test logs into an LLM</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                                </svg>
-                                                <span>Generate RCA summary → actionable Jira ticket</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <svg class="w-5 h-5 text-blue-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                                </svg>
-                                                <span>Evaluate accuracy using Promptfoo metrics</span>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Module 13 -->
-                        <div class="border-b border-gray-200 last:border-b-0">
-                            <button @click="openModule = openModule === 13 ? null : 13" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
-                                <div>
-                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 13: AI-Driven Debugging, Anomaly Detection & Reporting</h4>
-                                    <p class="text-gray-600 text-sm">Intelligent debugging and automated reporting</p>
-                                </div>
-                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 13 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
-                                </svg>
-                            </button>
-                            <div x-show="openModule === 13" x-collapse class="px-6 pb-6">
-                                <ul class="space-y-3 text-gray-700">
-                                    <li class="flex items-start">
-                                        <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                        </svg>
-                                        <span>Building anomaly-detection models for flaky tests</span>
-                                    </li>
                                     <li class="flex items-start">
                                         <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
@@ -1066,24 +935,24 @@
                                         <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                             <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                         </svg>
-                                        <span>Integrating Slack bots for auto-reporting</span>
+                                        <span>Integrating Email and telegram bots for auto-reporting</span>
                                     </li>
                                 </ul>
                             </div>
                         </div>
 
-                        <!-- Module 14 -->
+                        <!-- Module 12 -->
                         <div class="border-b border-gray-200 last:border-b-0">
-                            <button @click="openModule = openModule === 14 ? null : 14" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                            <button @click="openModule = openModule === 12 ? null : 12" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
                                 <div>
-                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 14: Capstone Project – Your First Agentic Test Bot</h4>
+                                    <h4 class="text-xl font-bold text-[#0B0B0B] mb-2">Module 12: Capstone Project – Your First Agentic Test Bot</h4>
                                     <p class="text-gray-600 text-sm">Build and present your AI-powered testing agent</p>
                                 </div>
-                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 14 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <svg class="w-6 h-6 text-[#E10600] transition-transform" :class="{ 'rotate-180': openModule === 12 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                                 </svg>
                             </button>
-                            <div x-show="openModule === 14" x-collapse class="px-6 pb-6">
+                            <div x-show="openModule === 12" x-collapse class="px-6 pb-6">
                                 <div class="space-y-4">
                                     <p class="text-gray-700 font-semibold mb-4">Build a complete AI-powered test automation framework by integrating all concepts learned throughout the workshop.</p>
 
@@ -1101,12 +970,6 @@
                                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                                 </svg>
                                                 <span>Integrate AI-powered test generation using Playwright MCP or Claude Code</span>
-                                            </li>
-                                            <li class="flex items-start">
-                                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                                </svg>
-                                                <span>Implement AI-driven Root Cause Analysis for automated failure investigation</span>
                                             </li>
                                             <li class="flex items-start">
                                                 <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -1484,19 +1347,13 @@
                                 <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
-                                <span><strong>Integrate 3+ LLM providers</strong> (Claude, OpenAI, Gemini) for test generation</span>
+                                <span><strong>Integrate Claude LLM provider</strong> for test generation</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
                                     <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                 </svg>
                                 <span><strong>Reduce test creation time by 40-60%</strong> using agentic coding techniques</span>
-                            </div>
-                            <div class="flex items-start">
-                                <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                </svg>
-                                <span><strong>Implement AI-powered RCA</strong> that automatically categorizes failures with 85%+ accuracy</span>
                             </div>
                             <div class="flex items-start">
                                 <svg class="w-5 h-5 text-[#E10600] mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
