@@ -234,16 +234,14 @@
             const statusBgColor = getStatusBgColor(workshop.statusColor);
             const tagsHTML = workshop.tags.map(tag => `<span class="px-3 py-1 bg-white/20 text-white text-sm font-medium rounded-full">${tag}</span>`).join('');
 
-            const buttonHTML = workshop.detailPageUrl && showDetailsButton
+            const buttonHTML = showDetailsButton && workshop.detailPageUrl
                 ? `<a href="${workshop.detailPageUrl}" class="inline-flex items-center justify-center w-full px-6 py-3 text-base font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-all">
                     View Details
                     <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
                     </svg>
                 </a>`
-                : `<button class="inline-flex items-center justify-center w-full px-6 py-3 text-base font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-all cursor-not-allowed" disabled>
-                    Notify Me When Available
-                </button>`;
+                : '';
 
             // Random photo for visual variety
             const photoNum = Math.floor(Math.random() * 7) + 2; // photos 2-8
