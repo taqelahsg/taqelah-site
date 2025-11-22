@@ -61,25 +61,16 @@
           "addressCountry": "SG"
         }
       },
-      "offers": [
-        {
-          "@type": "Offer",
-          "name": "Regular Price",
-          "price": "499",
-          "priceCurrency": "SGD",
-          "availability": "https://schema.org/PreOrder",
-          "url": "https://taqelah.sg/workshops/agentic-playwright-framework.html#register"
-        },
-        {
-          "@type": "Offer",
-          "name": "Community Member Price",
-          "price": "449",
-          "priceCurrency": "SGD",
-          "availability": "https://schema.org/PreOrder",
-          "url": "https://taqelah.sg/workshops/agentic-playwright-framework.html#register",
-          "description": "10% discount for TAQELAH WhatsApp Community Members"
-        }
-      ],
+      "offers": {
+        "@type": "Offer",
+        "name": "Launch Special - Introductory Offer",
+        "price": "299",
+        "priceCurrency": "SGD",
+        "availability": "https://schema.org/PreOrder",
+        "url": "https://taqelah.sg/workshops/agentic-playwright-framework.html#register",
+        "priceValidUntil": "2025-12-31",
+        "description": "Special introductory pricing for first workshop batch - Save SGD 200"
+      },
       "duration": "P2D",
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "eventStatus": "https://schema.org/EventScheduled",
@@ -171,7 +162,7 @@
                                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
                                     </svg>
                                     <p class="text-sm text-white/80 mb-1">Time</p>
-                                    <p class="font-semibold">TBA</p>
+                                    <p class="font-semibold">9:00 AM - 5:30 PM</p>
                                 </div>
                                 <div class="flex flex-col items-center">
                                     <svg class="w-6 h-6 mb-2 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -363,6 +354,10 @@
 
                 <!-- All Modules -->
                 <div class="mb-12">
+                    <div class="bg-red-50 rounded-lg p-4 mb-6 text-center">
+                        <p class="text-red-900 font-semibold">Full-Day Workshop: 9:00 AM - 5:30 PM (with breaks)</p>
+                    </div>
+
                     <div class="bg-gradient-to-r from-[#E10600] to-[#C20500] text-white rounded-t-xl p-6">
                         <h3 class="text-2xl sm:text-3xl font-bold">
                             Full-Day Workshop – Playwright Fundamentals, Framework Design & AI-Powered Testing
@@ -1447,70 +1442,38 @@
                         <svg class="w-5 h-5 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
                             <path fill-rule="evenodd" d="M8.257 3.099c.765-1.36 2.722-1.36 3.486 0l5.58 9.92c.75 1.334-.213 2.98-1.742 2.98H4.42c-1.53 0-2.493-1.646-1.743-2.98l5.58-9.92zM11 13a1 1 0 11-2 0 1 1 0 012 0zm-1-8a1 1 0 00-1 1v3a1 1 0 002 0V6a1 1 0 00-1-1z" clip-rule="evenodd"/>
                         </svg>
-                        <p class="text-yellow-300 font-semibold text-sm sm:text-base">Limited to 10 seats only • First come, first served</p>
+                        <p class="text-yellow-300 font-semibold text-sm sm:text-base">Limited to 15 attendees per batch • Batches filled on rolling basis</p>
                     </div>
                 </div>
 
                 <div class="bg-white/10 backdrop-blur-sm rounded-xl p-8 mb-8">
                     <div class="text-center mb-6">
                         <p class="text-sm text-white/80 mb-2">Workshop dates to be announced</p>
-                        <p class="text-3xl sm:text-4xl font-bold mb-2">Coming Soon</p>
-                        <p class="text-white/90 mb-6">Be the first to know when registration opens</p>
+                        <p class="text-3xl sm:text-4xl font-bold mb-2">Register Your Interest</p>
+                        <p class="text-white/90 mb-3">Register via WhatsApp or Google Form to get notified</p>
+                        <p class="text-sm text-white/80 italic">Venue and dates will be shared once your batch is filled</p>
 
                         <div class="border-t border-white/20 pt-6 mt-6">
                             <p class="text-sm text-white/80 mb-4">Workshop Fee</p>
 
-                            <!-- Early Bird Special -->
-                            <div class="bg-gradient-to-r from-green-400/20 to-green-500/20 rounded-lg p-5 mb-4 border-2 border-green-400/50 relative overflow-hidden">
-                                <div class="flex items-center justify-center mb-2">
-                                    <svg class="w-5 h-5 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                            <!-- Launch Special Offer -->
+                            <div class="bg-gradient-to-r from-green-400/20 to-green-500/20 rounded-lg p-6 border-2 border-green-400/50 relative overflow-hidden">
+                                <div class="absolute top-3 right-3 bg-yellow-400 text-green-900 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                                    LAUNCH SPECIAL
+                                </div>
+                                <div class="flex items-center justify-center mb-3">
+                                    <svg class="w-6 h-6 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
                                         <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
                                     </svg>
-                                    <p class="text-sm font-semibold text-green-300 uppercase tracking-wide">Early Bird Special</p>
+                                    <p class="text-base font-semibold text-green-300 uppercase tracking-wide">Introductory Offer</p>
                                 </div>
-                                <p class="text-sm text-white/90 mb-2">Register within first 48 hours</p>
+                                <p class="text-sm text-white/90 mb-3 text-center">Special pricing for our first workshop batch</p>
                                 <div class="flex items-center justify-center gap-3 mb-2">
-                                    <span class="text-xl text-white/60 line-through">SGD 499</span>
-                                    <span class="text-4xl sm:text-5xl font-bold text-white">SGD 449</span>
+                                    <span class="text-2xl text-white/60 line-through">SGD 499</span>
+                                    <span class="text-5xl sm:text-6xl font-bold text-white">SGD 299</span>
                                 </div>
-                                <p class="text-xs text-green-200">Save SGD 50 • Limited to first 5 registrants</p>
-                            </div>
-
-                            <!-- Regular Price -->
-                            <div class="bg-white/5 rounded-lg p-4 mb-4 border border-white/10">
-                                <p class="text-sm text-white/70 mb-1">Regular Price</p>
-                                <p class="text-3xl font-bold text-white">SGD 499</p>
-                            </div>
-
-                            <!-- Special Offer for WhatsApp Members -->
-                            <div class="bg-gradient-to-r from-yellow-400/20 to-yellow-500/20 rounded-lg p-5 border-2 border-yellow-400/50">
-                                <div class="flex items-center justify-center mb-2">
-                                    <svg class="w-5 h-5 text-yellow-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                                    </svg>
-                                    <p class="text-sm font-semibold text-yellow-300 uppercase tracking-wide">Community Member Discount</p>
-                                </div>
-                                <p class="text-sm text-white/90 mb-2">For TAQELAH WhatsApp Community Members</p>
-                                <p class="text-xs text-white/70 mb-3 italic">Must be in Taqelah WhatsApp group on or before November 20, 2025</p>
-                                <div class="flex items-center justify-center gap-3">
-                                    <span class="text-xl text-white/60 line-through">SGD 499</span>
-                                    <span class="text-4xl sm:text-5xl font-bold text-white">SGD 449</span>
-                                </div>
-                                <p class="text-xs text-yellow-200 mt-2">Save SGD 50 • Can be combined with early bird!</p>
-                            </div>
-
-                            <!-- Combined Savings Callout -->
-                            <div class="mt-4 p-5 bg-gradient-to-r from-yellow-400/20 to-orange-500/20 rounded-lg border-2 border-yellow-400/60 relative overflow-hidden">
-                                <div class="absolute top-2 right-2 bg-yellow-400 text-yellow-900 text-xs font-bold px-3 py-1 rounded-full uppercase animate-pulse">
-                                    Best Value
-                                </div>
-                                <p class="text-center">
-                                    <span class="block text-sm font-bold text-yellow-300 uppercase tracking-wide mb-2">Early Bird + Community Member</span>
-                                    <span class="block text-sm text-white/90 mb-2">Maximum Savings!</span>
-                                    <span class="block text-lg text-white/60 line-through mb-2">Regular: SGD 499</span>
-                                    <span class="block text-4xl sm:text-5xl font-bold text-white mb-1">SGD 399</span>
-                                    <span class="block text-sm text-yellow-200 font-semibold">(Save SGD 100!)</span>
-                                </p>
+                                <p class="text-sm text-green-200 font-semibold text-center">Save SGD 200 • Available for all participants</p>
+                                <p class="text-xs text-white/70 mt-3 text-center italic">Limited time offer • Book now to secure this price</p>
                             </div>
                         </div>
                     </div>

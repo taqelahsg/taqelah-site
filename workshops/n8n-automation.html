@@ -1,0 +1,1397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--
+      TAQELAH Workshop Detail Page
+      n8n Automation Workshop
+      Red & white theme, CDN-based, no build step
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Automate Tasks, Reduce Manual Work. Learn workflow automation with n8n, from basics to AI-powered integrations.">
+    <meta name="keywords" content="n8n, automation, workflow, AI, APIs, integration, workshop, Singapore">
+    <meta name="author" content="TAQELAH">
+    <meta name="theme-color" content="#E10600">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="n8n Automation Workshop | TAQELAH">
+    <meta property="og:description" content="Automate Tasks, Reduce Manual Work. 1-Day intensive workshop on workflow automation with n8n.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taqelah.sg/workshops/n8n-automation.html">
+    <meta property="og:image" content="https://taqelah.sg/assets/images/workshops/n8n-automation-og.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="n8n Automation Workshop | TAQELAH">
+    <meta name="twitter:description" content="Automate Tasks, Reduce Manual Work. 1-Day intensive workshop on workflow automation with n8n.">
+    <meta name="twitter:image" content="https://taqelah.sg/assets/images/workshops/n8n-automation-og.jpg">
+
+    <title>n8n Automation Workshop | TAQELAH</title>
+
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <script src="/assets/js/analytics.js"></script>
+    <script src="/assets/js/components.js?v=2"></script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "EducationEvent",
+      "name": "n8n Automation Workshop",
+      "description": "Automate Tasks, Reduce Manual Work. Learn workflow automation with n8n, from basics to AI-powered integrations.",
+      "image": "https://taqelah.sg/assets/images/workshops/n8n-automation-og.jpg",
+      "organizer": {
+        "@type": "Organization",
+        "name": "TAQELAH",
+        "url": "https://taqelah.sg"
+      },
+      "location": {
+        "@type": "Place",
+        "name": "TBA",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Singapore",
+          "addressCountry": "SG"
+        }
+      },
+      "offers": {
+        "@type": "Offer",
+        "name": "Launch Special - Introductory Offer",
+        "price": "299",
+        "priceCurrency": "SGD",
+        "availability": "https://schema.org/PreOrder",
+        "url": "https://taqelah.sg/workshops/n8n-automation.html#register",
+        "priceValidUntil": "2025-12-31",
+        "description": "Special introductory pricing for first workshop batch - Save SGD 200"
+      },
+      "duration": "P1D",
+      "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+      "eventStatus": "https://schema.org/EventScheduled",
+      "educationalLevel": "Beginner to Intermediate",
+      "teaches": [
+        "n8n workflow automation",
+        "API integration",
+        "Business process automation",
+        "AI-powered workflows",
+        "Error handling and logging",
+        "Integration best practices"
+      ]
+    }
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1121995923339151');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1121995923339151&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+</head>
+<body class="font-sans antialiased text-[#0B0B0B] bg-white" data-page="workshops">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#E10600] focus:text-white focus:rounded-lg">
+        Skip to main content
+    </a>
+
+    <div id="header-container"></div>
+
+    <main id="main-content">
+
+        <!-- Breadcrumb -->
+        <section class="bg-gray-50 py-4">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <nav class="flex items-center text-sm text-gray-600">
+                    <a href="/" class="hover:text-[#E10600] transition-colors">Home</a>
+                    <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    <a href="/workshops.html" class="hover:text-[#E10600] transition-colors">Workshops</a>
+                    <svg class="w-4 h-4 mx-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                    </svg>
+                    <span class="text-[#E10600] font-semibold">n8n Automation Workshop</span>
+                </nav>
+            </div>
+        </section>
+
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-purple-500 to-indigo-600 text-white py-16 sm:py-20 lg:py-24">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <div class="inline-block mb-4 px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full">
+                        <span class="text-sm sm:text-base font-semibold">1-Day Intensive Workshop</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 leading-tight">
+                        n8n Automation Workshop<br>
+                        <span class="text-white/90">Automate Tasks, Reduce Manual Work</span>
+                    </h1>
+                    <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed mb-8">
+                        Learn workflow automation with n8n, from basics to AI-powered integrations. Build automation that transforms your business efficiency.
+                    </p>
+
+                    <!-- Workshop Details -->
+                    <div class="max-w-2xl mx-auto mb-8">
+                        <div class="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-white">
+                                <div class="flex flex-col items-center">
+                                    <svg class="w-6 h-6 mb-2 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                    </svg>
+                                    <p class="text-sm text-white/80 mb-1">Date</p>
+                                    <p class="font-semibold">TBA</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <svg class="w-6 h-6 mb-2 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                    <p class="text-sm text-white/80 mb-1">Time</p>
+                                    <p class="font-semibold">9:00 AM - 5:30 PM</p>
+                                </div>
+                                <div class="flex flex-col items-center">
+                                    <svg class="w-6 h-6 mb-2 text-white/90" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    </svg>
+                                    <p class="text-sm text-white/80 mb-1">Location</p>
+                                    <p class="font-semibold">In-Person, Singapore</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                        <a href="#register" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-purple-600 bg-white hover:bg-gray-100 rounded-lg transition-all shadow-lg hover:shadow-xl min-h-[44px]">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                            Register Now
+                        </a>
+                        <a href="#curriculum" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-all min-h-[44px]">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                            View Curriculum
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Highlights -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100">
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">Hands-On Learning</h3>
+                        <p class="text-gray-600">Build real automation workflows from scratch. Learn by doing with practical exercises covering common business scenarios.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100">
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">AI-Powered Automation</h3>
+                        <p class="text-gray-600">Integrate AI into your workflows using Claude, OpenAI, and Gemini for intelligent automation and decision-making.</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100">
+                        <div class="w-12 h-12 bg-purple-500/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">Real Business Impact</h3>
+                        <p class="text-gray-600">Learn to automate tasks across marketing, operations, sales, HR, and engineering teams to save time and reduce errors.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You Will Learn -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">What You Will Learn</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Master workflow automation from fundamentals to advanced AI-powered integrations
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
+                                1
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Master n8n Fundamentals</h3>
+                            <p class="text-gray-600">Understand triggers, nodes, data flow, and credentials. Build your first automated workflows with confidence.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
+                                2
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Connect Any Tool via APIs</h3>
+                            <p class="text-gray-600">Learn API basics, authentication methods, and how to integrate with any service using n8n's HTTP node.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
+                                3
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Build Business Automations</h3>
+                            <p class="text-gray-600">Create real-world automations for marketing, operations, sales, HR, and engineering teams.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
+                                4
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Integrate AI Models</h3>
+                            <p class="text-gray-600">Use Claude, OpenAI, and Gemini for intelligent automation, content generation, and smart decision-making.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
+                                5
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Handle Errors & Security</h3>
+                            <p class="text-gray-600">Implement error handling, logging, retry strategies, and secure credential management for production-ready workflows.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
+                                6
+                            </div>
+                        </div>
+                        <div class="ml-4">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Build a Capstone Project</h3>
+                            <p class="text-gray-600">Create a complete automation workflow solving a real business problem and demo it to the group.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Who Should Attend -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Who Should Attend</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        This workshop is ideal for professionals looking to streamline their workflows
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-purple-50 rounded-xl p-6 border border-purple-100">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Business Owners</h3>
+                        <p class="text-gray-600">Looking to automate repetitive tasks and improve operational efficiency</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 border border-purple-100">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Developers & Engineers</h3>
+                        <p class="text-gray-600">Want to integrate automation into their development workflow</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 border border-purple-100">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Marketing & Operations Teams</h3>
+                        <p class="text-gray-600">Need to automate campaigns, reporting, and data management</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 border border-purple-100">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Product Managers</h3>
+                        <p class="text-gray-600">Looking to streamline user feedback, feature requests, and workflows</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 border border-purple-100">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">QA Engineers</h3>
+                        <p class="text-gray-600">Want to automate test alerts, issue triage, and reporting workflows</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 border border-purple-100">
+                        <div class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Anyone Wanting to Save Time</h3>
+                        <p class="text-gray-600">Tired of manual, repetitive tasks and ready to automate their work</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prerequisites -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <div class="text-center mb-12">
+                        <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Prerequisites</h2>
+                        <p class="text-lg text-gray-600">
+                            What you need to get the most out of this workshop
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white rounded-xl p-6 shadow-md border border-gray-200">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold">
+                                        ✓
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Basic Computer Skills</h3>
+                                    <p class="text-gray-600">Comfortable using web applications and basic software tools</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-md border border-gray-200">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 bg-green-500 rounded-lg flex items-center justify-center text-white font-bold">
+                                        ✓
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Interest in Automation</h3>
+                                    <p class="text-gray-600">Desire to learn how to automate repetitive tasks and workflows</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-md border border-gray-200">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold">
+                                        ~
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">No Coding Required</h3>
+                                    <p class="text-gray-600">n8n is a visual tool - programming experience is helpful but not mandatory</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-xl p-6 shadow-md border border-gray-200">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-10 h-10 bg-blue-500 rounded-lg flex items-center justify-center text-white font-bold">
+                                        +
+                                    </div>
+                                </div>
+                                <div class="ml-4">
+                                    <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Laptop Required</h3>
+                                    <p class="text-gray-600">Bring your own laptop with internet access for hands-on exercises</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What You'll Get -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">What You'll Get</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Everything you need to succeed with n8n automation
+                    </p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-purple-50 rounded-xl p-6 text-center border border-purple-100">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Course Materials</h3>
+                        <p class="text-gray-600 text-sm">Comprehensive slides, guides, and documentation for future reference</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 text-center border border-purple-100">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Workflow Templates</h3>
+                        <p class="text-gray-600 text-sm">Ready-to-use n8n templates and example workflows you can customize</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 text-center border border-purple-100">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Post-Workshop Support</h3>
+                        <p class="text-gray-600 text-sm">30 days of Q&A support via WhatsApp community for your questions</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 text-center border border-purple-100">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Community Access</h3>
+                        <p class="text-gray-600 text-sm">Join the TAQELAH automation community for ongoing learning and networking</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 text-center border border-purple-100">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Certificate</h3>
+                        <p class="text-gray-600 text-sm">Certificate of completion to showcase your n8n automation skills</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 text-center border border-purple-100">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Real-World Projects</h3>
+                        <p class="text-gray-600 text-sm">Practical workflows you can immediately apply to your daily work</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 text-center border border-purple-100">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Resource Library</h3>
+                        <p class="text-gray-600 text-sm">Curated list of n8n resources, tutorials, and integration guides</p>
+                    </div>
+                    <div class="bg-purple-50 rounded-xl p-6 text-center border border-purple-100">
+                        <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Hands-On Experience</h3>
+                        <p class="text-gray-600 text-sm">Build multiple working automations during the workshop</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Frequently Asked Questions</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Got questions? We've got answers
+                    </p>
+                </div>
+                <div class="max-w-3xl mx-auto space-y-4" x-data="{ openFaq: null }">
+                    <!-- FAQ 1 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button @click="openFaq = openFaq === 1 ? null : 1" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-purple-50 transition-colors">
+                            <span class="font-semibold text-[#0B0B0B] text-lg">Do I need prior programming experience?</span>
+                            <svg :class="openFaq === 1 ? 'rotate-180' : ''" class="w-5 h-5 text-purple-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openFaq === 1" x-collapse class="px-6 pb-5">
+                            <p class="text-gray-600 leading-relaxed">
+                                No! n8n is designed to be beginner-friendly with a visual workflow builder. While basic technical understanding helps, you don't need to be a programmer. We'll teach you everything from scratch, including how to work with APIs and automate tasks using n8n's intuitive drag-and-drop interface.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 2 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button @click="openFaq = openFaq === 2 ? null : 2" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-purple-50 transition-colors">
+                            <span class="font-semibold text-[#0B0B0B] text-lg">What should I bring to the workshop?</span>
+                            <svg :class="openFaq === 2 ? 'rotate-180' : ''" class="w-5 h-5 text-purple-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openFaq === 2" x-collapse class="px-6 pb-5">
+                            <p class="text-gray-600 leading-relaxed">
+                                Just bring your laptop (Windows, Mac, or Linux) with Chrome/Firefox installed. We'll guide you through setting up n8n during the workshop. Make sure your laptop is charged and you have stable internet access. All workshop materials and resources will be provided digitally.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 3 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button @click="openFaq = openFaq === 3 ? null : 3" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-purple-50 transition-colors">
+                            <span class="font-semibold text-[#0B0B0B] text-lg">Is n8n free to use after the workshop?</span>
+                            <svg :class="openFaq === 3 ? 'rotate-180' : ''" class="w-5 h-5 text-purple-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openFaq === 3" x-collapse class="px-6 pb-5">
+                            <p class="text-gray-600 leading-relaxed">
+                                Yes! n8n is open-source and free to self-host. You can run it on your own server, cloud infrastructure, or even locally on your computer at no cost. There's also a cloud option (n8n Cloud) with a free tier and paid plans for more advanced features and higher usage limits.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 4 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button @click="openFaq = openFaq === 4 ? null : 4" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-purple-50 transition-colors">
+                            <span class="font-semibold text-[#0B0B0B] text-lg">How do I know which batch I'll be in?</span>
+                            <svg :class="openFaq === 4 ? 'rotate-180' : ''" class="w-5 h-5 text-purple-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openFaq === 4" x-collapse class="px-6 pb-5">
+                            <p class="text-gray-600 leading-relaxed">
+                                After you register your interest via the Google Form or WhatsApp, we'll assign you to a batch based on availability. Each batch has 15 attendees maximum. Once your batch is filled, we'll confirm the venue and exact dates with you via email or WhatsApp. Registration is first-come, first-served.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 5 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button @click="openFaq = openFaq === 5 ? null : 5" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-purple-50 transition-colors">
+                            <span class="font-semibold text-[#0B0B0B] text-lg">Will I get hands-on practice during the workshop?</span>
+                            <svg :class="openFaq === 5 ? 'rotate-180' : ''" class="w-5 h-5 text-purple-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openFaq === 5" x-collapse class="px-6 pb-5">
+                            <p class="text-gray-600 leading-relaxed">
+                                Absolutely! This is a hands-on workshop. You'll build multiple real-world automation workflows throughout the day, including API integrations, data transformations, AI-powered automations, and a capstone project of your choice. By the end, you'll have working automations you can take back and use immediately.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 6 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button @click="openFaq = openFaq === 6 ? null : 6" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-purple-50 transition-colors">
+                            <span class="font-semibold text-[#0B0B0B] text-lg">What if I need help after the workshop?</span>
+                            <svg :class="openFaq === 6 ? 'rotate-180' : ''" class="w-5 h-5 text-purple-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openFaq === 6" x-collapse class="px-6 pb-5">
+                            <p class="text-gray-600 leading-relaxed">
+                                You'll get 30 days of post-workshop Q&A support via our WhatsApp community where you can ask questions and troubleshoot issues. Plus, you'll join the TAQELAH automation community for ongoing learning, networking, and sharing automation ideas with fellow participants.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 7 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button @click="openFaq = openFaq === 7 ? null : 7" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-purple-50 transition-colors">
+                            <span class="font-semibold text-[#0B0B0B] text-lg">Can I get a refund if I can't attend?</span>
+                            <svg :class="openFaq === 7 ? 'rotate-180' : ''" class="w-5 h-5 text-purple-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openFaq === 7" x-collapse class="px-6 pb-5">
+                            <p class="text-gray-600 leading-relaxed">
+                                We offer full refunds up to 7 days before the workshop date. If you cancel within 7 days of the workshop, we can transfer your registration to the next available batch at no extra cost. Contact us via WhatsApp or email to process refunds or batch transfers.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 8 -->
+                    <div class="bg-white rounded-xl border border-gray-200 overflow-hidden">
+                        <button @click="openFaq = openFaq === 8 ? null : 8" class="w-full text-left px-6 py-5 flex justify-between items-center hover:bg-purple-50 transition-colors">
+                            <span class="font-semibold text-[#0B0B0B] text-lg">What makes this workshop different from online tutorials?</span>
+                            <svg :class="openFaq === 8 ? 'rotate-180' : ''" class="w-5 h-5 text-purple-600 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openFaq === 8" x-collapse class="px-6 pb-5">
+                            <p class="text-gray-600 leading-relaxed">
+                                This is an in-person, instructor-led intensive workshop with personalized guidance, real-world use cases, and immediate feedback. You'll learn best practices, troubleshooting techniques, and advanced strategies that aren't typically covered in generic tutorials. Plus, you'll build a network with other automation enthusiasts and get expert mentorship throughout the day.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Instructor Profile -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Your Expert Instructor</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Learn from an industry leader with extensive experience in test automation and AI integration
+                    </p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <!-- Instructor 1 -->
+                    <div class="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-200 hover:shadow-xl transition-shadow">
+                        <div class="bg-gradient-to-br from-purple-500 to-indigo-600 h-32"></div>
+                        <div class="relative px-6 pb-6">
+                            <div class="absolute -top-16 left-1/2 transform -translate-x-1/2">
+                                <div class="w-32 h-32 rounded-full border-4 border-white overflow-hidden bg-gray-100">
+                                    <img src="/assets/images/avatars/syam.png" alt="Lead Instructor - Syam" class="w-full h-full object-cover" onerror="this.style.display='none'; this.parentElement.innerHTML='<svg class=\'w-20 h-20 text-gray-400 mx-auto mt-6\' fill=\'currentColor\' viewBox=\'0 0 20 20\'><path fill-rule=\'evenodd\' d=\'M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z\' clip-rule=\'evenodd\'/></svg>'">
+                                </div>
+                            </div>
+                            <div class="pt-20 text-center">
+                                <h3 class="text-2xl font-bold text-[#0B0B0B] mb-2">Syam Sasi</h3>
+                                <p class="text-purple-600 font-semibold mb-4">Lead Test Engineer</p>
+                                <div class="space-y-3 text-sm text-gray-600 text-left">
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>14+ years in test automation and quality engineering</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Expert in test automation and AI-powered testing</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Led highly scalable automation initiatives</span>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span>Conference speaker/Workshop instructor at international events</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workshop Curriculum -->
+        <section id="curriculum" class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">Workshop Curriculum</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Comprehensive 1-day program covering automation fundamentals to advanced AI integrations
+                    </p>
+                </div>
+
+                <div class="max-w-4xl mx-auto" x-data="{ openModule: 0 }">
+                    <div class="bg-purple-50 rounded-lg p-4 mb-6 text-center">
+                        <p class="text-purple-900 font-semibold">Full-Day Workshop: 9:00 AM - 5:30 PM (with breaks)</p>
+                    </div>
+
+                    <!-- Module 0 -->
+                    <div class="mb-4 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                        <button @click="openModule = openModule === 0 ? -1 : 0" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                                    0
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-[#0B0B0B]">Welcome & Setup</h3>
+                                    <p class="text-sm text-gray-600">30 minutes</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 transition-transform" :class="{ 'rotate-180': openModule === 0 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openModule === 0" x-collapse>
+                            <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                                <p class="text-gray-700 mb-4 font-semibold">Get everyone ready with environment & mindset</p>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Introduction to TAQELAH & workshop goals
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        What is n8n & why automation matters
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Real-world use cases across departments
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Setup options: n8n Cloud (free), Desktop app, Docker
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Quick verification: first simple "Hello World" flow
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 1 -->
+                    <div class="mb-4 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                        <button @click="openModule = openModule === 1 ? -1 : 1" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                                    1
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-[#0B0B0B]">Automation Fundamentals</h3>
+                                    <p class="text-sm text-gray-600">45 minutes</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 transition-transform" :class="{ 'rotate-180': openModule === 1 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openModule === 1" x-collapse>
+                            <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                                <p class="text-gray-700 mb-4 font-semibold">Understand the building blocks of workflow automation</p>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Concepts: triggers, nodes, data flow, credentials
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Visual workflow builder overview
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        What can be automated? Data entry, notifications, lead management, file handling, SaaS integrations
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>Hands-on:</strong> Build your first automated workflow (Google Sheet → Email)
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 2 -->
+                    <div class="mb-4 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                        <button @click="openModule = openModule === 2 ? -1 : 2" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                                    2
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-[#0B0B0B]">Core Nodes Deep Dive</h3>
+                                    <p class="text-sm text-gray-600">1 hour</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 transition-transform" :class="{ 'rotate-180': openModule === 2 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openModule === 2" x-collapse>
+                            <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                                <p class="text-gray-700 mb-4 font-semibold">Learn the essential nodes used in 80% of automations</p>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Webhook Trigger - receiving external data
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        HTTP Request - calling external APIs
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        IF / Switch / Merge - branching logic
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Email, Google Workspace (Sheets, Drive, Calendar)
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Slack / Telegram / WhatsApp integrations
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>Hands-on:</strong> Build a multi-step automation with branching logic
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 3 -->
+                    <div class="mb-4 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                        <button @click="openModule = openModule === 3 ? -1 : 3" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                                    3
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-[#0B0B0B]">Integrations & APIs</h3>
+                                    <p class="text-sm text-gray-600">1 hour</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 transition-transform" :class="{ 'rotate-180': openModule === 3 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openModule === 3" x-collapse>
+                            <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                                <p class="text-gray-700 mb-4 font-semibold">Enable participants to connect to any tool</p>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Understanding API basics (GET, POST, headers)
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Authentication: Basic, Token, OAuth2
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        How to read API documentation
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        n8n's HTTP Node in depth
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <span><strong>Hands-on:</strong> Connect to a public API (Weather, Notion, Airtable, Trello) and build a "Data Fetch → Process → Notify" workflow</span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 4 -->
+                    <div class="mb-4 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                        <button @click="openModule = openModule === 4 ? -1 : 4" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                                    4
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-[#0B0B0B]">Business Automation Use Cases</h3>
+                                    <p class="text-sm text-gray-600">45 minutes</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 transition-transform" :class="{ 'rotate-180': openModule === 4 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openModule === 4" x-collapse>
+                            <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                                <p class="text-gray-700 mb-4 font-semibold">Translate real problems into automated workflows</p>
+                                <p class="text-gray-700 mb-3">Use cases across teams:</p>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>Marketing:</strong> Auto-post content, capture leads, send campaigns
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>Operations:</strong> Auto-generate reports, sync spreadsheets, update dashboards
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>Sales:</strong> Lead routing, deal notifications, CRM sync
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>Product:</strong> User feedback pipeline, feature request workflow
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>HR:</strong> Auto onboarding emails, leave approval routing
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>QA/Engineering:</strong> Issue triage, test alerts, incident notifications
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>Activity:</strong> Group brainstorm - identify 3 manual tasks & convert to automation ideas
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 5 -->
+                    <div class="mb-4 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                        <button @click="openModule = openModule === 5 ? -1 : 5" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                                    5
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-[#0B0B0B]">AI-Powered Automation</h3>
+                                    <p class="text-sm text-gray-600">45 minutes</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 transition-transform" :class="{ 'rotate-180': openModule === 5 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openModule === 5" x-collapse>
+                            <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                                <p class="text-gray-700 mb-4 font-semibold">Use LLMs within n8n to boost workflows</p>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        n8n AI nodes: OpenAI, Claude, Gemini
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Summarization, classification, report generation
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Intelligent routing and decision-making using LLMs
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>Hands-on:</strong> Build an AI-powered email classifier
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        <strong>Hands-on:</strong> Auto-generate meeting summaries from transcripts
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 6 -->
+                    <div class="mb-4 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                        <button @click="openModule = openModule === 6 ? -1 : 6" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                                    6
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-[#0B0B0B]">Error Handling, Logging, Security</h3>
+                                    <p class="text-sm text-gray-600">30 minutes</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 transition-transform" :class="{ 'rotate-180': openModule === 6 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openModule === 6" x-collapse>
+                            <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                                <p class="text-gray-700 mb-4 font-semibold">Learn how to build reliable, safe automations</p>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Global error workflow
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Retry strategies
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Logging best practices
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Handling rate limits
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Credential safety & secret management
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Versioning & backups
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 7 -->
+                    <div class="mb-4 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                        <button @click="openModule = openModule === 7 ? -1 : 7" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                                    7
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-[#0B0B0B]">Build Your Capstone Project</h3>
+                                    <p class="text-sm text-gray-600">1 hour</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 transition-transform" :class="{ 'rotate-180': openModule === 7 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openModule === 7" x-collapse>
+                            <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                                <p class="text-gray-700 mb-4 font-semibold">Build a workflow that solves a real business problem</p>
+                                <p class="text-gray-700 mb-3">Participants choose one:</p>
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Automated reporting
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Social media content pipeline
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Customer support routing
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Task management sync (Jira ↔ Trello ↔ Asana)
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Lead enrichment & Slack alerts
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        QA/Test alert system
+                                    </li>
+                                </ul>
+                                <p class="text-gray-700 mt-4"><strong>Outcome:</strong> Each participant demos their workflow to the group</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Module 8 -->
+                    <div class="mb-4 bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                        <button @click="openModule = openModule === 8 ? -1 : 8" class="w-full px-6 py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors">
+                            <div class="flex items-center">
+                                <div class="w-10 h-10 bg-purple-600 rounded-lg flex items-center justify-center text-white font-bold mr-4 flex-shrink-0">
+                                    8
+                                </div>
+                                <div>
+                                    <h3 class="text-lg font-bold text-[#0B0B0B]">Closing & Next Steps</h3>
+                                    <p class="text-sm text-gray-600">15 minutes</p>
+                                </div>
+                            </div>
+                            <svg class="w-5 h-5 text-gray-400 transition-transform" :class="{ 'rotate-180': openModule === 8 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openModule === 8" x-collapse>
+                            <div class="px-6 pb-6 pt-2 border-t border-gray-100">
+                                <ul class="space-y-2 text-gray-700">
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Recap of key learnings
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Sharing of templates & GitHub repo
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Free resources and learning materials
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Certification of completion
+                                    </li>
+                                    <li class="flex items-start">
+                                        <svg class="w-5 h-5 text-purple-600 mr-2 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                                        </svg>
+                                        Invitation to TAQELAH WhatsApp/Telegram community
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- What's Included -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">What's Included</h2>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center border border-gray-100">
+                        <div class="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Course Materials</h3>
+                        <p class="text-gray-600">Comprehensive slides, guides, and documentation</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center border border-gray-100">
+                        <div class="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Workflow Templates</h3>
+                        <p class="text-gray-600">Ready-to-use n8n templates and example workflows</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center border border-gray-100">
+                        <div class="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Post-Workshop Support</h3>
+                        <p class="text-gray-600">30 days of Q&A support via WhatsApp community</p>
+                    </div>
+                    <div class="bg-white rounded-xl shadow-md p-6 text-center border border-gray-100">
+                        <div class="w-16 h-16 bg-purple-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-lg font-bold text-[#0B0B0B] mb-2">Community Access</h3>
+                        <p class="text-gray-600">Join the TAQELAH automation community</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Registration Section -->
+        <section id="register" class="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-purple-500 to-indigo-600 text-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to Transform Your Workflow?</h2>
+                    <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto mb-2">
+                        Limited to 15 attendees per batch • Batches filled on rolling basis
+                    </p>
+                    <p class="text-sm text-white/80 italic">
+                        Venue and dates will be shared once your batch is filled
+                    </p>
+                </div>
+
+                <div class="max-w-3xl mx-auto bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/20">
+                    <div class="text-center mb-8">
+                        <div class="inline-block bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-4">
+                            <span class="text-sm font-semibold">REGISTER YOUR INTEREST</span>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-3">Workshop Pricing</h3>
+                        <p class="text-sm text-white/80 italic">Register via WhatsApp or Google Form to get notified</p>
+                    </div>
+
+                    <!-- Launch Special Offer -->
+                    <div class="bg-gradient-to-r from-green-400/20 to-green-500/20 rounded-lg p-8 border-2 border-green-400/50 relative overflow-hidden mb-8">
+                        <div class="absolute top-3 right-3 bg-yellow-400 text-green-900 px-3 py-1.5 rounded-full text-xs font-bold shadow-lg">
+                            LAUNCH SPECIAL
+                        </div>
+                        <div class="flex items-center justify-center mb-3">
+                            <svg class="w-6 h-6 text-green-300 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <p class="text-base font-semibold text-green-300 uppercase tracking-wide">Introductory Offer</p>
+                        </div>
+                        <p class="text-sm text-white/90 mb-4 text-center">Special pricing for our first workshop batch</p>
+                        <div class="flex items-center justify-center gap-4 mb-2">
+                            <span class="text-2xl text-white/60 line-through">SGD 499</span>
+                            <span class="text-5xl sm:text-6xl font-bold text-white">SGD 299</span>
+                        </div>
+                        <p class="text-sm text-green-200 font-semibold text-center">Save SGD 200 • Available for all participants</p>
+                        <p class="text-xs text-white/70 mt-3 text-center italic">Limited time offer • Book now to secure this price</p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                        <a href="https://forms.gle/q6GXtvT1TtsVZY3o9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-purple-600 bg-white hover:bg-gray-100 rounded-lg transition-all shadow-lg hover:shadow-xl min-h-[44px]">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                            </svg>
+                            Register Now
+                        </a>
+                        <a href="/community.html" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-lg transition-all min-h-[44px]">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                            </svg>
+                            Join Community First
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- WhatsApp Contact Banner -->
+        <section class="py-8 bg-green-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div class="flex items-center">
+                        <svg class="w-12 h-12 text-green-600 mr-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        <div>
+                            <h3 class="text-lg font-bold text-[#0B0B0B]">Have Questions?</h3>
+                            <p class="text-gray-600">Chat with us on WhatsApp for instant support</p>
+                        </div>
+                    </div>
+                    <a href="https://wa.me/6588874971?text=Hi%2C%20I%27m%20interested%20in%20the%20n8n%20Automation%20Workshop" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center px-6 py-3 text-base font-semibold text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors shadow-md hover:shadow-lg min-h-[44px]">
+                        <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                        </svg>
+                        Chat on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-container"></div>
+
+</body>
+</html>

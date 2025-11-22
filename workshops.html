@@ -315,20 +315,20 @@
             const photoPath = `/assets/images/gallery/photo-${photoNum}.jpg`;
 
             return `
-                <div class="relative bg-gradient-to-br ${workshop.gradient} rounded-2xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.02] hover:shadow-2xl">
+                <div class="relative bg-gradient-to-br ${workshop.gradient} rounded-2xl shadow-xl overflow-hidden transform transition-all hover:scale-[1.02] hover:shadow-2xl h-full flex flex-col">
                     <div class="absolute inset-0 opacity-10">
                         <img src="${photoPath}" alt="Workshop background" class="w-full h-full object-cover">
                     </div>
-                    <div class="relative p-6 sm:p-8">
+                    <div class="relative p-6 sm:p-8 flex flex-col flex-grow">
                         <div class="flex items-start justify-between mb-4">
                             <span class="px-4 py-2 ${statusBgColor} text-white text-xs font-bold rounded-full uppercase tracking-wide">
                                 ${workshop.status}
                             </span>
                         </div>
-                        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3">
+                        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-3 min-h-[4rem]">
                             ${workshop.title}
                         </h3>
-                        <p class="text-white/90 text-base sm:text-lg mb-6 leading-relaxed">
+                        <p class="text-white/90 text-base sm:text-lg mb-6 leading-relaxed min-h-[3rem]">
                             ${workshop.description}
                         </p>
                         <div class="flex flex-wrap items-center gap-4 mb-6 text-white/90">
@@ -355,7 +355,9 @@
                         <div class="flex flex-wrap gap-2 mb-6">
                             ${tagsHTML}
                         </div>
-                        ${buttonHTML}
+                        <div class="mt-auto">
+                            ${buttonHTML}
+                        </div>
                     </div>
                 </div>
             `;

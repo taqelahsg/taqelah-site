@@ -15,24 +15,25 @@
       "gradient": "from-indigo-500 to-purple-600",
       "tags": ["Playwright", "TypeScript", "AI Testing", "Hands-On"],
       "detailPageUrl": "/workshops/agentic-playwright-framework.html"
+    },
+    {
+      "id": "n8n-automation",
+      "title": "n8n Automation Workshop",
+      "shortTitle": "n8n Automation",
+      "description": "Automate Tasks, Reduce Manual Work. Learn workflow automation with n8n, from basics to AI-powered integrations.",
+      "duration": "1 Day",
+      "durationLabel": "1-Day Intensive",
+      "date": "TBA",
+      "location": "In-Person",
+      "maxParticipants": 20,
+      "status": "REGISTRATION STARTED",
+      "statusColor": "green",
+      "gradient": "from-purple-500 to-indigo-600",
+      "tags": ["n8n", "Automation", "Workflow", "AI", "APIs"],
+      "detailPageUrl": "/workshops/n8n-automation.html"
     }
   ],
   "comingUpNext": [
-    {
-      "id": "qa-ai-agents-n8n",
-      "title": "Build QA AI agents with n8n",
-      "shortTitle": "QA AI Agents",
-      "description": "Learn to build intelligent QA automation agents using n8n workflow automation. Create AI-powered testing assistants that can analyze, execute, and report on test results autonomously.",
-      "duration": "1 Day",
-      "durationLabel": "1-Day Intensive",
-      "date": "Date TBA",
-      "location": "In-Person",
-      "status": "IN PLANNING",
-      "statusColor": "purple",
-      "gradient": "from-purple-500 to-indigo-600",
-      "tags": ["n8n", "AI Agents", "Automation", "Workflow"],
-      "detailPageUrl": null
-    },
     {
       "id": "qa-infrastructure",
       "title": "QA Infrastructure for Test Engineers",
