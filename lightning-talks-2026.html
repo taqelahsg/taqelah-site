@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#E10600">
+    <meta name="description" content="TAQELAH Lightning Talks Conference 2026 - Testing in the Age of AI: What We Test Changes. How We Test Transforms. 10 speakers, 10 minutes each, 100 minutes of pure insight.">
+    <meta name="keywords" content="QA, testing, AI, automation, conference, Singapore, Southeast Asia, lightning talks">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="TAQELAH Lightning Talks Conference 2026">
+    <meta property="og:description" content="Testing in the Age of AI - What We Test Changes. How We Test Transforms. — 10 Speakers, 10 Minutes, 100 Minutes of Pure Insight">
+    <meta property="og:type" content="event">
+    <meta property="og:url" content="https://taqelah.sg/lightning-talks-2026.html">
+
+    <title>Lightning Talks Conference 2026 | TAQELAH</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <script src="/assets/js/analytics.js"></script>
+    <script src="/assets/js/components.js?v=2"></script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1121995923339151');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1121995923339151&ev=PageView&noscript=1"
+    /></noscript>
+
+    <style>
+        /* Animated Background */
+        body {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            min-height: 100vh;
+        }
+
+        /* Keyframe Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-30px) rotate(5deg); }
+            66% { transform: translateY(-15px) rotate(-5deg); }
+        }
+        @keyframes float-delayed {
+            0%, 100% { transform: translateY(0px) translateX(0px); }
+            50% { transform: translateY(-40px) translateX(20px); }
+        }
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 30px rgba(225, 6, 0, 0.6), 0 0 60px rgba(225, 6, 0, 0.3); }
+            50% { box-shadow: 0 0 50px rgba(225, 6, 0, 0.9), 0 0 100px rgba(225, 6, 0, 0.5); }
+        }
+        @keyframes slide-up {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes lightning-strike {
+            0%, 100% { opacity: 1; transform: scale(1) rotate(0deg); }
+            25% { opacity: 0.9; transform: scale(1.05) rotate(2deg); }
+            75% { opacity: 0.95; transform: scale(1.03) rotate(-2deg); }
+        }
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+        @keyframes glow-text {
+            0%, 100% { text-shadow: 0 0 10px rgba(225, 6, 0, 0.5), 0 0 20px rgba(225, 6, 0, 0.3); }
+            50% { text-shadow: 0 0 20px rgba(225, 6, 0, 0.8), 0 0 40px rgba(225, 6, 0, 0.5); }
+        }
+        @keyframes particle-float {
+            0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.3; }
+            50% { transform: translate(100px, -100px) scale(1.5); opacity: 0.6; }
+        }
+
+        /* Animated Classes */
+        .float-animation { animation: float 6s ease-in-out infinite; }
+        .float-delayed { animation: float-delayed 8s ease-in-out infinite; }
+        .pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+        .slide-up { animation: slide-up 0.8s ease-out forwards; }
+        .lightning-strike { animation: lightning-strike 2s ease-in-out infinite; }
+        .glow-text { animation: glow-text 2s ease-in-out infinite; }
+
+        /* Glassmorphic Cards */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .glass-card-dark {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Enhanced Hover Effects */
+        .card-hover {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-12px) scale(1.03);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Gradient Text */
+        .gradient-text {
+            background: linear-gradient(135deg, #E10600 0%, #FF4500 50%, #FF6B35 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            background-size: 200% auto;
+            animation: shimmer 3s linear infinite;
+        }
+
+        /* Animated Particles */
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(225, 6, 0, 0.5);
+            border-radius: 50%;
+            animation: particle-float 10s ease-in-out infinite;
+        }
+
+        /* Circuit Pattern Background */
+        .circuit-bg {
+            background-image:
+                linear-gradient(90deg, rgba(225, 6, 0, 0.03) 1px, transparent 1px),
+                linear-gradient(rgba(225, 6, 0, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+        }
+
+        /* 3D Effect Cards */
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        .card-3d:hover {
+            transform: rotateY(5deg) rotateX(5deg);
+        }
+    </style>
+</head>
+<body class="font-sans antialiased text-white" data-page="lightning-talks-2026">
+
+    <div id="header-container"></div>
+
+    <main>
+        <!-- Hero Section - Ultra Modern -->
+        <section class="relative text-white overflow-hidden min-h-[100vh] flex items-center circuit-bg">
+            <!-- Animated Background Elements & Particles -->
+            <div class="absolute inset-0">
+                <div class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-[#E10600]/20 to-[#FF4500]/10 rounded-full blur-3xl float-animation"></div>
+                <div class="absolute bottom-20 right-10 w-[500px] h-[500px] bg-gradient-to-tl from-blue-500/20 to-purple-500/10 rounded-full blur-3xl float-delayed"></div>
+                <div class="absolute top-1/2 left-1/2 w-80 h-80 bg-gradient-to-r from-yellow-400/10 to-orange-500/10 rounded-full blur-3xl float-animation" style="animation-delay: 3s;"></div>
+
+                <!-- Floating Particles -->
+                <div class="particle" style="top: 10%; left: 20%; animation-delay: 0s;"></div>
+                <div class="particle" style="top: 40%; left: 80%; animation-delay: 2s;"></div>
+                <div class="particle" style="top: 70%; left: 30%; animation-delay: 4s;"></div>
+                <div class="particle" style="top: 85%; left: 70%; animation-delay: 6s;"></div>
+                <div class="particle" style="top: 25%; left: 60%; animation-delay: 8s;"></div>
+            </div>
+
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 relative z-10 w-full">
+                <div class="text-center space-y-8">
+                    <!-- Animated Lightning Emoji -->
+                    <div class="text-8xl sm:text-9xl lg:text-[12rem] mb-6 lightning-strike">⚡</div>
+
+                    <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight slide-up">
+                        <span class="block glow-text">TAQELAH</span>
+                        <span class="block bg-gradient-to-r from-[#E10600] to-[#FF4500] text-white px-8 py-3 inline-block transform -rotate-1 my-4 shadow-2xl">Lightning Talks</span>
+                        <span class="block gradient-text">2026</span>
+                    </h1>
+
+                    <p class="text-xl sm:text-2xl lg:text-3xl text-blue-100 leading-relaxed max-w-5xl mx-auto font-semibold slide-up" style="animation-delay: 0.2s;">
+                        Testing in the Age of AI - What We Test Changes. How We Test Transforms.
+                    </p>
+
+                    <!-- Conference Themes -->
+                    <div class="max-w-4xl mx-auto pt-8 slide-up" style="animation-delay: 0.3s;">
+                        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 text-white text-sm sm:text-base font-semibold">
+                                <span>🤖</span>
+                                <span>AI in Testing</span>
+                            </div>
+                            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 text-white text-sm sm:text-base font-semibold">
+                                <span>⚙️</span>
+                                <span>Modern Test Engineering</span>
+                            </div>
+                            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 text-white text-sm sm:text-base font-semibold">
+                                <span>🔧</span>
+                                <span>Practical Automation</span>
+                            </div>
+                            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 text-white text-sm sm:text-base font-semibold">
+                                <span>🚀</span>
+                                <span>Future Skills</span>
+                            </div>
+                            <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm px-4 py-2 rounded-full border border-white/20 text-white text-sm sm:text-base font-semibold">
+                                <span>🎯</span>
+                                <span>Evolving QA Roles</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Animated Stats -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto pt-8 slide-up" style="animation-delay: 0.4s;">
+                        <div class="glass-card-dark rounded-2xl p-6 sm:p-8 card-hover card-3d">
+                            <div class="text-4xl sm:text-5xl font-black gradient-text">10</div>
+                            <div class="text-xs sm:text-sm uppercase tracking-wider mt-2 text-blue-200">Speakers</div>
+                        </div>
+                        <div class="glass-card-dark rounded-2xl p-6 sm:p-8 card-hover card-3d">
+                            <div class="text-4xl sm:text-5xl font-black gradient-text">10</div>
+                            <div class="text-xs sm:text-sm uppercase tracking-wider mt-2 text-blue-200">Minutes Each</div>
+                        </div>
+                        <div class="glass-card-dark rounded-2xl p-6 sm:p-8 card-hover card-3d">
+                            <div class="text-4xl sm:text-5xl font-black gradient-text">100</div>
+                            <div class="text-xs sm:text-sm uppercase tracking-wider mt-2 text-blue-200">Minutes Total</div>
+                        </div>
+                        <div class="glass-card-dark rounded-2xl p-6 sm:p-8 card-hover card-3d">
+                            <div class="text-4xl sm:text-5xl font-black gradient-text">500</div>
+                            <div class="text-xs sm:text-sm uppercase tracking-wider mt-2 text-blue-200">Attendees</div>
+                        </div>
+                    </div>
+
+                    <!-- Event Details with Icons -->
+                    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-8 pt-8 slide-up" style="animation-delay: 0.6s;">
+                        <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <span class="font-bold text-lg">28 Feb 2026</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            <span class="font-bold text-lg">10:00 AM SGT</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/20">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"/>
+                            </svg>
+                            <span class="font-bold text-lg">Online</span>
+                        </div>
+                    </div>
+
+                    <!-- CTA Buttons - Enhanced -->
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center pt-12 slide-up" style="animation-delay: 0.8s;">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6VdhqZVyG09LJKYYL3RhIb6n2MGaSl6cy1pggIzD6Gab36Q/viewform?usp=preview" target="_blank" rel="noopener noreferrer"
+                           class="group relative inline-flex items-center justify-center px-12 py-6 text-xl font-black text-[#E10600] bg-white rounded-2xl shadow-2xl hover:shadow-3xl transform hover:scale-105 transition-all duration-300 overflow-hidden">
+                            <div class="absolute inset-0 bg-gradient-to-r from-white to-gray-50 group-hover:from-gray-50 group-hover:to-white transition-all"></div>
+                            <span class="relative flex items-center gap-3">
+                                Register Now (Free)
+                                <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                                </svg>
+                            </span>
+                        </a>
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpT1wwjahsPiff5PM8-Gha1pUNiAQ_JdHfUSqAyRnVZJOPHg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer"
+                           class="group inline-flex items-center justify-center px-12 py-6 text-xl font-black text-white bg-transparent border-4 border-white rounded-2xl hover:bg-white hover:text-[#E10600] transition-all duration-300 transform hover:scale-105">
+                            <span class="flex items-center gap-3">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                                </svg>
+                                Apply to Speak
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scroll Indicator -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+                <svg class="w-6 h-6 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+                </svg>
+            </div>
+        </section>
+
+        <!-- What Is Lightning Talks - Visual -->
+        <section class="py-20 sm:py-28 relative overflow-hidden circuit-bg">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-16">
+                        <div class="inline-block px-6 py-2 bg-gradient-to-r from-[#E10600] to-[#FF4500] rounded-full mb-6 shadow-lg">
+                            <span class="text-white font-black text-sm uppercase tracking-wider">About the Event</span>
+                        </div>
+                        <h2 class="text-5xl sm:text-6xl lg:text-7xl font-black text-white mb-8">
+                            What Is <span class="gradient-text">Lightning Talks?</span>
+                        </h2>
+                    </div>
+
+                    <!-- Visual Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                        <div class="glass-card rounded-3xl p-10 card-hover card-3d border-2 border-[#E10600]/20">
+                            <div class="text-6xl mb-4">🎯</div>
+                            <h3 class="text-3xl font-black mb-4 text-[#E10600]">Fast-Paced</h3>
+                            <p class="text-lg text-gray-700">
+                                10 hand-picked speakers sharing their most powerful ideas in sharp <strong>10-minute bursts</strong>
+                            </p>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-10 card-hover card-3d border-2 border-blue-500/20">
+                            <div class="text-6xl mb-4">💡</div>
+                            <h3 class="text-3xl font-black mb-4 text-blue-600">High-Energy</h3>
+                            <p class="text-lg text-gray-700">
+                                100 minutes of <strong>pure distilled knowledge</strong> for busy testers and SDETs
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Large Feature Card -->
+                    <div class="glass-card rounded-3xl p-12 card-hover border-2 border-[#E10600]/30 pulse-glow">
+                        <div class="text-center">
+                            <div class="text-7xl mb-6">🚀</div>
+                            <p class="text-3xl font-black gradient-text mb-4">Not Your Typical Conference</p>
+                            <p class="text-xl text-gray-700 leading-relaxed max-w-3xl mx-auto">
+                                Built for QA professionals across <strong>Singapore and Southeast Asia</strong> who want cutting-edge insights on AI, automation, and the future of testing — without the fluff.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conference Themes Section -->
+        <section class="py-20 sm:py-28 bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white relative overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0">
+                <div class="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-500/10 to-purple-500/10 rounded-full blur-3xl float-animation"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-gradient-to-tl from-[#E10600]/10 to-orange-500/10 rounded-full blur-3xl float-delayed"></div>
+            </div>
+
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-16">
+                        <div class="inline-block px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-6 shadow-lg">
+                            <span class="text-white font-black text-sm uppercase tracking-wider">Conference Themes</span>
+                        </div>
+                        <h2 class="text-5xl sm:text-6xl font-black text-white mb-6">
+                            What We'll <span class="gradient-text">Explore</span>
+                        </h2>
+                        <p class="text-xl text-blue-200 leading-relaxed">
+                            Five key areas shaping the future of testing and quality engineering
+                        </p>
+                    </div>
+
+                    <!-- Theme Cards -->
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Theme 1 -->
+                        <div class="glass-card-dark rounded-3xl p-8 border-2 border-[#E10600]/30 card-hover card-3d">
+                            <div class="text-5xl mb-4">🤖</div>
+                            <h3 class="text-2xl font-black mb-3 text-white">AI in Testing</h3>
+                            <p class="text-blue-200 text-base leading-relaxed">
+                                Leveraging artificial intelligence to revolutionize test creation, execution, and analysis
+                            </p>
+                        </div>
+
+                        <!-- Theme 2 -->
+                        <div class="glass-card-dark rounded-3xl p-8 border-2 border-blue-500/30 card-hover card-3d">
+                            <div class="text-5xl mb-4">⚙️</div>
+                            <h3 class="text-2xl font-black mb-3 text-white">Modern Test Engineering</h3>
+                            <p class="text-blue-200 text-base leading-relaxed">
+                                Contemporary approaches, tools, and frameworks driving quality at scale
+                            </p>
+                        </div>
+
+                        <!-- Theme 3 -->
+                        <div class="glass-card-dark rounded-3xl p-8 border-2 border-purple-500/30 card-hover card-3d">
+                            <div class="text-5xl mb-4">🔧</div>
+                            <h3 class="text-2xl font-black mb-3 text-white">Practical Automation Techniques</h3>
+                            <p class="text-blue-200 text-base leading-relaxed">
+                                Battle-tested strategies and patterns you can implement immediately
+                            </p>
+                        </div>
+
+                        <!-- Theme 4 -->
+                        <div class="glass-card-dark rounded-3xl p-8 border-2 border-green-500/30 card-hover card-3d md:col-span-2 lg:col-span-1">
+                            <div class="text-5xl mb-4">🚀</div>
+                            <h3 class="text-2xl font-black mb-3 text-white">Future Skills for Testers</h3>
+                            <p class="text-blue-200 text-base leading-relaxed">
+                                Competencies and knowledge areas critical for tomorrow's QA professionals
+                            </p>
+                        </div>
+
+                        <!-- Theme 5 -->
+                        <div class="glass-card-dark rounded-3xl p-8 border-2 border-yellow-500/30 card-hover card-3d md:col-span-2">
+                            <div class="text-5xl mb-4">🎯</div>
+                            <h3 class="text-2xl font-black mb-3 text-white">Evolving QA Roles</h3>
+                            <p class="text-blue-200 text-base leading-relaxed">
+                                How testing roles are transforming in response to AI, DevOps, and modern software delivery
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why Attend - Icon Grid -->
+        <section class="py-20 sm:py-28 circuit-bg">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-16">
+                        <h2 class="text-5xl sm:text-6xl font-black text-white mb-6">
+                            Why <span class="gradient-text">Attend?</span>
+                        </h2>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="glass-card rounded-3xl p-8 card-hover card-3d border border-blue-500/20">
+                            <div class="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 mb-3">Regional Reach</h3>
+                            <p class="text-gray-700 text-lg">10 perspectives from across Singapore, APAC, and global QA communities</p>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-8 card-hover card-3d border border-purple-500/20">
+                            <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 mb-3">Future-Ready Skills</h3>
+                            <p class="text-gray-700 text-lg">Insights on AI in testing you can apply immediately</p>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-8 card-hover card-3d border border-green-500/20">
+                            <div class="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 mb-3">Practical Frameworks</h3>
+                            <p class="text-gray-700 text-lg">Actionable takeaways you can use right away</p>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-8 card-hover card-3d border border-orange-500/20">
+                            <div class="w-16 h-16 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 mb-3">Engaged Community</h3>
+                            <p class="text-gray-700 text-lg">Join regional QA leaders in one powerful session</p>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-8 card-hover card-3d border border-[#E10600]/20">
+                            <div class="w-16 h-16 bg-gradient-to-br from-[#E10600] to-[#FF4500] rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 mb-3">Recordings + Slides</h3>
+                            <p class="text-gray-700 text-lg">Access all content after the conference</p>
+                        </div>
+
+                        <div class="glass-card rounded-3xl p-8 card-hover card-3d border border-yellow-500/20">
+                            <div class="w-16 h-16 bg-gradient-to-br from-yellow-500 to-yellow-600 rounded-2xl flex items-center justify-center mb-6 shadow-lg">
+                                <div class="text-3xl">🌏</div>
+                            </div>
+                            <h3 class="text-2xl font-black text-gray-900 mb-3">Southeast Asia Focus</h3>
+                            <p class="text-gray-700 text-lg">Perspectives relevant to our region's challenges</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightning Format - Big Visual -->
+        <section class="py-20 sm:py-28 bg-gradient-to-br from-[#E10600] via-[#C20500] to-[#A00400] text-white relative overflow-hidden">
+            <div class="absolute inset-0">
+                <div class="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 left-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-5xl mx-auto text-center">
+                    <div class="text-8xl mb-8 lightning-strike">⚡</div>
+                    <h2 class="text-5xl sm:text-6xl font-black mb-6">
+                        Lightning Talk Format
+                    </h2>
+                    <p class="text-2xl mb-16 text-white/90">Each speaker gets:</p>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-10 border-2 border-white/20 card-hover">
+                            <div class="text-8xl font-black mb-4 text-white">10</div>
+                            <div class="text-3xl font-black uppercase tracking-wide">Minutes</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-10 border-2 border-white/20 card-hover">
+                            <div class="text-8xl font-black mb-4 text-white">1</div>
+                            <div class="text-3xl font-black uppercase tracking-wide">Big Idea</div>
+                        </div>
+                        <div class="bg-white/10 backdrop-blur-lg rounded-3xl p-10 border-2 border-white/20 card-hover">
+                            <div class="text-8xl font-black mb-4 text-white">0</div>
+                            <div class="text-3xl font-black uppercase tracking-wide">Fluff</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-16 bg-white text-[#E10600] rounded-3xl p-10 inline-block">
+                        <p class="text-3xl font-black">
+                            = 100% Actionable Insights
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speakers Section - Modern -->
+        <section id="speakers" class="py-20 sm:py-28 circuit-bg">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto text-center">
+                    <h2 class="text-5xl sm:text-6xl font-black text-white mb-8">
+                        Speaker <span class="gradient-text">Line-up</span>
+                    </h2>
+
+                    <div class="glass-card rounded-3xl p-16 border-2 border-[#E10600]/20 card-hover pulse-glow">
+                        <div class="text-8xl mb-8">🎤</div>
+                        <h3 class="text-4xl font-black gradient-text mb-6">
+                            Coming Soon
+                        </h3>
+                        <p class="text-xl text-gray-700 leading-relaxed">
+                            We're curating an exceptional lineup of speakers from across the global testing community
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Speaker Application - Visual -->
+        <section id="speaker-application" class="py-20 sm:py-28 circuit-bg text-white relative">
+            <!-- Ambient Glow -->
+            <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-[#E10600]/10 to-purple-500/10 rounded-full blur-3xl"></div>
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-16">
+                        <div class="text-7xl mb-6">🚀</div>
+                        <h2 class="text-5xl sm:text-6xl font-black mb-6 glow-text">
+                            Want to Speak?
+                        </h2>
+                        <p class="text-2xl text-blue-200">
+                            Share your expertise with the APAC testing community
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+                        <div class="glass-card-dark rounded-2xl p-6 border border-white/20 card-hover">
+                            <div class="flex items-start gap-4">
+                                <div class="text-3xl">✅</div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Real-World Experience</h4>
+                                    <p class="text-white/70">Practical insights from the trenches</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card-dark rounded-2xl p-6 border border-white/20 card-hover">
+                            <div class="flex items-start gap-4">
+                                <div class="text-3xl">✅</div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">AI & Testing Focus</h4>
+                                    <p class="text-blue-200">Related to our 2026 theme</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card-dark rounded-2xl p-6 border border-white/20 card-hover">
+                            <div class="flex items-start gap-4">
+                                <div class="text-3xl">✅</div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Actionable Content</h4>
+                                    <p class="text-blue-200">Takeaways attendees can use now</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="glass-card-dark rounded-2xl p-6 border border-white/20 card-hover">
+                            <div class="flex items-start gap-4">
+                                <div class="text-3xl">✅</div>
+                                <div>
+                                    <h4 class="font-bold text-lg mb-1">Concise Delivery</h4>
+                                    <p class="text-blue-200">One big idea in 10 minutes</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpT1wwjahsPiff5PM8-Gha1pUNiAQ_JdHfUSqAyRnVZJOPHg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-3 px-12 py-6 text-xl font-black text-white bg-gradient-to-r from-[#E10600] to-[#FF4500] rounded-2xl hover:shadow-2xl transition-all transform hover:scale-105 shadow-lg pulse-glow">
+                            Apply to Speak
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <p class="mt-6 text-blue-200 text-lg">
+                            Submission deadline: <strong class="text-white glow-text">31 December 2025</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sponsorship Section - Enhanced Visual -->
+        <section class="py-20 sm:py-28 circuit-bg relative">
+            <!-- Ambient Glow -->
+            <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
+
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-5xl mx-auto">
+                    <div class="text-center mb-16">
+                        <div class="text-7xl mb-6">🤝</div>
+                        <h2 class="text-5xl sm:text-6xl font-black text-white mb-6 glow-text">
+                            Become a <span class="gradient-text">Sponsor</span>
+                        </h2>
+                        <p class="text-2xl text-blue-200">
+                            Partner with us to reach Southeast Asia's most engaged testing community
+                        </p>
+                    </div>
+
+                    <!-- Stats Banner -->
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12">
+                        <div class="glass-card-dark rounded-2xl p-6 text-center border border-[#E10600]/20 card-hover card-3d">
+                            <div class="text-4xl mb-2">🌏</div>
+                            <div class="text-lg font-bold text-white">Regional Reach</div>
+                        </div>
+                        <div class="glass-card-dark rounded-2xl p-6 text-center border border-blue-500/20 card-hover card-3d">
+                            <div class="text-4xl mb-2">👁️</div>
+                            <div class="text-lg font-bold text-white">Max Visibility</div>
+                        </div>
+                        <div class="glass-card-dark rounded-2xl p-6 text-center border border-purple-500/20 card-hover card-3d">
+                            <div class="text-4xl mb-2">🎯</div>
+                            <div class="text-lg font-bold text-white">Engaged Audience</div>
+                        </div>
+                        <div class="glass-card-dark rounded-2xl p-6 text-center border border-yellow-500/20 card-hover card-3d">
+                            <div class="text-4xl mb-2">🏆</div>
+                            <div class="text-lg font-bold text-white">Thought Leadership</div>
+                        </div>
+                    </div>
+
+                    <!-- Benefits Grid -->
+                    <div class="glass-card rounded-3xl p-10 border-2 border-[#E10600]/20 mb-12 card-hover">
+                        <h3 class="text-3xl font-black gradient-text mb-8 text-center">Sponsorship Benefits</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-[#E10600] rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Logo Placement</h4>
+                                    <p class="text-gray-600">Event website & materials</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-[#E10600] rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Live Recognition</h4>
+                                    <p class="text-gray-600">During conference stream</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-[#E10600] rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Social Media</h4>
+                                    <p class="text-gray-600">Cross-platform mentions</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 bg-[#E10600] rounded-full flex items-center justify-center flex-shrink-0">
+                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg text-gray-900">Speaker Slot</h4>
+                                    <p class="text-gray-600">Select sponsorship tiers</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="text-center">
+                        <a href="/contact.html"
+                           class="inline-flex items-center gap-3 px-12 py-6 text-xl font-black text-white bg-gradient-to-r from-[#E10600] to-[#FF4500] rounded-2xl hover:shadow-2xl transition-all transform hover:scale-105 shadow-lg pulse-glow">
+                            Inquire About Sponsorship
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <p class="mt-6 text-blue-200 text-lg">
+                            Limited slots available — <strong class="text-white">contact us for packages</strong>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Waitlist Section - Eye-Catching -->
+        <section id="waitlist" class="py-20 sm:py-28 bg-gradient-to-br from-[#E10600] via-[#C20500] to-[#A00400] text-white relative overflow-hidden">
+            <div class="absolute inset-0">
+                <div class="absolute top-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-3xl float-animation"></div>
+                <div class="absolute bottom-0 right-0 w-96 h-96 bg-yellow-400/10 rounded-full blur-3xl float-animation" style="animation-delay: 1.5s;"></div>
+            </div>
+
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-4xl mx-auto text-center">
+                    <div class="text-8xl mb-8">🎉</div>
+                    <h2 class="text-5xl sm:text-6xl font-black mb-6">
+                        Reserve Your Free Spot
+                    </h2>
+                    <p class="text-2xl text-white/90 mb-12 leading-relaxed">
+                        100% free event. Join the waitlist to be first notified when registration opens.
+                    </p>
+
+                    <!-- Pricing Card -->
+                    <div class="bg-white/10 backdrop-blur-lg border-2 border-white/20 rounded-3xl p-12 mb-12 max-w-md mx-auto">
+                        <div class="text-6xl font-black mb-4">FREE</div>
+                        <div class="text-2xl font-bold mb-2">Completely Free Event</div>
+                        <div class="text-lg text-white/80">All tickets are free — limited to 500 attendees</div>
+                    </div>
+
+                    <div class="space-y-6">
+                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSf6VdhqZVyG09LJKYYL3RhIb6n2MGaSl6cy1pggIzD6Gab36Q/viewform?usp=preview" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-3 px-12 py-6 text-xl font-black text-[#E10600] bg-white hover:bg-gray-100 rounded-2xl transition-all transform hover:scale-105 shadow-2xl pulse-glow">
+                            Register Now (Free)
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <p class="text-white/70 text-lg">
+                            Claim your free spot — limited to 500 attendees
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Community Quote - Visual -->
+        <section class="py-20 sm:py-28 circuit-bg">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-4xl mx-auto">
+                    <div class="glass-card rounded-3xl shadow-2xl p-12 sm:p-16 border-2 border-[#E10600]/20 text-center card-hover pulse-glow">
+                        <div class="text-7xl mb-8">💬</div>
+                        <blockquote class="text-3xl sm:text-4xl font-black text-gray-900 mb-8 leading-relaxed">
+                            "Built by testers, for testers — a TAQELAH signature event to shape the future of our craft."
+                        </blockquote>
+                        <div class="text-xl gradient-text font-bold">
+                            — The TAQELAH Community
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Final CTA - Bold -->
+        <section class="py-20 sm:py-28 circuit-bg text-white relative">
+            <!-- Final Ambient Glow -->
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-[#E10600]/10 via-purple-500/10 to-blue-500/10 rounded-full blur-3xl"></div>
+
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+                <div class="max-w-4xl mx-auto">
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-8 leading-tight glow-text">
+                        The Next Decade of QA Belongs to Those Who Leverage AI
+                    </h2>
+                    <p class="text-2xl sm:text-3xl text-blue-200 mb-12 font-semibold">
+                        Let's explore it together.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center">
+                        <a href="#waitlist"
+                           class="group inline-flex items-center justify-center gap-3 px-12 py-6 text-xl font-black text-white bg-gradient-to-r from-[#E10600] to-[#FF4500] rounded-2xl transition-all transform hover:scale-105 shadow-2xl pulse-glow">
+                            Join the Waitlist
+                            <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <a href="/contact.html"
+                           class="inline-flex items-center justify-center gap-3 px-12 py-6 text-xl font-black text-white glass-card-dark border-2 border-white/30 hover:bg-white hover:text-gray-900 rounded-2xl transition-all transform hover:scale-105">
+                            Contact Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer-container"></div>
+
+</body>
+</html>
