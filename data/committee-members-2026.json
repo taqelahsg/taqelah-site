@@ -1,0 +1,74 @@
+{
+  "members": [
+    {
+      "id": 1,
+      "name": "Syam Sasi",
+      "designation": "Co-Founder",
+      "organization": "TAQELAH",
+      "photo": "/assets/images/committee/syam.png",
+      "linkedin": "https://www.linkedin.com/in/syam-sasi/",
+      "gradientFrom": "#E10600",
+      "gradientTo": "#9333EA"
+    },
+    {
+      "id": 2,
+      "name": "Abhijeet Vaikar",
+      "designation": "Co-Founder",
+      "organization": "TAQELAH",
+      "photo": "/assets/images/committee/abhijeet.jpeg",
+      "linkedin": "https://www.linkedin.com/in/abhijeetvaikar/",
+      "gradientFrom": "#3B82F6",
+      "gradientTo": "#06B6D4"
+    },
+    {
+      "id": 3,
+      "name": "Praveen MS",
+      "designation": "Core Team Member",
+      "organization": "TAQELAH",
+      "photo": "/assets/images/committee/praveen.jpeg",
+      "linkedin": "https://www.linkedin.com/in/praveenms1/",
+      "gradientFrom": "#9333EA",
+      "gradientTo": "#EC4899"
+    },
+    {
+      "id": 4,
+      "name": "Premraj Murugaraj",
+      "designation": "Core Team Member",
+      "organization": "TAQELAH",
+      "photo": "/assets/images/committee/prem.jpeg",
+      "linkedin": "https://www.linkedin.com/in/premraj-murugaraj/",
+      "gradientFrom": "#10B981",
+      "gradientTo": "#14B8A6"
+    },
+    {
+      "id": 5,
+      "name": "Akshay Maldhure",
+      "designation": "Core Team Member",
+      "organization": "TAQELAH",
+      "photo": "/assets/images/committee/akshay.png",
+      "linkedin": "https://www.linkedin.com/in/akshaymaldhure/",
+      "gradientFrom": "#EAB308",
+      "gradientTo": "#F97316"
+    },
+    {
+      "id": 6,
+      "name": "Taqueem Javed",
+      "designation": "Core Team Member",
+      "organization": "TAQELAH",
+      "photo": "/assets/images/committee/taqueem.jpeg",
+      "linkedin": "https://www.linkedin.com/in/taqueem/",
+      "gradientFrom": "#6366F1",
+      "gradientTo": "#3B82F6"
+    },
+    {
+      "id": 7,
+      "name": "Keng Hun Koh",
+      "designation": "Core Team Member",
+      "organization": "TAQELAH",
+      "photo": "/assets/images/committee/kenghun.png",
+      "linkedin": "https://www.linkedin.com/in/keng-hun-koh-0139bbb3/",
+      "gradientFrom": "#6366F1",
+      "gradientTo": "#3B82F6"
+    }
+  ]
+}
