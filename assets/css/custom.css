@@ -3,6 +3,12 @@
   Mobile-first utilities and iOS safe area support
 */
 
+/* Global Font Family */
+body,
+html {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
 /* iOS Safe Area Support */
 .safe {
   padding-bottom: env(safe-area-inset-bottom);
