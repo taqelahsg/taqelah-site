@@ -126,11 +126,51 @@
                     <p class="text-lg sm:text-xl lg:text-2xl font-medium text-white/95 max-w-4xl mx-auto leading-relaxed drop-shadow-md">
                         Test Beyond Tomorrow - Skills, Tools & Mindsets for the Next Decade of QA.
                     </p>
-                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-green-500 rounded-full text-white text-base sm:text-lg font-bold shadow-lg">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-                        </svg>
-                        FREE Online Conference
+                    <!-- FREE Badge with Animations -->
+                    <style>
+                        @keyframes popIn {
+                            0% {
+                                transform: scale(0) rotate(-180deg);
+                                opacity: 0;
+                            }
+                            50% {
+                                transform: scale(1.2) rotate(10deg);
+                            }
+                            100% {
+                                transform: scale(1) rotate(0deg);
+                                opacity: 1;
+                            }
+                        }
+                        @keyframes glowBurst {
+                            0% {
+                                box-shadow: 0 0 0px rgba(34, 197, 94, 0);
+                            }
+                            50% {
+                                box-shadow: 0 0 40px rgba(34, 197, 94, 0.8), 0 0 80px rgba(34, 197, 94, 0.4);
+                            }
+                            100% {
+                                box-shadow: 0 0 20px rgba(34, 197, 94, 0.3);
+                            }
+                        }
+                        .free-badge-entrance {
+                            animation: popIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards,
+                                       glowBurst 1.5s ease-out 0.3s forwards;
+                        }
+                    </style>
+                    <div class="inline-block relative">
+                        <!-- Single glow ring -->
+                        <div class="absolute inset-0 animate-pulse">
+                            <div class="w-full h-full bg-green-400 rounded-full blur-lg opacity-60"></div>
+                        </div>
+
+                        <!-- Main badge -->
+                        <div class="free-badge-entrance relative inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-green-400 via-green-500 to-emerald-500 rounded-full text-white text-lg sm:text-xl font-black shadow-2xl border-3 border-white transform hover:scale-110 transition-transform">
+                            <svg class="w-6 h-6 text-yellow-300" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+                            </svg>
+                            <span class="font-black drop-shadow-lg">100% FREE</span>
+                            <span class="text-2xl">🎉</span>
+                        </div>
                     </div>
                 </div>
 
@@ -179,7 +219,16 @@
                         <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
                     </svg>
                     <span class="text-base sm:text-lg font-semibold">28 Feb 2026, 10 AM SGT</span>
-                    <span class="px-3 py-1 bg-green-500/90 rounded-full text-sm font-bold">Online</span>
+                    <span class="relative inline-block">
+                        <span class="absolute inset-0 animate-ping bg-green-400 rounded-full opacity-75"></span>
+                        <span class="relative px-3 py-1 bg-green-500 rounded-full text-sm font-bold animate-pulse inline-flex items-center gap-1">
+                            <span class="relative flex h-2 w-2">
+                                <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
+                                <span class="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
+                            </span>
+                            Online
+                        </span>
+                    </span>
                 </div>
 
                 <!-- Countdown Timer -->

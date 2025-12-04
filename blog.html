@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#E10600">
+    <meta name="description" content="TAQELAH Blog - Tutorials, insights, and resources for QA professionals and test automation engineers">
+    <title>Blog | TAQELAH</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <script src="/assets/js/analytics.js"></script>
+    <script src="/assets/js/components.js?v=2"></script>
+</head>
+<body class="font-sans antialiased text-[#0B0B0B] bg-white" data-page="blog">
+
+    <!-- HEADER -->
+    <div id="header-container"></div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-[#E10600] to-[#C20500] text-white py-12 sm:py-16 lg:py-20">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">TAQELAH Blog</h1>
+                <p class="text-lg sm:text-xl text-white/90 max-w-3xl mx-auto leading-relaxed">
+                    Tutorials, insights, and practical resources for QA professionals and test automation engineers
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog Posts Grid -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="blog-posts-container">
+                    <!-- Blog posts will be loaded dynamically from JSON -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+    <!-- Load Blog Posts Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/data/blog-posts.json')
+                .then(response => response.json())
+                .then(data => {
+                    const container = document.getElementById('blog-posts-container');
+
+                    data.posts.forEach(post => {
+                        const postCard = document.createElement('div');
+                        postCard.className = 'bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition-shadow duration-300';
+
+                        postCard.innerHTML = `
+                            <a href="${post.url}" class="block group">
+                                ${post.image ? `
+                                    <div class="relative h-48 bg-gradient-to-br from-[#E10600] to-[#C20500] overflow-hidden">
+                                        <img src="${post.image}"
+                                             alt="${post.title}"
+                                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                                             onerror="this.style.display='none'">
+                                    </div>
+                                ` : `
+                                    <div class="h-48 bg-gradient-to-br from-[#E10600] to-[#C20500] flex items-center justify-center">
+                                        <svg class="w-16 h-16 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                        </svg>
+                                    </div>
+                                `}
+
+                                <div class="p-6">
+                                    <div class="flex items-center gap-3 mb-3 text-sm text-gray-600">
+                                        <span class="inline-flex items-center gap-1">
+                                            <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                                                <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                                            </svg>
+                                            ${post.date}
+                                        </span>
+                                        ${post.category ? `
+                                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#E10600]/10 text-[#E10600]">
+                                                ${post.category}
+                                            </span>
+                                        ` : ''}
+                                    </div>
+
+                                    <h2 class="text-xl font-bold text-[#0B0B0B] mb-3 group-hover:text-[#E10600] transition-colors line-clamp-2">
+                                        ${post.title}
+                                    </h2>
+
+                                    <p class="text-gray-600 leading-relaxed mb-4 line-clamp-3">
+                                        ${post.excerpt}
+                                    </p>
+
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-[#E10600] font-semibold text-sm group-hover:underline">
+                                            Read More →
+                                        </span>
+                                        <span class="text-xs text-gray-500">
+                                            ${post.readTime || '5 min read'}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        `;
+
+                        container.appendChild(postCard);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error loading blog posts:', error);
+                    const container = document.getElementById('blog-posts-container');
+                    container.innerHTML = `
+                        <div class="col-span-full text-center py-12">
+                            <p class="text-gray-600">No blog posts available at the moment. Check back soon!</p>
+                        </div>
+                    `;
+                });
+        });
+    </script>
+</body>
+</html>

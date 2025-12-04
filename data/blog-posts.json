@@ -1,0 +1,16 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Prompt Evaluator Setup Guide - Complete Installation Tutorial",
+      "excerpt": "Learn how to set up Prompt Evaluator from scratch, from installing Node.js to running your first AI model comparison. This comprehensive guide covers everything you need to systematically compare AI models like GPT-4 and Gemini.",
+      "url": "/blog/prompt-evaluator-setup-guide.html",
+      "date": "December 4, 2025",
+      "category": "Tutorial",
+      "readTime": "15 min read",
+      "image": "/assets/images/blog/prompt-evaluator-setup-guide/prompt-eval-poster.png",
+      "author": "Syam Sasi",
+      "authorImage": "/assets/images/avatars/syam.png"
+    }
+  ]
+}
