@@ -163,13 +163,6 @@
                         </svg>
                         15 min read
                     </span>
-                    <span class="inline-flex items-center gap-2">
-                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
-                            <path fill-rule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clip-rule="evenodd"/>
-                        </svg>
-                        <span id="read-count">...</span> reads
-                    </span>
                     <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm">
                         Tutorial
                     </span>
@@ -1296,70 +1289,6 @@ What is the largest planet in our solar system?</code></pre>
                 }, 200); // Wait for fade out animation
             }
         });
-    </script>
-
-    <!-- Read Counter Script -->
-    <script>
-        // Read counter using image loading technique to bypass CORS
-        const pageId = 'prompt-evaluator-setup-guide';
-
-        function updateReadCount() {
-            const readCountElement = document.getElementById('read-count');
-
-            // Create a hidden image to trigger the hit counter
-            const img = document.createElement('img');
-            img.style.display = 'none';
-            img.src = `https://hits.dwyl.com/taqelah/${pageId}.svg?t=${Date.now()}`;
-
-            img.onload = function() {
-                // Image loaded successfully, now fetch via CORS proxy
-                fetchCountWithProxy(readCountElement);
-            };
-
-            img.onerror = function() {
-                console.error('Failed to load hit counter image');
-                hideCounter(readCountElement);
-            };
-
-            document.body.appendChild(img);
-        }
-
-        async function fetchCountWithProxy(readCountElement) {
-            try {
-                // Use allorigins.win as CORS proxy
-                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent('https://hits.dwyl.com/taqelah/' + pageId + '.svg')}`;
-                const response = await fetch(proxyUrl);
-                const text = await response.text();
-
-                // Extract count from SVG response
-                const match = text.match(/>hits<\/text>\s*<text[^>]*>(\d+)<\/text>/);
-                if (match && match[1]) {
-                    readCountElement.textContent = parseInt(match[1]).toLocaleString();
-                    console.log('Read count updated:', match[1]);
-                    return;
-                }
-
-                console.error('Could not parse count from SVG');
-                hideCounter(readCountElement);
-            } catch (error) {
-                console.error('Proxy fetch failed:', error);
-                hideCounter(readCountElement);
-            }
-        }
-
-        function hideCounter(element) {
-            if (element && element.parentElement) {
-                console.warn('Hiding read counter due to fetch failure');
-                element.parentElement.style.display = 'none';
-            }
-        }
-
-        // Run on page load
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', updateReadCount);
-        } else {
-            updateReadCount();
-        }
     </script>
 
 </body>
