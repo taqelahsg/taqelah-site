@@ -1300,34 +1300,66 @@ What is the largest planet in our solar system?</code></pre>
 
     <!-- Read Counter Script -->
     <script>
-        // Fetch and increment read count using CountAPI
-        // Using a unique namespace for taqelah-site
+        // Read counter using image loading technique to bypass CORS
         const pageId = 'prompt-evaluator-setup-guide';
-        const namespace = 'taqelah-site';
 
-        async function updateReadCount() {
+        function updateReadCount() {
+            const readCountElement = document.getElementById('read-count');
+
+            // Create a hidden image to trigger the hit counter
+            const img = document.createElement('img');
+            img.style.display = 'none';
+            img.src = `https://hits.dwyl.com/taqelah/${pageId}.svg?t=${Date.now()}`;
+
+            img.onload = function() {
+                // Image loaded successfully, now fetch via CORS proxy
+                fetchCountWithProxy(readCountElement);
+            };
+
+            img.onerror = function() {
+                console.error('Failed to load hit counter image');
+                hideCounter(readCountElement);
+            };
+
+            document.body.appendChild(img);
+        }
+
+        async function fetchCountWithProxy(readCountElement) {
             try {
-                // Hit the API to increment and get the count
-                const response = await fetch(`https://api.countapi.xyz/hit/${namespace}/${pageId}`);
-                const data = await response.json();
+                // Use allorigins.win as CORS proxy
+                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent('https://hits.dwyl.com/taqelah/' + pageId + '.svg')}`;
+                const response = await fetch(proxyUrl);
+                const text = await response.text();
 
-                // Update the display
-                const readCountElement = document.getElementById('read-count');
-                if (readCountElement && data.value) {
-                    readCountElement.textContent = data.value.toLocaleString();
+                // Extract count from SVG response
+                const match = text.match(/>hits<\/text>\s*<text[^>]*>(\d+)<\/text>/);
+                if (match && match[1]) {
+                    readCountElement.textContent = parseInt(match[1]).toLocaleString();
+                    console.log('Read count updated:', match[1]);
+                    return;
                 }
+
+                console.error('Could not parse count from SVG');
+                hideCounter(readCountElement);
             } catch (error) {
-                console.error('Error fetching read count:', error);
-                // Fallback display if API fails
-                const readCountElement = document.getElementById('read-count');
-                if (readCountElement) {
-                    readCountElement.textContent = '--';
-                }
+                console.error('Proxy fetch failed:', error);
+                hideCounter(readCountElement);
+            }
+        }
+
+        function hideCounter(element) {
+            if (element && element.parentElement) {
+                console.warn('Hiding read counter due to fetch failure');
+                element.parentElement.style.display = 'none';
             }
         }
 
         // Run on page load
-        updateReadCount();
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', updateReadCount);
+        } else {
+            updateReadCount();
+        }
     </script>
 
 </body>
