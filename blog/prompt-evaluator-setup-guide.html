@@ -1089,10 +1089,70 @@ What is the largest planet in our solar system?</code></pre>
                         </div>
                     </div>
 
+                    <h2>🎁 Bonus – Preview & Export Promptfoo YAML Configuration</h2>
+
+                    <p>One of the most powerful features of Prompt Evaluator is that it generates standard Promptfoo YAML configuration files behind the scenes. This means you can preview the exact configuration and export it for use in CI/CD pipelines, command-line automation, or sharing with your team.</p>
+
+                    <h3>Preview the YAML Configuration</h3>
+                    <ul class="list-disc">
+                        <li>Click on the <strong>Preview</strong> button in the toolbar</li>
+                        <li>This opens a read-only view of your project's Promptfoo YAML configuration</li>
+                        <li>You can see exactly how your prompts, providers, test cases, and assertions are structured</li>
+                        <li>This is helpful for understanding the underlying configuration and learning Promptfoo's YAML syntax</li>
+                    </ul>
+
+                    <div class="my-6 rounded-lg overflow-hidden border border-gray-200">
+                        <img src="/assets/images/blog/prompt-evaluator-setup-guide/bonus-preview.png"
+                             alt="Preview button showing the Promptfoo YAML configuration"
+                             class="w-full h-auto"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div style="display:none;" class="bg-gray-100 p-8 text-center text-gray-500">
+                            <svg class="w-16 h-16 mx-auto mb-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <p class="text-sm">Screenshot: Preview Promptfoo YAML Configuration</p>
+                        </div>
+                    </div>
+
+                    <h3>View the Generated YAML</h3>
+                    <p>Once you click Preview, you'll see the complete YAML configuration that Prompt Evaluator has generated based on your project settings. This includes:</p>
+                    <ul class="list-disc">
+                        <li>All your prompts and their configurations</li>
+                        <li>Provider settings (models, API keys references)</li>
+                        <li>Test dataset with inputs and expected outputs</li>
+                        <li>Assertions and evaluation criteria</li>
+                        <li>Any custom configurations you've set</li>
+                    </ul>
+
+                    <div class="my-6 rounded-lg overflow-hidden border border-gray-200">
+                        <img src="/assets/images/blog/prompt-evaluator-setup-guide/bonus-preview-yaml.png"
+                             alt="Promptfoo YAML configuration preview showing complete project setup"
+                             class="w-full h-auto"
+                             onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <div style="display:none;" class="bg-gray-100 p-8 text-center text-gray-500">
+                            <svg class="w-16 h-16 mx-auto mb-2 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                            <p class="text-sm">Screenshot: Promptfoo YAML Configuration</p>
+                        </div>
+                    </div>
+
+                    <h3>Export for Automation & CI/CD</h3>
+                    <p>The real power comes when you want to integrate your prompt testing into automated workflows:</p>
+                    <ul class="list-disc">
+                        <li>Click the <strong>Export</strong> button in the preview window</li>
+                        <li>Save the YAML file to your local machine</li>
+                        <li>Use this file with the Promptfoo CLI in your terminal or CI/CD pipeline</li>
+                        <li>Run automated tests with: <code class="bg-gray-100 px-2 py-1 rounded">promptfoo eval -c your-config.yaml</code></li>
+                        <li>Integrate into GitHub Actions, Jenkins, or any CI/CD system</li>
+                    </ul>
+
+                    <p class="mt-4">This workflow bridges the gap between visual development in Prompt Evaluator and automated testing in your production environment. You get the best of both worlds: a user-friendly GUI for setup and configuration, and standard YAML files for automation and version control.</p>
+
 
                     <div class="bg-green-50 border-l-4 border-green-500 p-6 my-8">
                         <h3 class="text-green-900 font-bold text-xl mb-2">🎉 Congratulations!</h3>
-                        <p class="text-green-900">You've successfully set up Prompt Evaluator and learned how to use all its powerful features. You can now systematically compare AI models, run security tests, track improvements over time, and make data-driven decisions about which models to use in your projects.</p>
+                        <p class="text-green-900">You've successfully set up Prompt Evaluator and learned how to use all its powerful features. You can now systematically compare AI models, run security tests, track improvements over time, export configurations for automation, and make data-driven decisions about which models to use in your projects.</p>
                     </div>
 
                     <div class="border-t border-gray-200 mt-12 pt-8">
@@ -1159,13 +1219,23 @@ What is the largest planet in our solar system?</code></pre>
                         Still Testing Like It's 2020? 🤔
                     </h2>
 
-                    <p class="text-2xl sm:text-3xl font-bold mb-8 drop-shadow-lg">
+                    <p class="text-2xl sm:text-3xl font-bold mb-6 drop-shadow-lg">
                         While You're Learning... AI is Already Rewriting The QA Playbook!
                     </p>
 
+                    <!-- Conference Branding -->
+                    <div class="inline-block px-8 py-3 bg-white rounded-2xl mb-8 shadow-2xl border-4 border-yellow-300">
+                        <p class="text-2xl sm:text-3xl font-black text-orange-600">
+                            FREE Online Conference by TAQELAH
+                        </p>
+                        <p class="text-lg font-bold text-gray-700 mt-1">
+                            Feb 28, 2026 • 100% Virtual • 100% Free
+                        </p>
+                    </div>
+
                     <div class="bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-3xl p-8 sm:p-10 mb-8 max-w-3xl mx-auto">
                         <p class="text-xl sm:text-2xl font-semibold mb-6 leading-relaxed">
-                            <span class="text-yellow-300">500+ testers</span> from across Southeast Asia are joining us on <span class="text-yellow-300">Feb 28, 2026</span> to discover:
+                            Join <span class="text-yellow-300">500+ testers</span> from across Southeast Asia to discover:
                         </p>
                         <ul class="text-left text-lg space-y-3 max-w-2xl mx-auto">
                             <li class="flex items-start gap-3">
