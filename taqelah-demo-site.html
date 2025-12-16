@@ -1,0 +1,1988 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taqelah Boutique - Women's Fashion</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Login Page */
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .login-box {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            width: 100%;
+            max-width: 400px;
+        }
+
+        .login-box h1 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #2c3e50;
+            font-size: 32px;
+        }
+
+        .login-box p {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e1e8ed;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .error-message {
+            color: #e74c3c;
+            font-size: 14px;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .btn-primary {
+            width: 100%;
+            padding: 14px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: #34495e;
+        }
+
+        /* Main Shop Layout */
+        .shop-container {
+            display: none;
+        }
+
+        /* Header */
+        .header {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 200;
+        }
+
+        .header-top {
+            background: #2c3e50;
+            color: white;
+            padding: 8px 0;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .header-main {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+
+        .search-bar {
+            flex: 1;
+            max-width: 500px;
+            margin: 0 30px;
+            position: relative;
+        }
+
+        .search-bar input {
+            width: 100%;
+            padding: 12px 20px;
+            border: 2px solid #e1e8ed;
+            border-radius: 25px;
+            font-size: 14px;
+        }
+
+        .search-bar input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .user-info {
+            color: #2c3e50;
+            font-weight: 500;
+        }
+
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+            font-size: 24px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e74c3c;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .btn-logout {
+            padding: 8px 20px;
+            background: transparent;
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-logout:hover {
+            background: #2c3e50;
+            color: white;
+        }
+
+        /* Navigation */
+        .nav-bar {
+            background: #f8f9fa;
+            padding: 15px 5%;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #3498db;
+        }
+
+        /* Main Content */
+        .main-content {
+            padding: 40px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Filters Section */
+        .filters-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 145px;
+            z-index: 100;
+        }
+
+        .filters-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .filters-header h3 {
+            color: #2c3e50;
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .btn-clear-filters {
+            padding: 8px 16px;
+            background: transparent;
+            color: #e74c3c;
+            border: 2px solid #e74c3c;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .btn-clear-filters:hover {
+            background: #e74c3c;
+            color: white;
+        }
+
+        .filters-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .filter-group label {
+            color: #2c3e50;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .filter-group select,
+        .filter-group input {
+            padding: 10px;
+            border: 2px solid #e1e8ed;
+            border-radius: 5px;
+            font-size: 14px;
+            color: #2c3e50;
+            background: white;
+            cursor: pointer;
+            transition: border-color 0.3s;
+        }
+
+        .filter-group select:focus,
+        .filter-group input:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .price-range-container {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .price-range-container input {
+            flex: 1;
+        }
+
+        .price-separator {
+            color: #7f8c8d;
+            font-weight: 600;
+        }
+
+        .filter-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .filter-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #3498db;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
+        .filter-tag-close {
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 1;
+        }
+
+        .filter-tag-close:hover {
+            opacity: 0.8;
+        }
+
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin: 30px 0;
+        }
+
+        .pagination-button {
+            padding: 10px 16px;
+            background: white;
+            color: #2c3e50;
+            border: 2px solid #e1e8ed;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .pagination-button:hover:not(:disabled) {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+
+        .pagination-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-button.active {
+            background: #3498db;
+            color: white;
+            border-color: #3498db;
+        }
+
+        .pagination-info {
+            color: #7f8c8d;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero-banner h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero-banner p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Search Results */
+        .search-results {
+            margin-bottom: 30px;
+            display: none;
+        }
+
+        .search-results h2 {
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        /* Product Grid */
+        .products-section h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: 600;
+            color: #666;
+        }
+
+        .product-info {
+            padding: 20px;
+        }
+
+        .product-index {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 15px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .product-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .product-description {
+            color: #7f8c8d;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .product-price {
+            font-size: 22px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .btn-add-cart {
+            width: 100%;
+            padding: 12px 15px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 15px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+            white-space: nowrap;
+            overflow: visible;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .btn-add-cart:hover {
+            background: #34495e;
+        }
+
+        /* Cart Sidebar */
+        .cart-sidebar {
+            position: fixed;
+            right: -400px;
+            top: 0;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            transition: right 0.3s;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-sidebar.active {
+            right: 0;
+        }
+
+        .cart-header {
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .cart-header h2 {
+            font-size: 20px;
+        }
+
+        .btn-close-cart {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .cart-items {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+        }
+
+        .cart-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .cart-item-image {
+            width: 80px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+            background: #f8f9fa;
+        }
+
+        .cart-item-info {
+            flex: 1;
+        }
+
+        .cart-item-name {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .cart-item-price {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+
+        .cart-item-remove {
+            background: transparent;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .cart-empty {
+            text-align: center;
+            padding: 40px 20px;
+            color: #7f8c8d;
+        }
+
+        .cart-footer {
+            padding: 20px;
+            border-top: 2px solid #e1e8ed;
+        }
+
+        .cart-total {
+            display: flex;
+            justify-content: space-between;
+            font-size: 20px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+
+        .btn-checkout {
+            width: 100%;
+            padding: 14px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-checkout:hover {
+            background: #229954;
+        }
+
+        .btn-checkout:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        /* Overlay */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            display: none;
+            z-index: 999;
+        }
+
+        .overlay.active {
+            display: block;
+        }
+
+        /* Success Message */
+        .success-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            z-index: 1001;
+            text-align: center;
+            max-width: 500px;
+            transition: transform 0.3s;
+        }
+
+        .success-modal.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .success-icon {
+            font-size: 64px;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+
+        .success-modal h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .success-modal p {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+        }
+
+        .btn-continue {
+            padding: 12px 30px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-continue:hover {
+            background: #34495e;
+        }
+
+        /* Product Details Modal */
+        .product-details-modal {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0);
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+            z-index: 1001;
+            max-width: 900px;
+            width: 90%;
+            max-height: 90vh;
+            overflow-y: auto;
+            transition: transform 0.3s;
+        }
+
+        .product-details-modal.active {
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .product-details-content {
+            display: flex;
+            gap: 40px;
+            padding: 40px;
+        }
+
+        .product-details-image-container {
+            flex: 1;
+            min-width: 350px;
+        }
+
+        .product-details-image {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+
+        .product-details-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-details-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            color: #7f8c8d;
+            transition: color 0.3s;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .product-details-close:hover {
+            color: #2c3e50;
+        }
+
+        .product-details-category {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+        }
+
+        .product-details-title {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .product-details-price {
+            font-size: 28px;
+            font-weight: bold;
+            color: #27ae60;
+            margin-bottom: 20px;
+        }
+
+        .product-details-description {
+            color: #7f8c8d;
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .product-details-specs {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+
+        .product-details-specs h3 {
+            color: #2c3e50;
+            font-size: 18px;
+            margin-bottom: 15px;
+        }
+
+        .product-spec-item {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px 0;
+            border-bottom: 1px solid #e1e8ed;
+        }
+
+        .product-spec-item:last-child {
+            border-bottom: none;
+        }
+
+        .product-spec-label {
+            color: #7f8c8d;
+            font-weight: 500;
+        }
+
+        .product-spec-value {
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .product-details-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: auto;
+        }
+
+        .btn-add-to-cart-large {
+            flex: 2;
+            padding: 16px 30px;
+            background: #2c3e50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-add-to-cart-large:hover {
+            background: #34495e;
+        }
+
+        .btn-back-to-shop {
+            flex: 1;
+            padding: 16px 30px;
+            background: transparent;
+            color: #2c3e50;
+            border: 2px solid #2c3e50;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .btn-back-to-shop:hover {
+            background: #2c3e50;
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-main {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .search-bar {
+                margin: 0;
+                max-width: 100%;
+            }
+
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+
+            .product-details-content {
+                flex-direction: column;
+                padding: 20px;
+            }
+
+            .product-details-image-container {
+                min-width: 100%;
+            }
+
+            .product-details-image {
+                height: 300px;
+            }
+
+            .product-details-actions {
+                flex-direction: column;
+            }
+
+            .btn-add-to-cart-large,
+            .btn-back-to-shop {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Login Page -->
+    <div class="login-container" id="loginPage">
+        <div class="login-box">
+            <h1>Taqelah Boutique</h1>
+            <p>Women's Fashion</p>
+            <form id="loginForm" data-testid="login-form">
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" placeholder="Enter 6 letter username" maxlength="6" data-testid="username-input">
+                    <div class="error-message" id="usernameError" data-testid="username-error">Username must be exactly 6 letters</div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" placeholder="Enter password" data-testid="password-input">
+                    <div class="error-message" id="passwordError" data-testid="password-error">Password must be username_GO</div>
+                </div>
+                <button type="submit" class="btn-primary" data-testid="login-button">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Shop Page -->
+    <div class="shop-container" id="shopPage">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-top">
+                ✨ New Collection Now Available | Free Shipping on Orders Over $100
+            </div>
+            <div class="header-main">
+                <div class="logo" data-testid="logo">Taqelah Boutique</div>
+                <div class="search-bar">
+                    <input type="text" id="searchInput" placeholder="Search for products..." data-testid="search-input">
+                </div>
+                <div class="header-actions">
+                    <div class="user-info" data-testid="user-info">Welcome, <span id="displayUsername"></span>!</div>
+                    <div class="cart-icon" id="cartIcon" data-testid="cart-icon">
+                        🛒
+                        <span class="cart-count" id="cartCount" data-testid="cart-count">0</span>
+                    </div>
+                    <button class="btn-logout" id="logoutBtn" data-testid="logout-button">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Navigation -->
+        <nav class="nav-bar" data-testid="category-navigation">
+            <ul class="nav-links">
+                <li><a href="#" data-category="all" data-testid="category-all">All</a></li>
+                <li><a href="#" data-category="new-in" data-testid="category-new-in">New In</a></li>
+                <li><a href="#" data-category="dresses" data-testid="category-dresses">Dresses</a></li>
+                <li><a href="#" data-category="tops" data-testid="category-tops">Tops</a></li>
+                <li><a href="#" data-category="bottoms" data-testid="category-bottoms">Bottoms</a></li>
+                <li><a href="#" data-category="outerwear" data-testid="category-outerwear">Outerwear</a></li>
+                <li><a href="#" data-category="accessories" data-testid="category-accessories">Accessories</a></li>
+                <li><a href="#" data-category="sale" data-testid="category-sale">Sale</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Hero Banner -->
+            <div class="hero-banner">
+                <h1>Spring Collection 2025</h1>
+                <p>Discover the latest trends in women's fashion</p>
+            </div>
+
+            <!-- Filters Section -->
+            <div class="filters-section" id="filtersSection" data-testid="filters-section">
+                <div class="filters-header">
+                    <h3>Filter Products</h3>
+                    <button class="btn-clear-filters" id="clearFiltersBtn" data-testid="clear-filters-button">Clear All</button>
+                </div>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label for="sizeFilter">Size</label>
+                        <select id="sizeFilter" data-testid="size-filter">
+                            <option value="">All Sizes</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <div class="price-range-container">
+                            <input type="number" id="minPrice" placeholder="Min" min="0" data-testid="min-price-input">
+                            <span class="price-separator">-</span>
+                            <input type="number" id="maxPrice" placeholder="Max" min="0" data-testid="max-price-input">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sortFilter">Sort By</label>
+                        <select id="sortFilter" data-testid="sort-filter">
+                            <option value="">Default</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name-asc">Name: A to Z</option>
+                            <option value="name-desc">Name: Z to A</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-tags" id="filterTags" data-testid="filter-tags"></div>
+            </div>
+
+            <!-- Search Results -->
+            <div class="search-results" id="searchResults" data-testid="search-results">
+                <h2>Search Results</h2>
+                <div class="pagination" id="searchPaginationTop" data-testid="search-pagination-top"></div>
+                <div class="product-grid" id="searchGrid" data-testid="search-grid"></div>
+                <div class="pagination" id="searchPaginationBottom" data-testid="search-pagination-bottom"></div>
+            </div>
+
+            <!-- All Products -->
+            <div class="products-section" data-testid="products-section">
+                <h2 id="sectionTitle" data-testid="section-title">Featured Products</h2>
+                <div class="pagination" id="productPaginationTop" data-testid="product-pagination-top"></div>
+                <div class="product-grid" id="productGrid" data-testid="product-grid"></div>
+                <div class="pagination" id="productPaginationBottom" data-testid="product-pagination-bottom"></div>
+            </div>
+        </main>
+
+        <!-- Cart Sidebar -->
+        <div class="cart-sidebar" id="cartSidebar" data-testid="cart-sidebar">
+            <div class="cart-header">
+                <h2>Shopping Cart</h2>
+                <button class="btn-close-cart" id="closeCart" data-testid="close-cart-button">×</button>
+            </div>
+            <div class="cart-items" id="cartItems" data-testid="cart-items">
+                <div class="cart-empty">Your cart is empty</div>
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cartTotal" data-testid="cart-total">$0.00</span>
+                </div>
+                <button class="btn-checkout" id="checkoutBtn" disabled data-testid="checkout-button">Checkout</button>
+            </div>
+        </div>
+
+        <!-- Overlay -->
+        <div class="overlay" id="overlay" data-testid="overlay"></div>
+
+        <!-- Success Modal -->
+        <div class="success-modal" id="successModal" data-testid="success-modal">
+            <div class="success-icon">✓</div>
+            <h2>Order Successful!</h2>
+            <p>Your order has been placed successfully. Thank you for shopping with Taqelah Boutique!</p>
+            <button class="btn-continue" id="continueBtn" data-testid="continue-shopping-button">Continue Shopping</button>
+        </div>
+
+        <!-- Product Details Modal -->
+        <div class="product-details-modal" id="productDetailsModal" data-testid="product-details-modal">
+            <button class="product-details-close" id="closeProductDetails" data-testid="close-product-details-button">×</button>
+            <div class="product-details-content" id="productDetailsContent" data-testid="product-details-content">
+                <!-- Content will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Product Data with unique real fashion photos organized by category
+        const products = [
+            // NEW IN
+            {
+                id: 1,
+                name: "Floral Midi Dress",
+                description: "Elegant floral print midi dress perfect for any occasion",
+                price: 89.99,
+                category: "new-in",
+                image: "https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Pink"
+            },
+            {
+                id: 2,
+                name: "Silk Blouse",
+                description: "Luxurious silk blouse in versatile neutral tone",
+                price: 79.99,
+                category: "new-in",
+                image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "S",
+                color: "Beige"
+            },
+            {
+                id: 3,
+                name: "Wide Leg Pants",
+                description: "Flowy wide leg pants for effortless style",
+                price: 59.99,
+                category: "new-in",
+                image: "https://images.pexels.com/photos/7679654/pexels-photo-7679654.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "L",
+                color: "White"
+            },
+
+            // DRESSES
+            {
+                id: 4,
+                name: "Cotton Shirt Dress",
+                description: "Classic cotton shirt dress for everyday wear",
+                price: 75.99,
+                category: "dresses",
+                image: "https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Blue"
+            },
+            {
+                id: 5,
+                name: "Wrap Dress",
+                description: "Flattering wrap dress with adjustable tie",
+                price: 85.99,
+                category: "dresses",
+                image: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "S",
+                color: "Red"
+            },
+            {
+                id: 6,
+                name: "Maxi Dress",
+                description: "Flowing maxi dress for elegant occasions",
+                price: 95.99,
+                category: "dresses",
+                image: "https://images.pexels.com/photos/3755714/pexels-photo-3755714.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "L",
+                color: "Black"
+            },
+            {
+                id: 7,
+                name: "Summer Sundress",
+                description: "Light and breezy sundress perfect for warm days",
+                price: 65.99,
+                category: "dresses",
+                image: "https://images.pexels.com/photos/1124468/pexels-photo-1124468.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "XS",
+                color: "White"
+            },
+
+            // TOPS
+            {
+                id: 8,
+                name: "Linen Blend Top",
+                description: "Breathable linen blend top for casual comfort",
+                price: 45.99,
+                category: "tops",
+                image: "https://images.pexels.com/photos/7679862/pexels-photo-7679862.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Beige"
+            },
+            {
+                id: 9,
+                name: "Silk Cami",
+                description: "Delicate silk camisole for layering or standalone wear",
+                price: 52.99,
+                category: "tops",
+                image: "https://images.pexels.com/photos/5868272/pexels-photo-5868272.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "S",
+                color: "Black"
+            },
+            {
+                id: 10,
+                name: "Cotton V-Neck Tee",
+                description: "Essential cotton tee with flattering v-neck",
+                price: 32.99,
+                category: "tops",
+                image: "https://images.pexels.com/photos/7679743/pexels-photo-7679743.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "L",
+                color: "Gray"
+            },
+            {
+                id: 11,
+                name: "Striped Button-Up",
+                description: "Classic striped button-up shirt for any occasion",
+                price: 58.99,
+                category: "tops",
+                image: "https://images.pexels.com/photos/5710082/pexels-photo-5710082.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Blue"
+            },
+
+            // BOTTOMS
+            {
+                id: 12,
+                name: "High-Waist Trousers",
+                description: "Tailored high-waist trousers for a sophisticated look",
+                price: 69.99,
+                category: "bottoms",
+                image: "https://images.pexels.com/photos/3755021/pexels-photo-3755021.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Black"
+            },
+            {
+                id: 13,
+                name: "Pleated Skirt",
+                description: "Feminine pleated skirt in soft pastel shade",
+                price: 55.99,
+                category: "bottoms",
+                image: "https://images.pexels.com/photos/7679485/pexels-photo-7679485.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "S",
+                color: "Pink"
+            },
+            {
+                id: 14,
+                name: "Denim Jeans",
+                description: "Classic denim jeans with perfect fit",
+                price: 78.99,
+                category: "bottoms",
+                image: "https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "L",
+                color: "Blue"
+            },
+            {
+                id: 15,
+                name: "Midi Skirt",
+                description: "Elegant midi skirt for office or evening",
+                price: 62.99,
+                category: "bottoms",
+                image: "https://images.pexels.com/photos/9373442/pexels-photo-9373442.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Beige"
+            },
+
+            // OUTERWEAR
+            {
+                id: 16,
+                name: "Knit Cardigan",
+                description: "Cozy knit cardigan perfect for layering",
+                price: 65.99,
+                category: "outerwear",
+                image: "https://images.pexels.com/photos/8148577/pexels-photo-8148577.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "L",
+                color: "Gray"
+            },
+            {
+                id: 17,
+                name: "Blazer Jacket",
+                description: "Structured blazer for professional elegance",
+                price: 125.99,
+                category: "outerwear",
+                image: "https://images.pexels.com/photos/3755706/pexels-photo-3755706.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Black"
+            },
+            {
+                id: 18,
+                name: "Denim Jacket",
+                description: "Classic denim jacket - a wardrobe essential",
+                price: 89.99,
+                category: "outerwear",
+                image: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "S",
+                color: "Blue"
+            },
+            {
+                id: 19,
+                name: "Trench Coat",
+                description: "Timeless trench coat for rainy days",
+                price: 145.99,
+                category: "outerwear",
+                image: "https://images.pexels.com/photos/1375736/pexels-photo-1375736.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "L",
+                color: "Beige"
+            },
+
+            // ACCESSORIES
+            {
+                id: 20,
+                name: "Leather Handbag",
+                description: "Premium leather handbag with gold hardware",
+                price: 129.99,
+                category: "accessories",
+                image: "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Black"
+            },
+            {
+                id: 21,
+                name: "Silk Scarf",
+                description: "Luxurious silk scarf in vibrant print",
+                price: 42.99,
+                category: "accessories",
+                image: "https://images.pexels.com/photos/5119214/pexels-photo-5119214.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Red"
+            },
+            {
+                id: 22,
+                name: "Statement Earrings",
+                description: "Bold statement earrings to elevate any outfit",
+                price: 38.99,
+                category: "accessories",
+                image: "https://images.pexels.com/photos/3673765/pexels-photo-3673765.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Pink"
+            },
+            {
+                id: 23,
+                name: "Wide Belt",
+                description: "Stylish wide belt to cinch your waist",
+                price: 35.99,
+                category: "accessories",
+                image: "https://images.pexels.com/photos/2850487/pexels-photo-2850487.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Black"
+            },
+
+            // SALE
+            {
+                id: 24,
+                name: "Casual Tee",
+                description: "Comfortable casual tee - end of season sale",
+                price: 19.99,
+                category: "sale",
+                image: "https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "XL",
+                color: "White"
+            },
+            {
+                id: 25,
+                name: "Summer Shorts",
+                description: "Lightweight summer shorts - clearance price",
+                price: 24.99,
+                category: "sale",
+                image: "https://images.pexels.com/photos/7764675/pexels-photo-7764675.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Blue"
+            },
+            {
+                id: 26,
+                name: "Knit Sweater",
+                description: "Cozy knit sweater - special discount",
+                price: 39.99,
+                category: "sale",
+                image: "https://images.pexels.com/photos/5622862/pexels-photo-5622862.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "L",
+                color: "Green"
+            },
+            {
+                id: 27,
+                name: "Ankle Boots",
+                description: "Stylish ankle boots - final sale",
+                price: 54.99,
+                category: "sale",
+                image: "https://images.pexels.com/photos/336372/pexels-photo-336372.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
+                size: "M",
+                color: "Black"
+            }
+        ];
+
+        // State
+        let currentUser = '';
+        let cart = [];
+        let currentCategory = 'all';
+        let activeFilters = {
+            size: '',
+            minPrice: '',
+            maxPrice: '',
+            sort: ''
+        };
+        let currentPage = 1;
+        let currentSearchPage = 1;
+        const ITEMS_PER_PAGE = 8;
+
+        // DOM Elements
+        const loginPage = document.getElementById('loginPage');
+        const shopPage = document.getElementById('shopPage');
+        const loginForm = document.getElementById('loginForm');
+        const usernameInput = document.getElementById('username');
+        const passwordInput = document.getElementById('password');
+        const usernameError = document.getElementById('usernameError');
+        const passwordError = document.getElementById('passwordError');
+        const displayUsername = document.getElementById('displayUsername');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const searchInput = document.getElementById('searchInput');
+        const searchResults = document.getElementById('searchResults');
+        const searchGrid = document.getElementById('searchGrid');
+        const productGrid = document.getElementById('productGrid');
+        const cartIcon = document.getElementById('cartIcon');
+        const cartSidebar = document.getElementById('cartSidebar');
+        const closeCart = document.getElementById('closeCart');
+        const overlay = document.getElementById('overlay');
+        const cartItems = document.getElementById('cartItems');
+        const cartCount = document.getElementById('cartCount');
+        const cartTotal = document.getElementById('cartTotal');
+        const checkoutBtn = document.getElementById('checkoutBtn');
+        const successModal = document.getElementById('successModal');
+        const continueBtn = document.getElementById('continueBtn');
+        const productDetailsModal = document.getElementById('productDetailsModal');
+        const productDetailsContent = document.getElementById('productDetailsContent');
+        const closeProductDetails = document.getElementById('closeProductDetails');
+        const sizeFilter = document.getElementById('sizeFilter');
+        const minPrice = document.getElementById('minPrice');
+        const maxPrice = document.getElementById('maxPrice');
+        const sortFilter = document.getElementById('sortFilter');
+        const clearFiltersBtn = document.getElementById('clearFiltersBtn');
+        const filterTags = document.getElementById('filterTags');
+        const productPaginationTop = document.getElementById('productPaginationTop');
+        const productPaginationBottom = document.getElementById('productPaginationBottom');
+        const searchPaginationTop = document.getElementById('searchPaginationTop');
+        const searchPaginationBottom = document.getElementById('searchPaginationBottom');
+
+        // Login Handling
+        loginForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const username = usernameInput.value.trim();
+            const password = passwordInput.value.trim();
+
+            // Validate username (exactly 6 letters)
+            if (username.length !== 6 || !/^[a-zA-Z]+$/.test(username)) {
+                usernameError.style.display = 'block';
+                return;
+            } else {
+                usernameError.style.display = 'none';
+            }
+
+            // Validate password (username_GO)
+            if (password !== `${username}_GO`) {
+                passwordError.style.display = 'block';
+                return;
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            // Login successful
+            currentUser = username;
+            displayUsername.textContent = username;
+            localStorage.setItem('taqelahUser', username);
+            localStorage.setItem('taqelahCart', JSON.stringify(cart));
+            loginPage.style.display = 'none';
+            shopPage.style.display = 'block';
+            renderProducts(products);
+        });
+
+        // Logout
+        logoutBtn.addEventListener('click', () => {
+            currentUser = '';
+            cart = [];
+            usernameInput.value = '';
+            passwordInput.value = '';
+            localStorage.removeItem('taqelahUser');
+            localStorage.removeItem('taqelahCart');
+            loginPage.style.display = 'flex';
+            shopPage.style.display = 'none';
+            updateCart();
+        });
+
+        // Render Products
+        function renderProducts(productsToRender, container = productGrid, showIndex = true, page = 1) {
+            if (productsToRender.length === 0) {
+                container.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <div style="font-size: 64px; margin-bottom: 20px;">🔍</div>
+                        <h3 style="color: #2c3e50; font-size: 24px; margin-bottom: 15px;">No Products Found</h3>
+                        <p style="color: #7f8c8d; font-size: 16px; margin-bottom: 25px;">We couldn't find any products matching your criteria.</p>
+                        <button onclick="clearAllFilters()" style="padding: 12px 30px; background: #3498db; color: white; border: none; border-radius: 5px; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s;" onmouseover="this.style.background='#2980b9'" onmouseout="this.style.background='#3498db'">Clear All Filters</button>
+                    </div>
+                `;
+                return;
+            }
+
+            const startIndex = (page - 1) * ITEMS_PER_PAGE;
+            const endIndex = startIndex + ITEMS_PER_PAGE;
+            const paginatedProducts = productsToRender.slice(startIndex, endIndex);
+
+            container.innerHTML = paginatedProducts.map((product, index) => `
+                <div class="product-card" data-id="${product.id}" data-testid="product-card-${product.id}">
+                    <img src="${product.image}" alt="${product.name}" class="product-image" onclick="showProductDetails(${product.id})" data-testid="product-image-${product.id}">
+                    <div class="product-info">
+                        ${showIndex ? `<span class="product-index" data-testid="product-index-${product.id}">Index: ${startIndex + index + 1}</span>` : ''}
+                        <div class="product-name" onclick="showProductDetails(${product.id})" data-testid="product-name-${product.id}">${product.name}</div>
+                        <div class="product-description" data-testid="product-description-${product.id}">${product.description}</div>
+                        <div class="product-price" data-testid="product-price-${product.id}">$${product.price.toFixed(2)}</div>
+                        <button class="btn-add-cart" onclick="event.stopPropagation(); addToCart(${product.id})" data-testid="add-to-cart-button-${product.id}">Add to Cart</button>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Render Pagination
+        function renderPagination(totalItems, currentPage, onPageChange, topContainer, bottomContainer) {
+            const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
+
+            if (totalPages <= 1) {
+                topContainer.innerHTML = '';
+                bottomContainer.innerHTML = '';
+                return;
+            }
+
+            const paginationHTML = `
+                <button class="pagination-button" ${currentPage === 1 ? 'disabled' : ''}
+                    onclick="${onPageChange}(${currentPage - 1})" data-testid="prev-page-button">
+                    Previous
+                </button>
+                ${Array.from({ length: totalPages }, (_, i) => i + 1).map(pageNum => `
+                    <button class="pagination-button ${pageNum === currentPage ? 'active' : ''}"
+                        onclick="${onPageChange}(${pageNum})" data-testid="page-button-${pageNum}">
+                        ${pageNum}
+                    </button>
+                `).join('')}
+                <button class="pagination-button" ${currentPage === totalPages ? 'disabled' : ''}
+                    onclick="${onPageChange}(${currentPage + 1})" data-testid="next-page-button">
+                    Next
+                </button>
+                <span class="pagination-info" data-testid="pagination-info">
+                    Page ${currentPage} of ${totalPages} (${totalItems} items)
+                </span>
+            `;
+
+            topContainer.innerHTML = paginationHTML;
+            bottomContainer.innerHTML = paginationHTML;
+        }
+
+        // Change Page for Products
+        function changeProductPage(page) {
+            currentPage = page;
+            filterAndSortProducts();
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Change Page for Search Results
+        function changeSearchPage(page) {
+            currentSearchPage = page;
+            const searchTerm = searchInput.value.toLowerCase().trim();
+            performSearch(searchTerm);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Show Product Details
+        function showProductDetails(productId) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            // Get category display name
+            const categoryNames = {
+                'new-in': 'New In',
+                'dresses': 'Dresses',
+                'tops': 'Tops',
+                'bottoms': 'Bottoms',
+                'outerwear': 'Outerwear',
+                'accessories': 'Accessories',
+                'sale': 'Sale'
+            };
+
+            // Get material based on category
+            const materials = {
+                'dresses': '100% Cotton',
+                'tops': 'Linen Blend',
+                'bottoms': 'Cotton/Polyester',
+                'outerwear': 'Wool Blend',
+                'accessories': 'Premium Leather',
+                'new-in': 'Premium Fabric',
+                'sale': 'Mixed Materials'
+            };
+
+            // Get care instructions
+            const careInstructions = 'Machine wash cold, tumble dry low';
+
+            productDetailsContent.innerHTML = `
+                <div class="product-details-image-container">
+                    <img src="${product.image}" alt="${product.name}" class="product-details-image" data-testid="product-details-image">
+                </div>
+                <div class="product-details-info">
+                    <span class="product-details-category" data-testid="product-details-category">${categoryNames[product.category]}</span>
+                    <h2 class="product-details-title" data-testid="product-details-title">${product.name}</h2>
+                    <div class="product-details-price" data-testid="product-details-price">$${product.price.toFixed(2)}</div>
+                    <p class="product-details-description" data-testid="product-details-description">${product.description}</p>
+
+                    <div class="product-details-specs" data-testid="product-details-specs">
+                        <h3>Product Details</h3>
+                        <div class="product-spec-item">
+                            <span class="product-spec-label">Material</span>
+                            <span class="product-spec-value" data-testid="product-details-material">${materials[product.category]}</span>
+                        </div>
+                        <div class="product-spec-item">
+                            <span class="product-spec-label">Care</span>
+                            <span class="product-spec-value" data-testid="product-details-care">${careInstructions}</span>
+                        </div>
+                        <div class="product-spec-item">
+                            <span class="product-spec-label">Product ID</span>
+                            <span class="product-spec-value" data-testid="product-details-id">#TQ${String(product.id).padStart(4, '0')}</span>
+                        </div>
+                        <div class="product-spec-item">
+                            <span class="product-spec-label">Availability</span>
+                            <span class="product-spec-value" data-testid="product-details-availability">In Stock</span>
+                        </div>
+                    </div>
+
+                    <div class="product-details-actions">
+                        <button class="btn-add-to-cart-large" onclick="addToCart(${product.id}); closeProductDetailsModal();" data-testid="product-details-add-to-cart">Add to Cart</button>
+                        <button class="btn-back-to-shop" onclick="closeProductDetailsModal();" data-testid="product-details-back-button">Back</button>
+                    </div>
+                </div>
+            `;
+
+            productDetailsModal.classList.add('active');
+            overlay.classList.add('active');
+        }
+
+        // Close Product Details Modal
+        function closeProductDetailsModal() {
+            productDetailsModal.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+
+        // Filter and Sort Products
+        function filterAndSortProducts() {
+            let filtered = products;
+
+            // Filter by category
+            if (currentCategory !== 'all') {
+                filtered = filtered.filter(p => p.category === currentCategory);
+            }
+
+            // Filter by size
+            if (activeFilters.size) {
+                filtered = filtered.filter(p => p.size === activeFilters.size);
+            }
+
+            // Filter by price range
+            if (activeFilters.minPrice) {
+                filtered = filtered.filter(p => p.price >= parseFloat(activeFilters.minPrice));
+            }
+            if (activeFilters.maxPrice) {
+                filtered = filtered.filter(p => p.price <= parseFloat(activeFilters.maxPrice));
+            }
+
+            // Sort products
+            if (activeFilters.sort) {
+                switch(activeFilters.sort) {
+                    case 'price-low':
+                        filtered.sort((a, b) => a.price - b.price);
+                        break;
+                    case 'price-high':
+                        filtered.sort((a, b) => b.price - a.price);
+                        break;
+                    case 'name-asc':
+                        filtered.sort((a, b) => a.name.localeCompare(b.name));
+                        break;
+                    case 'name-desc':
+                        filtered.sort((a, b) => b.name.localeCompare(a.name));
+                        break;
+                }
+            }
+
+            renderProducts(filtered, productGrid, true, currentPage);
+            renderPagination(filtered.length, currentPage, 'changeProductPage', productPaginationTop, productPaginationBottom);
+            updateFilterTags();
+        }
+
+        // Update Filter Tags
+        function updateFilterTags() {
+            const tags = [];
+
+            if (activeFilters.size) {
+                tags.push({ type: 'size', label: `Size: ${activeFilters.size}`, value: activeFilters.size });
+            }
+            if (activeFilters.minPrice || activeFilters.maxPrice) {
+                const min = activeFilters.minPrice || '0';
+                const max = activeFilters.maxPrice || '∞';
+                tags.push({ type: 'price', label: `Price: $${min} - $${max}` });
+            }
+            if (activeFilters.sort) {
+                const sortLabels = {
+                    'price-low': 'Price: Low to High',
+                    'price-high': 'Price: High to Low',
+                    'name-asc': 'Name: A to Z',
+                    'name-desc': 'Name: Z to A'
+                };
+                tags.push({ type: 'sort', label: sortLabels[activeFilters.sort] });
+            }
+
+            filterTags.innerHTML = tags.map(tag => `
+                <div class="filter-tag" data-testid="filter-tag-${tag.type}">
+                    <span>${tag.label}</span>
+                    <span class="filter-tag-close" onclick="removeFilter('${tag.type}')" data-testid="remove-filter-${tag.type}">×</span>
+                </div>
+            `).join('');
+        }
+
+        // Remove Filter
+        function removeFilter(type) {
+            if (type === 'size') {
+                activeFilters.size = '';
+                sizeFilter.value = '';
+            } else if (type === 'price') {
+                activeFilters.minPrice = '';
+                activeFilters.maxPrice = '';
+                minPrice.value = '';
+                maxPrice.value = '';
+            } else if (type === 'sort') {
+                activeFilters.sort = '';
+                sortFilter.value = '';
+            }
+            filterAndSortProducts();
+        }
+
+        // Clear All Filters
+        function clearAllFilters() {
+            activeFilters = {
+                size: '',
+                minPrice: '',
+                maxPrice: '',
+                sort: ''
+            };
+            sizeFilter.value = '';
+            minPrice.value = '';
+            maxPrice.value = '';
+            sortFilter.value = '';
+            currentPage = 1; // Reset to first page
+            filterAndSortProducts();
+        }
+
+        // Filter Event Listeners
+        sizeFilter.addEventListener('change', (e) => {
+            activeFilters.size = e.target.value;
+            currentPage = 1; // Reset to first page
+            filterAndSortProducts();
+        });
+
+        minPrice.addEventListener('input', (e) => {
+            activeFilters.minPrice = e.target.value;
+            currentPage = 1; // Reset to first page
+            filterAndSortProducts();
+        });
+
+        maxPrice.addEventListener('input', (e) => {
+            activeFilters.maxPrice = e.target.value;
+            currentPage = 1; // Reset to first page
+            filterAndSortProducts();
+        });
+
+        sortFilter.addEventListener('change', (e) => {
+            activeFilters.sort = e.target.value;
+            currentPage = 1; // Reset to first page
+            filterAndSortProducts();
+        });
+
+        clearFiltersBtn.addEventListener('click', clearAllFilters);
+
+        // Category Navigation
+        const sectionTitle = document.getElementById('sectionTitle');
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const category = e.target.dataset.category;
+                const categoryName = e.target.textContent;
+
+                // Clear search
+                searchInput.value = '';
+                searchResults.style.display = 'none';
+
+                // Update current category and filter
+                currentCategory = category;
+                currentPage = 1; // Reset to first page
+                if (category === 'all') {
+                    sectionTitle.textContent = 'All Products';
+                } else {
+                    sectionTitle.textContent = categoryName;
+                }
+
+                // Apply filters
+                filterAndSortProducts();
+
+                // Highlight active category
+                document.querySelectorAll('.nav-links a').forEach(a => a.style.color = '#2c3e50');
+                e.target.style.color = '#3498db';
+            });
+        });
+
+        // Perform Search
+        function performSearch(searchTerm) {
+            if (searchTerm === '') {
+                searchResults.style.display = 'none';
+                searchPaginationTop.innerHTML = '';
+                searchPaginationBottom.innerHTML = '';
+                return;
+            }
+
+            const filtered = products.filter(product =>
+                product.name.toLowerCase().includes(searchTerm) ||
+                product.description.toLowerCase().includes(searchTerm) ||
+                product.category.toLowerCase().includes(searchTerm)
+            );
+
+            if (filtered.length > 0) {
+                searchResults.style.display = 'block';
+                renderProducts(filtered, searchGrid, true, currentSearchPage);
+                renderPagination(filtered.length, currentSearchPage, 'changeSearchPage', searchPaginationTop, searchPaginationBottom);
+            } else {
+                searchResults.style.display = 'block';
+                searchGrid.innerHTML = `
+                    <div style="grid-column: 1 / -1; text-align: center; padding: 60px 20px; background: white; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+                        <div style="font-size: 64px; margin-bottom: 20px;">🔍</div>
+                        <h3 style="color: #2c3e50; font-size: 24px; margin-bottom: 15px;">No Results Found</h3>
+                        <p style="color: #7f8c8d; font-size: 16px; margin-bottom: 10px;">We couldn't find any products matching "<strong>${searchTerm}</strong>".</p>
+                        <p style="color: #7f8c8d; font-size: 14px;">Try searching with different keywords or browse our categories.</p>
+                    </div>
+                `;
+                searchPaginationTop.innerHTML = '';
+                searchPaginationBottom.innerHTML = '';
+            }
+        }
+
+        // Search Functionality
+        searchInput.addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase().trim();
+            currentSearchPage = 1; // Reset to first page on new search
+            performSearch(searchTerm);
+        });
+
+        // Add to Cart
+        function addToCart(productId) {
+            const product = products.find(p => p.id === productId);
+            if (product) {
+                cart.push({...product});
+                updateCart();
+            }
+        }
+
+        // Update Cart
+        function updateCart() {
+            cartCount.textContent = cart.length;
+
+            // Save cart to localStorage
+            if (currentUser) {
+                localStorage.setItem('taqelahCart', JSON.stringify(cart));
+            }
+
+            if (cart.length === 0) {
+                cartItems.innerHTML = '<div class="cart-empty">Your cart is empty</div>';
+                checkoutBtn.disabled = true;
+                cartTotal.textContent = '$0.00';
+                return;
+            }
+
+            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            cartTotal.textContent = `$${total.toFixed(2)}`;
+            checkoutBtn.disabled = false;
+
+            cartItems.innerHTML = cart.map((item, index) => `
+                <div class="cart-item" data-testid="cart-item-${item.id}">
+                    <img src="${item.image}" alt="${item.name}" class="cart-item-image" data-testid="cart-item-image-${item.id}">
+                    <div class="cart-item-info">
+                        <div class="cart-item-name" data-testid="cart-item-name-${item.id}">${item.name}</div>
+                        <div class="cart-item-price" data-testid="cart-item-price-${item.id}">$${item.price.toFixed(2)}</div>
+                    </div>
+                    <button class="cart-item-remove" onclick="removeFromCart(${index})" data-testid="remove-cart-item-${item.id}">Remove</button>
+                </div>
+            `).join('');
+        }
+
+        // Remove from Cart
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        // Cart Toggle
+        cartIcon.addEventListener('click', () => {
+            cartSidebar.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        closeCart.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        overlay.addEventListener('click', () => {
+            cartSidebar.classList.remove('active');
+            productDetailsModal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Close Product Details
+        closeProductDetails.addEventListener('click', () => {
+            closeProductDetailsModal();
+        });
+
+        // Checkout
+        checkoutBtn.addEventListener('click', () => {
+            // Close cart
+            cartSidebar.classList.remove('active');
+
+            // Show success modal
+            successModal.classList.add('active');
+            overlay.classList.add('active');
+
+            // Clear cart
+            cart = [];
+            updateCart();
+        });
+
+        // Continue Shopping
+        continueBtn.addEventListener('click', () => {
+            successModal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Initialize
+        window.onload = () => {
+            // Check for saved session
+            const savedUser = localStorage.getItem('taqelahUser');
+            const savedCart = localStorage.getItem('taqelahCart');
+
+            if (savedUser) {
+                // Restore session
+                currentUser = savedUser;
+                displayUsername.textContent = savedUser;
+
+                // Restore cart
+                if (savedCart) {
+                    try {
+                        cart = JSON.parse(savedCart);
+                    } catch (e) {
+                        cart = [];
+                    }
+                }
+
+                // Show shop page
+                loginPage.style.display = 'none';
+                shopPage.style.display = 'block';
+                renderProducts(products);
+                updateCart();
+            } else {
+                // Show login page
+                loginPage.style.display = 'flex';
+                shopPage.style.display = 'none';
+            }
+        };
+    </script>
+</body>
+</html>
