@@ -80,6 +80,34 @@
             border-color: #3498db;
         }
 
+        .username-helper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 6px;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .char-counter {
+            font-weight: 600;
+            color: #95a5a6;
+            transition: color 0.3s;
+        }
+
+        .char-counter.complete {
+            color: #27ae60;
+        }
+
+        .char-counter.warning {
+            color: #f39c12;
+        }
+
+        .char-hint {
+            font-style: italic;
+            color: #95a5a6;
+        }
+
         .error-message {
             color: #e74c3c;
             font-size: 14px;
@@ -1815,6 +1843,10 @@
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text" id="username" placeholder="Enter 6 letter username" maxlength="6" data-testid="username-input">
+                    <div class="username-helper" id="usernameHelper" data-testid="username-helper">
+                        <span class="char-counter" id="charCounter" data-testid="char-counter">0/6 characters</span>
+                        <span class="char-hint">Letters only</span>
+                    </div>
                     <div class="error-message" id="usernameError" data-testid="username-error">Username must be exactly 6 letters</div>
                 </div>
                 <div class="form-group">
@@ -1830,16 +1862,16 @@
     <!-- Shop Page -->
     <div class="shop-container" id="shopPage">
         <!-- Header -->
-        <header class="header">
-            <div class="header-top">
+        <header class="header" data-testid="header">
+            <div class="header-top" data-testid="header-announcement">
                 ✨ New Collection Now Available | Free Shipping on Orders Over $100
             </div>
-            <div class="header-main">
+            <div class="header-main" data-testid="header-main">
                 <div class="logo" data-testid="logo">Taqelah Boutique</div>
-                <div class="search-bar">
+                <div class="search-bar" data-testid="search-bar">
                     <input type="text" id="searchInput" placeholder="Search for products..." data-testid="search-input">
                 </div>
-                <div class="header-actions">
+                <div class="header-actions" data-testid="header-actions">
                     <div class="user-info" data-testid="user-info">Welcome, <span id="displayUsername"></span>!</div>
                     <button class="filter-menu-btn" id="filterMenuBtn" data-testid="filter-menu-button">☰</button>
                     <div class="cart-icon" id="cartIcon" data-testid="cart-icon">
@@ -1868,18 +1900,18 @@
         <!-- Main Content -->
         <main class="main-content">
             <!-- Hero Banner -->
-            <div class="hero-banner">
-                <h1>Spring Collection 2025</h1>
-                <p>Discover the latest trends in women's fashion</p>
+            <div class="hero-banner" data-testid="hero-banner">
+                <h1 data-testid="hero-title">Spring Collection 2025</h1>
+                <p data-testid="hero-subtitle">Discover the latest trends in women's fashion</p>
             </div>
 
             <!-- Filters Section -->
             <div class="filters-section" id="filtersSection" data-testid="filters-section">
-                <div class="filters-header">
-                    <h3>Filter Products</h3>
+                <div class="filters-header" data-testid="filters-header">
+                    <h3 data-testid="filters-title">Filter Products</h3>
                     <button class="btn-clear-filters" id="clearFiltersBtn" data-testid="clear-filters-button">Clear All</button>
                 </div>
-                <div class="filters-grid">
+                <div class="filters-grid" data-testid="filters-grid">
                     <div class="filter-group">
                         <label for="sizeFilter">Size</label>
                         <select id="sizeFilter" data-testid="size-filter">
@@ -1938,11 +1970,11 @@
                 <button class="btn-close-cart" id="closeCart" data-testid="close-cart-button">×</button>
             </div>
             <div class="cart-items" id="cartItems" data-testid="cart-items">
-                <div class="cart-empty">Your cart is empty</div>
+                <div class="cart-empty" data-testid="cart-empty">Your cart is empty</div>
             </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span>Total:</span>
+            <div class="cart-footer" data-testid="cart-footer">
+                <div class="cart-total" data-testid="cart-total-container">
+                    <span data-testid="cart-total-label">Total:</span>
                     <span id="cartTotal" data-testid="cart-total">$0.00</span>
                 </div>
                 <button class="btn-checkout" id="checkoutBtn" disabled data-testid="checkout-button">Checkout</button>
@@ -1954,32 +1986,32 @@
 
         <!-- Enhanced Checkout Modal -->
         <div class="checkout-modal" id="checkoutModal" data-testid="checkout-modal">
-            <div class="checkout-container">
-                <div class="checkout-header">
-                    <h2>Checkout</h2>
-                    <button class="btn-close-checkout" id="closeCheckout">×</button>
+            <div class="checkout-container" data-testid="checkout-container">
+                <div class="checkout-header" data-testid="checkout-header">
+                    <h2 data-testid="checkout-title">Checkout</h2>
+                    <button class="btn-close-checkout" id="closeCheckout" data-testid="close-checkout-button">×</button>
                 </div>
 
-                <div class="checkout-body" id="checkoutForm">
+                <div class="checkout-body" id="checkoutForm" data-testid="checkout-form">
                     <!-- Promo Code Section -->
-                    <div class="promo-section">
-                        <div class="promo-toggle" id="promoToggle">+ Have a promo code?</div>
-                        <div class="promo-input-group" id="promoInputGroup">
+                    <div class="promo-section" data-testid="promo-section">
+                        <div class="promo-toggle" id="promoToggle" data-testid="promo-toggle">+ Have a promo code?</div>
+                        <div class="promo-input-group" id="promoInputGroup" data-testid="promo-input-group">
                             <input type="text" id="promoCodeInput" placeholder="Enter promo code" data-testid="promo-code-input">
-                            <button class="btn-apply-promo" id="applyPromoBtn">Apply</button>
+                            <button class="btn-apply-promo" id="applyPromoBtn" data-testid="apply-promo-button">Apply</button>
                         </div>
-                        <div class="promo-applied" id="promoApplied">
-                            <span id="appliedPromoCode"></span>
-                            <button class="btn-remove-promo" id="removePromoBtn">×</button>
+                        <div class="promo-applied" id="promoApplied" data-testid="promo-applied">
+                            <span id="appliedPromoCode" data-testid="applied-promo-code"></span>
+                            <button class="btn-remove-promo" id="removePromoBtn" data-testid="remove-promo-button">×</button>
                         </div>
-                        <div class="promo-message" id="promoMessage"></div>
+                        <div class="promo-message" id="promoMessage" data-testid="promo-message"></div>
                     </div>
 
                     <!-- Form Progress Indicator -->
-                    <div class="form-progress">
-                        <span class="progress-text" id="progressText">0 of 8 fields completed</span>
-                        <div class="progress-bar-container">
-                            <div class="progress-bar" id="progressBar"></div>
+                    <div class="form-progress" data-testid="form-progress">
+                        <span class="progress-text" id="progressText" data-testid="progress-text">0 of 8 fields completed</span>
+                        <div class="progress-bar-container" data-testid="progress-bar-container">
+                            <div class="progress-bar" id="progressBar" data-testid="progress-bar"></div>
                         </div>
                     </div>
 
@@ -2065,32 +2097,32 @@
                     </div>
 
                     <!-- Order Summary -->
-                    <h3 class="section-title">Order Summary</h3>
-                    <div class="order-summary-section">
-                        <div class="summary-row subtotal">
-                            <span>Subtotal</span>
-                            <span id="checkoutSubtotal">$0.00</span>
+                    <h3 class="section-title" data-testid="order-summary-title">Order Summary</h3>
+                    <div class="order-summary-section" data-testid="order-summary-section">
+                        <div class="summary-row subtotal" data-testid="summary-subtotal-row">
+                            <span data-testid="subtotal-label">Subtotal</span>
+                            <span id="checkoutSubtotal" data-testid="checkout-subtotal">$0.00</span>
                         </div>
-                        <div class="summary-row shipping">
-                            <span>Shipping</span>
-                            <span id="checkoutShipping">$5.99</span>
+                        <div class="summary-row shipping" data-testid="summary-shipping-row">
+                            <span data-testid="shipping-label">Shipping</span>
+                            <span id="checkoutShipping" data-testid="checkout-shipping">$5.99</span>
                         </div>
-                        <div class="summary-row tax" style="display: none;" id="taxRow">
-                            <span>Tax (10%)</span>
-                            <span id="checkoutTax">$0.00</span>
+                        <div class="summary-row tax" style="display: none;" id="taxRow" data-testid="summary-tax-row">
+                            <span data-testid="tax-label">Tax (10%)</span>
+                            <span id="checkoutTax" data-testid="checkout-tax">$0.00</span>
                         </div>
-                        <div class="summary-row discount" style="display: none;" id="discountRow">
-                            <span>Discount</span>
-                            <span id="checkoutDiscount">-$0.00</span>
+                        <div class="summary-row discount" style="display: none;" id="discountRow" data-testid="summary-discount-row">
+                            <span data-testid="discount-label">Discount</span>
+                            <span id="checkoutDiscount" data-testid="checkout-discount">-$0.00</span>
                         </div>
-                        <div class="summary-row total">
-                            <span>Total</span>
-                            <span id="checkoutTotal">$0.00</span>
+                        <div class="summary-row total" data-testid="summary-total-row">
+                            <span data-testid="total-label">Total</span>
+                            <span id="checkoutTotal" data-testid="checkout-total">$0.00</span>
                         </div>
                     </div>
                 </div>
 
-                <div class="checkout-actions">
+                <div class="checkout-actions" data-testid="checkout-actions">
                     <button class="btn-place-order" id="placeOrderBtn" data-testid="place-order-button">Place Order</button>
                 </div>
             </div>
@@ -2098,24 +2130,24 @@
 
         <!-- Success Modal -->
         <div class="success-modal" id="successModal" data-testid="success-modal">
-            <div class="order-confirmation" id="orderConfirmation">
-                <div class="confirmation-icon">✓</div>
-                <h2>Order Placed Successfully!</h2>
-                <div class="order-number">Order Number: <strong id="orderNumberDisplay">#ORDER-12345</strong></div>
-                <p class="confirmation-message">Thank you for your order! We've sent a confirmation email to your inbox.</p>
+            <div class="order-confirmation" id="orderConfirmation" data-testid="order-confirmation">
+                <div class="confirmation-icon" data-testid="confirmation-icon">✓</div>
+                <h2 data-testid="confirmation-title">Order Placed Successfully!</h2>
+                <div class="order-number" data-testid="order-number">Order Number: <strong id="orderNumberDisplay" data-testid="order-number-display">#ORDER-12345</strong></div>
+                <p class="confirmation-message" data-testid="confirmation-message">Thank you for your order! We've sent a confirmation email to your inbox.</p>
 
-                <div class="confirmation-details">
-                    <div class="detail-row">
-                        <span class="detail-label">Items:</span>
-                        <span class="detail-value" id="confirmationItems">0</span>
+                <div class="confirmation-details" data-testid="confirmation-details">
+                    <div class="detail-row" data-testid="confirmation-items-row">
+                        <span class="detail-label" data-testid="items-label">Items:</span>
+                        <span class="detail-value" id="confirmationItems" data-testid="confirmation-items">0</span>
                     </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Total Amount:</span>
-                        <span class="detail-value" id="confirmationTotal">$0.00</span>
+                    <div class="detail-row" data-testid="confirmation-total-row">
+                        <span class="detail-label" data-testid="total-amount-label">Total Amount:</span>
+                        <span class="detail-value" id="confirmationTotal" data-testid="confirmation-total">$0.00</span>
                     </div>
-                    <div class="detail-row">
-                        <span class="detail-label">Estimated Delivery:</span>
-                        <span class="detail-value" id="confirmationDelivery">5-7 business days</span>
+                    <div class="detail-row" data-testid="confirmation-delivery-row">
+                        <span class="detail-label" data-testid="delivery-label">Estimated Delivery:</span>
+                        <span class="detail-value" id="confirmationDelivery" data-testid="confirmation-delivery">5-7 business days</span>
                     </div>
                 </div>
 
@@ -2182,13 +2214,13 @@
 
         <!-- Toast Notification -->
         <div class="toast-notification" id="toastNotification" data-testid="toast-notification">
-            <span class="toast-icon">✓</span>
-            <span class="toast-message" id="toastMessage"></span>
+            <span class="toast-icon" data-testid="toast-icon">✓</span>
+            <span class="toast-message" id="toastMessage" data-testid="toast-message"></span>
         </div>
 
         <!-- Loading Overlay -->
         <div class="loading-overlay" id="loadingOverlay" data-testid="loading-overlay">
-            <div class="loading-spinner"></div>
+            <div class="loading-spinner" data-testid="loading-spinner"></div>
         </div>
     </div>
 
@@ -2595,6 +2627,34 @@
             `).join('');
             container.innerHTML = skeletonCards;
         }
+
+        // Username Character Counter
+        const charCounter = document.getElementById('charCounter');
+        const usernameHelper = document.getElementById('usernameHelper');
+
+        usernameInput.addEventListener('input', (e) => {
+            const value = e.target.value;
+            const length = value.length;
+
+            // Update character counter
+            charCounter.textContent = `${length}/6 characters`;
+
+            // Remove non-letter characters in real-time
+            e.target.value = value.replace(/[^a-zA-Z]/g, '');
+
+            // Update counter styling based on length
+            charCounter.classList.remove('complete', 'warning');
+            if (length === 6) {
+                charCounter.classList.add('complete');
+            } else if (length > 3) {
+                charCounter.classList.add('warning');
+            }
+        });
+
+        // Hide error on focus
+        usernameInput.addEventListener('focus', () => {
+            usernameError.style.display = 'none';
+        });
 
         // Login Handling
         loginForm.addEventListener('submit', (e) => {
