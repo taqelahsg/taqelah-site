@@ -15,6 +15,13 @@
             font-family: 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
+            overflow-x: hidden;
+            max-width: 100vw;
+        }
+
+        html {
+            overflow-x: hidden;
+            max-width: 100vw;
         }
 
         /* Login Page */
@@ -163,6 +170,23 @@
             font-weight: 500;
         }
 
+        .filter-menu-btn {
+            display: none;
+            background: transparent;
+            border: 2px solid #2c3e50;
+            color: #2c3e50;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+
+        .filter-menu-btn:hover {
+            background: #2c3e50;
+            color: white;
+        }
+
         .cart-icon {
             position: relative;
             cursor: pointer;
@@ -243,6 +267,11 @@
             position: sticky;
             top: 145px;
             z-index: 100;
+            transition: transform 0.3s, opacity 0.3s;
+        }
+
+        .filters-section.mobile-hidden {
+            display: none;
         }
 
         .filters-header {
@@ -724,6 +753,757 @@
             background: #34495e;
         }
 
+        /* Cart Quantity Selector Controls */
+        .cart-item-quantity {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .btn-quantity-decrease,
+        .btn-quantity-increase {
+            width: 30px;
+            height: 30px;
+            border: 2px solid #2c3e50;
+            background: white;
+            color: #2c3e50;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            padding: 0;
+            line-height: 1;
+        }
+
+        .btn-quantity-decrease:hover,
+        .btn-quantity-increase:hover {
+            background: #2c3e50;
+            color: white;
+        }
+
+        .btn-quantity-decrease:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+            background: #e0e0e0;
+            border-color: #ccc;
+        }
+
+        .quantity-display {
+            min-width: 30px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .cart-item-unit-price {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 2px;
+        }
+
+        /* Toast Notification */
+        .toast-notification {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #27ae60;
+            color: white;
+            padding: 16px 24px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: bottom 0.3s ease-in-out;
+            min-width: 280px;
+            max-width: 90%;
+        }
+
+        .toast-notification.show {
+            bottom: 30px;
+        }
+
+        .toast-icon {
+            font-size: 20px;
+        }
+
+        .toast-message {
+            flex: 1;
+        }
+
+        /* Loading Spinner and Overlay */
+        .loading-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .loading-overlay.active {
+            display: flex;
+        }
+
+        .loading-spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top: 4px solid #ffffff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Mini Loading Spinner (for inline use) */
+        .mini-spinner {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(44, 62, 80, 0.3);
+            border-top: 2px solid #2c3e50;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        /* Skeleton Screens */
+        .skeleton-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 0;
+        }
+
+        .skeleton-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .skeleton-image {
+            width: 100%;
+            height: 350px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        .skeleton-content {
+            padding: 20px;
+        }
+
+        .skeleton-title {
+            width: 70%;
+            height: 20px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 4px;
+            margin-bottom: 12px;
+        }
+
+        .skeleton-text {
+            width: 100%;
+            height: 14px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .skeleton-price {
+            width: 40%;
+            height: 24px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 4px;
+            margin-top: 12px;
+        }
+
+        .skeleton-button {
+            width: 100%;
+            height: 40px;
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Button loading state */
+        .btn-loading {
+            pointer-events: none;
+            opacity: 0.7;
+            position: relative;
+        }
+
+        /* Enhanced Checkout Modal */
+        .checkout-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1002;
+            padding: 20px;
+        }
+
+        .checkout-modal.active {
+            display: flex;
+        }
+
+        .checkout-container {
+            background: white;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 900px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+        }
+
+        .checkout-header {
+            padding: 25px 30px;
+            border-bottom: 2px solid #e1e8ed;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .checkout-header h2 {
+            color: #2c3e50;
+            margin: 0;
+        }
+
+        .btn-close-checkout {
+            background: transparent;
+            border: none;
+            font-size: 32px;
+            color: #7f8c8d;
+            cursor: pointer;
+        }
+
+        .checkout-body {
+            padding: 30px;
+        }
+
+        .section-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin: 20px 0 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e1e8ed;
+        }
+
+        .promo-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+        }
+
+        .promo-toggle {
+            cursor: pointer;
+            color: #3498db;
+            font-weight: 600;
+        }
+
+        .promo-input-group {
+            display: none;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .promo-input-group.show {
+            display: flex;
+        }
+
+        .promo-input-group input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 5px;
+        }
+
+        .btn-apply-promo {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-apply-promo:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.4);
+        }
+
+        .btn-apply-promo:active {
+            transform: translateY(0);
+        }
+
+        .promo-applied {
+            display: none;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 15px;
+            background: #e8f8f0;
+            border-radius: 5px;
+            color: #27ae60;
+            margin-top: 15px;
+        }
+
+        .promo-applied.show {
+            display: flex;
+        }
+
+        .btn-remove-promo {
+            background: transparent;
+            border: none;
+            color: #e74c3c;
+            cursor: pointer;
+        }
+
+        .promo-message {
+            font-size: 14px;
+            margin-top: 10px;
+            display: none;
+        }
+
+        .promo-message.show {
+            display: block;
+        }
+
+        .promo-message.success {
+            color: #27ae60;
+        }
+
+        .promo-message.error {
+            color: #e74c3c;
+        }
+
+        /* Enhanced Form Styles */
+        .form-group {
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            transition: color 0.3s;
+        }
+
+        .form-group label .required {
+            color: #e74c3c;
+            margin-left: 3px;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 14px 16px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+            transition: all 0.3s ease;
+            background: white;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: #3498db;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+        }
+
+        .form-group input.error {
+            border-color: #e74c3c;
+            background: #fff5f5;
+        }
+
+        .form-group input.success {
+            border-color: #27ae60;
+            background: #f0fff4;
+        }
+
+        .form-group input.error:focus {
+            box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+        }
+
+        .form-group input.success:focus {
+            box-shadow: 0 0 0 3px rgba(39, 174, 96, 0.1);
+        }
+
+        .form-error {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: 6px;
+            display: none;
+            align-items: center;
+            gap: 5px;
+            animation: slideDown 0.3s ease;
+        }
+
+        .form-error.show {
+            display: flex;
+        }
+
+        .form-error::before {
+            content: "⚠";
+            font-size: 14px;
+        }
+
+        .form-success {
+            color: #27ae60;
+            font-size: 13px;
+            margin-top: 6px;
+            display: none;
+            align-items: center;
+            gap: 5px;
+            animation: slideDown 0.3s ease;
+        }
+
+        .form-success.show {
+            display: flex;
+        }
+
+        .form-success::before {
+            content: "✓";
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        /* Input icons for validation */
+        .form-group.has-icon {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 16px;
+            top: 46px;
+            font-size: 18px;
+            display: none;
+            animation: popIn 0.3s ease;
+        }
+
+        .input-icon.show {
+            display: block;
+        }
+
+        .input-icon.error {
+            color: #e74c3c;
+        }
+
+        .input-icon.success {
+            color: #27ae60;
+        }
+
+        @keyframes popIn {
+            0% {
+                transform: scale(0);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Helper text */
+        .form-helper {
+            font-size: 12px;
+            color: #7f8c8d;
+            margin-top: 5px;
+        }
+
+        /* Form progress indicator */
+        .form-progress {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 15px 20px;
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .progress-bar-container {
+            flex: 1;
+            height: 8px;
+            background: #e1e8ed;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #3498db, #2ecc71);
+            border-radius: 10px;
+            transition: width 0.4s ease;
+            width: 0%;
+        }
+
+        .progress-text {
+            font-size: 14px;
+            font-weight: 600;
+            color: #2c3e50;
+            white-space: nowrap;
+        }
+
+        .order-summary-section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 25px 0;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 12px;
+            font-size: 15px;
+        }
+
+        .summary-row.total {
+            font-size: 20px;
+            font-weight: 700;
+            color: #2c3e50;
+            padding-top: 15px;
+            border-top: 2px solid #d1d8dd;
+            margin-top: 15px;
+        }
+
+        .checkout-actions {
+            padding: 25px 30px;
+            border-top: 2px solid #e1e8ed;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .btn-place-order {
+            padding: 16px 48px;
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-place-order:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+        }
+
+        .btn-place-order:active {
+            transform: translateY(0);
+        }
+
+        .btn-place-order:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .order-confirmation {
+            text-align: center;
+            padding: 40px 30px;
+        }
+
+        .confirmation-icon {
+            font-size: 80px;
+            color: #27ae60;
+        }
+
+        .order-number {
+            font-size: 16px;
+            color: #7f8c8d;
+            margin: 15px 0;
+        }
+
+        .confirmation-details {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: left;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Mobile Filter Menu */
+        .mobile-filter-menu {
+            position: fixed;
+            right: -100%;
+            top: 0;
+            width: 90%;
+            max-width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            transition: right 0.3s;
+            z-index: 1000;
+            overflow-y: auto;
+            display: none;
+        }
+
+        .mobile-filter-menu.active {
+            right: 0;
+        }
+
+        .mobile-filter-header {
+            padding: 20px;
+            background: #2c3e50;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .mobile-filter-header h2 {
+            font-size: 20px;
+            margin: 0;
+        }
+
+        .btn-close-filter {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 28px;
+            cursor: pointer;
+            padding: 0;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .mobile-filter-content {
+            padding: 20px;
+        }
+
+        .mobile-filter-content .filters-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .mobile-filter-content .filter-group {
+            width: 100%;
+        }
+
+        .mobile-filter-content .price-range-container {
+            display: flex;
+            flex-direction: row;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .mobile-filter-content .price-range-container input {
+            flex: 1;
+            min-width: 0;
+            width: 100%;
+        }
+
+        .mobile-filter-actions {
+            padding: 20px;
+            border-top: 2px solid #e1e8ed;
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-apply-filters {
+            flex: 1;
+            padding: 14px;
+            background: #27ae60;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .btn-apply-filters:hover {
+            background: #229954;
+        }
+
         /* Product Details Modal */
         .product-details-modal {
             position: fixed;
@@ -901,19 +1681,51 @@
 
         /* Responsive */
         @media (max-width: 768px) {
+            body, html {
+                overflow-x: hidden;
+                width: 100%;
+                max-width: 100vw;
+            }
+
             .header-main {
                 flex-direction: column;
                 gap: 15px;
+                padding: 15px 3%;
             }
 
             .search-bar {
                 margin: 0;
                 max-width: 100%;
+                width: 100%;
+            }
+
+            .search-bar input {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .filter-menu-btn {
+                display: block;
+            }
+
+            .filters-section {
+                display: none !important;
+            }
+
+            .mobile-filter-menu {
+                display: block;
+            }
+
+            .main-content {
+                padding: 20px 3%;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .product-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 20px;
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+                gap: 15px;
+                width: 100%;
             }
 
             .cart-sidebar {
@@ -923,29 +1735,72 @@
 
             .nav-links {
                 flex-wrap: wrap;
-                gap: 15px;
+                gap: 10px;
+                padding: 0 3%;
+                justify-content: flex-start;
+            }
+
+            .nav-bar {
+                padding: 15px 0;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .hero-banner {
+                padding: 40px 20px;
+                margin: 0 -3% 30px -3%;
+                border-radius: 0;
+            }
+
+            .filters-section {
+                margin: 0 -3% 20px -3%;
+                border-radius: 0;
             }
 
             .product-details-content {
                 flex-direction: column;
                 padding: 20px;
+                width: 100%;
+                box-sizing: border-box;
             }
 
             .product-details-image-container {
                 min-width: 100%;
+                max-width: 100%;
             }
 
             .product-details-image {
                 height: 300px;
+                width: 100%;
             }
 
             .product-details-actions {
                 flex-direction: column;
+                width: 100%;
             }
 
             .btn-add-to-cart-large,
             .btn-back-to-shop {
                 width: 100%;
+            }
+
+            .user-info {
+                display: none;
+            }
+
+            .product-card {
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            .product-image {
+                width: 100%;
+                height: 250px;
+            }
+
+            .header-actions {
+                width: 100%;
+                justify-content: space-between;
             }
         }
     </style>
@@ -986,6 +1841,7 @@
                 </div>
                 <div class="header-actions">
                     <div class="user-info" data-testid="user-info">Welcome, <span id="displayUsername"></span>!</div>
+                    <button class="filter-menu-btn" id="filterMenuBtn" data-testid="filter-menu-button">☰</button>
                     <div class="cart-icon" id="cartIcon" data-testid="cart-icon">
                         🛒
                         <span class="cart-count" id="cartCount" data-testid="cart-count">0</span>
@@ -1096,12 +1952,175 @@
         <!-- Overlay -->
         <div class="overlay" id="overlay" data-testid="overlay"></div>
 
+        <!-- Enhanced Checkout Modal -->
+        <div class="checkout-modal" id="checkoutModal" data-testid="checkout-modal">
+            <div class="checkout-container">
+                <div class="checkout-header">
+                    <h2>Checkout</h2>
+                    <button class="btn-close-checkout" id="closeCheckout">×</button>
+                </div>
+
+                <div class="checkout-body" id="checkoutForm">
+                    <!-- Promo Code Section -->
+                    <div class="promo-section">
+                        <div class="promo-toggle" id="promoToggle">+ Have a promo code?</div>
+                        <div class="promo-input-group" id="promoInputGroup">
+                            <input type="text" id="promoCodeInput" placeholder="Enter promo code" data-testid="promo-code-input">
+                            <button class="btn-apply-promo" id="applyPromoBtn">Apply</button>
+                        </div>
+                        <div class="promo-applied" id="promoApplied">
+                            <span id="appliedPromoCode"></span>
+                            <button class="btn-remove-promo" id="removePromoBtn">×</button>
+                        </div>
+                        <div class="promo-message" id="promoMessage"></div>
+                    </div>
+
+                    <!-- Form Progress Indicator -->
+                    <div class="form-progress">
+                        <span class="progress-text" id="progressText">0 of 8 fields completed</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                    </div>
+
+                    <!-- Shipping Address Form -->
+                    <h3 class="section-title">Shipping Information</h3>
+                    <div class="form-group has-icon">
+                        <label>Full Name <span class="required">*</span></label>
+                        <input type="text" id="fullName" placeholder="John Doe" data-testid="full-name-input" required>
+                        <span class="input-icon" id="fullNameIcon">✓</span>
+                        <div class="form-error" id="fullNameError">Please enter your full name</div>
+                        <div class="form-success" id="fullNameSuccess">Looks good!</div>
+                    </div>
+
+                    <div class="form-group has-icon">
+                        <label>Email <span class="required">*</span></label>
+                        <input type="email" id="email" placeholder="john@example.com" data-testid="email-input" required>
+                        <span class="input-icon" id="emailIcon">✓</span>
+                        <div class="form-error" id="emailError">Please enter a valid email</div>
+                        <div class="form-success" id="emailSuccess">Looks good!</div>
+                    </div>
+
+                    <div class="form-group has-icon">
+                        <label>Phone Number <span class="required">*</span></label>
+                        <input type="tel" id="phone" placeholder="+1 (555) 123-4567" data-testid="phone-input" required>
+                        <span class="input-icon" id="phoneIcon">✓</span>
+                        <div class="form-error" id="phoneError">Please enter a valid phone number</div>
+                        <div class="form-success" id="phoneSuccess">Looks good!</div>
+                    </div>
+
+                    <div class="form-group has-icon">
+                        <label>Address Line 1 <span class="required">*</span></label>
+                        <input type="text" id="address1" placeholder="123 Main Street" data-testid="address1-input" required>
+                        <span class="input-icon" id="address1Icon">✓</span>
+                        <div class="form-error" id="address1Error">Please enter your address</div>
+                        <div class="form-success" id="address1Success">Looks good!</div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Address Line 2 (Optional)</label>
+                        <input type="text" id="address2" placeholder="Apartment, suite, etc." data-testid="address2-input">
+                        <div class="form-helper">Apartment, suite, unit, building, floor, etc.</div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group has-icon">
+                            <label>City <span class="required">*</span></label>
+                            <input type="text" id="city" placeholder="New York" data-testid="city-input" required>
+                            <span class="input-icon" id="cityIcon">✓</span>
+                            <div class="form-error" id="cityError">Required</div>
+                            <div class="form-success" id="citySuccess">Looks good!</div>
+                        </div>
+                        <div class="form-group has-icon">
+                            <label>State/Province <span class="required">*</span></label>
+                            <input type="text" id="state" placeholder="NY" data-testid="state-input" required>
+                            <span class="input-icon" id="stateIcon">✓</span>
+                            <div class="form-error" id="stateError">Required</div>
+                            <div class="form-success" id="stateSuccess">Looks good!</div>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group has-icon">
+                            <label>Postal Code <span class="required">*</span></label>
+                            <input type="text" id="postal" placeholder="10001" data-testid="postal-input" required>
+                            <span class="input-icon" id="postalIcon">✓</span>
+                            <div class="form-error" id="postalError">Required</div>
+                            <div class="form-success" id="postalSuccess">Looks good!</div>
+                        </div>
+                        <div class="form-group has-icon">
+                            <label>Country <span class="required">*</span></label>
+                            <select id="country" data-testid="country-select" required>
+                                <option value="">Select Country</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="GB">United Kingdom</option>
+                                <option value="AU">Australia</option>
+                                <option value="SG">Singapore</option>
+                            </select>
+                            <span class="input-icon" id="countryIcon">✓</span>
+                            <div class="form-error" id="countryError">Required</div>
+                            <div class="form-success" id="countrySuccess">Looks good!</div>
+                        </div>
+                    </div>
+
+                    <!-- Order Summary -->
+                    <h3 class="section-title">Order Summary</h3>
+                    <div class="order-summary-section">
+                        <div class="summary-row subtotal">
+                            <span>Subtotal</span>
+                            <span id="checkoutSubtotal">$0.00</span>
+                        </div>
+                        <div class="summary-row shipping">
+                            <span>Shipping</span>
+                            <span id="checkoutShipping">$5.99</span>
+                        </div>
+                        <div class="summary-row tax" style="display: none;" id="taxRow">
+                            <span>Tax (10%)</span>
+                            <span id="checkoutTax">$0.00</span>
+                        </div>
+                        <div class="summary-row discount" style="display: none;" id="discountRow">
+                            <span>Discount</span>
+                            <span id="checkoutDiscount">-$0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total</span>
+                            <span id="checkoutTotal">$0.00</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="checkout-actions">
+                    <button class="btn-place-order" id="placeOrderBtn" data-testid="place-order-button">Place Order</button>
+                </div>
+            </div>
+        </div>
+
         <!-- Success Modal -->
         <div class="success-modal" id="successModal" data-testid="success-modal">
-            <div class="success-icon">✓</div>
-            <h2>Order Successful!</h2>
-            <p>Your order has been placed successfully. Thank you for shopping with Taqelah Boutique!</p>
-            <button class="btn-continue" id="continueBtn" data-testid="continue-shopping-button">Continue Shopping</button>
+            <div class="order-confirmation" id="orderConfirmation">
+                <div class="confirmation-icon">✓</div>
+                <h2>Order Placed Successfully!</h2>
+                <div class="order-number">Order Number: <strong id="orderNumberDisplay">#ORDER-12345</strong></div>
+                <p class="confirmation-message">Thank you for your order! We've sent a confirmation email to your inbox.</p>
+
+                <div class="confirmation-details">
+                    <div class="detail-row">
+                        <span class="detail-label">Items:</span>
+                        <span class="detail-value" id="confirmationItems">0</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Total Amount:</span>
+                        <span class="detail-value" id="confirmationTotal">$0.00</span>
+                    </div>
+                    <div class="detail-row">
+                        <span class="detail-label">Estimated Delivery:</span>
+                        <span class="detail-value" id="confirmationDelivery">5-7 business days</span>
+                    </div>
+                </div>
+
+                <button class="btn-continue" id="continueBtn" data-testid="continue-shopping-button">Continue Shopping</button>
+            </div>
         </div>
 
         <!-- Product Details Modal -->
@@ -1110,6 +2129,66 @@
             <div class="product-details-content" id="productDetailsContent" data-testid="product-details-content">
                 <!-- Content will be populated by JavaScript -->
             </div>
+        </div>
+
+        <!-- Mobile Filter Menu -->
+        <div class="mobile-filter-menu" id="mobileFilterMenu" data-testid="mobile-filter-menu">
+            <div class="mobile-filter-header">
+                <h2>Filters</h2>
+                <button class="btn-close-filter" id="closeMobileFilter" data-testid="close-mobile-filter-button">×</button>
+            </div>
+            <div class="mobile-filter-content">
+                <div class="filters-header" style="margin-bottom: 20px;">
+                    <button class="btn-clear-filters" id="clearFiltersMobile" data-testid="clear-filters-mobile-button" style="width: 100%;">Clear All Filters</button>
+                </div>
+                <div class="filters-grid">
+                    <div class="filter-group">
+                        <label for="sizeFilterMobile">Size</label>
+                        <select id="sizeFilterMobile" data-testid="size-filter-mobile">
+                            <option value="">All Sizes</option>
+                            <option value="XS">XS</option>
+                            <option value="S">S</option>
+                            <option value="M">M</option>
+                            <option value="L">L</option>
+                            <option value="XL">XL</option>
+                            <option value="XXL">XXL</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Price Range</label>
+                        <div class="price-range-container">
+                            <input type="number" id="minPriceMobile" placeholder="Min" min="0" data-testid="min-price-mobile-input">
+                            <span class="price-separator">-</span>
+                            <input type="number" id="maxPriceMobile" placeholder="Max" min="0" data-testid="max-price-mobile-input">
+                        </div>
+                    </div>
+                    <div class="filter-group">
+                        <label for="sortFilterMobile">Sort By</label>
+                        <select id="sortFilterMobile" data-testid="sort-filter-mobile">
+                            <option value="">Default</option>
+                            <option value="price-low">Price: Low to High</option>
+                            <option value="price-high">Price: High to Low</option>
+                            <option value="name-asc">Name: A to Z</option>
+                            <option value="name-desc">Name: Z to A</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="filter-tags" id="filterTagsMobile" data-testid="filter-tags-mobile" style="margin-top: 20px;"></div>
+            </div>
+            <div class="mobile-filter-actions">
+                <button class="btn-apply-filters" id="applyFiltersBtn" data-testid="apply-filters-button">Apply Filters</button>
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div class="toast-notification" id="toastNotification" data-testid="toast-notification">
+            <span class="toast-icon">✓</span>
+            <span class="toast-message" id="toastMessage"></span>
+        </div>
+
+        <!-- Loading Overlay -->
+        <div class="loading-overlay" id="loadingOverlay" data-testid="loading-overlay">
+            <div class="loading-spinner"></div>
         </div>
     </div>
 
@@ -1120,7 +2199,7 @@
             {
                 id: 1,
                 name: "Floral Midi Dress",
-                description: "Elegant floral print midi dress perfect for any occasion",
+                description: "Elegant floral print midi dress perfect for any occasion. Features flattering silhouette and comfortable fabric.",
                 price: 89.99,
                 category: "new-in",
                 image: "https://images.pexels.com/photos/1055691/pexels-photo-1055691.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1130,7 +2209,7 @@
             {
                 id: 2,
                 name: "Silk Blouse",
-                description: "Luxurious silk blouse in versatile neutral tone",
+                description: "Luxurious silk blouse in versatile neutral tone. Perfect for office or evening wear with elegance.",
                 price: 79.99,
                 category: "new-in",
                 image: "https://images.pexels.com/photos/7679720/pexels-photo-7679720.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1140,7 +2219,7 @@
             {
                 id: 3,
                 name: "Wide Leg Pants",
-                description: "Flowy wide leg pants for effortless style",
+                description: "Flowy wide leg pants for effortless everyday style. High-waisted design with comfortable stretch fabric.",
                 price: 59.99,
                 category: "new-in",
                 image: "https://images.pexels.com/photos/7679654/pexels-photo-7679654.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1152,7 +2231,7 @@
             {
                 id: 4,
                 name: "Cotton Shirt Dress",
-                description: "Classic cotton shirt dress for everyday wear",
+                description: "Classic cotton shirt dress for everyday comfort. Features button-front closure and relaxed fit styling.",
                 price: 75.99,
                 category: "dresses",
                 image: "https://images.pexels.com/photos/3755440/pexels-photo-3755440.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1162,7 +2241,7 @@
             {
                 id: 5,
                 name: "Wrap Dress",
-                description: "Flattering wrap dress with adjustable tie",
+                description: "Flattering wrap dress with adjustable tie closure. Creates elegant silhouette that suits all body types.",
                 price: 85.99,
                 category: "dresses",
                 image: "https://images.pexels.com/photos/6311392/pexels-photo-6311392.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1172,7 +2251,7 @@
             {
                 id: 6,
                 name: "Maxi Dress",
-                description: "Flowing maxi dress for elegant occasions",
+                description: "Flowing maxi dress for elegant special occasions. Full-length design with comfortable stretch fabric.",
                 price: 95.99,
                 category: "dresses",
                 image: "https://images.pexels.com/photos/3755714/pexels-photo-3755714.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1182,7 +2261,7 @@
             {
                 id: 7,
                 name: "Summer Sundress",
-                description: "Light and breezy sundress perfect for warm days",
+                description: "Light and breezy sundress perfect for warm weather. Adjustable straps and relaxed fit for comfort.",
                 price: 65.99,
                 category: "dresses",
                 image: "https://images.pexels.com/photos/1124468/pexels-photo-1124468.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1194,7 +2273,7 @@
             {
                 id: 8,
                 name: "Linen Blend Top",
-                description: "Breathable linen blend top for casual comfort",
+                description: "Breathable linen blend top for casual daily comfort. Lightweight fabric perfect for warm weather styling.",
                 price: 45.99,
                 category: "tops",
                 image: "https://images.pexels.com/photos/7679862/pexels-photo-7679862.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1204,7 +2283,7 @@
             {
                 id: 9,
                 name: "Silk Cami",
-                description: "Delicate silk camisole for layering or standalone wear",
+                description: "Delicate silk camisole for layering or solo wear. Features adjustable straps and smooth elegant drape.",
                 price: 52.99,
                 category: "tops",
                 image: "https://images.pexels.com/photos/5868272/pexels-photo-5868272.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1214,7 +2293,7 @@
             {
                 id: 10,
                 name: "Cotton V-Neck Tee",
-                description: "Essential cotton tee with flattering v-neck",
+                description: "Essential cotton tee with flattering v-neck design. Soft fabric and classic cut for everyday casual wear.",
                 price: 32.99,
                 category: "tops",
                 image: "https://images.pexels.com/photos/7679743/pexels-photo-7679743.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1224,7 +2303,7 @@
             {
                 id: 11,
                 name: "Striped Button-Up",
-                description: "Classic striped button-up shirt for any occasion",
+                description: "Classic striped button-up shirt for any occasion. Timeless design with modern tailored flattering fit.",
                 price: 58.99,
                 category: "tops",
                 image: "https://images.pexels.com/photos/5710082/pexels-photo-5710082.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1236,7 +2315,7 @@
             {
                 id: 12,
                 name: "High-Waist Trousers",
-                description: "Tailored high-waist trousers for a sophisticated look",
+                description: "Tailored high-waist trousers for sophisticated style. Features pressed seams and elegant flattering fit.",
                 price: 69.99,
                 category: "bottoms",
                 image: "https://images.pexels.com/photos/3755021/pexels-photo-3755021.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1246,7 +2325,7 @@
             {
                 id: 13,
                 name: "Pleated Skirt",
-                description: "Feminine pleated skirt in soft pastel shade",
+                description: "Feminine pleated skirt in soft pretty pastel shade. Flowy design with comfortable elastic waistband.",
                 price: 55.99,
                 category: "bottoms",
                 image: "https://images.pexels.com/photos/7679485/pexels-photo-7679485.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1256,7 +2335,7 @@
             {
                 id: 14,
                 name: "Denim Jeans",
-                description: "Classic denim jeans with perfect fit",
+                description: "Classic denim jeans with perfect flattering fit. Premium quality denim with stretch for all-day comfort.",
                 price: 78.99,
                 category: "bottoms",
                 image: "https://images.pexels.com/photos/1598507/pexels-photo-1598507.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1266,7 +2345,7 @@
             {
                 id: 15,
                 name: "Midi Skirt",
-                description: "Elegant midi skirt for office or evening",
+                description: "Elegant midi skirt for office or evening occasions. Versatile design that pairs well with any outfit top.",
                 price: 62.99,
                 category: "bottoms",
                 image: "https://images.pexels.com/photos/9373442/pexels-photo-9373442.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1278,7 +2357,7 @@
             {
                 id: 16,
                 name: "Knit Cardigan",
-                description: "Cozy knit cardigan perfect for layering",
+                description: "Cozy knit cardigan perfect for everyday layering. Soft fabric with button closure and relaxed comfortable fit.",
                 price: 65.99,
                 category: "outerwear",
                 image: "https://images.pexels.com/photos/8148577/pexels-photo-8148577.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1288,7 +2367,7 @@
             {
                 id: 17,
                 name: "Blazer Jacket",
-                description: "Structured blazer for professional elegance",
+                description: "Structured blazer for professional elegant style. Tailored fit with refined details and premium quality lining.",
                 price: 125.99,
                 category: "outerwear",
                 image: "https://images.pexels.com/photos/3755706/pexels-photo-3755706.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1298,7 +2377,7 @@
             {
                 id: 18,
                 name: "Denim Jacket",
-                description: "Classic denim jacket - a wardrobe essential",
+                description: "Classic denim jacket - a true wardrobe essential. Versatile piece that pairs perfectly with everything you own.",
                 price: 89.99,
                 category: "outerwear",
                 image: "https://images.pexels.com/photos/1926769/pexels-photo-1926769.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1308,7 +2387,7 @@
             {
                 id: 19,
                 name: "Trench Coat",
-                description: "Timeless trench coat for rainy days",
+                description: "Timeless trench coat perfect for rainy weather days. Features belted waist and water-resistant durable fabric.",
                 price: 145.99,
                 category: "outerwear",
                 image: "https://images.pexels.com/photos/1375736/pexels-photo-1375736.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1320,7 +2399,7 @@
             {
                 id: 20,
                 name: "Leather Handbag",
-                description: "Premium leather handbag with gold hardware",
+                description: "Premium leather handbag with elegant gold hardware. Spacious interior with multiple compartments for easy organization.",
                 price: 129.99,
                 category: "accessories",
                 image: "https://images.pexels.com/photos/1152077/pexels-photo-1152077.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1330,7 +2409,7 @@
             {
                 id: 21,
                 name: "Silk Scarf",
-                description: "Luxurious silk scarf in vibrant print",
+                description: "Luxurious silk scarf in vibrant beautiful print. Versatile accessory perfect for any season or weather style.",
                 price: 42.99,
                 category: "accessories",
                 image: "https://images.pexels.com/photos/5119214/pexels-photo-5119214.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1340,7 +2419,7 @@
             {
                 id: 22,
                 name: "Statement Earrings",
-                description: "Bold statement earrings to elevate any outfit",
+                description: "Bold statement earrings to elevate any look or outfit. Eye-catching design with comfortable lightweight all-day wear.",
                 price: 38.99,
                 category: "accessories",
                 image: "https://images.pexels.com/photos/3673765/pexels-photo-3673765.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1350,7 +2429,7 @@
             {
                 id: 23,
                 name: "Wide Belt",
-                description: "Stylish wide belt to cinch your waist",
+                description: "Stylish wide belt to cinch and define your waist. Adjustable fit with elegant decorative buckle detail finish.",
                 price: 35.99,
                 category: "accessories",
                 image: "https://images.pexels.com/photos/2850487/pexels-photo-2850487.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1362,7 +2441,7 @@
             {
                 id: 24,
                 name: "Casual Tee",
-                description: "Comfortable casual tee - end of season sale",
+                description: "Comfortable casual tee - amazing end of season sale. Soft cotton fabric with classic timeless crew neck styling.",
                 price: 19.99,
                 category: "sale",
                 image: "https://images.pexels.com/photos/8532616/pexels-photo-8532616.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1372,7 +2451,7 @@
             {
                 id: 25,
                 name: "Summer Shorts",
-                description: "Lightweight summer shorts - clearance price",
+                description: "Lightweight summer shorts - special clearance pricing. Breathable fabric with adjustable drawstring waist for perfect fit.",
                 price: 24.99,
                 category: "sale",
                 image: "https://images.pexels.com/photos/7764675/pexels-photo-7764675.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1382,7 +2461,7 @@
             {
                 id: 26,
                 name: "Knit Sweater",
-                description: "Cozy knit sweater - special discount",
+                description: "Cozy knit sweater - special limited discount price. Warm and comfortable with ribbed trim decorative details.",
                 price: 39.99,
                 category: "sale",
                 image: "https://images.pexels.com/photos/5622862/pexels-photo-5622862.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1392,7 +2471,7 @@
             {
                 id: 27,
                 name: "Ankle Boots",
-                description: "Stylish ankle boots - final sale",
+                description: "Stylish ankle boots - final clearance sale pricing. Versatile design with comfortable cushioned insole for all-day wear.",
                 price: 54.99,
                 category: "sale",
                 image: "https://images.pexels.com/photos/336372/pexels-photo-336372.jpeg?auto=compress&cs=tinysrgb&w=400&h=500",
@@ -1452,6 +2531,70 @@
         const productPaginationBottom = document.getElementById('productPaginationBottom');
         const searchPaginationTop = document.getElementById('searchPaginationTop');
         const searchPaginationBottom = document.getElementById('searchPaginationBottom');
+
+        // Mobile Filter Elements
+        const filterMenuBtn = document.getElementById('filterMenuBtn');
+        const mobileFilterMenu = document.getElementById('mobileFilterMenu');
+        const closeMobileFilter = document.getElementById('closeMobileFilter');
+        const sizeFilterMobile = document.getElementById('sizeFilterMobile');
+        const minPriceMobile = document.getElementById('minPriceMobile');
+        const maxPriceMobile = document.getElementById('maxPriceMobile');
+        const sortFilterMobile = document.getElementById('sortFilterMobile');
+        const clearFiltersMobile = document.getElementById('clearFiltersMobile');
+        const filterTagsMobile = document.getElementById('filterTagsMobile');
+        const applyFiltersBtn = document.getElementById('applyFiltersBtn');
+
+        // Toast Notification Elements
+        const toastNotification = document.getElementById('toastNotification');
+        const toastMessage = document.getElementById('toastMessage');
+
+        // Show Toast Notification
+        function showToast(message, duration = 3000) {
+            toastMessage.textContent = message;
+            toastNotification.classList.add('show');
+
+            setTimeout(() => {
+                toastNotification.classList.remove('show');
+            }, duration);
+        }
+
+        // Loading Overlay Element
+        const loadingOverlay = document.getElementById('loadingOverlay');
+
+        // Show/Hide Loading Overlay
+        function showLoading() {
+            loadingOverlay.classList.add('active');
+        }
+
+        function hideLoading() {
+            loadingOverlay.classList.remove('active');
+        }
+
+        // Simulate async operation with delay
+        function simulateAsync(callback, delay = 500) {
+            showLoading();
+            setTimeout(() => {
+                callback();
+                hideLoading();
+            }, delay);
+        }
+
+        // Show Skeleton Screen
+        function showSkeletonScreen(container = productGrid, count = 8) {
+            const skeletonCards = Array.from({ length: count }, (_, i) => `
+                <div class="skeleton-card" data-testid="skeleton-card-${i}">
+                    <div class="skeleton-image"></div>
+                    <div class="skeleton-content">
+                        <div class="skeleton-title"></div>
+                        <div class="skeleton-text"></div>
+                        <div class="skeleton-text" style="width: 85%;"></div>
+                        <div class="skeleton-price"></div>
+                        <div class="skeleton-button"></div>
+                    </div>
+                </div>
+            `).join('');
+            container.innerHTML = skeletonCards;
+        }
 
         // Login Handling
         loginForm.addEventListener('submit', (e) => {
@@ -1696,9 +2839,15 @@
                 }
             }
 
-            renderProducts(filtered, productGrid, true, currentPage);
-            renderPagination(filtered.length, currentPage, 'changeProductPage', productPaginationTop, productPaginationBottom);
-            updateFilterTags();
+            // Show skeleton screen while filtering
+            showSkeletonScreen(productGrid, 8);
+
+            // Simulate async filtering with delay
+            setTimeout(() => {
+                renderProducts(filtered, productGrid, true, currentPage);
+                renderPagination(filtered.length, currentPage, 'changeProductPage', productPaginationTop, productPaginationBottom);
+                updateFilterTags();
+            }, 400);
         }
 
         // Update Filter Tags
@@ -1723,12 +2872,15 @@
                 tags.push({ type: 'sort', label: sortLabels[activeFilters.sort] });
             }
 
-            filterTags.innerHTML = tags.map(tag => `
+            const tagsHTML = tags.map(tag => `
                 <div class="filter-tag" data-testid="filter-tag-${tag.type}">
                     <span>${tag.label}</span>
                     <span class="filter-tag-close" onclick="removeFilter('${tag.type}')" data-testid="remove-filter-${tag.type}">×</span>
                 </div>
             `).join('');
+
+            filterTags.innerHTML = tagsHTML;
+            filterTagsMobile.innerHTML = tagsHTML;
         }
 
         // Remove Filter
@@ -1760,6 +2912,10 @@
             minPrice.value = '';
             maxPrice.value = '';
             sortFilter.value = '';
+            sizeFilterMobile.value = '';
+            minPriceMobile.value = '';
+            maxPriceMobile.value = '';
+            sortFilterMobile.value = '';
             currentPage = 1; // Reset to first page
             filterAndSortProducts();
         }
@@ -1768,24 +2924,28 @@
         sizeFilter.addEventListener('change', (e) => {
             activeFilters.size = e.target.value;
             currentPage = 1; // Reset to first page
+            syncFilters();
             filterAndSortProducts();
         });
 
         minPrice.addEventListener('input', (e) => {
             activeFilters.minPrice = e.target.value;
             currentPage = 1; // Reset to first page
+            syncFilters();
             filterAndSortProducts();
         });
 
         maxPrice.addEventListener('input', (e) => {
             activeFilters.maxPrice = e.target.value;
             currentPage = 1; // Reset to first page
+            syncFilters();
             filterAndSortProducts();
         });
 
         sortFilter.addEventListener('change', (e) => {
             activeFilters.sort = e.target.value;
             currentPage = 1; // Reset to first page
+            syncFilters();
             filterAndSortProducts();
         });
 
@@ -1867,14 +3027,24 @@
         function addToCart(productId) {
             const product = products.find(p => p.id === productId);
             if (product) {
-                cart.push({...product});
-                updateCart();
+                simulateAsync(() => {
+                    const existingItem = cart.find(item => item.id === productId);
+                    if (existingItem) {
+                        existingItem.quantity += 1;
+                        showToast(`${product.name} quantity increased to ${existingItem.quantity}`);
+                    } else {
+                        cart.push({...product, quantity: 1});
+                        showToast(`${product.name} added to cart`);
+                    }
+                    updateCart();
+                }, 300);
             }
         }
 
         // Update Cart
         function updateCart() {
-            cartCount.textContent = cart.length;
+            const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+            cartCount.textContent = totalItems;
 
             // Save cart to localStorage
             if (currentUser) {
@@ -1888,7 +3058,7 @@
                 return;
             }
 
-            const total = cart.reduce((sum, item) => sum + item.price, 0);
+            const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
             cartTotal.textContent = `$${total.toFixed(2)}`;
             checkoutBtn.disabled = false;
 
@@ -1897,17 +3067,48 @@
                     <img src="${item.image}" alt="${item.name}" class="cart-item-image" data-testid="cart-item-image-${item.id}">
                     <div class="cart-item-info">
                         <div class="cart-item-name" data-testid="cart-item-name-${item.id}">${item.name}</div>
-                        <div class="cart-item-price" data-testid="cart-item-price-${item.id}">$${item.price.toFixed(2)}</div>
+                        <div class="cart-item-price" data-testid="cart-item-price-${item.id}">$${(item.price * item.quantity).toFixed(2)}</div>
+                        <div class="cart-item-unit-price">$${item.price.toFixed(2)} each</div>
+                        <div class="cart-item-quantity">
+                            <button class="btn-quantity-decrease" onclick="decreaseQuantity(${item.id})" data-testid="decrease-quantity-${item.id}">−</button>
+                            <span class="quantity-display" data-testid="quantity-${item.id}">${item.quantity}</span>
+                            <button class="btn-quantity-increase" onclick="increaseQuantity(${item.id})" data-testid="increase-quantity-${item.id}">+</button>
+                        </div>
                     </div>
-                    <button class="cart-item-remove" onclick="removeFromCart(${index})" data-testid="remove-cart-item-${item.id}">Remove</button>
+                    <button class="cart-item-remove" onclick="removeFromCart(${item.id})" data-testid="remove-cart-item-${item.id}">Remove</button>
                 </div>
             `).join('');
         }
 
         // Remove from Cart
-        function removeFromCart(index) {
-            cart.splice(index, 1);
+        function removeFromCart(productId) {
+            cart = cart.filter(item => item.id !== productId);
             updateCart();
+        }
+
+        // Increase Quantity
+        function increaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                if (item.quantity < 99) { // Max quantity limit
+                    item.quantity += 1;
+                    updateCart();
+                }
+            }
+        }
+
+        // Decrease Quantity
+        function decreaseQuantity(productId) {
+            const item = cart.find(item => item.id === productId);
+            if (item) {
+                if (item.quantity > 1) {
+                    item.quantity -= 1;
+                    updateCart();
+                } else {
+                    // If quantity is 1, remove the item entirely
+                    removeFromCart(productId);
+                }
+            }
         }
 
         // Cart Toggle
@@ -1924,6 +3125,7 @@
         overlay.addEventListener('click', () => {
             cartSidebar.classList.remove('active');
             productDetailsModal.classList.remove('active');
+            mobileFilterMenu.classList.remove('active');
             overlay.classList.remove('active');
         });
 
@@ -1932,23 +3134,401 @@
             closeProductDetailsModal();
         });
 
-        // Checkout
+        // Enhanced Checkout Elements
+        const checkoutModal = document.getElementById('checkoutModal');
+        const closeCheckout = document.getElementById('closeCheckout');
+        const placeOrderBtn = document.getElementById('placeOrderBtn');
+        const promoToggle = document.getElementById('promoToggle');
+        const promoInputGroup = document.getElementById('promoInputGroup');
+        const promoCodeInput = document.getElementById('promoCodeInput');
+        const applyPromoBtn = document.getElementById('applyPromoBtn');
+        const promoApplied = document.getElementById('promoApplied');
+        const appliedPromoCode = document.getElementById('appliedPromoCode');
+        const removePromoBtn = document.getElementById('removePromoBtn');
+        const promoMessage = document.getElementById('promoMessage');
+
+        // Checkout state
+        let appliedPromo = null;
+        const promoCodes = {
+            'SAVE10': { discount: 0.10, type: 'percentage', description: '10% off' },
+            'WELCOME20': { discount: 0.20, type: 'percentage', description: '20% off' },
+            'FREESHIP': { discount: 5.99, type: 'fixed', description: 'Free shipping' }
+        };
+
+        // Open Checkout
         checkoutBtn.addEventListener('click', () => {
-            // Close cart
             cartSidebar.classList.remove('active');
-
-            // Show success modal
-            successModal.classList.add('active');
+            checkoutModal.classList.add('active');
             overlay.classList.add('active');
+            updateCheckoutSummary();
+        });
 
-            // Clear cart
-            cart = [];
-            updateCart();
+        // Close Checkout
+        closeCheckout.addEventListener('click', () => {
+            checkoutModal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Promo Code Toggle
+        promoToggle.addEventListener('click', () => {
+            promoInputGroup.classList.toggle('show');
+        });
+
+        // Apply Promo Code
+        applyPromoBtn.addEventListener('click', () => {
+            const code = promoCodeInput.value.trim().toUpperCase();
+            if (promoCodes[code]) {
+                appliedPromo = { code, ...promoCodes[code] };
+                appliedPromoCode.textContent = `${code} - ${promoCodes[code].description} applied`;
+                promoApplied.classList.add('show');
+                promoInputGroup.classList.remove('show');
+                promoMessage.textContent = `Promo code applied successfully!`;
+                promoMessage.className = 'promo-message success show';
+                setTimeout(() => promoMessage.classList.remove('show'), 3000);
+                updateCheckoutSummary();
+            } else {
+                promoMessage.textContent = 'Invalid promo code. Try: SAVE10, WELCOME20, or FREESHIP';
+                promoMessage.className = 'promo-message error show';
+                setTimeout(() => promoMessage.classList.remove('show'), 3000);
+            }
+        });
+
+        // Remove Promo Code
+        removePromoBtn.addEventListener('click', () => {
+            appliedPromo = null;
+            promoApplied.classList.remove('show');
+            promoCodeInput.value = '';
+            updateCheckoutSummary();
+        });
+
+        // Update Checkout Summary
+        function updateCheckoutSummary() {
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const shipping = subtotal >= 100 ? 0 : 5.99; // Free shipping over $100
+            const tax = subtotal * 0.10; // 10% tax
+
+            let discount = 0;
+            if (appliedPromo) {
+                if (appliedPromo.type === 'percentage') {
+                    discount = subtotal * appliedPromo.discount;
+                } else {
+                    discount = appliedPromo.discount;
+                }
+            }
+
+            const total = subtotal + shipping + tax - discount;
+
+            document.getElementById('checkoutSubtotal').textContent = `$${subtotal.toFixed(2)}`;
+            document.getElementById('checkoutShipping').textContent = shipping === 0 ? 'FREE' : `$${shipping.toFixed(2)}`;
+            document.getElementById('checkoutTax').textContent = `$${tax.toFixed(2)}`;
+            document.getElementById('checkoutTotal').textContent = `$${total.toFixed(2)}`;
+
+            // Show/hide tax row
+            document.getElementById('taxRow').style.display = 'flex';
+
+            // Show/hide discount row
+            if (discount > 0) {
+                document.getElementById('discountRow').style.display = 'flex';
+                document.getElementById('checkoutDiscount').textContent = `-$${discount.toFixed(2)}`;
+            } else {
+                document.getElementById('discountRow').style.display = 'none';
+            }
+        }
+
+        // Form Validation
+        function validateCheckoutForm() {
+            let isValid = true;
+
+            // Full Name
+            const fullName = document.getElementById('fullName').value.trim();
+            if (!fullName) {
+                document.getElementById('fullName').classList.add('error');
+                document.getElementById('fullNameError').classList.add('show');
+                isValid = false;
+            } else {
+                document.getElementById('fullName').classList.remove('error');
+                document.getElementById('fullNameError').classList.remove('show');
+            }
+
+            // Email
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById('email').classList.add('error');
+                document.getElementById('emailError').classList.add('show');
+                isValid = false;
+            } else {
+                document.getElementById('email').classList.remove('error');
+                document.getElementById('emailError').classList.remove('show');
+            }
+
+            // Phone
+            const phone = document.getElementById('phone').value.trim();
+            if (!phone || phone.length < 10) {
+                document.getElementById('phone').classList.add('error');
+                document.getElementById('phoneError').classList.add('show');
+                isValid = false;
+            } else {
+                document.getElementById('phone').classList.remove('error');
+                document.getElementById('phoneError').classList.remove('show');
+            }
+
+            // Address 1
+            const address1 = document.getElementById('address1').value.trim();
+            if (!address1) {
+                document.getElementById('address1').classList.add('error');
+                document.getElementById('address1Error').classList.add('show');
+                isValid = false;
+            } else {
+                document.getElementById('address1').classList.remove('error');
+                document.getElementById('address1Error').classList.remove('show');
+            }
+
+            // City
+            const city = document.getElementById('city').value.trim();
+            if (!city) {
+                document.getElementById('city').classList.add('error');
+                document.getElementById('cityError').classList.add('show');
+                isValid = false;
+            } else {
+                document.getElementById('city').classList.remove('error');
+                document.getElementById('cityError').classList.remove('show');
+            }
+
+            // State
+            const state = document.getElementById('state').value.trim();
+            if (!state) {
+                document.getElementById('state').classList.add('error');
+                document.getElementById('stateError').classList.add('show');
+                isValid = false;
+            } else {
+                document.getElementById('state').classList.remove('error');
+                document.getElementById('stateError').classList.remove('show');
+            }
+
+            // Postal
+            const postal = document.getElementById('postal').value.trim();
+            if (!postal) {
+                document.getElementById('postal').classList.add('error');
+                document.getElementById('postalError').classList.add('show');
+                isValid = false;
+            } else {
+                document.getElementById('postal').classList.remove('error');
+                document.getElementById('postalError').classList.remove('show');
+            }
+
+            // Country
+            const country = document.getElementById('country').value;
+            if (!country) {
+                document.getElementById('country').classList.add('error');
+                document.getElementById('countryError').classList.add('show');
+                isValid = false;
+            } else {
+                document.getElementById('country').classList.remove('error');
+                document.getElementById('countryError').classList.remove('show');
+            }
+
+            return isValid;
+        }
+
+        // Real-time Form Validation and Progress Tracking
+        const formFields = ['fullName', 'email', 'phone', 'address1', 'city', 'state', 'postal', 'country'];
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+
+        function updateFormProgress() {
+            let completedFields = 0;
+
+            formFields.forEach(fieldId => {
+                const field = document.getElementById(fieldId);
+                if (field && field.value.trim() !== '') {
+                    completedFields++;
+                }
+            });
+
+            const percentage = (completedFields / formFields.length) * 100;
+            progressBar.style.width = percentage + '%';
+            progressText.textContent = `${completedFields} of ${formFields.length} fields completed`;
+        }
+
+        function validateField(fieldId) {
+            const field = document.getElementById(fieldId);
+            const errorElement = document.getElementById(fieldId + 'Error');
+            const successElement = document.getElementById(fieldId + 'Success');
+            const iconElement = document.getElementById(fieldId + 'Icon');
+
+            if (!field) return;
+
+            const value = field.value.trim();
+            let isValid = false;
+
+            // Field-specific validation
+            if (fieldId === 'email') {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                isValid = emailRegex.test(value);
+            } else if (fieldId === 'phone') {
+                isValid = value.length >= 10;
+            } else {
+                isValid = value.length >= 2;
+            }
+
+            // Update field styling
+            if (value === '') {
+                // Empty - reset to default
+                field.classList.remove('error', 'success');
+                if (errorElement) errorElement.classList.remove('show');
+                if (successElement) successElement.classList.remove('show');
+                if (iconElement) iconElement.classList.remove('show');
+            } else if (isValid) {
+                // Valid
+                field.classList.remove('error');
+                field.classList.add('success');
+                if (errorElement) errorElement.classList.remove('show');
+                if (successElement) successElement.classList.add('show');
+                if (iconElement) {
+                    iconElement.classList.remove('error');
+                    iconElement.classList.add('success', 'show');
+                    iconElement.textContent = '✓';
+                }
+            } else {
+                // Invalid
+                field.classList.remove('success');
+                field.classList.add('error');
+                if (errorElement) errorElement.classList.add('show');
+                if (successElement) successElement.classList.remove('show');
+                if (iconElement) {
+                    iconElement.classList.remove('success');
+                    iconElement.classList.add('error', 'show');
+                    iconElement.textContent = '✗';
+                }
+            }
+
+            updateFormProgress();
+        }
+
+        // Add real-time validation listeners
+        formFields.forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            if (field) {
+                field.addEventListener('input', () => validateField(fieldId));
+                field.addEventListener('blur', () => validateField(fieldId));
+            }
+        });
+
+        // Place Order
+        placeOrderBtn.addEventListener('click', () => {
+            if (!validateCheckoutForm()) {
+                showToast('Please fill in all required fields', 3000);
+                return;
+            }
+
+            // Show loading
+            simulateAsync(() => {
+                // Generate order number
+                const orderNumber = `ORDER-${Date.now().toString().slice(-8)}`;
+                const subtotal = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                const shipping = subtotal >= 100 ? 0 : 5.99;
+                const tax = subtotal * 0.10;
+                let discount = 0;
+                if (appliedPromo) {
+                    discount = appliedPromo.type === 'percentage' ? subtotal * appliedPromo.discount : appliedPromo.discount;
+                }
+                const total = subtotal + shipping + tax - discount;
+                const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+
+                // Update confirmation details
+                document.getElementById('orderNumberDisplay').textContent = `#${orderNumber}`;
+                document.getElementById('confirmationItems').textContent = totalItems;
+                document.getElementById('confirmationTotal').textContent = `$${total.toFixed(2)}`;
+
+                // Clear cart and close checkout
+                cart = [];
+                updateCart();
+                checkoutModal.classList.remove('active');
+
+                // Ensure loading is hidden before showing success modal
+                hideLoading();
+
+                // Show success modal
+                successModal.classList.add('active');
+                overlay.classList.add('active');
+
+                // Reset form
+                document.getElementById('checkoutForm').reset();
+                appliedPromo = null;
+                promoApplied.classList.remove('show');
+                promoInputGroup.classList.remove('show');
+            }, 800);
         });
 
         // Continue Shopping
         continueBtn.addEventListener('click', () => {
             successModal.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Mobile Filter Menu Toggle
+        filterMenuBtn.addEventListener('click', () => {
+            mobileFilterMenu.classList.add('active');
+            overlay.classList.add('active');
+        });
+
+        closeMobileFilter.addEventListener('click', () => {
+            mobileFilterMenu.classList.remove('active');
+            overlay.classList.remove('active');
+        });
+
+        // Sync Mobile Filter with Desktop Filter
+        function syncFilters() {
+            // Sync values between desktop and mobile
+            sizeFilterMobile.value = activeFilters.size;
+            minPriceMobile.value = activeFilters.minPrice;
+            maxPriceMobile.value = activeFilters.maxPrice;
+            sortFilterMobile.value = activeFilters.sort;
+
+            sizeFilter.value = activeFilters.size;
+            minPrice.value = activeFilters.minPrice;
+            maxPrice.value = activeFilters.maxPrice;
+            sortFilter.value = activeFilters.sort;
+
+            // Update both filter tag displays
+            updateFilterTags();
+        }
+
+        // Mobile Filter Event Listeners
+        sizeFilterMobile.addEventListener('change', (e) => {
+            activeFilters.size = e.target.value;
+            currentPage = 1;
+            syncFilters();
+            filterAndSortProducts();
+        });
+
+        minPriceMobile.addEventListener('input', (e) => {
+            activeFilters.minPrice = e.target.value;
+            currentPage = 1;
+            syncFilters();
+            filterAndSortProducts();
+        });
+
+        maxPriceMobile.addEventListener('input', (e) => {
+            activeFilters.maxPrice = e.target.value;
+            currentPage = 1;
+            syncFilters();
+            filterAndSortProducts();
+        });
+
+        sortFilterMobile.addEventListener('change', (e) => {
+            activeFilters.sort = e.target.value;
+            currentPage = 1;
+            syncFilters();
+            filterAndSortProducts();
+        });
+
+        clearFiltersMobile.addEventListener('click', clearAllFilters);
+
+        // Apply Filters Button - closes the mobile menu
+        applyFiltersBtn.addEventListener('click', () => {
+            mobileFilterMenu.classList.remove('active');
             overlay.classList.remove('active');
         });
 
@@ -1967,6 +3547,22 @@
                 if (savedCart) {
                     try {
                         cart = JSON.parse(savedCart);
+                        // Migrate legacy cart items without quantity
+                        cart = cart.map(item => ({
+                            ...item,
+                            quantity: item.quantity || 1
+                        }));
+                        // Consolidate duplicate items
+                        const consolidatedCart = [];
+                        cart.forEach(item => {
+                            const existing = consolidatedCart.find(c => c.id === item.id);
+                            if (existing) {
+                                existing.quantity += item.quantity;
+                            } else {
+                                consolidatedCart.push({...item});
+                            }
+                        });
+                        cart = consolidatedCart;
                     } catch (e) {
                         cart = [];
                     }
@@ -1975,8 +3571,15 @@
                 // Show shop page
                 loginPage.style.display = 'none';
                 shopPage.style.display = 'block';
-                renderProducts(products);
-                updateCart();
+
+                // Show skeleton screen first
+                showSkeletonScreen(productGrid, 8);
+
+                // Simulate loading products with delay
+                setTimeout(() => {
+                    renderProducts(products);
+                    updateCart();
+                }, 800);
             } else {
                 // Show login page
                 loginPage.style.display = 'flex';
