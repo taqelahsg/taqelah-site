@@ -4,6 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taqelah Boutique - Women's Fashion</title>
+
+    <!-- Google Analytics -->
+    <script>
+        // GA4 Measurement ID
+        const GA_MEASUREMENT_ID = 'G-WFB1TGMGH2';
+
+        // Load Google Analytics script
+        (function() {
+            const script = document.createElement('script');
+            script.async = true;
+            script.src = `https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`;
+            document.head.appendChild(script);
+
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', GA_MEASUREMENT_ID, {
+                'page_title': document.title,
+                'page_path': window.location.pathname
+            });
+            window.gtag = gtag;
+        })();
+    </script>
+
+    <!-- Meta Pixel Code -->
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1121995923339151');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=1121995923339151&ev=PageView&noscript=1"
+    /></noscript>
+    <!-- End Meta Pixel Code -->
+
     <style>
         * {
             margin: 0;
@@ -2787,6 +2829,29 @@
             const product = products.find(p => p.id === productId);
             if (!product) return;
 
+            // Track product view event
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'view_item', {
+                    currency: 'USD',
+                    value: product.price,
+                    items: [{
+                        item_id: product.id,
+                        item_name: product.name,
+                        item_category: product.category,
+                        price: product.price
+                    }]
+                });
+            }
+            if (typeof fbq !== 'undefined') {
+                fbq('track', 'ViewContent', {
+                    content_name: product.name,
+                    content_ids: [product.id],
+                    content_type: 'product',
+                    value: product.price,
+                    currency: 'USD'
+                });
+            }
+
             // Get category display name
             const categoryNames = {
                 'new-in': 'New In',
@@ -3097,6 +3162,30 @@
                         showToast(`${product.name} added to cart`);
                     }
                     updateCart();
+
+                    // Track add to cart event
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'add_to_cart', {
+                            currency: 'USD',
+                            value: product.price,
+                            items: [{
+                                item_id: product.id,
+                                item_name: product.name,
+                                item_category: product.category,
+                                price: product.price,
+                                quantity: 1
+                            }]
+                        });
+                    }
+                    if (typeof fbq !== 'undefined') {
+                        fbq('track', 'AddToCart', {
+                            content_name: product.name,
+                            content_ids: [product.id],
+                            content_type: 'product',
+                            value: product.price,
+                            currency: 'USD'
+                        });
+                    }
                 }, 300);
             }
         }
@@ -3221,6 +3310,34 @@
             checkoutModal.classList.add('active');
             overlay.classList.add('active');
             updateCheckoutSummary();
+
+            // Track begin checkout event
+            if (typeof gtag !== 'undefined') {
+                const cartValue = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                gtag('event', 'begin_checkout', {
+                    currency: 'USD',
+                    value: cartValue,
+                    items: cart.map(item => ({
+                        item_id: item.id,
+                        item_name: item.name,
+                        item_category: item.category,
+                        price: item.price,
+                        quantity: item.quantity
+                    }))
+                });
+            }
+            if (typeof fbq !== 'undefined') {
+                const cartValue = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+                fbq('track', 'InitiateCheckout', {
+                    content_ids: cart.map(item => item.id),
+                    contents: cart.map(item => ({
+                        id: item.id,
+                        quantity: item.quantity
+                    })),
+                    value: cartValue,
+                    currency: 'USD'
+                });
+            }
         });
 
         // Close Checkout
@@ -3508,6 +3625,36 @@
 
                 // Ensure loading is hidden before showing success modal
                 hideLoading();
+
+                // Track purchase event
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'purchase', {
+                        transaction_id: orderNumber,
+                        value: total,
+                        tax: tax,
+                        shipping: shipping,
+                        currency: 'USD',
+                        coupon: appliedPromo ? Object.keys(promoCodes).find(key => promoCodes[key] === appliedPromo) : '',
+                        items: cart.map(item => ({
+                            item_id: item.id,
+                            item_name: item.name,
+                            item_category: item.category,
+                            price: item.price,
+                            quantity: item.quantity
+                        }))
+                    });
+                }
+                if (typeof fbq !== 'undefined') {
+                    fbq('track', 'Purchase', {
+                        content_ids: cart.map(item => item.id),
+                        contents: cart.map(item => ({
+                            id: item.id,
+                            quantity: item.quantity
+                        })),
+                        value: total,
+                        currency: 'USD'
+                    });
+                }
 
                 // Show success modal
                 successModal.classList.add('active');
