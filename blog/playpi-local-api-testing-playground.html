@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="theme-color" content="#E10600">
+    <meta name="description" content="Learn how to set up PlayPI - a free, open-source local API testing playground that provides RESTful, GraphQL, gRPC, and WebSocket APIs for learning automation testing">
+    <title>Getting Started with PlayPI: Your Local API Testing Playground | Taqelah! Blog</title>
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <script src="/assets/js/analytics.js"></script>
+    <script src="/assets/js/components.js?v=2"></script>
+
+    <style>
+        /* Custom styles for blog post */
+        .blog-content h2 {
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: #E10600;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        .blog-content h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #0B0B0B;
+            margin-top: 2rem;
+            margin-bottom: 0.75rem;
+        }
+        .blog-content h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #0B0B0B;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .blog-content p {
+            margin-bottom: 1rem;
+            line-height: 1.75;
+        }
+        .blog-content ul, .blog-content ol {
+            margin-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .blog-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.75;
+        }
+        .blog-content code {
+            background-color: #f3f4f6;
+            padding: 0.125rem 0.375rem;
+            border-radius: 0.25rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.875rem;
+        }
+        .blog-content pre {
+            background-color: #1f2937;
+            color: #f9fafb;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            margin-bottom: 1rem;
+        }
+        .blog-content pre code {
+            background-color: transparent;
+            padding: 0;
+            color: #f9fafb;
+        }
+        .blog-content blockquote {
+            border-left: 4px solid #E10600;
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-style: italic;
+            color: #4b5563;
+        }
+        .step-box {
+            background-color: #f9fafb;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        .step-box h3 {
+            font-weight: 700;
+            color: #E10600;
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+        .feature-badge {
+            display: inline-block;
+            background-color: #E10600;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.25rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+        .info-box {
+            background-color: #dbeafe;
+            border-left: 4px solid #3b82f6;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+        }
+        .warning-box {
+            background-color: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+        }
+        .success-box {
+            background-color: #d1fae5;
+            border-left: 4px solid #10b981;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            border-radius: 0.25rem;
+        }
+    </style>
+</head>
+
+<body class="font-sans antialiased text-[#0B0B0B] bg-white" data-page="blog">
+
+    <!-- HEADER -->
+    <div id="header-container"></div>
+
+    <!-- MAIN CONTENT -->
+    <main>
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-[#E10600] to-[#C20500] text-white py-12 sm:py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="mb-4">
+                    <a href="/blog.html" class="inline-flex items-center text-white/80 hover:text-white transition-colors">
+                        <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                        Back to Blog
+                    </a>
+                </div>
+                <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+                    Getting Started with PlayPI: Your Local API Testing Playground
+                </h1>
+                <div class="flex flex-wrap items-center gap-4 text-white/90 mb-6">
+                    <span class="inline-flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z" clip-rule="evenodd"/>
+                        </svg>
+                        December 19, 2025
+                    </span>
+                    <span class="inline-flex items-center gap-2">
+                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+                        </svg>
+                        15 min read
+                    </span>
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-white/20 backdrop-blur-sm">
+                        Tutorial
+                    </span>
+                </div>
+                <!-- Author Info -->
+                <div class="flex items-center gap-3 mb-6">
+                    <div>
+                        <p class="font-semibold text-white">
+                            <a href="https://www.linkedin.com/in/syam-sasi/"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="hover:text-yellow-300 transition-colors inline-flex items-center gap-2">
+                                Syam Sasi
+                                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                        </p>
+                        <p class="text-sm text-white/80">Co-Founder, taqelah!</p>
+                    </div>
+                </div>
+                <p class="text-lg sm:text-xl text-white/90 leading-relaxed">
+                    Learn API automation testing with PlayPI - a free, Docker-based tool that gives you instant access to RESTful, GraphQL, gRPC, and WebSocket APIs running entirely on your local machine. No internet required, no API keys needed, and no rate limits!
+                </p>
+            </div>
+        </section>
+
+        <!-- Blog Content -->
+        <section class="py-12 sm:py-16">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="blog-content prose prose-lg max-w-none">
+
+                    <h2>Introduction</h2>
+
+                    <p class="text-xl text-gray-700 leading-relaxed">
+                        Learning API automation testing can be challenging when you don't have reliable test APIs to practice with. Public APIs often have rate limits, authentication requirements, or may change without notice. What if you could have a complete API testing environment running on your own computer, with multiple API types ready to use?
+                    </p>
+
+                    <p>
+                        Meet <strong>PlayPI</strong> - a free, open-source API playground that runs entirely on your local machine. No internet required, no API keys needed, and no rate limits!
+                    </p>
+
+                    <div class="info-box">
+                        <p><strong>About PlayPI:</strong> PlayPI was originally developed by <a href="https://www.linkedin.com/in/abhijeetvaikar/" target="_blank" class="text-[#E10600] hover:underline">Abhijeet Vaikar</a>, a passionate QA engineer and test automation enthusiast. The project is open-source and available on <a href="https://github.com/abhivaikar/PlayPI" target="_blank" class="text-[#E10600] hover:underline">GitHub</a>.</p>
+                    </div>
+
+                    <h2>What is PlayPI?</h2>
+
+                    <p>
+                        PlayPI (pronounced Play-P-I, like API) is a Docker-based tool that gives you instant access to 6 different API services covering the most popular protocols:
+                    </p>
+
+                    <ul>
+                        <li><strong>RESTful APIs</strong> (2 services) - HTTP-based APIs for inventory and task management</li>
+                        <li><strong>GraphQL API</strong> - Query-based API for flexible data fetching</li>
+                        <li><strong>gRPC APIs</strong> (2 services) - High-performance RPC framework</li>
+                        <li><strong>WebSocket API</strong> - Real-time bidirectional communication</li>
+                    </ul>
+
+                    <p>All services come with a beautiful web dashboard where you can:</p>
+                    <ul>
+                        <li>Start and stop services with one click</li>
+                        <li>Test API endpoints interactively</li>
+                        <li>Edit request bodies before sending</li>
+                        <li>See live responses</li>
+                    </ul>
+
+                    <h2>Who Should Use PlayPI?</h2>
+
+                    <ul>
+                        <li><strong>QA Engineers</strong> learning API automation testing</li>
+                        <li><strong>Developers</strong> practicing API integration</li>
+                        <li><strong>Students</strong> studying web services and protocols</li>
+                        <li><strong>Workshop Instructors</strong> teaching API testing</li>
+                        <li><strong>Anyone</strong> wanting to understand how different API types work</li>
+                    </ul>
+
+                    <h2>What's New in PlayPI?</h2>
+
+                    <p>
+                        The latest version of PlayPI introduces a game-changing feature that makes API testing even more accessible: <strong>an integrated web dashboard</strong>!
+                    </p>
+
+                    <div class="mb-8">
+                        <img src="/assets/images/blog/playpi-local-api-testing-playground/1.png"
+                             alt="PlayPI Dashboard - Service Management Interface"
+                             class="rounded-lg shadow-lg w-full mb-4">
+                        <p class="text-sm text-gray-600 text-center italic">PlayPI Dashboard showing the three-column layout: Stopped Services, Running Services, and API Testing Panel</p>
+                    </div>
+
+                    <div class="success-box">
+                        <p><strong>New Dashboard Features:</strong></p>
+                        <ul>
+                            <li><strong>One-Click Service Management</strong> - Start and stop any API service with a single button click</li>
+                            <li><strong>Interactive API Testing Panel</strong> - Test endpoints directly from your browser without needing Postman or curl</li>
+                            <li><strong>Live Request Editor</strong> - Edit JSON request bodies in real-time before sending</li>
+                            <li><strong>Instant Response Viewer</strong> - See API responses immediately with syntax highlighting</li>
+                            <li><strong>Visual Service Status</strong> - Track which services are running or stopped at a glance</li>
+                            <li><strong>No Additional Tools Required</strong> - Everything you need is built right into the dashboard</li>
+                        </ul>
+                    </div>
+
+                    <div class="mb-8">
+                        <img src="/assets/images/blog/playpi-local-api-testing-playground/2.png"
+                             alt="PlayPI Interactive API Testing Panel"
+                             class="rounded-lg shadow-lg w-full mb-4">
+                        <p class="text-sm text-gray-600 text-center italic">Interactive API Testing Panel with live request editor and instant response viewer</p>
+                    </div>
+
+                    <h3>Why the Dashboard Makes a Difference</h3>
+
+                    <p>
+                        Previously, testing APIs required knowledge of command-line tools like <code>curl</code> or third-party applications like Postman. While these are valuable tools to learn, they create an additional barrier for beginners who just want to understand how APIs work.
+                    </p>
+
+                    <p>
+                        With the integrated dashboard, you can now:
+                    </p>
+
+                    <ul>
+                        <li><strong>Start learning immediately</strong> - No need to learn curl syntax or install additional software</li>
+                        <li><strong>Experiment freely</strong> - Edit request payloads and see results instantly</li>
+                        <li><strong>Focus on concepts</strong> - Understand API behavior without getting stuck on tooling</li>
+                        <li><strong>Test all API types</strong> - RESTful, GraphQL, gRPC, and WebSocket - all from one interface</li>
+                        <li><strong>Perfect for teaching</strong> - Instructors can demonstrate API testing without complex setup</li>
+                    </ul>
+
+                    <div class="mb-8">
+                        <img src="/assets/images/blog/playpi-local-api-testing-playground/3.png"
+                             alt="PlayPI Live Request Editor and Response Viewer"
+                             class="rounded-lg shadow-lg w-full mb-4">
+                        <p class="text-sm text-gray-600 text-center italic">Edit JSON request bodies in real-time and see API responses with syntax highlighting</p>
+                    </div>
+
+                    <div class="info-box">
+                        <p><strong>Pro Tip:</strong> Once you're comfortable with the dashboard, you can graduate to professional tools like Postman, Insomnia, or command-line tools. The dashboard provides the perfect learning environment before moving to production-grade tools!</p>
+                    </div>
+
+                    <h2>Prerequisites</h2>
+
+                    <p>
+                        Before we begin, you'll need Docker installed on your computer. Don't worry - we'll walk through everything step by step!
+                    </p>
+
+                    <h3>Step 1: Install Docker</h3>
+
+                    <p>
+                        Docker is a platform that lets you run applications in containers. Think of it as a lightweight virtual machine.
+                    </p>
+
+                    <h4>For Windows:</h4>
+
+                    <ol>
+                        <li>Go to <a href="https://docs.docker.com/desktop/install/windows-install/" target="_blank">Docker Desktop for Windows</a></li>
+                        <li>Download Docker Desktop</li>
+                        <li>Run the installer</li>
+                        <li>Follow the installation wizard</li>
+                        <li>Restart your computer when prompted</li>
+                        <li>Open Docker Desktop to complete setup</li>
+                    </ol>
+
+                    <div class="info-box">
+                        <p><strong>System Requirements:</strong></p>
+                        <ul>
+                            <li>Windows 10 64-bit: Pro, Enterprise, or Education</li>
+                            <li>OR Windows 11 64-bit: Home or Pro</li>
+                            <li>WSL 2 feature enabled (installer will help with this)</li>
+                        </ul>
+                    </div>
+
+                    <h4>For macOS:</h4>
+
+                    <ol>
+                        <li>Go to <a href="https://docs.docker.com/desktop/install/mac-install/" target="_blank">Docker Desktop for Mac</a></li>
+                        <li>Download the version for your chip:
+                            <ul>
+                                <li><strong>Apple Silicon (M1/M2/M3)</strong>: Download "Mac with Apple chip"</li>
+                                <li><strong>Intel Mac</strong>: Download "Mac with Intel chip"</li>
+                            </ul>
+                        </li>
+                        <li>Open the downloaded <code>.dmg</code> file</li>
+                        <li>Drag Docker to Applications folder</li>
+                        <li>Open Docker from Applications</li>
+                        <li>Grant necessary permissions when prompted</li>
+                    </ol>
+
+                    <h4>For Linux:</h4>
+
+                    <p>Ubuntu/Debian:</p>
+
+                    <pre><code># Update package index
+sudo apt-get update
+
+# Install Docker
+sudo apt-get install docker.io
+
+# Start Docker service
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Add your user to docker group (so you don't need sudo)
+sudo usermod -aG docker $USER
+
+# Log out and log back in for changes to take effect</code></pre>
+
+                    <p>For other Linux distributions, check the <a href="https://docs.docker.com/engine/install/" target="_blank">official Docker docs</a>.</p>
+
+                    <h3>Step 2: Verify Docker Installation</h3>
+
+                    <p>Open your terminal (Command Prompt on Windows, Terminal on Mac/Linux) and run:</p>
+
+                    <pre><code>docker --version</code></pre>
+
+                    <p>You should see output like:</p>
+
+                    <pre><code>Docker version 24.0.7, build afdd53b</code></pre>
+
+                    <div class="success-box">
+                        <p><strong>If you see this, congratulations!</strong> Docker is installed correctly.</p>
+                    </div>
+
+                    <h2>Getting Started with PlayPI</h2>
+
+                    <p>Now comes the exciting part - running PlayPI!</p>
+
+                    <div class="step-box">
+                        <h3>Step 1: Pull the PlayPI Image</h3>
+
+                        <p>Open your terminal and run:</p>
+
+                        <pre><code>docker pull taqelah/playpi:latest</code></pre>
+
+                        <p>This downloads the PlayPI dashboard from Docker Hub. It's about 50MB and includes everything you need.</p>
+
+                        <p>You'll see output like:</p>
+
+                        <pre><code>latest: Pulling from taqelah/playpi
+a1b2c3d4e5f6: Pull complete
+...
+Status: Downloaded newer image for taqelah/playpi:latest</code></pre>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>Step 2: Start the Dashboard</h3>
+
+                        <p>Run this command to start PlayPI:</p>
+
+                        <pre><code>docker run -p 8000:8000 -p 8080:8080 -p 8081:8081 -p 8082:8082 -p 8084:8084 -p 8085:8085 -p 8086:8086 taqelah/playpi:latest</code></pre>
+
+                        <div class="info-box">
+                            <p><strong>What do these port numbers mean?</strong></p>
+                            <ul>
+                                <li><code>-p 8000:8000</code> - Maps your computer's port 8000 to the container's port 8000 (dashboard)</li>
+                                <li><code>-p 8080:8080</code> - RESTful Inventory API</li>
+                                <li><code>-p 8081:8081</code> - GraphQL API</li>
+                                <li><code>-p 8082:8082</code> - gRPC Inventory API</li>
+                                <li><code>-p 8084:8084</code> - gRPC User Registration API</li>
+                                <li><code>-p 8085:8085</code> - RESTful Task Management API</li>
+                                <li><code>-p 8086:8086</code> - WebSocket Chat API</li>
+                            </ul>
+                        </div>
+
+                        <p>You'll see output like:</p>
+
+                        <pre><code>Starting PlayPI Dashboard...
+Preparing dashboard...
+Checking and freeing dashboard ports...
+✓ All dashboard ports are available
+
+✓ Dashboard running on http://localhost:8000
+Open your browser to manage all services</code></pre>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>Step 3: Open the Dashboard</h3>
+
+                        <p>Open your web browser and go to:</p>
+
+                        <pre><code>http://localhost:8000</code></pre>
+
+                        <p>You should see the PlayPI dashboard with three columns:</p>
+
+                        <ol>
+                            <li><strong>Left Column</strong>: Stopped Services</li>
+                            <li><strong>Middle Column</strong>: Running Services</li>
+                            <li><strong>Right Column</strong>: API Testing Panel</li>
+                        </ol>
+                    </div>
+
+                    <h2>Using PlayPI for API Testing</h2>
+
+                    <p>Let's walk through testing different types of APIs!</p>
+
+                    <h3>Testing a RESTful API</h3>
+
+                    <p>RESTful APIs are the most common type. Let's test the Inventory Management API.</p>
+
+                    <h4>Step 1: Start the Service</h4>
+
+                    <ol>
+                        <li>In the left column, find "RESTful Inventory Manager"</li>
+                        <li>Click the green <strong>Start</strong> button</li>
+                        <li>Wait for the service to move to the middle "Running Services" column</li>
+                    </ol>
+
+                    <h4>Step 2: Select the Service</h4>
+
+                    <ol>
+                        <li>Click on "RESTful Inventory Manager" in the middle column</li>
+                        <li>The right panel will show available API endpoints</li>
+                    </ol>
+
+                    <h4>Step 3: Test GET Request</h4>
+
+                    <ol>
+                        <li>Find the "Get All Items" example</li>
+                        <li>You'll see:
+                            <ul>
+                                <li><strong>Method</strong>: GET (green badge)</li>
+                                <li><strong>URL</strong>: <code>http://localhost:8080/items</code></li>
+                                <li><strong>Description</strong>: Retrieve all inventory items</li>
+                            </ul>
+                        </li>
+                        <li>Click the <strong>Try It</strong> button</li>
+                        <li>See the response appear below:</li>
+                    </ol>
+
+                    <pre><code>{
+  "items": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "description": "Dell XPS 15",
+      "price": 1299.99,
+      "quantity": 5
+    },
+    {
+      "id": 2,
+      "name": "Mouse",
+      "description": "Wireless Mouse",
+      "price": 29.99,
+      "quantity": 50
+    }
+  ]
+}</code></pre>
+
+                    <h4>Step 4: Test POST Request (With Editable Body!)</h4>
+
+                    <ol>
+                        <li>Find the "Create Item" example</li>
+                        <li>You'll see an <strong>editable text area</strong> with JSON:</li>
+                    </ol>
+
+                    <pre><code>{
+  "name": "Keyboard",
+  "description": "Mechanical Keyboard",
+  "price": 89.99,
+  "quantity": 15
+}</code></pre>
+
+                    <ol start="3">
+                        <li><strong>Edit the JSON</strong> - Try changing the values:</li>
+                    </ol>
+
+                    <pre><code>{
+  "name": "Monitor",
+  "description": "4K Monitor 27 inch",
+  "price": 399.99,
+  "quantity": 10
+}</code></pre>
+
+                    <ol start="4">
+                        <li>Click <strong>Try It</strong></li>
+                        <li>See your custom item created:</li>
+                    </ol>
+
+                    <pre><code>{
+  "id": 3,
+  "name": "Monitor",
+  "description": "4K Monitor 27 inch",
+  "price": 399.99,
+  "quantity": 10
+}</code></pre>
+
+                    <h3>Testing a GraphQL API</h3>
+
+                    <p>GraphQL lets you request exactly the data you need.</p>
+
+                    <h4>Step 1: Start GraphQL Service</h4>
+
+                    <ol>
+                        <li>Find "GraphQL Inventory Manager" in the stopped column</li>
+                        <li>Click <strong>Start</strong></li>
+                        <li>Click on it in the running column</li>
+                    </ol>
+
+                    <h4>Step 2: Test a Query</h4>
+
+                    <ol>
+                        <li>Find the "Get All Items" example</li>
+                        <li>See the GraphQL query:</li>
+                    </ol>
+
+                    <pre><code>{
+  items {
+    id
+    name
+    price
+  }
+}</code></pre>
+
+                    <ol start="3">
+                        <li>Notice you're only requesting <code>id</code>, <code>name</code>, and <code>price</code> - not all fields!</li>
+                        <li>Click <strong>Try It</strong></li>
+                        <li>Get only the data you asked for</li>
+                    </ol>
+
+                    <h4>Step 3: Test a Mutation</h4>
+
+                    <ol>
+                        <li>Find the "Add Item" example</li>
+                        <li>Edit the mutation to add your own item</li>
+                        <li>Click <strong>Try It</strong></li>
+                    </ol>
+
+                    <h3>Testing WebSocket (Real-time Communication)</h3>
+
+                    <p>WebSocket APIs enable real-time, two-way communication.</p>
+
+                    <h4>Step 1: Start WebSocket Service</h4>
+
+                    <ol>
+                        <li>Find "WebSocket Live Chat"</li>
+                        <li>Click <strong>Start</strong></li>
+                        <li>Click on it when running</li>
+                    </ol>
+
+                    <h4>Step 2: View Connection Info</h4>
+
+                    <p>You'll see:</p>
+                    <ul>
+                        <li><strong>Method</strong>: WS (purple badge)</li>
+                        <li><strong>URL</strong>: <code>ws://localhost:8086/ws</code></li>
+                        <li><strong>Description</strong>: Connect using WebSocket client</li>
+                    </ul>
+
+                    <div class="info-box">
+                        <p><strong>Note:</strong> WebSocket requires special client tools like:</p>
+                        <ul>
+                            <li>Browser console (<code>new WebSocket()</code>)</li>
+                            <li>Postman (WebSocket request)</li>
+                            <li>Command-line tools like <code>wscat</code></li>
+                        </ul>
+                    </div>
+
+                    <p>Example using browser console:</p>
+
+                    <pre><code>const ws = new WebSocket('ws://localhost:8086/ws');
+
+ws.onopen = () => {
+    console.log('Connected!');
+    ws.send(JSON.stringify({
+        type: 'message',
+        username: 'TestUser',
+        content: 'Hello!'
+    }));
+};
+
+ws.onmessage = (event) => {
+    console.log('Received:', event.data);
+};</code></pre>
+
+                    <h3>Testing gRPC APIs</h3>
+
+                    <p>gRPC is a high-performance RPC framework.</p>
+
+                    <p>You'll need special tools for gRPC:</p>
+                    <ul>
+                        <li><strong>grpcurl</strong> (command-line tool)</li>
+                        <li><strong>Postman</strong> (supports gRPC)</li>
+                        <li><strong>BloomRPC</strong> (GUI client)</li>
+                    </ul>
+
+                    <p>Example with grpcurl:</p>
+
+                    <pre><code># List available services
+grpcurl -plaintext localhost:8082 list
+
+# Call a method
+grpcurl -plaintext -d '{"id": 1}' localhost:8082 inventory.InventoryService/GetItem</code></pre>
+
+                    <h2>Real-World API Testing Scenarios</h2>
+
+                    <p>Now that you understand the basics, let's explore practical testing scenarios.</p>
+
+                    <h3>Scenario 1: Testing CRUD Operations</h3>
+
+                    <p>Test the complete Create-Read-Update-Delete cycle:</p>
+
+                    <ol>
+                        <li><strong>Create</strong>: POST a new item</li>
+                        <li><strong>Read</strong>: GET the item by ID</li>
+                        <li><strong>Update</strong>: PUT/PATCH to modify it</li>
+                        <li><strong>Delete</strong>: DELETE to remove it</li>
+                        <li><strong>Verify</strong>: GET again to confirm deletion</li>
+                    </ol>
+
+                    <h3>Scenario 2: Testing Error Handling</h3>
+
+                    <ol>
+                        <li>Try to GET a non-existent item (ID: 99999)</li>
+                        <li>POST with invalid data (negative price)</li>
+                        <li>DELETE an already deleted item</li>
+                        <li>See how the API responds to errors</li>
+                    </ol>
+
+                    <h3>Scenario 3: Performance Testing</h3>
+
+                    <ol>
+                        <li>Start the RESTful Task Manager</li>
+                        <li>Create 100 tasks in a loop</li>
+                        <li>Measure response times</li>
+                        <li>Test pagination and filtering</li>
+                    </ol>
+
+                    <h3>Scenario 4: Integration Testing</h3>
+
+                    <p>Test interactions between services:</p>
+
+                    <ol>
+                        <li>Create an item in RESTful API</li>
+                        <li>Query it via GraphQL</li>
+                        <li>Verify data consistency</li>
+                    </ol>
+
+                    <h2>Using PlayPI for Test Automation</h2>
+
+                    <p>PlayPI is perfect for practicing API automation with tools like:</p>
+
+                    <h3>Postman</h3>
+
+                    <ol>
+                        <li>Create a new collection</li>
+                        <li>Add requests for each endpoint</li>
+                        <li>Write tests using JavaScript</li>
+                        <li>Run the collection</li>
+                    </ol>
+
+                    <p>Example Postman test:</p>
+
+                    <pre><code>pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Response has items array", function () {
+    pm.expect(pm.response.json()).to.have.property('items');
+});</code></pre>
+
+                    <h3>Python + Requests</h3>
+
+                    <pre><code>import requests
+
+# Test GET
+response = requests.get('http://localhost:8080/items')
+assert response.status_code == 200
+assert 'items' in response.json()
+
+# Test POST
+new_item = {
+    "name": "Tablet",
+    "description": "iPad Pro",
+    "price": 799.99,
+    "quantity": 8
+}
+response = requests.post('http://localhost:8080/items', json=new_item)
+assert response.status_code == 201
+assert response.json()['name'] == 'Tablet'</code></pre>
+
+                    <h3>JavaScript + Axios</h3>
+
+                    <pre><code>const axios = require('axios');
+
+async function testAPI() {
+    // GET request
+    const response = await axios.get('http://localhost:8080/items');
+    console.log('Items:', response.data);
+
+    // POST request
+    const newItem = {
+        name: 'Headphones',
+        description: 'Noise Cancelling',
+        price: 249.99,
+        quantity: 20
+    };
+    const created = await axios.post('http://localhost:8080/items', newItem);
+    console.log('Created:', created.data);
+}
+
+testAPI();</code></pre>
+
+                    <h3>REST Assured (Java)</h3>
+
+                    <pre><code>import io.restassured.RestAssured;
+import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
+
+public class InventoryAPITest {
+    @Test
+    public void testGetAllItems() {
+        given()
+            .baseUri("http://localhost:8080")
+        .when()
+            .get("/items")
+        .then()
+            .statusCode(200)
+            .body("items", notNullValue());
+    }
+}</code></pre>
+
+                    <h2>Advanced Features</h2>
+
+                    <h3>Automatic Port Cleanup</h3>
+
+                    <p>If you see "port already in use" errors, PlayPI automatically cleans up ports on startup!</p>
+
+                    <p>You'll see:</p>
+
+                    <pre><code>Preparing dashboard...
+Checking and freeing dashboard ports...
+Port 8000 is in use, attempting to free it...
+✓ Port 8000 freed successfully
+✓ All dashboard ports are available</code></pre>
+
+                    <h3>Stopping and Starting Services</h3>
+
+                    <ul>
+                        <li>Stop services when not needed to save resources</li>
+                        <li>Start only the services you're testing</li>
+                        <li>All data resets when you restart a service (perfect for testing!)</li>
+                    </ul>
+
+                    <h3>Running in Background (Detached Mode)</h3>
+
+                    <p>To run PlayPI in the background:</p>
+
+                    <pre><code>docker run -d \
+  --name playpi \
+  -p 8000:8000 -p 8080:8080 -p 8081:8081 -p 8082:8082 \
+  -p 8084:8084 -p 8085:8085 -p 8086:8086 \
+  taqelah/playpi:latest</code></pre>
+
+                    <p>Check if it's running:</p>
+                    <pre><code>docker ps</code></pre>
+
+                    <p>View logs:</p>
+                    <pre><code>docker logs playpi</code></pre>
+
+                    <p>Stop it:</p>
+                    <pre><code>docker stop playpi</code></pre>
+
+                    <p>Start it again:</p>
+                    <pre><code>docker start playpi</code></pre>
+
+                    <p>Remove it:</p>
+                    <pre><code>docker rm playpi</code></pre>
+
+                    <h2>Troubleshooting</h2>
+
+                    <h3>"Cannot connect to Docker daemon"</h3>
+
+                    <p><strong>Problem:</strong> Docker isn't running</p>
+
+                    <p><strong>Solution:</strong></p>
+                    <ul>
+                        <li>Windows/Mac: Open Docker Desktop</li>
+                        <li>Linux: Run <code>sudo systemctl start docker</code></li>
+                    </ul>
+
+                    <h3>"Port is already allocated"</h3>
+
+                    <p><strong>Problem:</strong> Another application is using the port</p>
+
+                    <p><strong>Solution:</strong></p>
+                    <ul>
+                        <li>Stop other applications using those ports</li>
+                        <li>Or use PlayPI's automatic cleanup (it does this by default!)</li>
+                    </ul>
+
+                    <h3>"docker: command not found"</h3>
+
+                    <p><strong>Problem:</strong> Docker isn't installed or not in PATH</p>
+
+                    <p><strong>Solution:</strong></p>
+                    <ul>
+                        <li>Reinstall Docker</li>
+                        <li>Windows: Add Docker to PATH in Environment Variables</li>
+                        <li>Mac/Linux: Docker should be in PATH automatically</li>
+                    </ul>
+
+                    <h3>Dashboard doesn't open</h3>
+
+                    <p><strong>Problem:</strong> Container might not be running</p>
+
+                    <p><strong>Solution:</strong></p>
+
+                    <pre><code># Check if container is running
+docker ps
+
+# Check container logs
+docker logs &lt;container-id&gt;
+
+# Restart the container
+docker restart &lt;container-id&gt;</code></pre>
+
+                    <h3>"Try It" buttons show errors</h3>
+
+                    <p><strong>Problem:</strong> Service might not be started</p>
+
+                    <p><strong>Solution:</strong></p>
+                    <ol>
+                        <li>Make sure the service is in the "Running Services" column</li>
+                        <li>Wait a few seconds after starting</li>
+                        <li>Check that all ports are mapped correctly</li>
+                    </ol>
+
+                    <h2>Best Practices</h2>
+
+                    <h3>1. Start Fresh for Each Test Session</h3>
+
+                    <pre><code># Stop and remove old container
+docker stop playpi && docker rm playpi
+
+# Start fresh
+docker run -d --name playpi -p 8000-8002:8000-8002 -p 8004-8006:8004-8006 taqelah/playpi:latest</code></pre>
+
+                    <h3>2. Use Descriptive Test Data</h3>
+
+                    <p>When creating items, use realistic data:</p>
+
+                    <pre><code>{
+  "name": "Product-Test-123",
+  "description": "Created during test run at 2025-01-15",
+  "price": 99.99,
+  "quantity": 10
+}</code></pre>
+
+                    <h3>3. Test Edge Cases</h3>
+
+                    <ul>
+                        <li>Empty strings</li>
+                        <li>Very long strings</li>
+                        <li>Negative numbers</li>
+                        <li>Zero quantities</li>
+                        <li>Special characters</li>
+                        <li>Unicode characters</li>
+                    </ul>
+
+                    <h3>4. Document Your Tests</h3>
+
+                    <p>Keep a log of what you tested:</p>
+
+                    <pre><code>✅ GET /items - Returns 200
+✅ POST /items - Creates new item
+✅ GET /items/1 - Returns specific item
+❌ DELETE /items/1 - Returns 404 (expected: 200)</code></pre>
+
+                    <h2>Learning Path</h2>
+
+                    <h3>Week 1: REST Basics</h3>
+                    <ul>
+                        <li>Learn HTTP methods (GET, POST, PUT, DELETE)</li>
+                        <li>Test RESTful Inventory API</li>
+                        <li>Practice with Postman</li>
+                    </ul>
+
+                    <h3>Week 2: GraphQL</h3>
+                    <ul>
+                        <li>Understand queries vs mutations</li>
+                        <li>Test GraphQL Inventory API</li>
+                        <li>Learn field selection</li>
+                    </ul>
+
+                    <h3>Week 3: Advanced REST</h3>
+                    <ul>
+                        <li>Test Task Management API</li>
+                        <li>Learn pagination, filtering, sorting</li>
+                        <li>Test error responses</li>
+                    </ul>
+
+                    <h3>Week 4: Real-time APIs</h3>
+                    <ul>
+                        <li>Understand WebSocket protocol</li>
+                        <li>Test Live Chat API</li>
+                        <li>Learn bidirectional communication</li>
+                    </ul>
+
+                    <h3>Week 5: gRPC</h3>
+                    <ul>
+                        <li>Learn Protocol Buffers</li>
+                        <li>Test gRPC services</li>
+                        <li>Compare performance with REST</li>
+                    </ul>
+
+                    <h3>Week 6: Automation</h3>
+                    <ul>
+                        <li>Write automated tests</li>
+                        <li>Use testing frameworks</li>
+                        <li>Create test suites</li>
+                    </ul>
+
+                    <h2>Conclusion</h2>
+
+                    <p>
+                        PlayPI gives you a complete API testing playground right on your computer. No setup hassles, no API keys, no rate limits - just pure learning and practicing.
+                    </p>
+
+                    <p>
+                        Whether you're preparing for a QA interview, building your first automation framework, or teaching a workshop, PlayPI provides realistic APIs to work with.
+                    </p>
+
+                    <h2>What's Next?</h2>
+
+                    <ul>
+                        <li><strong>Fork the project</strong>: <a href="https://github.com/abhivaikar/PlayPI" target="_blank">GitHub Repository</a></li>
+                        <li><strong>Contribute</strong>: Add more API examples</li>
+                        <li><strong>Share</strong>: Help others learn API testing</li>
+                        <li><strong>Connect with the creator</strong>: <a href="https://www.linkedin.com/in/abhijeetvaikar/" target="_blank">Abhijeet Vaikar on LinkedIn</a></li>
+                    </ul>
+
+                    <h2>Quick Reference Card</h2>
+
+                    <pre><code># Pull image
+docker pull taqelah/playpi:latest
+
+# Run dashboard
+docker run -p 8000:8000 -p 8080:8080 -p 8081:8081 -p 8082:8082 -p 8084:8084 -p 8085:8085 -p 8086:8086 taqelah/playpi:latest
+
+# Run in background
+docker run -d --name playpi -p 8000-8002:8000-8002 -p 8004-8006:8004-8006 taqelah/playpi:latest
+
+# Stop
+docker stop playpi
+
+# Start
+docker start playpi
+
+# Remove
+docker rm playpi
+
+# View logs
+docker logs playpi</code></pre>
+
+                    <div class="info-box">
+                        <p><strong>Dashboard URL:</strong> http://localhost:8000</p>
+
+                        <p><strong>Service Ports:</strong></p>
+                        <ul>
+                            <li>8080 - RESTful Inventory</li>
+                            <li>8081 - GraphQL Inventory</li>
+                            <li>8082 - gRPC Inventory</li>
+                            <li>8084 - gRPC User Registration</li>
+                            <li>8085 - RESTful Task Management</li>
+                            <li>8086 - WebSocket Chat</li>
+                        </ul>
+                    </div>
+
+                    <hr class="my-12">
+
+                    <p class="text-center text-2xl font-bold text-[#E10600]">Happy Testing!</p>
+
+                    <p class="text-center text-gray-600">
+                        <em>Found this helpful? Star the project on GitHub and share with your fellow testers!</em>
+                    </p>
+
+                    <!-- Call to Action -->
+                    <div class="bg-gradient-to-br from-[#E10600] to-[#C20500] text-white p-8 rounded-lg mt-12">
+                        <h3 class="text-2xl font-bold text-white mb-4">Want to Learn More About API Testing?</h3>
+                        <p class="mb-6">
+                            Check out our other blog posts and resources on API testing, automation, and quality engineering.
+                        </p>
+                        <a href="/blog.html" class="inline-block bg-white text-[#E10600] font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors">
+                            Read More Blog Posts
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Lightning Talks 2026 Clickbait Section -->
+        <section class="py-16 sm:py-20 bg-gradient-to-r from-yellow-400 via-orange-500 to-red-600 text-white relative overflow-hidden">
+            <!-- Animated Background -->
+            <div class="absolute inset-0">
+                <div class="absolute top-0 left-0 w-full h-full bg-black/10"></div>
+                <div class="absolute top-10 right-10 w-64 h-64 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
+                <div class="absolute bottom-10 left-10 w-80 h-80 bg-white/5 rounded-full blur-3xl" style="animation: float 6s ease-in-out infinite;"></div>
+            </div>
+
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-5xl mx-auto text-center">
+                    <!-- Attention Grabber -->
+                    <div class="inline-block px-6 py-2 bg-black/30 backdrop-blur-sm rounded-full mb-6 border-2 border-white/50 animate-bounce">
+                        <span class="text-white font-black text-sm uppercase tracking-wider">⚠️ Don't Miss This!</span>
+                    </div>
+
+                    <!-- Main Hook -->
+                    <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black mb-6 leading-tight drop-shadow-2xl">
+                        Still Testing Like It's 2020? 🤔
+                    </h2>
+
+                    <p class="text-2xl sm:text-3xl font-bold mb-6 drop-shadow-lg">
+                        While You're Learning APIs... AI is Already Rewriting The QA Playbook!
+                    </p>
+
+                    <!-- Conference Branding -->
+                    <div class="inline-block px-8 py-3 bg-white rounded-2xl mb-8 shadow-2xl border-4 border-yellow-300">
+                        <p class="text-2xl sm:text-3xl font-black text-orange-600">
+                            FREE Online Conference by Taqelah!
+                        </p>
+                        <p class="text-lg font-bold text-gray-700 mt-1">
+                            Feb 28, 2026 • 100% Virtual • 100% Free
+                        </p>
+                    </div>
+
+                    <div class="bg-white/10 backdrop-blur-md border-2 border-white/30 rounded-3xl p-8 sm:p-10 mb-8 max-w-3xl mx-auto">
+                        <p class="text-xl sm:text-2xl font-semibold mb-6 leading-relaxed">
+                            Join <span class="text-yellow-300">500+ testers</span> from across Southeast Asia to discover:
+                        </p>
+                        <ul class="text-left text-lg space-y-3 max-w-2xl mx-auto">
+                            <li class="flex items-start gap-3">
+                                <span class="text-2xl flex-shrink-0">🔥</span>
+                                <span>How AI is transforming testing workflows RIGHT NOW</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-2xl flex-shrink-0">💡</span>
+                                <span>What skills will separate great testers from obsolete ones</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-2xl flex-shrink-0">🚀</span>
+                                <span>Real frameworks you can use Monday morning</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="text-2xl flex-shrink-0">⚡</span>
+                                <span>10 lightning talks = 100 minutes of pure, actionable insight</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Urgency Element -->
+                    <div class="bg-black/40 backdrop-blur-sm rounded-2xl p-6 mb-8 border-2 border-yellow-300 max-w-2xl mx-auto">
+                        <p class="text-2xl font-black mb-2">
+                            ⏰ FREE Registration • Limited to 500 Spots
+                        </p>
+                        <p class="text-lg text-yellow-200">
+                            Don't be the only one on your team who missed this!
+                        </p>
+                    </div>
+
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+                        <a href="/lightning-talks-2026.html"
+                           class="group inline-flex items-center justify-center gap-3 px-10 py-5 text-xl font-black text-orange-600 bg-white hover:bg-yellow-100 rounded-2xl transition-all transform hover:scale-110 shadow-2xl border-4 border-white">
+                            Yes! Save My FREE Spot →
+                            <svg class="w-6 h-6 group-hover:translate-x-2 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
+                            </svg>
+                        </a>
+                        <div class="text-sm text-white/90 font-semibold">
+                            ✓ 100% Free • ✓ No Credit Card • ✓ Instant Access
+                        </div>
+                    </div>
+
+                    <!-- Social Proof -->
+                    <p class="mt-8 text-lg text-white/80 font-medium">
+                        Join QA professionals from <span class="font-black text-yellow-300">Singapore, Malaysia, Indonesia, Thailand, Philippines, Vietnam, Taiwan, Japan, India & beyond</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Add keyframe animation for float effect -->
+            <style>
+                @keyframes float {
+                    0%, 100% { transform: translateY(0px) rotate(0deg); }
+                    33% { transform: translateY(-30px) rotate(5deg); }
+                    66% { transform: translateY(-15px) rotate(-5deg); }
+                }
+            </style>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <div id="footer-container"></div>
+
+</body>
+</html>

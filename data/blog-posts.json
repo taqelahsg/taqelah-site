@@ -1,6 +1,18 @@
 {
   "posts": [
     {
+      "id": 3,
+      "title": "Getting Started with PlayPI: Your Local API Testing Playground",
+      "excerpt": "Learn API automation testing with PlayPI - a free, Docker-based tool that gives you instant access to RESTful, GraphQL, gRPC, and WebSocket APIs running entirely on your local machine. No internet required, no API keys needed, and no rate limits!",
+      "url": "/blog/playpi-local-api-testing-playground.html",
+      "date": "December 19, 2025",
+      "category": "Tutorial",
+      "readTime": "15 min read",
+      "image": "/assets/images/blog/playpi-local-api-testing-playground/playpi-poster.png",
+      "author": "Syam Sasi",
+      "authorImage": "/assets/images/avatars/syam.png"
+    },
+    {
       "id": 2,
       "title": "How to Write a Great Abstract for Your TAQELAH Lightning Talk",
       "excerpt": "A strong abstract is the most important part of your TAQELAH Lightning Talk proposal. Learn how to craft a compelling abstract that aligns with the 2026 theme: 'Test Beyond Tomorrow: Skills, Tools & Mindsets for the Next Decade of QA'.",
