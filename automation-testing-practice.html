@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Testing Practice Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .section {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+        }
+
+        .section h2 {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 20px;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="number"],
+        input[type="date"],
+        textarea,
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+        .btn-success {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+        }
+
+        .btn-danger {
+            background-color: #dc3545;
+            color: white;
+        }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+        .btn-warning {
+            background-color: #ffc107;
+            color: black;
+        }
+
+        .btn-warning:hover {
+            background-color: #e0a800;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            margin-bottom: 10px;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            display: inline-block;
+            margin-right: 20px;
+            font-weight: normal;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .drag-drop-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 10px;
+        }
+
+        .drag-source,
+        .drop-zone {
+            min-height: 150px;
+            padding: 20px;
+            border: 2px dashed #ccc;
+            border-radius: 5px;
+            flex: 1;
+        }
+
+        .drag-source {
+            background-color: #f0f8ff;
+        }
+
+        .drop-zone {
+            background-color: #fff8dc;
+        }
+
+        .draggable-item {
+            padding: 10px;
+            margin: 5px 0;
+            background-color: #007bff;
+            color: white;
+            border-radius: 4px;
+            cursor: move;
+            user-select: none;
+        }
+
+        .draggable-item:hover {
+            background-color: #0056b3;
+        }
+
+        .drop-zone.drag-over {
+            border-color: #007bff;
+            background-color: #e7f3ff;
+        }
+
+        iframe {
+            width: 100%;
+            height: 300px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        #output-display {
+            margin-top: 10px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            min-height: 50px;
+        }
+
+        .file-info {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+        }
+
+        .new-window-content {
+            display: none;
+        }
+
+        select[multiple] {
+            height: 120px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Automation Testing Practice Page</h1>
+
+        <!-- Section 1: Input Fields -->
+        <div class="section" data-testid="section-input-fields">
+            <h2>1. Input Fields</h2>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" placeholder="Enter username" data-testid="input-username">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter email" data-testid="input-email">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="Enter password" data-testid="input-password">
+            </div>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" min="1" max="120" placeholder="Enter age" data-testid="input-age">
+            </div>
+            <div class="form-group">
+                <label for="dob">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" data-testid="input-dob">
+            </div>
+            <div class="form-group">
+                <label for="comments">Comments:</label>
+                <textarea id="comments" name="comments" rows="4" placeholder="Enter your comments" data-testid="input-comments"></textarea>
+            </div>
+        </div>
+
+        <!-- Section 2: Buttons -->
+        <div class="section" data-testid="section-buttons">
+            <h2>2. Buttons</h2>
+            <button id="btn-click" class="btn-primary" data-testid="btn-click">Click Me</button>
+            <button id="btn-double-click" class="btn-success" data-testid="btn-double-click">Double Click Me</button>
+            <button id="btn-right-click" class="btn-warning" data-testid="btn-right-click">Right Click Me</button>
+            <button id="btn-disabled" class="btn-danger" disabled data-testid="btn-disabled">Disabled Button</button>
+            <button id="btn-enable" class="btn-primary" data-testid="btn-enable">Enable Disabled Button</button>
+            <div id="output-display" data-testid="output-display"></div>
+        </div>
+
+        <!-- Section 3: Radio Buttons -->
+        <div class="section" data-testid="section-radio-buttons">
+            <h2>3. Radio Buttons</h2>
+            <div class="form-group">
+                <label>Select Gender:</label>
+                <div class="radio-group" data-testid="radio-group-gender">
+                    <label><input type="radio" name="gender" value="male" id="radio-male" data-testid="radio-male"> Male</label>
+                    <label><input type="radio" name="gender" value="female" id="radio-female" data-testid="radio-female"> Female</label>
+                    <label><input type="radio" name="gender" value="other" id="radio-other" data-testid="radio-other"> Other</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label>Experience Level:</label>
+                <div class="radio-group" data-testid="radio-group-experience">
+                    <label><input type="radio" name="experience" value="beginner" id="exp-beginner" data-testid="radio-beginner"> Beginner</label>
+                    <label><input type="radio" name="experience" value="intermediate" id="exp-intermediate" data-testid="radio-intermediate"> Intermediate</label>
+                    <label><input type="radio" name="experience" value="expert" id="exp-expert" data-testid="radio-expert"> Expert</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 4: Checkboxes -->
+        <div class="section" data-testid="section-checkboxes">
+            <h2>4. Checkboxes</h2>
+            <div class="form-group">
+                <label>Select Programming Languages:</label>
+                <div class="checkbox-group" data-testid="checkbox-group-languages">
+                    <label><input type="checkbox" name="languages" value="javascript" id="lang-js" data-testid="checkbox-javascript"> JavaScript</label>
+                    <label><input type="checkbox" name="languages" value="python" id="lang-py" data-testid="checkbox-python"> Python</label>
+                    <label><input type="checkbox" name="languages" value="java" id="lang-java" data-testid="checkbox-java"> Java</label>
+                    <label><input type="checkbox" name="languages" value="csharp" id="lang-cs" data-testid="checkbox-csharp"> C#</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label><input type="checkbox" id="agree-terms" data-testid="checkbox-agree-terms"> I agree to terms and conditions</label>
+            </div>
+            <button id="btn-check-all" class="btn-primary" data-testid="btn-check-all">Check All Languages</button>
+            <button id="btn-uncheck-all" class="btn-primary" data-testid="btn-uncheck-all">Uncheck All Languages</button>
+        </div>
+
+        <!-- Section 5: Static Dropdown -->
+        <div class="section" data-testid="section-static-dropdown">
+            <h2>5. Static Dropdown (Single Select)</h2>
+            <div class="form-group">
+                <label for="country-select">Select Country:</label>
+                <select id="country-select" name="country" data-testid="select-country">
+                    <option value="">-- Select Country --</option>
+                    <option value="usa">United States</option>
+                    <option value="uk">United Kingdom</option>
+                    <option value="canada">Canada</option>
+                    <option value="australia">Australia</option>
+                    <option value="india">India</option>
+                    <option value="germany">Germany</option>
+                    <option value="france">France</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Section 6: Dynamic Dropdown -->
+        <div class="section" data-testid="section-dynamic-dropdown">
+            <h2>6. Dynamic Dropdown (Dependent Dropdowns)</h2>
+            <div class="form-group">
+                <label for="category-select">Select Category:</label>
+                <select id="category-select" name="category" data-testid="select-category">
+                    <option value="">-- Select Category --</option>
+                    <option value="electronics">Electronics</option>
+                    <option value="clothing">Clothing</option>
+                    <option value="books">Books</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="subcategory-select">Select Subcategory:</label>
+                <select id="subcategory-select" name="subcategory" disabled data-testid="select-subcategory">
+                    <option value="">-- Select Category First --</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Section 7: Multi-Select Dropdown -->
+        <div class="section" data-testid="section-multiselect-dropdown">
+            <h2>7. Multi-Select Dropdown</h2>
+            <div class="form-group">
+                <label for="skills-select">Select Skills (Hold Ctrl/Cmd to select multiple):</label>
+                <select id="skills-select" name="skills" multiple data-testid="select-skills">
+                    <option value="html">HTML</option>
+                    <option value="css">CSS</option>
+                    <option value="javascript">JavaScript</option>
+                    <option value="react">React</option>
+                    <option value="angular">Angular</option>
+                    <option value="vue">Vue.js</option>
+                    <option value="nodejs">Node.js</option>
+                    <option value="python">Python</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Section 8: Alerts -->
+        <div class="section" data-testid="section-alerts">
+            <h2>8. Alerts</h2>
+            <button id="btn-alert" class="btn-primary" data-testid="btn-alert">Show Alert</button>
+            <button id="btn-confirm" class="btn-success" data-testid="btn-confirm">Show Confirm</button>
+            <button id="btn-prompt" class="btn-warning" data-testid="btn-prompt">Show Prompt</button>
+            <div id="alert-result" style="margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;" data-testid="alert-result"></div>
+        </div>
+
+        <!-- Section 9: Frames (iFrame) -->
+        <div class="section" data-testid="section-iframe">
+            <h2>9. iFrame</h2>
+            <iframe id="test-iframe" name="test-iframe" src="about:blank" data-testid="test-iframe"></iframe>
+            <button id="btn-load-iframe" class="btn-primary" style="margin-top: 10px;" data-testid="btn-load-iframe">Load Content in iFrame</button>
+        </div>
+
+        <!-- Section 10: Window Handling -->
+        <div class="section" data-testid="section-window-handling">
+            <h2>10. Window Handling</h2>
+            <button id="btn-new-window" class="btn-primary" data-testid="btn-new-window">Open New Window</button>
+            <button id="btn-new-tab" class="btn-success" data-testid="btn-new-tab">Open New Tab</button>
+            <div id="window-info" style="margin-top: 10px; padding: 10px; background-color: #f8f9fa; border-radius: 4px;" data-testid="window-info"></div>
+        </div>
+
+        <!-- Section 11: Drag and Drop -->
+        <div class="section" data-testid="section-drag-drop">
+            <h2>11. Drag and Drop</h2>
+            <div class="drag-drop-container">
+                <div class="drag-source" data-testid="drag-source">
+                    <h3>Drag From Here</h3>
+                    <div class="draggable-item" draggable="true" id="item1" data-testid="draggable-item-1">Item 1</div>
+                    <div class="draggable-item" draggable="true" id="item2" data-testid="draggable-item-2">Item 2</div>
+                    <div class="draggable-item" draggable="true" id="item3" data-testid="draggable-item-3">Item 3</div>
+                    <div class="draggable-item" draggable="true" id="item4" data-testid="draggable-item-4">Item 4</div>
+                </div>
+                <div class="drop-zone" id="drop-zone" data-testid="drop-zone">
+                    <h3>Drop Here</h3>
+                </div>
+            </div>
+            <button id="btn-reset-drag" class="btn-warning" style="margin-top: 10px;" data-testid="btn-reset-drag">Reset Items</button>
+        </div>
+
+        <!-- Section 12: File Upload -->
+        <div class="section" data-testid="section-file-upload">
+            <h2>12. File Upload</h2>
+            <div class="form-group">
+                <label for="file-upload">Upload File:</label>
+                <input type="file" id="file-upload" name="file" data-testid="file-upload-single">
+            </div>
+            <div class="form-group">
+                <label for="file-upload-multiple">Upload Multiple Files:</label>
+                <input type="file" id="file-upload-multiple" name="files" multiple data-testid="file-upload-multiple">
+            </div>
+            <div class="file-info" id="file-info" data-testid="file-info"></div>
+        </div>
+
+        <!-- Section 13: File Download -->
+        <div class="section" data-testid="section-file-download">
+            <h2>13. File Download</h2>
+            <button id="btn-download-txt" class="btn-primary" data-testid="btn-download-txt">Download Text File</button>
+            <button id="btn-download-csv" class="btn-success" data-testid="btn-download-csv">Download CSV File</button>
+            <button id="btn-download-json" class="btn-warning" data-testid="btn-download-json">Download JSON File</button>
+        </div>
+    </div>
+
+    <!-- Hidden content for new window -->
+    <div class="new-window-content" id="new-window-content">
+        <h1>New Window/Tab Content</h1>
+        <p>This is a new window opened for testing window handling.</p>
+        <p>Window name: <span id="window-name"></span></p>
+    </div>
+
+    <script>
+        // Button Events
+        document.getElementById('btn-click').addEventListener('click', function() {
+            document.getElementById('output-display').innerHTML = '<strong>Button clicked!</strong> Timestamp: ' + new Date().toLocaleTimeString();
+        });
+
+        document.getElementById('btn-double-click').addEventListener('dblclick', function() {
+            document.getElementById('output-display').innerHTML = '<strong>Button double-clicked!</strong> Timestamp: ' + new Date().toLocaleTimeString();
+        });
+
+        document.getElementById('btn-right-click').addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+            document.getElementById('output-display').innerHTML = '<strong>Button right-clicked!</strong> Timestamp: ' + new Date().toLocaleTimeString();
+        });
+
+        document.getElementById('btn-enable').addEventListener('click', function() {
+            const disabledBtn = document.getElementById('btn-disabled');
+            disabledBtn.disabled = !disabledBtn.disabled;
+            this.textContent = disabledBtn.disabled ? 'Enable Disabled Button' : 'Disable Button';
+        });
+
+        // Checkbox Controls
+        document.getElementById('btn-check-all').addEventListener('click', function() {
+            document.querySelectorAll('input[name="languages"]').forEach(cb => cb.checked = true);
+        });
+
+        document.getElementById('btn-uncheck-all').addEventListener('click', function() {
+            document.querySelectorAll('input[name="languages"]').forEach(cb => cb.checked = false);
+        });
+
+        // Dynamic Dropdown
+        const subcategories = {
+            electronics: ['Laptops', 'Smartphones', 'Tablets', 'Cameras'],
+            clothing: ['Shirts', 'Pants', 'Dresses', 'Shoes'],
+            books: ['Fiction', 'Non-Fiction', 'Science', 'History']
+        };
+
+        document.getElementById('category-select').addEventListener('change', function() {
+            const category = this.value;
+            const subcategorySelect = document.getElementById('subcategory-select');
+
+            subcategorySelect.innerHTML = '<option value="">-- Select Subcategory --</option>';
+
+            if (category && subcategories[category]) {
+                subcategorySelect.disabled = false;
+                subcategories[category].forEach(sub => {
+                    const option = document.createElement('option');
+                    option.value = sub.toLowerCase().replace(' ', '-');
+                    option.textContent = sub;
+                    subcategorySelect.appendChild(option);
+                });
+            } else {
+                subcategorySelect.disabled = true;
+            }
+        });
+
+        // Alerts
+        document.getElementById('btn-alert').addEventListener('click', function() {
+            alert('This is a simple alert!');
+            document.getElementById('alert-result').textContent = 'Alert was shown';
+        });
+
+        document.getElementById('btn-confirm').addEventListener('click', function() {
+            const result = confirm('Do you want to proceed?');
+            document.getElementById('alert-result').textContent = 'Confirm result: ' + (result ? 'OK' : 'Cancel');
+        });
+
+        document.getElementById('btn-prompt').addEventListener('click', function() {
+            const result = prompt('Please enter your name:', 'John Doe');
+            document.getElementById('alert-result').textContent = 'Prompt result: ' + (result || 'Cancelled');
+        });
+
+        // iFrame
+        document.getElementById('btn-load-iframe').addEventListener('click', function() {
+            const iframe = document.getElementById('test-iframe');
+            const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+            iframeDoc.open();
+            iframeDoc.write('<html><head><style>body { font-family: Arial; padding: 20px; background-color: #f0f0f0; } h2 { color: #007bff; }</style></head><body><h2>iFrame Content</h2><p>This content is loaded inside an iFrame.</p><input type="text" id="iframe-input" placeholder="Test input in iframe"><button id="iframe-button">Click me in iframe</button></body></html>');
+            iframeDoc.close();
+
+            // Add event listener after iframe content is loaded
+            setTimeout(function() {
+                const iframeButton = iframeDoc.getElementById('iframe-button');
+                if (iframeButton) {
+                    iframeButton.addEventListener('click', function() {
+                        alert('Button clicked inside iframe!');
+                    });
+                }
+            }, 100);
+        });
+
+        // Window Handling
+        document.getElementById('btn-new-window').addEventListener('click', function() {
+            const newWindow = window.open('', 'TestWindow', 'width=600,height=400');
+            newWindow.document.write('<html><head><title>Test Window</title><style>body { font-family: Arial; padding: 20px; } h1 { color: #007bff; }</style></head><body><h1>New Window for Testing</h1><p>This is a popup window opened for automation testing.</p><p>Window name: TestWindow</p><button onclick="window.close()">Close This Window</button></body></html>');
+            document.getElementById('window-info').textContent = 'New window opened with name: TestWindow';
+        });
+
+        document.getElementById('btn-new-tab').addEventListener('click', function() {
+            window.open('about:blank', '_blank');
+            document.getElementById('window-info').textContent = 'New tab opened';
+        });
+
+        // Drag and Drop
+        let draggedElement = null;
+
+        document.querySelectorAll('.draggable-item').forEach(item => {
+            item.addEventListener('dragstart', function(e) {
+                draggedElement = this;
+                e.dataTransfer.effectAllowed = 'move';
+                e.dataTransfer.setData('text/html', this.innerHTML);
+                this.style.opacity = '0.5';
+            });
+
+            item.addEventListener('dragend', function() {
+                this.style.opacity = '1';
+            });
+        });
+
+        const dropZone = document.getElementById('drop-zone');
+
+        dropZone.addEventListener('dragover', function(e) {
+            if (e.preventDefault) {
+                e.preventDefault();
+            }
+            e.dataTransfer.dropEffect = 'move';
+            this.classList.add('drag-over');
+            return false;
+        });
+
+        dropZone.addEventListener('dragleave', function() {
+            this.classList.remove('drag-over');
+        });
+
+        dropZone.addEventListener('drop', function(e) {
+            if (e.stopPropagation) {
+                e.stopPropagation();
+            }
+            this.classList.remove('drag-over');
+
+            if (draggedElement) {
+                this.appendChild(draggedElement);
+            }
+            return false;
+        });
+
+        document.getElementById('btn-reset-drag').addEventListener('click', function() {
+            const dragSource = document.querySelector('.drag-source');
+            const items = document.querySelectorAll('.draggable-item');
+            items.forEach(item => {
+                dragSource.appendChild(item);
+            });
+        });
+
+        // File Upload
+        document.getElementById('file-upload').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                document.getElementById('file-info').innerHTML = `
+                    <strong>Single File Selected:</strong><br>
+                    Name: ${file.name}<br>
+                    Size: ${(file.size / 1024).toFixed(2)} KB<br>
+                    Type: ${file.type}
+                `;
+            }
+        });
+
+        document.getElementById('file-upload-multiple').addEventListener('change', function(e) {
+            const files = Array.from(e.target.files);
+            if (files.length > 0) {
+                let html = '<strong>Multiple Files Selected:</strong><br>';
+                files.forEach((file, index) => {
+                    html += `${index + 1}. ${file.name} (${(file.size / 1024).toFixed(2)} KB)<br>`;
+                });
+                document.getElementById('file-info').innerHTML = html;
+            }
+        });
+
+        // File Download
+        function downloadFile(filename, content, type) {
+            const blob = new Blob([content], { type: type });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = filename;
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+            document.body.removeChild(a);
+        }
+
+        document.getElementById('btn-download-txt').addEventListener('click', function() {
+            const content = 'This is a sample text file for automation testing.\nLine 2\nLine 3';
+            downloadFile('test-file.txt', content, 'text/plain');
+        });
+
+        document.getElementById('btn-download-csv').addEventListener('click', function() {
+            const content = 'Name,Age,Email\nJohn Doe,30,john@example.com\nJane Smith,25,jane@example.com';
+            downloadFile('test-data.csv', content, 'text/csv');
+        });
+
+        document.getElementById('btn-download-json').addEventListener('click', function() {
+            const data = {
+                users: [
+                    { name: 'John Doe', age: 30, email: 'john@example.com' },
+                    { name: 'Jane Smith', age: 25, email: 'jane@example.com' }
+                ]
+            };
+            downloadFile('test-data.json', JSON.stringify(data, null, 2), 'application/json');
+        });
+    </script>
+</body>
+</html>
