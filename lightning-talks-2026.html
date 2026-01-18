@@ -6,7 +6,7 @@
     <meta name="theme-color" content="#E10600">
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Join Singapore's premier testing conference - Taqelah! Lightning Talks 2026. FREE online event on Feb 28, 2026. 10 expert speakers on AI testing, automation, QA careers. Register now for Southeast Asia's top software testing conference.">
+    <meta name="description" content="Join Singapore's premier testing conference - taqelah! Lightning Talks 2026. FREE online event on Feb 28, 2026. 2 keynotes + 15 lightning talks featuring 17 expert speakers on AI testing, automation, and QA careers. Register now for Southeast Asia's top software testing conference.">
     <meta name="keywords" content="Singapore testing conference, Singapore QA conference, software testing conference Singapore, QA conference 2026, testing conference Southeast Asia, Singapore software testing, QA conference Asia, testing automation conference, AI testing conference, free testing conference Singapore, Taqelah conference, lightning talks testing, QA meetup Singapore, software quality conference, test automation Singapore, QA community Singapore, testing professionals Singapore, SDET conference, quality assurance conference, Singapore tech conference 2026">
     <meta name="author" content="Taqelah">
     <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -24,10 +24,10 @@
     {
       "@context": "https://schema.org",
       "@type": "Event",
-      "name": "Taqelah! Lightning Talks Conference 2026",
-      "description": "Test Beyond Tomorrow: Skills, Tools & Mindsets for the Next Decade of QA. 10 speakers, 10 minutes each, 100 minutes of pure insight.",
+      "name": "taqelah! Lightning Talks Conference 2026",
+      "description": "Test Beyond Tomorrow: Skills, Tools & Mindsets for the Next Decade of QA. 2 keynotes + 15 lightning talks featuring 17 expert speakers. 220 minutes of pure insight.",
       "startDate": "2026-02-28T12:00:00+08:00",
-      "endDate": "2026-02-28T14:00:00+08:00",
+      "endDate": "2026-02-28T15:40:00+08:00",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
       "location": {
@@ -57,22 +57,22 @@
     </script>
 
     <!-- Open Graph -->
-    <meta property="og:title" content="Taqelah! Lightning Talks Conference 2026">
-    <meta property="og:description" content="Test Beyond Tomorrow - Skills, Tools & Mindsets for the Next Decade of QA — 10 Speakers, 10 Minutes, 100 Minutes of Pure Insight">
+    <meta property="og:title" content="taqelah! Lightning Talks Conference 2026">
+    <meta property="og:description" content="Test Beyond Tomorrow - Skills, Tools & Mindsets for the Next Decade of QA — 2 Keynotes + 15 Lightning Talks, 17 Expert Speakers, 220 Minutes of Pure Insight">
     <meta property="og:type" content="event">
     <meta property="og:url" content="https://taqelah.sg/lightning-talks-2026.html">
     <meta property="og:image" content="https://taqelah.sg/assets/images/lightning-talks-2026-poster.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Taqelah! Lightning Talks Conference 2026 - Test Beyond Tomorrow">
+    <meta property="og:image:alt" content="taqelah! Lightning Talks Conference 2026 - Test Beyond Tomorrow">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Taqelah! Lightning Talks Conference 2026">
+    <meta name="twitter:title" content="taqelah! Lightning Talks Conference 2026">
     <meta name="twitter:description" content="Test Beyond Tomorrow - Skills, Tools & Mindsets for the Next Decade of QA">
     <meta name="twitter:image" content="https://taqelah.sg/assets/images/lightning-talks-2026-poster.png">
 
-    <title>Singapore Testing Conference 2026 | FREE Online QA Lightning Talks | Taqelah!</title>
+    <title>Singapore Testing Conference 2026 | FREE Online QA Lightning Talks | taqelah!</title>
     <link rel="icon" type="image/png" href="/assets/images/logo.png">
 
     <script src="https://cdn.tailwindcss.com"></script>
@@ -216,6 +216,228 @@
             transform: rotateY(5deg) rotateX(5deg);
         }
 
+        /* Speaker Card Entrance Animations */
+        @keyframes slideFromLeft {
+            from { opacity: 0; transform: translateX(-100px) rotate(-5deg); }
+            to { opacity: 1; transform: translateX(0) rotate(0deg); }
+        }
+        @keyframes slideFromRight {
+            from { opacity: 0; transform: translateX(100px) rotate(5deg); }
+            to { opacity: 1; transform: translateX(0) rotate(0deg); }
+        }
+        @keyframes slideFromTop {
+            from { opacity: 0; transform: translateY(-100px) scale(0.8); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes slideFromBottom {
+            from { opacity: 0; transform: translateY(100px) scale(0.8); }
+            to { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        @keyframes zoomIn {
+            from { opacity: 0; transform: scale(0.3) rotate(10deg); }
+            to { opacity: 1; transform: scale(1) rotate(0deg); }
+        }
+        @keyframes flipIn {
+            from { opacity: 0; transform: perspective(400px) rotateY(-90deg); }
+            to { opacity: 1; transform: perspective(400px) rotateY(0deg); }
+        }
+
+        .speaker-card {
+            opacity: 0;
+        }
+        .speaker-card.animate-in.from-left {
+            animation: slideFromLeft 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .speaker-card.animate-in.from-right {
+            animation: slideFromRight 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .speaker-card.animate-in.from-top {
+            animation: slideFromTop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .speaker-card.animate-in.from-bottom {
+            animation: slideFromBottom 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .speaker-card.animate-in.zoom-in {
+            animation: zoomIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+        .speaker-card.animate-in.flip-in {
+            animation: flipIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+        }
+
+        /* Center Timeline Styles */
+        .timeline {
+            position: relative;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #E10600, #8B5CF6, #3B82F6, #10B981);
+            border-radius: 2px;
+        }
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 0 40px;
+        }
+        .timeline-item.left {
+            left: 0;
+            padding-right: 50px;
+        }
+        .timeline-item.right {
+            left: 50%;
+            padding-left: 50px;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            width: 16px;
+            height: 16px;
+            background: linear-gradient(135deg, #E10600, #FF4500);
+            border: 3px solid #1a1a2e;
+            border-radius: 50%;
+            z-index: 10;
+            box-shadow: 0 0 20px rgba(225, 6, 0, 0.5);
+        }
+        .timeline-item.left::before {
+            right: -8px;
+        }
+        .timeline-item.right::before {
+            left: -8px;
+        }
+        .timeline-item.keynote::before {
+            width: 20px;
+            height: 20px;
+            background: linear-gradient(135deg, #F59E0B, #EF4444);
+            box-shadow: 0 0 25px rgba(245, 158, 11, 0.6);
+        }
+        .timeline-item.keynote.left::before {
+            right: -10px;
+        }
+        .timeline-item.keynote.right::before {
+            left: -10px;
+        }
+        .timeline-item.closing::before {
+            background: linear-gradient(135deg, #10B981, #14B8A6);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+        }
+
+        /* Timeline Cinema-Style Scroll Animations */
+        @keyframes cinemaSlideLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-150px) scale(0.9);
+                filter: blur(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+                filter: blur(0);
+            }
+        }
+        @keyframes cinemaSlideRight {
+            from {
+                opacity: 0;
+                transform: translateX(150px) scale(0.9);
+                filter: blur(5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0) scale(1);
+                filter: blur(0);
+            }
+        }
+
+        .timeline-item {
+            opacity: 0;
+        }
+        .timeline-item.animate-in.left {
+            animation: cinemaSlideLeft 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+        .timeline-item.animate-in.right {
+            animation: cinemaSlideRight 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+        }
+
+        /* Timeline Talk Description Expand */
+        .talk-description {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+            opacity: 0;
+            margin-top: 0;
+        }
+        .timeline-talk.expanded .talk-description {
+            max-height: 800px;
+            opacity: 1;
+            margin-top: 12px;
+        }
+        .timeline-talk {
+            cursor: pointer;
+        }
+        .timeline-talk .expand-icon {
+            transition: transform 0.3s ease;
+        }
+        .timeline-talk.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+
+        /* FAQ Accordion Styles */
+        .faq-item.expanded .faq-answer {
+            max-height: 300px;
+            opacity: 1;
+            margin-top: 0;
+        }
+        .faq-item.expanded .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        /* Mobile Timeline */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 20px;
+            }
+            .timeline-item {
+                width: 100%;
+                padding-left: 50px !important;
+                padding-right: 10px !important;
+            }
+            .timeline-item.left,
+            .timeline-item.right {
+                left: 0;
+            }
+            .timeline-item::before,
+            .timeline-item.left::before,
+            .timeline-item.right::before,
+            .timeline-item.keynote.left::before,
+            .timeline-item.keynote.right::before {
+                left: 12px !important;
+                right: auto !important;
+            }
+        }
+
+        /* Respect user's reduced motion preference for accessibility */
+        @media (prefers-reduced-motion: reduce) {
+            .speaker-card,
+            .timeline-item {
+                opacity: 1;
+            }
+            .speaker-card.animate-in.from-left,
+            .speaker-card.animate-in.from-right,
+            .speaker-card.animate-in.from-top,
+            .speaker-card.animate-in.from-bottom,
+            .speaker-card.animate-in.zoom-in,
+            .speaker-card.animate-in.flip-in,
+            .timeline-item.animate-in.left,
+            .timeline-item.animate-in.right {
+                animation: none;
+                opacity: 1;
+            }
+        }
+
         /* Prevent horizontal overflow */
         section {
             overflow-x: hidden;
@@ -270,10 +492,10 @@
                     <div class="text-8xl sm:text-9xl lg:text-[12rem] mb-6 lightning-strike">⚡</div>
 
                     <h1 class="text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-black leading-tight tracking-tight slide-up">
-                        <span class="block glow-text">Taqelah!</span>
+                        <span class="block glow-text">taqelah!</span>
                         <span class="block bg-gradient-to-r from-[#E10600] to-[#FF4500] text-white px-8 py-3 inline-block transform -rotate-1 my-4 shadow-2xl">Lightning Talks</span>
                         <span class="block gradient-text">2026</span>
-                        <span class="block text-2xl sm:text-3xl lg:text-4xl text-yellow-300 mt-4 font-bold">FREE Online Conference by Taqelah!</span>
+                        <span class="block text-2xl sm:text-3xl lg:text-4xl text-yellow-300 mt-4 font-bold">FREE Online Conference by taqelah!</span>
                     </h1>
 
                     <p class="text-xl sm:text-2xl lg:text-3xl text-blue-100 leading-relaxed max-w-5xl mx-auto font-semibold slide-up" style="animation-delay: 0.2s;">
@@ -331,17 +553,21 @@
                     </div>
 
                     <!-- Animated Stats -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 max-w-4xl mx-auto pt-8 slide-up" style="animation-delay: 0.4s;">
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-4 sm:gap-6 max-w-5xl mx-auto pt-8 slide-up" style="animation-delay: 0.4s;">
                         <div class="glass-card-dark rounded-2xl p-6 sm:p-8 card-hover card-3d">
-                            <div class="text-4xl sm:text-5xl font-black gradient-text">10</div>
-                            <div class="text-xs sm:text-sm uppercase tracking-wider mt-2 text-blue-200">Speakers</div>
+                            <div class="text-4xl sm:text-5xl font-black gradient-text">2</div>
+                            <div class="text-xs sm:text-sm uppercase tracking-wider mt-2 text-blue-200">Keynotes</div>
+                        </div>
+                        <div class="glass-card-dark rounded-2xl p-6 sm:p-8 card-hover card-3d">
+                            <div class="text-4xl sm:text-5xl font-black gradient-text">15</div>
+                            <div class="text-xs sm:text-sm uppercase tracking-wider mt-2 text-blue-200">Lightning Talks</div>
                         </div>
                         <div class="glass-card-dark rounded-2xl p-6 sm:p-8 card-hover card-3d">
                             <div class="text-4xl sm:text-5xl font-black gradient-text">10</div>
                             <div class="text-xs sm:text-sm uppercase tracking-wider mt-2 text-blue-200">Minutes Each</div>
                         </div>
                         <div class="glass-card-dark rounded-2xl p-6 sm:p-8 card-hover card-3d">
-                            <div class="text-4xl sm:text-5xl font-black gradient-text">100</div>
+                            <div class="text-4xl sm:text-5xl font-black gradient-text">220</div>
                             <div class="text-xs sm:text-sm uppercase tracking-wider mt-2 text-blue-200">Minutes Total</div>
                         </div>
                         <div class="glass-card-dark rounded-2xl p-6 sm:p-8 card-hover card-3d">
@@ -432,7 +658,7 @@
                             <div class="text-6xl mb-4">💡</div>
                             <h3 class="text-3xl font-black mb-4 text-blue-600">High-Energy</h3>
                             <p class="text-lg text-gray-700">
-                                100 minutes of <strong>pure distilled knowledge</strong> for busy testers and SDETs
+                                220 minutes of <strong>pure distilled knowledge</strong> for busy testers and SDETs
                             </p>
                         </div>
                     </div>
@@ -518,7 +744,7 @@
                             This isn't theory. This is <span class="text-yellow-300">happening now</span>.
                         </p>
                         <p class="text-xl text-white/90 mb-8 max-w-3xl mx-auto">
-                            Join us for 100 minutes of real-world insights, practical frameworks, and strategic thinking from QA leaders navigating this transformation firsthand.
+                            Join us for 220 minutes of real-world insights, practical frameworks, and strategic thinking from QA leaders navigating this transformation firsthand.
                         </p>
                         <a href="#register"
                            class="inline-flex items-center gap-3 px-12 py-6 text-xl font-black text-[#E10600] bg-white hover:bg-yellow-300 rounded-2xl transition-all transform hover:scale-105 shadow-2xl pulse-glow">
@@ -859,182 +1085,812 @@
                         </div>
                     </div>
 
-                    <!-- More Speakers Coming Soon -->
-                    <div class="text-center">
-                        <div class="glass-card-dark rounded-3xl p-12 lg:p-16 border-2 border-white/20 card-hover inline-block max-w-2xl">
-                            <div class="text-7xl lg:text-8xl mb-8 animate-bounce">🎤</div>
-                            <h3 class="text-3xl lg:text-4xl font-black gradient-text mb-6">
-                                More Amazing Speakers Coming Soon!
+                    <!-- Lightning Talk Speakers -->
+                    <div class="mt-20">
+                        <div class="text-center mb-12">
+                            <div class="inline-block px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-6 shadow-lg">
+                                <span class="text-white font-black text-sm uppercase tracking-wider">Lightning Talk Speakers</span>
+                            </div>
+                            <h3 class="text-4xl sm:text-5xl font-black text-white mb-4 glow-text">
+                                Meet Our <span class="gradient-text">Speakers</span>
                             </h3>
-                            <p class="text-xl lg:text-2xl text-blue-200 leading-relaxed">
-                                We're assembling an exceptional lineup of experts from across the global testing community
-                            </p>
+                            <p class="text-xl text-blue-200">15 experts sharing powerful ideas in 10-minute bursts</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+                            <!-- Priyank Shah -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/priyank-shah.jpg" alt="Priyank Shah" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white text-4xl font-black\'>PS</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Priyank Shah</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Lead Software Engineer</p>
+                                <p class="text-blue-300 text-sm mb-3">Carousell</p>
+                                <a href="https://www.linkedin.com/in/priyankshahqa/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">RAG + n8n: The Powerhouse for Context-Aware Test Case Generation</p>
+                                </div>
+                            </div>
+
+                            <!-- Chitransh Shrivastava -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/chitransh-shrivastava.png" alt="Chitransh Shrivastava" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-4xl font-black\'>CS</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Chitransh Shrivastava</h4>
+                                <p class="text-yellow-300 text-sm font-medium">QA Engineer</p>
+                                <p class="text-blue-300 text-sm mb-3">Metacube Software</p>
+                                <a href="https://www.linkedin.com/in/chitranshshrivastava29/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Web3 & Blockchain Testing: What QA Needs to Rethink</p>
+                                </div>
+                            </div>
+
+                            <!-- Mesut Durukal -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/mesut-durukal.jpg" alt="Mesut Durukal" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center text-white text-4xl font-black\'>MD</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Mesut Durukal</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Senior QA Automation Engineer</p>
+                                <p class="text-blue-300 text-sm mb-3">Indeed</p>
+                                <a href="https://www.linkedin.com/in/mesutdurukal/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Using Mutation Testing to Expose Your Tests' Hidden Weaknesses</p>
+                                </div>
+                            </div>
+
+                            <!-- Srinivasan Sekar & Sai Krishna -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="flex justify-center gap-4 mb-6">
+                                    <div class="text-center">
+                                        <div class="w-28 h-28 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl mx-auto mb-2">
+                                            <img src="assets/images/speakers/2026-lightning-talks/srinivasan-sekar.jpg" alt="Srinivasan Sekar" class="w-full h-full object-cover"
+                                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-white text-3xl font-black\'>SS</div>'">
+                                        </div>
+                                        <p class="text-white text-xs font-medium">Srinivasan</p>
+                                    </div>
+                                    <div class="text-center">
+                                        <div class="w-28 h-28 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl mx-auto mb-2">
+                                            <img src="assets/images/speakers/2026-lightning-talks/sai-krishna.jpg" alt="Sai Krishna" class="w-full h-full object-cover"
+                                                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-pink-500 to-purple-500 flex items-center justify-center text-white text-3xl font-black\'>SK</div>'">
+                                        </div>
+                                        <p class="text-white text-xs font-medium">Sai Krishna</p>
+                                    </div>
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Srinivasan Sekar & Sai Krishna</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Directors of Engineering</p>
+                                <p class="text-blue-300 text-sm mb-3">LambdaTest</p>
+                                <div class="flex justify-center gap-4 mb-4">
+                                    <a href="https://www.linkedin.com/in/srinivasan-sekar/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                        Srini
+                                    </a>
+                                    <a href="https://www.linkedin.com/in/sai-krishna-3755407b/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm">
+                                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                        Sai
+                                    </a>
+                                </div>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Supercharging Appium with MCP: Context-Aware Mobile Test Automation</p>
+                                </div>
+                            </div>
+
+                            <!-- Rahul Parwal -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/rahul-parwal.png" alt="Rahul Parwal" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center text-white text-4xl font-black\'>RP</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Rahul Parwal</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Specialist</p>
+                                <p class="text-blue-300 text-sm mb-3">ifm group of companies</p>
+                                <a href="https://www.linkedin.com/in/rahul-parwal/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Productize Yourself as a Tester - Your Authenticity Is the Only Moat</p>
+                                </div>
+                            </div>
+
+                            <!-- Santhosh Tuppad -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/santhosh-tuppad.jpg" alt="Santhosh Tuppad" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center text-white text-4xl font-black\'>ST</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Santhosh Tuppad</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Test Advocate</p>
+                                <p class="text-blue-300 text-sm mb-3">ElevenXN Technologies</p>
+                                <a href="https://www.linkedin.com/in/santhosh-tuppad-338b7412/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Shift Everywhere: When Testers, Hackers & GPTs Team Up</p>
+                                </div>
+                            </div>
+
+                            <!-- Nikhil Bhandari -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/nikhil-bhandari.jpg" alt="Nikhil Bhandari" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white text-4xl font-black\'>NB</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Nikhil Bhandari</h4>
+                                <p class="text-yellow-300 text-sm font-medium">VP - Quality Engineering</p>
+                                <p class="text-blue-300 text-sm mb-3">Moniepoint Inc.</p>
+                                <a href="https://www.linkedin.com/in/nikhilbhandari/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Beyond the Script - Practical Software Test Automation Techniques</p>
+                                </div>
+                            </div>
+
+                            <!-- Ashutosh Bhatawadekar -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/ashutosh-bhatawadekar.jpg" alt="Ashutosh Bhatawadekar" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center text-white text-4xl font-black\'>AB</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Ashutosh Bhatawadekar</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Engagement Director | CIO Advisory</p>
+                                <p class="text-blue-300 text-sm mb-3">Tata Consultancy Services</p>
+                                <a href="https://www.linkedin.com/in/ashutosh-bhatawadekar/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Future of QA in an AI World</p>
+                                </div>
+                            </div>
+
+                            <!-- Sparsh Shrivastava -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/sparsh-shrivastava.png" alt="Sparsh Shrivastava" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white text-4xl font-black\'>SS</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Sparsh Shrivastava</h4>
+                                <p class="text-yellow-300 text-sm font-medium">QA Automation Specialist</p>
+                                <p class="text-blue-300 text-sm mb-3">One Click LCA</p>
+                                <a href="https://www.linkedin.com/in/sparsh-shrivastava-qa/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Shift-Right Testing: When Production Becomes Your Test Environment</p>
+                                </div>
+                            </div>
+
+                            <!-- Ujjwal Kumar Singh -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/ujjwal-kumar-singh.jpg" alt="Ujjwal Kumar Singh" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white text-4xl font-black\'>US</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Ujjwal Kumar Singh</h4>
+                                <p class="text-yellow-300 text-sm font-medium">SDET</p>
+                                <p class="text-blue-300 text-sm mb-3">Skeps</p>
+                                <a href="https://www.linkedin.com/in/ujjwal-k-singh/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Test Analytics Without Decisions Is Just Reporting</p>
+                                </div>
+                            </div>
+
+                            <!-- Tran Thuy Nha Truc -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/tran-thuy-nha-truc.jpg" alt="Tran Thuy Nha Truc" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white text-4xl font-black\'>TT</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Tran Thuy Nha Truc</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Senior Quality Engineer</p>
+                                <p class="text-blue-300 text-sm mb-3">TMA Solutions</p>
+                                <a href="https://www.linkedin.com/in/truc1911/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Testing AI-based Systems: Why Traditional QA Fails and What Comes Next</p>
+                                </div>
+                            </div>
+
+                            <!-- Goh Chun Lin -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/goh-chun-lin.png" alt="Goh Chun Lin" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center text-white text-4xl font-black\'>GC</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Goh Chun Lin</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Senior Cloud Software Engineer</p>
+                                <p class="text-blue-300 text-sm mb-3">.NET Foundation</p>
+                                <a href="https://www.linkedin.com/in/gohchunlin/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Performance Testing via Simulation</p>
+                                </div>
+                            </div>
+
+                            <!-- Pavan Teja -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/pavan-teja.jpg" alt="Pavan Teja" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center text-white text-4xl font-black\'>PT</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Pavan Teja</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Lead QA Engineer</p>
+                                <p class="text-blue-300 text-sm mb-3">NCS Group</p>
+                                <a href="https://www.linkedin.com/in/pavan-teja-m-072689142/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">The Human Edge in Testing AI Models</p>
+                                </div>
+                            </div>
+
+                            <!-- Shashwat Nagayach -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/shashwat-nagayach.jpg" alt="Shashwat Nagayach" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-sky-500 to-blue-500 flex items-center justify-center text-white text-4xl font-black\'>SN</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Shashwat Nagayach</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Sr. QA Manager</p>
+                                <p class="text-blue-300 text-sm mb-3">Asymbl</p>
+                                <a href="https://www.linkedin.com/in/shashwat-nagayach/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Future Skills for Testers</p>
+                                </div>
+                            </div>
+
+                            <!-- Jency Stella -->
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                                <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
+                                    <img src="assets/images/speakers/2026-lightning-talks/jency-stella.png" alt="Jency Stella" class="w-full h-full object-cover"
+                                         onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-fuchsia-500 to-pink-500 flex items-center justify-center text-white text-4xl font-black\'>JS</div>'">
+                                </div>
+                                <h4 class="font-bold text-white text-xl mb-2">Jency Stella</h4>
+                                <p class="text-yellow-300 text-sm font-medium">Quality Engineering Associate Manager</p>
+                                <p class="text-blue-300 text-sm mb-3">Accenture</p>
+                                <a href="https://www.linkedin.com/in/jency-stella/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                    LinkedIn
+                                </a>
+                                <div class="pt-4 border-t border-white/10">
+                                    <p class="text-blue-200 text-sm leading-relaxed">Testing Reimagined: The Age of Intelligence</p>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Speaker Application - Visual -->
-        <section id="speaker-application" class="py-20 sm:py-28 circuit-bg text-white relative">
+        <!-- Full Schedule Section -->
+        <section id="schedule" class="py-20 sm:py-28 circuit-bg text-white relative">
             <!-- Ambient Glow -->
             <div class="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-gradient-to-br from-[#E10600]/10 to-purple-500/10 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-gradient-to-tr from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
+
             <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div class="max-w-5xl mx-auto">
                     <div class="text-center mb-16">
-                        <div class="text-7xl mb-6">🚀</div>
+                        <div class="inline-block px-6 py-2 bg-gradient-to-r from-[#E10600] to-[#FF4500] rounded-full mb-6 shadow-lg">
+                            <span class="text-white font-black text-sm uppercase tracking-wider">Event Schedule</span>
+                        </div>
                         <h2 class="text-5xl sm:text-6xl font-black mb-6 glow-text">
-                            Want to Speak?
+                            Full <span class="gradient-text">Agenda</span>
                         </h2>
                         <p class="text-2xl text-blue-200">
-                            Share your expertise with the Southeast Asian testing community
+                            3 hours 40 minutes of pure testing knowledge
+                        </p>
+                        <p class="text-lg text-blue-300 mt-4">
+                            <span class="font-bold">28 February 2026</span> | 12:00 PM - 3:40 PM SGT (GMT+8)
                         </p>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-                        <div class="glass-card-dark rounded-2xl p-6 border border-white/20 card-hover">
-                            <div class="flex items-start gap-4">
-                                <div class="text-3xl">✅</div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-1">Real-World Experience</h4>
-                                    <p class="text-white/70">Practical insights from the trenches</p>
+                    <!-- Center Timeline -->
+                    <div class="timeline pb-8">
+                        <!-- Opening - Left -->
+                        <div class="timeline-item left mb-8">
+                            <div class="glass-card-dark rounded-2xl p-5 border border-white/10 card-hover">
+                                <div class="flex items-center gap-4 flex-row-reverse">
+                                    <div class="flex gap-1">
+                                        <img src="/assets/images/hosts/gana.jpeg" alt="Gana" class="w-12 h-12 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                        <img src="/assets/images/hosts/prachi.jpeg" alt="Prachi" class="w-12 h-12 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    </div>
+                                    <div class="text-right flex-1">
+                                        <div class="inline-block px-3 py-1 bg-purple-600/30 rounded-full text-xs font-bold text-purple-300 mb-2">OPENING</div>
+                                        <div class="text-lg font-bold text-[#E10600]">12:00 <span class="text-xs text-blue-300 font-normal">• 2 min</span></div>
+                                        <h4 class="font-bold text-white mt-2">Welcome & Housekeeping</h4>
+                                        <p class="text-blue-200 text-sm">Hosts: Gana & Prachi</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="glass-card-dark rounded-2xl p-6 border border-white/20 card-hover">
-                            <div class="flex items-start gap-4">
-                                <div class="text-3xl">✅</div>
+
+                        <!-- Sponsor - Right -->
+                        <div class="timeline-item right mb-8">
+                            <div class="glass-card-dark rounded-2xl p-5 border border-yellow-500/30 card-hover flex items-center gap-4">
+                                <img src="/assets/images/sponsors/applitools-logo.png" alt="Applitools" class="w-16 h-16 rounded-xl object-contain bg-white p-2">
                                 <div>
-                                    <h4 class="font-bold text-lg mb-1">AI & Testing Focus</h4>
-                                    <p class="text-blue-200">Related to our 2026 theme</p>
+                                    <div class="inline-block px-3 py-1 bg-yellow-600/30 rounded-full text-xs font-bold text-yellow-300 mb-2">SPONSOR</div>
+                                    <div class="text-lg font-bold text-yellow-400">12:02 <span class="text-xs text-blue-300 font-normal">• 6 min</span></div>
+                                    <h4 class="font-bold text-white mt-1">Applitools - Platinum Sponsor</h4>
                                 </div>
                             </div>
                         </div>
-                        <div class="glass-card-dark rounded-2xl p-6 border border-white/20 card-hover">
-                            <div class="flex items-start gap-4">
-                                <div class="text-3xl">✅</div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-1">Actionable Content</h4>
-                                    <p class="text-blue-200">Takeaways attendees can use now</p>
+
+                        <!-- Keynote 1 - Left -->
+                        <div class="timeline-item left keynote mb-8">
+                            <div class="glass-card-dark rounded-2xl p-6 border border-[#E10600]/40 card-hover flex items-center gap-4 flex-row-reverse">
+                                <img src="/assets/images/speakers/pradeep.jpeg" alt="Pradeep Soundararajan" class="w-20 h-20 rounded-xl object-cover ring-2 ring-[#E10600]/50">
+                                <div class="text-right flex-1">
+                                    <div class="inline-block px-3 py-1 bg-[#E10600]/30 rounded-full text-xs font-bold text-red-300 mb-2">🎤 KEYNOTE</div>
+                                    <div class="text-xl font-bold text-[#E10600]">12:09 <span class="text-xs text-blue-300 font-normal">• 20 min</span></div>
+                                    <h4 class="font-bold text-white text-lg mt-1">Pradeep Soundararajan</h4>
+                                    <p class="text-yellow-300 text-sm font-medium">Founder & CEO, Moolya</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="glass-card-dark rounded-2xl p-6 border border-white/20 card-hover">
-                            <div class="flex items-start gap-4">
-                                <div class="text-3xl">✅</div>
-                                <div>
-                                    <h4 class="font-bold text-lg mb-1">Concise Delivery</h4>
-                                    <p class="text-blue-200">One big idea in 10 minutes</p>
+
+                        <!-- Keynote 2 - Right -->
+                        <div class="timeline-item right keynote mb-8">
+                            <div class="glass-card-dark rounded-2xl p-6 border border-blue-500/40 card-hover flex items-center gap-4">
+                                <img src="/assets/images/speakers/unmesh.jpeg" alt="Unmesh Gundecha" class="w-20 h-20 rounded-xl object-cover ring-2 ring-blue-500/50">
+                                <div class="flex-1">
+                                    <div class="inline-block px-3 py-1 bg-blue-600/30 rounded-full text-xs font-bold text-blue-300 mb-2">🎤 KEYNOTE</div>
+                                    <div class="text-xl font-bold text-blue-400">12:30 <span class="text-xs text-blue-300 font-normal">• 20 min</span></div>
+                                    <h4 class="font-bold text-white text-lg mt-1">Unmesh Gundecha</h4>
+                                    <p class="text-yellow-300 text-sm font-medium">Head, Cloud Platform Engineering, Standard Chartered</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lightning Talks Header - Centered -->
+                        <div class="text-center my-12 relative z-20">
+                            <div class="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full shadow-lg">
+                                <span class="text-2xl">⚡</span>
+                                <span class="text-white font-black text-lg">Lightning Talks</span>
+                                <span class="text-blue-200 text-sm">(10 min each)</span>
+                            </div>
+                        </div>
+
+                        <!-- Talk 1 - Left: Priyank Shah -->
+                        <div class="timeline-item left mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4 flex-row-reverse">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/priyank-shah.jpg" alt="Priyank Shah" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="text-right flex-1">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <div class="text-sm font-bold text-purple-400">12:51</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Priyank Shah</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">RAG + n8n: Context-Aware Test Case Generation</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description text-right">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>Discover how combining Retrieval-Augmented Generation (RAG) with n8n workflow automation can revolutionize your test case generation process. This session demonstrates how to build context-aware testing pipelines that understand your application's domain.</p>
+                                        <p class="font-semibold text-purple-300 mt-2">Key Takeaways:</p>
+                                        <p>• Learn to integrate RAG for intelligent, context-driven test case creation</p>
+                                        <p>• Build automated workflows with n8n to streamline QA processes</p>
+                                        <p>• Balance speed and quality without compromising test coverage</p>
+                                        <p>• See a live demo of the RAG + n8n pipeline in action</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 2 - Right: Chitransh Shrivastava -->
+                        <div class="timeline-item right mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/chitransh-shrivastava.png" alt="Chitransh Shrivastava" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="text-sm font-bold text-purple-400">13:02</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Chitransh Shrivastava</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Web3 & Blockchain Testing: What QA Needs to Rethink</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>Web3 and blockchain apps sound exciting but when it comes to testing them, many QAs feel a bit lost. The usual test cases don't feel enough while testing wallets, smart contracts, decentralised flows and irreversible transactions.</p>
+                                        <p class="font-semibold text-purple-300">You'll walk away with:</p>
+                                        <p>• What Web3 apps are from a tester's point of view</p>
+                                        <p>• What new risks and questions QAs should think about</p>
+                                        <p>• How testers can start preparing without feeling lost</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 3 - Left: Mesut Durukal -->
+                        <div class="timeline-item left mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4 flex-row-reverse">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/mesut-durukal.jpg" alt="Mesut Durukal" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="text-right flex-1">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <div class="text-sm font-bold text-purple-400">13:13</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Mesut Durukal</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Using Mutation Testing to Expose Your Tests' Hidden Weaknesses</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description text-right">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>I have been in several projects where we had high test coverage yet still suffered from flaky tests and missed defects. In this talk, I introduce mutation testing as a practical way to assess how effective your tests truly are—by deliberately breaking your code and checking whether your tests catch the damage.</p>
+                                        <p>This talk challenges the underlying assumption that test suites are trustworthy simply because they are large or have high coverage. Instead, it provides a concrete, evidence-based technique to measure the actual effectiveness of tests.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 4 - Right: Srinivasan Sekar & Sai Krishna -->
+                        <div class="timeline-item right mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex gap-1">
+                                        <img src="/assets/images/speakers/2026-lightning-talks/srinivasan-sekar.jpg" alt="Srinivasan Sekar" class="w-11 h-11 rounded-lg object-cover ring-2 ring-purple-500/50">
+                                        <img src="/assets/images/speakers/2026-lightning-talks/sai-krishna.jpg" alt="Sai Krishna" class="w-11 h-11 rounded-lg object-cover ring-2 ring-purple-500/50">
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="text-sm font-bold text-purple-400">13:24</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Srinivasan Sekar & Sai Krishna</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Supercharging Appium with MCP</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>Discover how the Model Context Protocol (MCP) is transforming mobile test automation by bringing AI-powered context awareness to Appium.</p>
+                                        <p>You'll learn how MCP enables Claude and other AI assistants to directly interact with your Appium test infrastructure, accessing real-time device states, test results, and application logs.</p>
+                                        <p class="font-semibold text-purple-300">We'll explore practical use cases including:</p>
+                                        <p>• Intelligent test debugging</p>
+                                        <p>• Natural language test generation</p>
+                                        <p>• Automated root cause analysis of test failures</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 5 - Left: Rahul Parwal -->
+                        <div class="timeline-item left mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4 flex-row-reverse">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/rahul-parwal.png" alt="Rahul Parwal" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="text-right flex-1">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <div class="text-sm font-bold text-purple-400">13:35</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Rahul Parwal</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Productize Yourself as a Tester</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description text-right">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>AI is rewriting how testing is done, but it's also rewriting how testers are seen. Skills alone don't stand out anymore. What stands out is how you package those skills, how you tell your story, and how you productize yourself.</p>
+                                        <p class="font-semibold text-purple-300">By the end of this session, you will:</p>
+                                        <p>• Explore various dimensions of testing portfolios</p>
+                                        <p>• Learn to leverage a Portfolio as a stepping stone for career success</p>
+                                        <p>• Understand why portfolios might be the new work resumes</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 6 - Right: Santhosh Tuppad -->
+                        <div class="timeline-item right mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/santhosh-tuppad.jpg" alt="Santhosh Tuppad" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="text-sm font-bold text-purple-400">13:46</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Santhosh Tuppad</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Shift Everywhere: Testers, Hackers & GPTs Team Up</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>The future of QA is no longer about shifting left or right—it's about shifting everywhere. As AI and GPTs reshape how we learn, test, and think, testers, developers, and security professionals have an unprecedented opportunity to go deeper, faster, and wider.</p>
+                                        <p>This is about collusion between humans and AI, not collision—where GPTs act as thinking partners that help us ask sharper questions and reason deeper.</p>
+                                        <p class="font-semibold text-purple-300">Because in the age of AI: WYPIWYG—What You Prompt Is What You Get. Ask better. Don't be stingy.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 7 - Left: Nikhil Bhandari -->
+                        <div class="timeline-item left mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4 flex-row-reverse">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/nikhil-bhandari.jpg" alt="Nikhil Bhandari" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="text-right flex-1">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <div class="text-sm font-bold text-purple-400">13:57</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Nikhil Bhandari</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Beyond the Script - Practical Test Automation</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description text-right">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>In the race for continuous delivery, many teams fall into the "Automation Trap": building brittle, over-engineered suites that cost more to maintain than the value they deliver.</p>
+                                        <p class="font-semibold text-purple-300">Key Takeaways:</p>
+                                        <p>• Strategic Frameworks: Implementing the Test Pyramid and data-driven methodologies</p>
+                                        <p>• Decoupling & Observability: Contract Testing for microservices</p>
+                                        <p>• The Three Pillars: Test Data Management, Modular Design, Environment Stability</p>
+                                        <p>• Seamless CI/CD Integration</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 8 - Right: Ashutosh Bhatawadekar -->
+                        <div class="timeline-item right mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/ashutosh-bhatawadekar.jpg" alt="Ashutosh Bhatawadekar" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="text-sm font-bold text-purple-400">14:08</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Ashutosh Bhatawadekar</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Future of QA in an AI World</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>Software testing is undergoing a seismic shift. Automation, AI, Agile and DevOps have accelerated delivery, yet many organizations continue to measure testing through archaic lenses.</p>
+                                        <p>In this talk, I bring out a new Testing Value Equation that redefines quality as a multiplier of trust, speed and business acumen.</p>
+                                        <p class="font-semibold text-purple-300">The RISE framework (Reimagine, Integrate, Shift, Elevate) can help teams embed quality earlier, smarter and collaboratively.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 9 - Left: Sparsh Shrivastava -->
+                        <div class="timeline-item left mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4 flex-row-reverse">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/sparsh-shrivastava.png" alt="Sparsh Shrivastava" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="text-right flex-1">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <div class="text-sm font-bold text-purple-400">14:19</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Sparsh Shrivastava</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Shift-Right Testing: Production as Test Environment</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description text-right">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>Most teams work hard to test before release, yet many real problems still appear only after users start using the product. Performance drops, unexpected behavior and reliability issues often show up in production, not in test environments.</p>
+                                        <p class="font-semibold text-purple-300">Attendees will gain:</p>
+                                        <p>• A clear understanding of shift-right testing in practice</p>
+                                        <p>• Ways to use production insights to improve quality</p>
+                                        <p>• A future-ready mindset for evolving QA roles</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 10 - Right: Ujjwal Kumar Singh -->
+                        <div class="timeline-item right mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/ujjwal-kumar-singh.jpg" alt="Ujjwal Kumar Singh" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="text-sm font-bold text-purple-400">14:30</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Ujjwal Kumar Singh</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Test Analytics Without Decisions Is Just Reporting</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>Most test analytics efforts work backwards. Teams measure what is easy—pass rates, coverage, execution time—and hope the data leads to better decisions. The problem is not a lack of data, but analytics disconnected from decisions.</p>
+                                        <p class="font-semibold text-purple-300">Three Key Takeaways:</p>
+                                        <p>• Common ways test analytics fail to support real testing decisions</p>
+                                        <p>• A practical, three-step decision-first approach to designing test metrics</p>
+                                        <p>• Real examples of minimal analytics that inform release readiness</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 11 - Left: Tran Thuy Nha Truc -->
+                        <div class="timeline-item left mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4 flex-row-reverse">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/tran-thuy-nha-truc.jpg" alt="Tran Thuy Nha Truc" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="text-right flex-1">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <div class="text-sm font-bold text-purple-400">14:41</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Tran Thuy Nha Truc</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Testing AI-based Systems: Why Traditional QA Fails</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description text-right">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>As AI becomes embedded in every product, traditional QA approaches are no longer enough. AI-based systems behave probabilistically, learn from imperfect data, and degrade over time.</p>
+                                        <p class="font-semibold text-purple-300">This talk explores three core challenges:</p>
+                                        <p>• Non-determinism (same input, different output)</p>
+                                        <p>• Bias (models inheriting human and data flaws)</p>
+                                        <p>• Model drift (performance decay over time)</p>
+                                        <p>Solution: The AI testing 4R framework (Reliability, Robustness, Responsibility, Resilience)</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 12 - Right: Goh Chun Lin -->
+                        <div class="timeline-item right mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/goh-chun-lin.png" alt="Goh Chun Lin" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="text-sm font-bold text-purple-400">14:52</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Goh Chun Lin</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Performance Testing via Simulation</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>Traditional performance testing often feels like a brute-force attack: We spin up expensive infrastructure, write complex load scripts (k6/JMeter), and hammer the system until it breaks. This process is reactive, costly, and frequently happens too late.</p>
+                                        <p class="font-semibold text-purple-300">In this lightning talk, I will demonstrate a radical approach to shift-left testing using Discrete Event Simulation.</p>
+                                        <p>Instead of testing software against hardware, we simulate the physics of the infrastructure itself. I will walk through a case study involving Amazon RDS T3 throttling, showing how we can predict the system breaking point without sending a single HTTP request.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 13 - Left: Jency Stella -->
+                        <div class="timeline-item left mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4 flex-row-reverse">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/jency-stella.png" alt="Jency Stella" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="text-right flex-1">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <div class="text-sm font-bold text-purple-400">15:03</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Jency Stella</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Testing Reimagined: The Age of Intelligence</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description text-right">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>Let's explore the evolution of testing, highlighting its past, present, and future in the ever-changing digital landscape.</p>
+                                        <p class="font-semibold text-purple-300">The Past – The Age of Reactive Testing</p>
+                                        <p>Testing was treated as a separate and final phase, rendering defect detection costly.</p>
+                                        <p class="font-semibold text-purple-300">The Present – Agile and Intelligent Testing</p>
+                                        <p>The shift-left model indicates that testing begins early, catching defects quickly.</p>
+                                        <p class="font-semibold text-purple-300">The Future – AI as a Tool, Humans as Decision-Makers</p>
+                                        <p>AI enhances, humans decide. The future is for adaptive testers who run AI-powered tools with human intelligence.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 14 - Right: Pavan Teja -->
+                        <div class="timeline-item right mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/pavan-teja.jpg" alt="Pavan Teja" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="text-sm font-bold text-purple-400">15:14</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Pavan Teja</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">The Human Edge in Testing AI Models</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>Testing AI applications demands a paradigm shift from traditional software testing. Unlike deterministic code, AI apps rely on data-driven models with unpredictable behaviors.</p>
+                                        <p class="font-semibold text-purple-300">Challenges include:</p>
+                                        <p>• Validating accuracy and ensuring data quality</p>
+                                        <p>• Detecting bias and interpreting black-box decisions</p>
+                                        <p>Leveraging domain knowledge and exploratory skills, manual testers bring key assets to AI output testing. The path forward blends traditional QA rigor with AI expertise for reliable, fair, and robust AI applications.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Talk 15 - Left: Shashwat Nagayach -->
+                        <div class="timeline-item left mb-6">
+                            <div class="glass-card-dark rounded-2xl p-4 border border-purple-500/20 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4 flex-row-reverse">
+                                    <img src="/assets/images/speakers/2026-lightning-talks/shashwat-nagayach.jpg" alt="Shashwat Nagayach" class="w-14 h-14 rounded-xl object-cover ring-2 ring-purple-500/50">
+                                    <div class="text-right flex-1">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <div class="text-sm font-bold text-purple-400">15:25</div>
+                                            <svg class="w-4 h-4 text-purple-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <h4 class="font-bold text-white mt-1">Shashwat Nagayach</h4>
+                                        <p class="text-blue-200 text-xs leading-relaxed">Future Skills for Testers</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description text-right">
+                                    <div class="pt-3 border-t border-purple-500/20 text-xs text-blue-100 leading-relaxed space-y-2">
+                                        <p>As AI transforms the QA landscape, testers must evolve their skillsets to stay relevant. This talk explores how different QA roles can adapt and thrive by embracing AI as a powerful ally rather than a threat.</p>
+                                        <p class="font-semibold text-purple-300 mt-2">Key Takeaways - Modern QA Team Composition:</p>
+                                        <p>• <span class="text-white">Domain Expert QAs:</span> Leverage AI to reduce repetitive work and focus on high-value testing</p>
+                                        <p>• <span class="text-white">Automation Testers:</span> Use AI for intelligent script generation and coverage analysis</p>
+                                        <p>• <span class="text-white">ETL/Data Testers:</span> Ensure clean, structured data pipelines and prevent test data loss</p>
+                                        <p>• <span class="text-white">QA Leaders:</span> Champion AI adoption, measure time savings, and build resilient, self-sufficient teams</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Closing - Right -->
+                        <div class="timeline-item right closing mb-6">
+                            <div class="glass-card-dark rounded-2xl p-5 border border-green-500/30 card-hover">
+                                <div class="flex items-center gap-4">
+                                    <div class="flex gap-1">
+                                        <img src="/assets/images/hosts/gana.jpeg" alt="Gana" class="w-12 h-12 rounded-xl object-cover ring-2 ring-green-500/50">
+                                        <img src="/assets/images/hosts/prachi.jpeg" alt="Prachi" class="w-12 h-12 rounded-xl object-cover ring-2 ring-green-500/50">
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="inline-block px-3 py-1 bg-green-600/30 rounded-full text-xs font-bold text-green-300 mb-2">🎉 CLOSING</div>
+                                        <div class="text-lg font-bold text-green-400">15:35 <span class="text-xs text-blue-300 font-normal">• 5 min</span></div>
+                                        <h4 class="font-bold text-white mt-2">Thanks & Slack Q&A Reminder</h4>
+                                        <p class="text-blue-200 text-sm">Gana & Prachi - Wrap up & community engagement</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="text-center">
-                        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfpT1wwjahsPiff5PM8-Gha1pUNiAQ_JdHfUSqAyRnVZJOPHg/viewform?usp=dialog" target="_blank" rel="noopener noreferrer"
-                           class="inline-flex items-center gap-3 px-12 py-6 text-xl font-black text-white bg-gradient-to-r from-[#E10600] to-[#FF4500] rounded-2xl hover:shadow-2xl transition-all transform hover:scale-105 shadow-lg pulse-glow">
-                            Apply to Speak
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                        <p class="mt-6 text-blue-200 text-lg">
-                            Submission deadline: <strong class="text-white glow-text">31 December 2025</strong>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Sponsorship Section - Enhanced Visual -->
-        <section class="py-20 sm:py-28 circuit-bg relative">
-            <!-- Ambient Glow -->
-            <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-gradient-to-tr from-blue-500/10 to-purple-500/10 rounded-full blur-3xl"></div>
-
-            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                <div class="max-w-5xl mx-auto">
-                    <div class="text-center mb-16">
-                        <div class="text-7xl mb-6">🤝</div>
-                        <h2 class="text-5xl sm:text-6xl font-black text-white mb-6 glow-text">
-                            Become a <span class="gradient-text">Sponsor</span>
-                        </h2>
-                        <p class="text-2xl text-blue-200">
-                            Partner with us to reach Southeast Asia's most engaged testing community
-                        </p>
-                    </div>
-
-                    <!-- Stats Banner -->
-                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 mb-12">
-                        <div class="glass-card-dark rounded-2xl p-6 text-center border border-[#E10600]/20 card-hover card-3d">
-                            <div class="text-4xl mb-2">🌏</div>
-                            <div class="text-lg font-bold text-white">Regional Reach</div>
-                        </div>
-                        <div class="glass-card-dark rounded-2xl p-6 text-center border border-blue-500/20 card-hover card-3d">
-                            <div class="text-4xl mb-2">👁️</div>
-                            <div class="text-lg font-bold text-white">Max Visibility</div>
-                        </div>
-                        <div class="glass-card-dark rounded-2xl p-6 text-center border border-purple-500/20 card-hover card-3d">
-                            <div class="text-4xl mb-2">🎯</div>
-                            <div class="text-lg font-bold text-white">Engaged Audience</div>
-                        </div>
-                        <div class="glass-card-dark rounded-2xl p-6 text-center border border-yellow-500/20 card-hover card-3d">
-                            <div class="text-4xl mb-2">🏆</div>
-                            <div class="text-lg font-bold text-white">Thought Leadership</div>
-                        </div>
-                    </div>
-
-                    <!-- Benefits Grid -->
-                    <div class="glass-card rounded-3xl p-10 border-2 border-[#E10600]/20 mb-12 card-hover">
-                        <h3 class="text-3xl font-black gradient-text mb-8 text-center">Sponsorship Benefits</h3>
-                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-[#E10600] rounded-full flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-gray-900">Logo Placement</h4>
-                                    <p class="text-gray-600">Event website & materials</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-[#E10600] rounded-full flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-gray-900">Live Recognition</h4>
-                                    <p class="text-gray-600">During conference stream</p>
-                                </div>
-                            </div>
-                            <div class="flex items-start gap-4">
-                                <div class="w-10 h-10 bg-[#E10600] rounded-full flex items-center justify-center flex-shrink-0">
-                                    <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"/>
-                                    </svg>
-                                </div>
-                                <div>
-                                    <h4 class="font-bold text-lg text-gray-900">Social Media</h4>
-                                    <p class="text-gray-600">Cross-platform mentions</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="text-center">
-                        <a href="/contact.html"
-                           class="inline-flex items-center gap-3 px-12 py-6 text-xl font-black text-white bg-gradient-to-r from-[#E10600] to-[#FF4500] rounded-2xl hover:shadow-2xl transition-all transform hover:scale-105 shadow-lg pulse-glow">
-                            Inquire About Sponsorship
-                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
-                        <p class="mt-6 text-blue-200 text-lg">
-                            Limited slots available — <strong class="text-white">contact us for packages</strong>
-                        </p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -1079,54 +1935,6 @@
                         </div>
                     </div>
 
-                    <!-- Gold Sponsor -->
-                    <div class="mb-16">
-                        <div class="text-center mb-8">
-                            <div class="inline-block px-6 py-2 bg-gradient-to-r from-yellow-500 to-yellow-400 rounded-full shadow-lg">
-                                <span class="text-gray-900 font-black text-base uppercase tracking-wider">Gold Sponsor</span>
-                            </div>
-                        </div>
-                        <div class="max-w-2xl mx-auto">
-                            <div class="glass-card-dark rounded-3xl p-10 border-2 border-yellow-500/30 card-hover flex items-center justify-center min-h-[200px]">
-                                <div class="text-center">
-                                    <div class="text-5xl mb-4">🌟</div>
-                                    <p class="text-xl text-blue-200 font-semibold">Your Logo Here</p>
-                                    <p class="text-sm text-white/60 mt-2">Join as Gold Sponsor</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Silver Sponsor -->
-                    <div class="mb-12">
-                        <div class="text-center mb-8">
-                            <div class="inline-block px-6 py-2 bg-gradient-to-r from-gray-300 to-gray-200 rounded-full shadow-lg">
-                                <span class="text-gray-900 font-black text-base uppercase tracking-wider">Silver Sponsor</span>
-                            </div>
-                        </div>
-                        <div class="max-w-xl mx-auto">
-                            <div class="glass-card-dark rounded-3xl p-8 border-2 border-gray-400/30 card-hover flex items-center justify-center min-h-[160px]">
-                                <div class="text-center">
-                                    <div class="text-4xl mb-3">⭐</div>
-                                    <p class="text-lg text-blue-200 font-semibold">Your Logo Here</p>
-                                    <p class="text-xs text-white/60 mt-2">Join as Silver Sponsor</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Sponsorship CTA -->
-                    <div class="text-center mt-12">
-                        <p class="text-xl text-blue-200 mb-6">
-                            Interested in sponsoring this event?
-                        </p>
-                        <a href="/contact.html"
-                           class="inline-flex items-center gap-3 px-10 py-5 text-lg font-black text-white bg-gradient-to-r from-[#E10600] to-[#FF4500] rounded-2xl hover:shadow-2xl transition-all transform hover:scale-105 shadow-lg pulse-glow">
-                            Become a Sponsor
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M13 7l5 5m0 0l-5 5m5-5H6"/>
-                            </svg>
-                        </a>
                     </div>
                 </div>
             </div>
@@ -1280,10 +2088,10 @@
                     <div class="glass-card rounded-3xl shadow-2xl p-12 sm:p-16 border-2 border-[#E10600]/20 text-center card-hover pulse-glow">
                         <div class="text-7xl mb-8">💬</div>
                         <blockquote class="text-3xl sm:text-4xl font-black text-gray-900 mb-8 leading-relaxed">
-                            "Built by testers, for testers — a Taqelah! signature event to shape the future of our craft."
+                            "Built by testers, for testers — a taqelah! signature event to shape the future of our craft."
                         </blockquote>
                         <div class="text-xl gradient-text font-bold">
-                            — The Taqelah! Community
+                            — The taqelah! Community
                         </div>
                     </div>
                 </div>
@@ -1385,6 +2193,155 @@
                     <!-- Committee Members Grid -->
                     <div id="committee-members-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         <!-- Members will be loaded from JSON -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-20 sm:py-28 bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900 relative overflow-hidden">
+            <!-- Background Elements -->
+            <div class="absolute inset-0">
+                <div class="absolute top-20 left-10 w-72 h-72 bg-purple-500/10 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-20 right-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="max-w-4xl mx-auto">
+                    <!-- Section Header -->
+                    <div class="text-center mb-16">
+                        <div class="inline-block px-6 py-2 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-6 shadow-lg">
+                            <span class="text-white font-black text-sm uppercase tracking-wider">FAQ</span>
+                        </div>
+                        <h2 class="text-4xl sm:text-5xl lg:text-6xl font-black text-white mb-6 glow-text">
+                            Frequently Asked <span class="gradient-text">Questions</span>
+                        </h2>
+                        <p class="text-xl text-blue-200">Everything you need to know about the event</p>
+                    </div>
+
+                    <!-- FAQ Items -->
+                    <div class="space-y-4">
+                        <!-- FAQ 1 -->
+                        <div class="glass-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
+                            <div class="faq-item p-5 cursor-pointer" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-bold text-white text-lg">What is taqelah! and what is the Lightning Talks Conference?</h3>
+                                    <svg class="w-5 h-5 text-purple-400 faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                                <div class="faq-answer mt-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                    <p class="text-blue-200 pt-4"><strong class="text-white">taqelah!</strong> (Test Automation & Quality Engineering, Lah!) is Singapore's most vibrant testing community, connecting QA professionals through meetups, workshops, and knowledge sharing since 2018.</p>
+                                    <p class="text-blue-200 pt-3">The <strong class="text-white">Lightning Talks Conference</strong> is our flagship online event where 17 speakers share powerful insights in short, focused talks — 2 keynotes and 15 lightning talks of 10 minutes each. It's designed for busy testers who want maximum value in minimum time!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 2 -->
+                        <div class="glass-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
+                            <div class="faq-item p-5 cursor-pointer" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-bold text-white text-lg">Is the event free?</h3>
+                                    <svg class="w-5 h-5 text-purple-400 faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                                <div class="faq-answer mt-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                    <p class="text-blue-200 pt-4">Yes, this is a <strong class="text-green-400">100% free</strong> online conference. No registration fees, no hidden costs - just pure knowledge sharing!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="glass-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
+                            <div class="faq-item p-5 cursor-pointer" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-bold text-white text-lg">What is the date and time?</h3>
+                                    <svg class="w-5 h-5 text-purple-400 faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                                <div class="faq-answer mt-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                    <p class="text-blue-200 pt-4"><strong class="text-white">February 28, 2026</strong> at <strong class="text-white">12:00 PM (GMT+8)</strong> - Singapore Time.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 3 -->
+                        <div class="glass-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
+                            <div class="faq-item p-5 cursor-pointer" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-bold text-white text-lg">How long is the event?</h3>
+                                    <svg class="w-5 h-5 text-purple-400 faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                                <div class="faq-answer mt-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                    <p class="text-blue-200 pt-4">Approximately <strong class="text-white">3 hours 40 minutes</strong> (220 minutes) featuring 2 keynote sessions and 15 lightning talks.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 4 -->
+                        <div class="glass-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
+                            <div class="faq-item p-5 cursor-pointer" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-bold text-white text-lg">What platform will it be on?</h3>
+                                    <svg class="w-5 h-5 text-purple-400 faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                                <div class="faq-answer mt-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                    <p class="text-blue-200 pt-4">The event will be hosted on <strong class="text-white">Zoom</strong>. Registered attendees will receive the Zoom link <strong class="text-white">1 week before the event</strong> via email confirmation and calendar invitation.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 5 -->
+                        <div class="glass-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
+                            <div class="faq-item p-5 cursor-pointer" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-bold text-white text-lg">Will the event be recorded?</h3>
+                                    <svg class="w-5 h-5 text-purple-400 faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                                <div class="faq-answer mt-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                    <p class="text-blue-200 pt-4">Yes! The recording will be available on the <a href="https://www.youtube.com/@taqelahsingapore9510" target="_blank" class="text-purple-400 hover:text-purple-300 underline">taqelah! YouTube channel</a>. Please subscribe if you haven't already!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 6 -->
+                        <div class="glass-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
+                            <div class="faq-item p-5 cursor-pointer" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-bold text-white text-lg">Is there a Q&A session?</h3>
+                                    <svg class="w-5 h-5 text-purple-400 faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                                <div class="faq-answer mt-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                    <p class="text-blue-200 pt-4">Since these are 10-minute packed talks, we won't have live Q&A during the event. Instead, we'll have <strong class="text-white">dedicated Slack channels for each speaker</strong> where you can ask your questions. Join the taqelah! Slack community to participate!</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 7 -->
+                        <div class="glass-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
+                            <div class="faq-item p-5 cursor-pointer" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-bold text-white text-lg">How do I join the taqelah! community?</h3>
+                                    <svg class="w-5 h-5 text-purple-400 faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                                <div class="faq-answer mt-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                    <p class="text-blue-200 pt-4">Join our Slack community to connect with speakers and fellow attendees:</p>
+                                    <a href="https://join.slack.com/t/taqelah/shared_invite/zt-3ndaq61fn-1lPEAhfs_l0Rq5XlwSADWg" target="_blank" class="inline-flex items-center gap-2 mt-3 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors text-sm font-semibold">
+                                        <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M5.042 15.165a2.528 2.528 0 0 1-2.52 2.523A2.528 2.528 0 0 1 0 15.165a2.527 2.527 0 0 1 2.522-2.52h2.52v2.52zM6.313 15.165a2.527 2.527 0 0 1 2.521-2.52 2.527 2.527 0 0 1 2.521 2.52v6.313A2.528 2.528 0 0 1 8.834 24a2.528 2.528 0 0 1-2.521-2.522v-6.313zM8.834 5.042a2.528 2.528 0 0 1-2.521-2.52A2.528 2.528 0 0 1 8.834 0a2.528 2.528 0 0 1 2.521 2.522v2.52H8.834zM8.834 6.313a2.528 2.528 0 0 1 2.521 2.521 2.528 2.528 0 0 1-2.521 2.521H2.522A2.528 2.528 0 0 1 0 8.834a2.528 2.528 0 0 1 2.522-2.521h6.312zM18.956 8.834a2.528 2.528 0 0 1 2.522-2.521A2.528 2.528 0 0 1 24 8.834a2.528 2.528 0 0 1-2.522 2.521h-2.522V8.834zM17.688 8.834a2.528 2.528 0 0 1-2.523 2.521 2.527 2.527 0 0 1-2.52-2.521V2.522A2.527 2.527 0 0 1 15.165 0a2.528 2.528 0 0 1 2.523 2.522v6.312zM15.165 18.956a2.528 2.528 0 0 1 2.523 2.522A2.528 2.528 0 0 1 15.165 24a2.527 2.527 0 0 1-2.52-2.522v-2.522h2.52zM15.165 17.688a2.527 2.527 0 0 1-2.52-2.523 2.526 2.526 0 0 1 2.52-2.52h6.313A2.527 2.527 0 0 1 24 15.165a2.528 2.528 0 0 1-2.522 2.523h-6.313z"/></svg>
+                                        Join taqelah! Slack
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FAQ 8 -->
+                        <div class="glass-card-dark rounded-2xl border border-purple-500/20 overflow-hidden">
+                            <div class="faq-item p-5 cursor-pointer" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-bold text-white text-lg">How can I become a speaker at future events?</h3>
+                                    <svg class="w-5 h-5 text-purple-400 faq-icon transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                </div>
+                                <div class="faq-answer mt-0 max-h-0 overflow-hidden transition-all duration-300 opacity-0">
+                                    <p class="text-blue-200 pt-4">We'd love to hear from you! Connect with us via our <a href="/contact.html" class="text-purple-400 hover:text-purple-300 underline">contact page</a> and let us know about your topic ideas.</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1492,6 +2449,80 @@
         } else {
             loadCommitteeMembers();
         }
+    </script>
+
+    <!-- Speaker Cards Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const speakerCards = document.querySelectorAll('.speaker-card');
+            const animationDirections = ['from-left', 'from-right', 'from-top', 'from-bottom', 'zoom-in', 'flip-in'];
+
+            // Assign varied directions to each card
+            speakerCards.forEach((card, index) => {
+                const direction = animationDirections[index % animationDirections.length];
+                card.setAttribute('data-animation', direction);
+            });
+
+            // Intersection Observer for scroll-triggered animations
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            let animatedCount = 0;
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const card = entry.target;
+                        const direction = card.getAttribute('data-animation');
+                        // Stagger the animations based on order of appearance
+                        setTimeout(() => {
+                            card.classList.add('animate-in', direction);
+                        }, animatedCount * 80);
+                        animatedCount++;
+                        observer.unobserve(card);
+                    }
+                });
+            }, observerOptions);
+
+            speakerCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+
+    <!-- Timeline Cinema Animation Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const timelineItems = document.querySelectorAll('.timeline-item');
+
+            // Intersection Observer for cinema-style scroll animations
+            const timelineObserverOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2
+            };
+
+            let timelineAnimatedCount = 0;
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        const item = entry.target;
+                        // Stagger the animations for cinematic effect
+                        setTimeout(() => {
+                            item.classList.add('animate-in');
+                        }, timelineAnimatedCount * 120);
+                        timelineAnimatedCount++;
+                        timelineObserver.unobserve(item);
+                    }
+                });
+            }, timelineObserverOptions);
+
+            timelineItems.forEach(item => {
+                timelineObserver.observe(item);
+            });
+        });
     </script>
 
 </body>

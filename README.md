@@ -1,8 +1,8 @@
-# Taqelah! - Singapore QA Community Website
+# taqelah! - Singapore QA Community Website
 
 Mobile-first, responsive static website for Singapore's own most vibrant testing community. Built with pure HTML, Tailwind CSS (CDN), Alpine.js, and Swiper. Red & white themed, hosted via GitHub Pages.
 
-**Taqelah!** stands for **Test Automation & Quality Engineering, Lah!** - a name that blends technical excellence with Singaporean charm.
+**taqelah!** stands for **Test Automation & Quality Engineering, Lah!** - a name that blends technical excellence with Singaporean charm.
 
 ## 🎯 Features
 
@@ -38,7 +38,7 @@ Mobile-first, responsive static website for Singapore's own most vibrant testing
 │   ├── js/
 │   │   └── (optional)
 │   └── images/
-│       ├── logo.png             # Taqelah! logo (also used as favicon)
+│       ├── logo.png             # taqelah! logo (also used as favicon)
 │       ├── events/
 │       ├── companies/           # Company logos
 │       ├── gallery/             # Community photos
@@ -57,7 +57,7 @@ Mobile-first, responsive static website for Singapore's own most vibrant testing
 - **Community (community.html)**: Community overview and member companies
 - **Jobs (jobs.html)**: Link to Telegram job board for QA & testing positions in Singapore
 - **Sponsors (sponsors.html)**: Sponsorship opportunities and benefits
-- **About (about.html)**: Taqelah! story, impact, goals, and Code of Conduct link
+- **About (about.html)**: taqelah! story, impact, goals, and Code of Conduct link
 - **Code of Conduct (code-of-conduct.html)**: Community guidelines and values for QA professionals
 - **Contact (contact.html)**: Contact form with FormSubmit.co and social media links
 
@@ -67,7 +67,7 @@ All pages include:
 - Navigation: Home → Events → Community → Jobs → Sponsors → About → Contact
 - Footer with social media links (Twitter, LinkedIn, GitHub, YouTube, Instagram, Facebook)
 - Footer links: Events, Community, Jobs, About Us, Code of Conduct, Sponsors, Contact
-- Favicon (Taqelah! logo)
+- Favicon (taqelah! logo)
 
 ## 🚀 GitHub Pages Deployment
 
@@ -75,7 +75,7 @@ All pages include:
 
 ```bash
 git add .
-git commit -m "Initial Taqelah! site with mobile-first design"
+git commit -m "Initial taqelah! site with mobile-first design"
 git push origin main
 ```
 
@@ -331,7 +331,7 @@ Workshops • Meetups • Mentorship
 ```
 Where QA Engineers Belong
 Learn, network, and grow together
-[Join Taqelah! Today]
+[Join taqelah! Today]
 ```
 
 All variants are:
@@ -412,11 +412,11 @@ MIT License - Feel free to use this template for your own community!
 
 ### Follow Us
 - **Twitter**: [@taqelahsg](https://twitter.com/taqelahsg)
-- **LinkedIn**: [Taqelah!](https://linkedin.com/company/taqelah)
+- **LinkedIn**: [taqelah!](https://linkedin.com/company/taqelah)
 - **GitHub**: [taqelahsg](https://github.com/taqelahsg)
 - **YouTube**: [@taqelahsingapore9510](https://www.youtube.com/@taqelahsingapore9510)
 - **Instagram**: [@taqelah](https://www.instagram.com/taqelah/)
-- **Facebook**: [Taqelah! Group](https://www.facebook.com/groups/148322462547482)
+- **Facebook**: [taqelah! Group](https://www.facebook.com/groups/148322462547482)
 - **Telegram**: [Job Board](https://t.me/+cEKbcW58WwpiN2Fl) - QA & Testing jobs in Singapore
 
 ## 🌟 Key Features Implemented
