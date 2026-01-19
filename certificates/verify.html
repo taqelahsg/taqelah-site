@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="Verify taqelah! community certificates - Authenticate attendance and speaker credentials">
+    <meta name="keywords" content="certificate verification, taqelah, QA community, credential verification">
+    <meta name="author" content="taqelah!">
+    <meta name="theme-color" content="#E10600">
+
+    <!-- Open Graph - will be updated dynamically -->
+    <meta property="og:title" content="taqelah! Certificate Verification">
+    <meta property="og:description" content="Verify taqelah! community certificates">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://taqelah.sg/certificates/verify.html">
+    <meta property="og:image" content="https://taqelah.sg/assets/images/logo.png">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="taqelah! Certificate Verification">
+    <meta name="twitter:description" content="Verify taqelah! community certificates">
+
+    <title>Certificate Verification | taqelah!</title>
+
+    <link rel="icon" type="image/png" href="/assets/images/logo.png">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <script src="/assets/js/analytics.js"></script>
+    <script src="/assets/js/components.js?v=2"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'display': ['Playfair Display', 'serif'],
+                        'body': ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- JSON-LD for Certificate Verification -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Certificate Verification",
+      "description": "Verify taqelah! community certificates and credentials",
+      "publisher": {
+        "@type": "Organization",
+        "name": "taqelah!",
+        "url": "https://taqelah.sg"
+      }
+    }
+    </script>
+
+    <style>
+        /* Certificate Frame */
+        .certificate-frame {
+            background: linear-gradient(145deg, #fefefe 0%, #f8f6f4 100%);
+            position: relative;
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.15),
+                0 0 0 1px rgba(225, 6, 0, 0.1),
+                inset 0 0 100px rgba(225, 6, 0, 0.02);
+        }
+
+        /* Decorative Border */
+        .certificate-border {
+            position: absolute;
+            inset: 12px;
+            border: 2px solid #E10600;
+            pointer-events: none;
+        }
+        .certificate-border::before {
+            content: '';
+            position: absolute;
+            inset: 6px;
+            border: 1px solid rgba(225, 6, 0, 0.3);
+        }
+
+        /* Corner Ornaments */
+        .corner-ornament {
+            position: absolute;
+            width: 80px;
+            height: 80px;
+            opacity: 0.15;
+        }
+        .corner-ornament svg {
+            width: 100%;
+            height: 100%;
+            fill: #E10600;
+        }
+        .corner-tl { top: 24px; left: 24px; }
+        .corner-tr { top: 24px; right: 24px; transform: rotate(90deg); }
+        .corner-bl { bottom: 24px; left: 24px; transform: rotate(-90deg); }
+        .corner-br { bottom: 24px; right: 24px; transform: rotate(180deg); }
+
+        /* Gold Seal */
+        .seal {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(145deg, #D4AF37 0%, #F4D03F 30%, #D4AF37 60%, #B8860B 100%);
+            border-radius: 50%;
+            position: relative;
+            box-shadow:
+                0 4px 15px rgba(212, 175, 55, 0.4),
+                inset 0 2px 4px rgba(255, 255, 255, 0.4),
+                inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .seal::before {
+            content: '';
+            position: absolute;
+            inset: 4px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+        }
+        .seal-inner {
+            position: absolute;
+            inset: 10px;
+            background: linear-gradient(145deg, #F4D03F 0%, #D4AF37 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Ribbon Effect */
+        .ribbon-left, .ribbon-right {
+            position: absolute;
+            bottom: -25px;
+            width: 35px;
+            height: 55px;
+            background: linear-gradient(180deg, #C41E3A 0%, #8B0000 100%);
+        }
+        .ribbon-left {
+            left: 8px;
+            transform: rotate(-15deg);
+            border-radius: 0 0 5px 5px;
+        }
+        .ribbon-right {
+            right: 8px;
+            transform: rotate(15deg);
+            border-radius: 0 0 5px 5px;
+        }
+
+        /* Verified Badge */
+        .verified-badge {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            box-shadow: 0 4px 14px rgba(5, 150, 105, 0.3);
+        }
+
+        /* Signature Line */
+        .signature-line {
+            width: 200px;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #333, transparent);
+        }
+
+        /* Watermark */
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 180px;
+            font-weight: 700;
+            color: rgba(225, 6, 0, 0.03);
+            pointer-events: none;
+            white-space: nowrap;
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* QR Code Area */
+        .qr-placeholder {
+            width: 80px;
+            height: 80px;
+            background: #fff;
+            border: 1px solid #e5e5e5;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #999;
+        }
+
+        /* Decorative Divider */
+        .fancy-divider {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        .fancy-divider::before,
+        .fancy-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #E10600, transparent);
+        }
+
+        /* Button hover effects */
+        .btn-professional {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        .btn-professional::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 50%);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="font-body antialiased text-[#0B0B0B] bg-white" data-page="certificates">
+
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#E10600] focus:text-white focus:rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2">
+        Skip to main content
+    </a>
+
+    <div id="header-container"></div>
+
+    <main id="main-content" class="pt-20" x-data="certificateVerification()">
+
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-[#1a1a2e] via-[#16213e] to-[#0f0f23] text-white py-16 lg:py-20">
+            <div class="max-w-screen-xl mx-auto px-4 lg:px-8 text-center">
+                <div class="inline-flex items-center gap-2 bg-white/10 backdrop-blur px-4 py-2 rounded-full mb-6">
+                    <svg class="w-5 h-5 text-green-400" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                    </svg>
+                    <span class="text-sm font-medium">Official Credential Verification</span>
+                </div>
+                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">Certificate Verification</h1>
+                <p class="text-lg sm:text-xl text-gray-300 max-w-2xl mx-auto">
+                    Instantly verify the authenticity of taqelah! credentials
+                </p>
+            </div>
+        </section>
+
+        <!-- Certificate Display Section -->
+        <section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+            <div class="max-w-screen-xl mx-auto px-4 lg:px-8">
+
+                <!-- Loading State -->
+                <div x-show="loading" class="text-center py-20">
+                    <div class="inline-flex flex-col items-center">
+                        <div class="relative">
+                            <div class="w-16 h-16 border-4 border-gray-200 rounded-full"></div>
+                            <div class="absolute inset-0 w-16 h-16 border-4 border-[#E10600] border-t-transparent rounded-full animate-spin"></div>
+                        </div>
+                        <p class="mt-6 text-gray-600 font-medium">Verifying credential...</p>
+                    </div>
+                </div>
+
+                <!-- Error State -->
+                <div x-show="!loading && error" class="text-center py-16">
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-10 max-w-lg mx-auto">
+                        <div class="w-20 h-20 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <svg class="w-10 h-10 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </div>
+                        <h2 class="font-display text-2xl font-bold text-gray-800 mb-3">Certificate Not Found</h2>
+                        <p class="text-gray-500 mb-8" x-text="errorMessage"></p>
+                        <a href="/certificates/verify.html" class="inline-flex items-center gap-2 bg-[#E10600] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#C20500] transition-all shadow-lg shadow-red-500/20">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            Try Another ID
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Search Form (when no ID in URL) -->
+                <div x-show="!loading && !certificate && !error" class="text-center py-12">
+                    <div class="bg-white rounded-3xl shadow-xl border border-gray-100 p-10 max-w-lg mx-auto">
+                        <div class="w-20 h-20 bg-gradient-to-br from-[#E10600] to-[#C20500] rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg shadow-red-500/20">
+                            <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h2 class="font-display text-3xl font-bold text-gray-800 mb-3">Verify a Certificate</h2>
+                        <p class="text-gray-500 mb-8">Enter the unique credential ID to verify authenticity</p>
+                        <form @submit.prevent="searchCertificate" class="space-y-4">
+                            <div class="relative">
+                                <input
+                                    type="text"
+                                    x-model="searchId"
+                                    placeholder="TQLH-2026-LT-001"
+                                    class="w-full px-6 py-4 bg-gray-50 border-2 border-gray-200 rounded-xl focus:border-[#E10600] focus:bg-white focus:outline-none text-center text-lg font-mono tracking-wider transition-all"
+                                    required
+                                >
+                            </div>
+                            <button
+                                type="submit"
+                                class="w-full bg-gradient-to-r from-[#E10600] to-[#C20500] text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:shadow-red-500/20 transition-all btn-professional"
+                            >
+                                Verify Certificate
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Certificate Card -->
+                <div x-show="!loading && certificate" class="max-w-4xl mx-auto">
+
+                    <!-- Verified Badge -->
+                    <div class="text-center mb-8">
+                        <div class="inline-flex items-center gap-3 verified-badge text-white px-8 py-4 rounded-full">
+                            <svg class="w-7 h-7" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm-.997-6l7.07-7.071-1.414-1.414-5.656 5.657-2.829-2.829-1.414 1.414L11.003 16z"/>
+                            </svg>
+                            <span class="font-bold text-lg tracking-wide">VERIFIED CREDENTIAL</span>
+                        </div>
+                    </div>
+
+                    <!-- Professional Certificate -->
+                    <div class="certificate-frame rounded-sm p-8 sm:p-16 relative" id="certificate-content">
+                        <!-- Decorative Border -->
+                        <div class="certificate-border rounded-sm"></div>
+
+                        <!-- Corner Ornaments -->
+                        <div class="corner-ornament corner-tl">
+                            <svg viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,20 L20,20 L20,100 L0,100 Z"/></svg>
+                        </div>
+                        <div class="corner-ornament corner-tr">
+                            <svg viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,20 L20,20 L20,100 L0,100 Z"/></svg>
+                        </div>
+                        <div class="corner-ornament corner-bl">
+                            <svg viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,20 L20,20 L20,100 L0,100 Z"/></svg>
+                        </div>
+                        <div class="corner-ornament corner-br">
+                            <svg viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,20 L20,20 L20,100 L0,100 Z"/></svg>
+                        </div>
+
+                        <!-- Watermark -->
+                        <div class="watermark">taqelah!</div>
+
+                        <div class="text-center relative z-10">
+                            <!-- Logo & Organization -->
+                            <div class="mb-8">
+                                <img src="/assets/images/logo.png" alt="taqelah! logo" class="h-20 mx-auto mb-4">
+                                <p class="text-sm uppercase tracking-[0.2em] text-gray-500 font-medium">Singapore's Own Most Vibrant Testing Community</p>
+                            </div>
+
+                            <!-- Decorative Divider -->
+                            <div class="fancy-divider mb-8">
+                                <svg class="w-6 h-6 text-[#E10600]" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                            </div>
+
+                            <!-- Certificate Type -->
+                            <div class="mb-6">
+                                <span
+                                    class="inline-block px-6 py-2 rounded-full text-sm font-bold uppercase tracking-[0.2em]"
+                                    :class="{
+                                        'bg-blue-50 text-blue-700 border border-blue-200': certificate.certificateType === 'attendance',
+                                        'bg-purple-50 text-purple-700 border border-purple-200': certificate.certificateType === 'meetup-speaker',
+                                        'bg-amber-50 text-amber-700 border border-amber-200': certificate.certificateType === 'lightning-speaker',
+                                        'bg-emerald-50 text-emerald-700 border border-emerald-200': certificate.certificateType === 'workshop',
+                                        'bg-rose-50 text-rose-700 border border-rose-200': certificate.certificateType === 'volunteer'
+                                    }"
+                                    x-text="getCertificateTitle(certificate.certificateType)"
+                                ></span>
+                            </div>
+
+                            <!-- Formal Intro -->
+                            <p class="text-gray-500 text-lg mb-4 font-light">This is to certify that</p>
+
+                            <!-- Recipient Name -->
+                            <div class="mb-8">
+                                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-0 pb-2" x-text="certificate.recipientName"></h1>
+                                <div style="margin-top: 20px;" class="mx-auto w-64 h-0.5 bg-[#E10600]"></div>
+                            </div>
+
+                            <!-- Description -->
+                            <p class="text-lg text-gray-600 mb-2 max-w-2xl mx-auto leading-relaxed" x-text="certificate.description"></p>
+
+                            <!-- Talk Title (for speakers) -->
+                            <p x-show="certificate.talkTitle" class="text-xl text-gray-700 font-medium italic mb-6">
+                                "<span x-text="certificate.talkTitle"></span>"
+                            </p>
+
+                            <!-- Event Name Highlight -->
+                            <div class="mb-8">
+                                <p class="font-display text-2xl sm:text-3xl font-semibold text-[#E10600]" x-text="certificate.eventName"></p>
+                                <p class="text-gray-500 mt-2" x-text="formatDate(certificate.eventDate)"></p>
+                            </div>
+
+                            <!-- Skills -->
+                            <div x-show="certificate.skills && certificate.skills.length > 0" class="mb-10">
+                                <p class="text-xs uppercase tracking-[0.2em] text-gray-400 mb-3">Skills & Competencies</p>
+                                <div class="flex flex-wrap justify-center gap-2">
+                                    <template x-for="skill in certificate.skills" :key="skill">
+                                        <span class="bg-gray-100 text-gray-700 px-4 py-1.5 rounded-full text-sm font-medium" x-text="skill"></span>
+                                    </template>
+                                </div>
+                            </div>
+
+                            <!-- Seal and Signature Section -->
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 pt-8 border-t border-gray-200">
+                                <!-- Issued Date -->
+                                <div class="text-center">
+                                    <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2">Date Issued</p>
+                                    <p class="font-semibold text-gray-700" x-text="formatDate(certificate.issueDate)"></p>
+                                </div>
+
+                                <!-- Seal -->
+                                <div class="seal mx-8">
+                                    <div class="seal-inner">
+                                        <div class="text-center px-2">
+                                            <svg class="w-10 h-10 text-amber-900 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                            </svg>
+                                            <p class="text-[10px] font-bold text-amber-900 uppercase tracking-widest mt-1">Verified</p>
+                                        </div>
+                                    </div>
+                                    <div class="ribbon-left"></div>
+                                    <div class="ribbon-right"></div>
+                                </div>
+
+                                <!-- Issuing Authority -->
+                                <div class="text-center">
+                                    <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2">Issued By</p>
+                                    <p class="font-semibold text-gray-700" x-text="certificate.issuedBy"></p>
+                                </div>
+                            </div>
+
+                            <!-- Certificate ID -->
+                            <div class="mt-10 pt-6 border-t border-dashed border-gray-300">
+                                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                                    <div class="text-center">
+                                        <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-1">Credential ID</p>
+                                        <p class="font-mono text-sm font-bold text-gray-800 bg-gray-100 px-4 py-2 rounded" x-text="certificate.id"></p>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-1">Verification URL</p>
+                                        <p class="text-xs text-gray-500 font-mono">taqelah.sg/certificates/verify</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
+                        <!-- Share on LinkedIn -->
+                        <button
+                            @click="shareOnLinkedIn"
+                            class="inline-flex items-center justify-center gap-3 bg-[#0A66C2] text-white px-8 py-4 rounded-xl font-semibold hover:bg-[#004182] transition-all shadow-lg shadow-blue-500/20 btn-professional"
+                        >
+                            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            Add to LinkedIn Profile
+                        </button>
+
+                        <!-- Copy Link -->
+                        <button
+                            @click="copyLink"
+                            class="inline-flex items-center justify-center gap-3 bg-white text-gray-700 px-8 py-4 rounded-xl font-semibold hover:bg-gray-50 transition-all border-2 border-gray-200 hover:border-gray-300"
+                        >
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+                            </svg>
+                            <span x-text="copied ? 'Link Copied!' : 'Copy Verification Link'"></span>
+                        </button>
+
+                        <!-- Download as Image -->
+                        <button
+                            @click="downloadCertificate"
+                            class="inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#E10600] to-[#C20500] text-white px-8 py-4 rounded-xl font-semibold hover:shadow-xl hover:shadow-red-500/20 transition-all btn-professional"
+                        >
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path>
+                            </svg>
+                            Download Certificate
+                        </button>
+                    </div>
+
+                    <!-- Verify Another -->
+                    <div class="text-center mt-10">
+                        <a href="/certificates/verify.html" class="inline-flex items-center gap-2 text-gray-500 hover:text-[#E10600] font-medium transition-colors">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                            Verify another certificate
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer-container"></div>
+
+    <!-- html2canvas for certificate download -->
+    <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+
+    <script>
+        function certificateVerification() {
+            return {
+                certificate: null,
+                loading: true,
+                error: false,
+                errorMessage: '',
+                searchId: '',
+                copied: false,
+
+                init() {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    const certificateId = urlParams.get('id');
+
+                    if (certificateId) {
+                        this.verifyCertificate(certificateId);
+                    } else {
+                        this.loading = false;
+                    }
+                },
+
+                async verifyCertificate(id) {
+                    this.loading = true;
+                    this.error = false;
+
+                    try {
+                        const response = await fetch('/data/certificates.json');
+                        const certificates = await response.json();
+
+                        const cert = certificates.find(c => c.id === id);
+
+                        if (cert) {
+                            this.certificate = cert;
+                            this.updateMetaTags(cert);
+                        } else {
+                            this.error = true;
+                            this.errorMessage = `No certificate found with ID: ${id}. Please check the ID and try again.`;
+                        }
+                    } catch (err) {
+                        this.error = true;
+                        this.errorMessage = 'Unable to verify certificate. Please try again later.';
+                        console.error('Error loading certificates:', err);
+                    }
+
+                    this.loading = false;
+                },
+
+                searchCertificate() {
+                    if (this.searchId.trim()) {
+                        window.location.href = `/certificates/verify.html?id=${encodeURIComponent(this.searchId.trim())}`;
+                    }
+                },
+
+                formatDate(dateString) {
+                    const date = new Date(dateString);
+                    return date.toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+                },
+
+                getCertificateTitle(type) {
+                    const titles = {
+                        'attendance': 'Certificate of Attendance',
+                        'workshop': 'Certificate of Completion',
+                        'meetup-speaker': 'Certificate of Speaking',
+                        'lightning-speaker': 'Certificate of Speaking',
+                        'volunteer': 'Certificate of Appreciation'
+                    };
+                    return titles[type] || 'Certificate';
+                },
+
+                updateMetaTags(cert) {
+                    document.title = `${cert.recipientName} - ${cert.eventName} Certificate | taqelah!`;
+
+                    const description = `${cert.recipientName} ${cert.certificateType === 'speaker' ? 'spoke at' : 'attended'} ${cert.eventName}. Verified by taqelah! community.`;
+
+                    document.querySelector('meta[property="og:title"]').setAttribute('content', `${cert.recipientName} - ${cert.eventName} Certificate`);
+                    document.querySelector('meta[property="og:description"]').setAttribute('content', description);
+                    document.querySelector('meta[name="twitter:title"]').setAttribute('content', `${cert.recipientName} - ${cert.eventName} Certificate`);
+                    document.querySelector('meta[name="twitter:description"]').setAttribute('content', description);
+                },
+
+                shareOnLinkedIn() {
+                    const certUrl = encodeURIComponent(window.location.href);
+                    const linkedInUrl = `https://www.linkedin.com/profile/add?startTask=CERTIFICATION_NAME&name=${encodeURIComponent(this.certificate.eventName)}&organizationName=${encodeURIComponent('taqelah!')}&issueYear=${new Date(this.certificate.issueDate).getFullYear()}&issueMonth=${new Date(this.certificate.issueDate).getMonth() + 1}&certUrl=${certUrl}&certId=${encodeURIComponent(this.certificate.id)}`;
+
+                    window.open(linkedInUrl, '_blank', 'width=600,height=600');
+                },
+
+                async copyLink() {
+                    try {
+                        await navigator.clipboard.writeText(window.location.href);
+                        this.copied = true;
+                        setTimeout(() => this.copied = false, 2000);
+                    } catch (err) {
+                        console.error('Failed to copy:', err);
+                    }
+                },
+
+                async downloadCertificate() {
+                    const element = document.getElementById('certificate-content');
+
+                    try {
+                        const canvas = await html2canvas(element, {
+                            scale: 3,
+                            backgroundColor: '#fefefe',
+                            useCORS: true,
+                            logging: false
+                        });
+
+                        const link = document.createElement('a');
+                        link.download = `${this.certificate.id}-certificate.png`;
+                        link.href = canvas.toDataURL('image/png');
+                        link.click();
+                    } catch (err) {
+                        console.error('Error generating certificate image:', err);
+                        alert('Unable to download certificate. Please try again.');
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

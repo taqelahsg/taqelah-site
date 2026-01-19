@@ -1,0 +1,65 @@
+[
+  {
+    "id": "TQLH-2026-WS-001",
+    "recipientName": "Prachi Angal",
+    "eventName": "Agentic Playwright Framework Workshop",
+    "eventDate": "2026-01-24",
+    "certificateType": "workshop",
+    "issueDate": "2026-01-25",
+    "description": "Successfully completed the Agentic Playwright Framework with AI-Powered Testing workshop",
+    "duration": "4 hours",
+    "skills": ["Playwright", "TypeScript", "AI Testing", "Test Automation"],
+    "issuedBy": "taqelah! Community",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-2026-WS-001"
+  },
+  {
+    "id": "TQLH-2026-MS-001",
+    "recipientName": "Gowthamraj Palani",
+    "eventName": "taqelah! January 2026 Meetup",
+    "eventDate": "2026-01-15",
+    "certificateType": "meetup-speaker",
+    "issueDate": "2026-01-16",
+    "description": "Delivered an insightful talk at the taqelah! monthly meetup",
+    "talkTitle": "Accelerating Test Automation with Playwright MCP and Prompt-Driven Test",
+    "skills": ["Playwright", "MCP", "Test Automation", "AI Testing"],
+    "issuedBy": "taqelah! Community",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-2026-MS-001"
+  },
+  {
+    "id": "TQLH-2026-LT-001",
+    "recipientName": "Priyank Shah",
+    "eventName": "Lightning Talks 2026",
+    "eventDate": "2026-02-22",
+    "certificateType": "lightning-speaker",
+    "issueDate": "2026-02-23",
+    "description": "Delivered a lightning talk at the taqelah! Lightning Talks 2026 conference",
+    "talkTitle": "RAG + n8n: The Powerhouse for Context-Aware Test Case Generation",
+    "skills": ["RAG", "n8n", "AI Testing", "Test Case Generation"],
+    "issuedBy": "taqelah! Community",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-2026-LT-001"
+  },
+  {
+    "id": "TQLH-2026-VOL-001",
+    "recipientName": "Premraj Murugaraj",
+    "eventName": "taqelah! Community 2026",
+    "eventDate": "2026-01-01",
+    "certificateType": "volunteer",
+    "issueDate": "2026-01-19",
+    "description": "For outstanding contribution and dedication as a community volunteer",
+    "skills": ["Community Building", "Event Organization", "Mentorship"],
+    "issuedBy": "taqelah! Community",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-2026-VOL-001"
+  },
+  {
+    "id": "TQLH-2026-ATT-001",
+    "recipientName": "Akshay Maldhure",
+    "eventName": "Lightning Talks 2026",
+    "eventDate": "2026-02-22",
+    "certificateType": "attendance",
+    "issueDate": "2026-02-23",
+    "description": "Successfully attended the taqelah! Lightning Talks 2026 conference",
+    "skills": ["Quality Engineering", "Test Automation", "AI Testing"],
+    "issuedBy": "taqelah! Community",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-2026-ATT-001"
+  }
+]
