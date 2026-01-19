@@ -177,6 +177,13 @@
             pointer-events: none;
             white-space: nowrap;
             font-family: 'Playfair Display', serif;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        @media (max-width: 640px) {
+            .watermark {
+                font-size: 80px;
+            }
         }
 
         /* QR Code Area */
@@ -221,7 +228,7 @@
         }
     </style>
 </head>
-<body class="font-body antialiased text-[#0B0B0B] bg-white" data-page="certificates">
+<body class="font-body antialiased text-[#0B0B0B] bg-white overflow-x-hidden" data-page="certificates">
 
     <a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-[#E10600] focus:text-white focus:rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E10600] focus-visible:ring-offset-2">
         Skip to main content
