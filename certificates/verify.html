@@ -364,14 +364,14 @@
                             <div class="mb-6">
                                 <span
                                     class="inline-block px-6 py-2 rounded-full text-sm font-bold uppercase tracking-[0.2em]"
-                                    :class="{
+                                    :class="certificate ? {
                                         'bg-blue-50 text-blue-700 border border-blue-200': certificate.certificateType === 'attendance',
                                         'bg-purple-50 text-purple-700 border border-purple-200': certificate.certificateType === 'meetup-speaker',
                                         'bg-amber-50 text-amber-700 border border-amber-200': certificate.certificateType === 'lightning-speaker',
                                         'bg-emerald-50 text-emerald-700 border border-emerald-200': certificate.certificateType === 'workshop',
                                         'bg-rose-50 text-rose-700 border border-rose-200': certificate.certificateType === 'volunteer'
-                                    }"
-                                    x-text="getCertificateTitle(certificate.certificateType)"
+                                    } : {}"
+                                    x-text="certificate ? getCertificateTitle(certificate.certificateType) : ''"
                                 ></span>
                             </div>
 
@@ -615,10 +615,18 @@
 
                     try {
                         const canvas = await html2canvas(element, {
-                            scale: 3,
+                            scale: 2,
                             backgroundColor: '#fefefe',
                             useCORS: true,
-                            logging: false
+                            allowTaint: true,
+                            logging: false,
+                            onclone: (clonedDoc) => {
+                                // Ensure styles are applied in cloned document
+                                const clonedElement = clonedDoc.getElementById('certificate-content');
+                                if (clonedElement) {
+                                    clonedElement.style.width = element.offsetWidth + 'px';
+                                }
+                            }
                         });
 
                         const link = document.createElement('a');
@@ -627,7 +635,7 @@
                         link.click();
                     } catch (err) {
                         console.error('Error generating certificate image:', err);
-                        alert('Unable to download certificate. Please try again.');
+                        alert('Unable to download certificate. Please use your browser\'s screenshot feature (Cmd+Shift+4 on Mac or Print Screen on Windows).');
                     }
                 }
             }
