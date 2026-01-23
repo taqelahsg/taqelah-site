@@ -444,16 +444,16 @@
                                 </div>
                             </div>
 
-                            <!-- Certificate ID -->
+                            <!-- Certificate ID and QR Code -->
                             <div class="mt-10 pt-6 border-t border-dashed border-gray-300">
-                                <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
+                                <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
                                     <div class="text-center">
                                         <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-1">Credential ID</p>
                                         <p class="font-mono text-sm font-bold text-gray-800 bg-gray-100 px-4 py-2 rounded" x-text="certificate.id"></p>
                                     </div>
                                     <div class="text-center">
-                                        <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-1">Verification URL</p>
-                                        <p class="text-xs text-gray-500 font-mono">taqelah.sg/certificates/verify</p>
+                                        <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2">Scan to Verify</p>
+                                        <img id="qrcode" class="bg-white p-2 rounded-lg shadow-sm border border-gray-200" width="96" height="96" alt="QR Code for verification" />
                                     </div>
                                 </div>
                             </div>
@@ -515,7 +515,7 @@
 
     <!-- html2canvas for certificate download -->
     <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
-
+    
     <script>
         function certificateVerification() {
             return {
@@ -550,6 +550,7 @@
                         if (cert) {
                             this.certificate = cert;
                             this.updateMetaTags(cert);
+                            this.$nextTick(() => this.generateQRCode());
                         } else {
                             this.error = true;
                             this.errorMessage = `No certificate found with ID: ${id}. Please check the ID and try again.`;
@@ -617,6 +618,14 @@
                     }
                 },
 
+                generateQRCode() {
+                    const qrcodeImg = document.getElementById('qrcode');
+                    if (qrcodeImg && this.certificate) {
+                        const verifyUrl = encodeURIComponent(window.location.href);
+                        qrcodeImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=${verifyUrl}`;
+                    }
+                },
+
                 async downloadCertificate() {
                     const element = document.getElementById('certificate-content');
 
@@ -626,14 +635,7 @@
                             backgroundColor: '#fefefe',
                             useCORS: true,
                             allowTaint: true,
-                            logging: false,
-                            onclone: (clonedDoc) => {
-                                // Ensure styles are applied in cloned document
-                                const clonedElement = clonedDoc.getElementById('certificate-content');
-                                if (clonedElement) {
-                                    clonedElement.style.width = element.offsetWidth + 'px';
-                                }
-                            }
+                            logging: false
                         });
 
                         const link = document.createElement('a');

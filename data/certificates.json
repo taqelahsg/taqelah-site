@@ -1,19 +1,136 @@
 [
   {
-    "id": "TQLH-2026-WS-001",
-    "recipientName": "Prachi Angal",
-    "eventName": "Agentic Playwright Framework Workshop",
+    "id": "TQLH-WS-X7K9M2PQ",
+    "recipientName": "Magesh Kumar",
+    "eventName": "Playwright Workshop",
     "eventDate": "2026-01-24",
     "certificateType": "workshop",
-    "issueDate": "2026-01-25",
-    "description": "Successfully completed the Agentic Playwright Framework with AI-Powered Testing workshop",
+    "issueDate": "2026-01-24",
+    "description": "Successfully completed the Playwright Workshop",
     "duration": "4 hours",
-    "skills": ["Playwright", "TypeScript", "AI Testing", "Test Automation"],
-    "issuedBy": "taqelah! Community",
-    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-2026-WS-001"
+    "skills": ["Playwright", "TypeScript", "Test Automation", "Web Testing"],
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-WS-X7K9M2PQ"
   },
   {
-    "id": "TQLH-2026-MS-001",
+    "id": "TQLH-WS-B3N5R8TW",
+    "recipientName": "Vaishnavi Suresh",
+    "eventName": "Playwright Workshop",
+    "eventDate": "2026-01-24",
+    "certificateType": "workshop",
+    "issueDate": "2026-01-24",
+    "description": "Successfully completed the Playwright Workshop",
+    "duration": "4 hours",
+    "skills": ["Playwright", "TypeScript", "Test Automation", "Web Testing"],
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-WS-B3N5R8TW"
+  },
+  {
+    "id": "TQLH-WS-H4J6L9VY",
+    "recipientName": "Sampath Kumar",
+    "eventName": "Playwright Workshop",
+    "eventDate": "2026-01-24",
+    "certificateType": "workshop",
+    "issueDate": "2026-01-24",
+    "description": "Successfully completed the Playwright Workshop",
+    "duration": "4 hours",
+    "skills": ["Playwright", "TypeScript", "Test Automation", "Web Testing"],
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-WS-H4J6L9VY"
+  },
+  {
+    "id": "TQLH-WS-C8F2G5KZ",
+    "recipientName": "Rashmi Sanjeev",
+    "eventName": "Playwright Workshop",
+    "eventDate": "2026-01-24",
+    "certificateType": "workshop",
+    "issueDate": "2026-01-24",
+    "description": "Successfully completed the Playwright Workshop",
+    "duration": "4 hours",
+    "skills": ["Playwright", "TypeScript", "Test Automation", "Web Testing"],
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-WS-C8F2G5KZ"
+  },
+  {
+    "id": "TQLH-WS-D9E3A7NX",
+    "recipientName": "Kevin Tan",
+    "eventName": "Playwright Workshop",
+    "eventDate": "2026-01-24",
+    "certificateType": "workshop",
+    "issueDate": "2026-01-24",
+    "description": "Successfully completed the Playwright Workshop",
+    "duration": "4 hours",
+    "skills": ["Playwright", "TypeScript", "Test Automation", "Web Testing"],
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-WS-D9E3A7NX"
+  },
+  {
+    "id": "TQLH-WS-P6Q1S4UW",
+    "recipientName": "Namrata Mishra",
+    "eventName": "Playwright Workshop",
+    "eventDate": "2026-01-24",
+    "certificateType": "workshop",
+    "issueDate": "2026-01-24",
+    "description": "Successfully completed the Playwright Workshop",
+    "duration": "4 hours",
+    "skills": ["Playwright", "TypeScript", "Test Automation", "Web Testing"],
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-WS-P6Q1S4UW"
+  },
+  {
+    "id": "TQLH-WS-M2T8W5YR",
+    "recipientName": "Prachi Angal",
+    "eventName": "Playwright Workshop",
+    "eventDate": "2026-01-24",
+    "certificateType": "workshop",
+    "issueDate": "2026-01-24",
+    "description": "Successfully completed the Playwright Workshop",
+    "duration": "4 hours",
+    "skills": ["Playwright", "TypeScript", "Test Automation", "Web Testing"],
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-WS-M2T8W5YR"
+  },
+  {
+    "id": "TQLH-WS-V7Z3B6KC",
+    "recipientName": "Rupali Sharma",
+    "eventName": "Playwright Workshop",
+    "eventDate": "2026-01-24",
+    "certificateType": "workshop",
+    "issueDate": "2026-01-24",
+    "description": "Successfully completed the Playwright Workshop",
+    "duration": "4 hours",
+    "skills": ["Playwright", "TypeScript", "Test Automation", "Web Testing"],
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-WS-V7Z3B6KC"
+  },
+  {
+    "id": "TQLH-WS-J5L9N2FH",
+    "recipientName": "Rekha Lankipalli",
+    "eventName": "Playwright Workshop",
+    "eventDate": "2026-01-24",
+    "certificateType": "workshop",
+    "issueDate": "2026-01-24",
+    "description": "Successfully completed the Playwright Workshop",
+    "duration": "4 hours",
+    "skills": ["Playwright", "TypeScript", "Test Automation", "Web Testing"],
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-WS-J5L9N2FH"
+  },
+  {
+    "id": "TQLH-WS-R4X8E1GT",
+    "recipientName": "Yoong Cheng Nee",
+    "eventName": "Playwright Workshop",
+    "eventDate": "2026-01-24",
+    "certificateType": "workshop",
+    "issueDate": "2026-01-24",
+    "description": "Successfully completed the Playwright Workshop",
+    "duration": "4 hours",
+    "skills": ["Playwright", "TypeScript", "Test Automation", "Web Testing"],
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-WS-R4X8E1GT"
+  },
+  {
+    "id": "TQLH-MS-K3P7Q9WA",
     "recipientName": "Gowthamraj Palani",
     "eventName": "taqelah! January 2026 Meetup",
     "eventDate": "2026-01-15",
@@ -22,11 +139,11 @@
     "description": "Delivered an insightful talk at the taqelah! monthly meetup",
     "talkTitle": "Accelerating Test Automation with Playwright MCP and Prompt-Driven Test",
     "skills": ["Playwright", "MCP", "Test Automation", "AI Testing"],
-    "issuedBy": "taqelah! Community",
-    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-2026-MS-001"
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-MS-K3P7Q9WA"
   },
   {
-    "id": "TQLH-2026-LT-001",
+    "id": "TQLH-LT-F8H2J4MB",
     "recipientName": "Priyank Shah",
     "eventName": "Lightning Talks 2026",
     "eventDate": "2026-02-22",
@@ -35,11 +152,11 @@
     "description": "Delivered a lightning talk at the taqelah! Lightning Talks 2026 conference",
     "talkTitle": "RAG + n8n: The Powerhouse for Context-Aware Test Case Generation",
     "skills": ["RAG", "n8n", "AI Testing", "Test Case Generation"],
-    "issuedBy": "taqelah! Community",
-    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-2026-LT-001"
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-LT-F8H2J4MB"
   },
   {
-    "id": "TQLH-2026-VOL-001",
+    "id": "TQLH-VOL-A6C1D5NS",
     "recipientName": "Premraj Murugaraj",
     "eventName": "taqelah! Community 2026",
     "eventDate": "2026-01-01",
@@ -47,11 +164,11 @@
     "issueDate": "2026-01-19",
     "description": "For outstanding contribution and dedication as a community volunteer",
     "skills": ["Community Building", "Event Organization", "Mentorship"],
-    "issuedBy": "taqelah! Community",
-    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-2026-VOL-001"
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-VOL-A6C1D5NS"
   },
   {
-    "id": "TQLH-2026-ATT-001",
+    "id": "TQLH-ATT-Y9U4I7OP",
     "recipientName": "Akshay Maldhure",
     "eventName": "Lightning Talks 2026",
     "eventDate": "2026-02-22",
@@ -59,7 +176,7 @@
     "issueDate": "2026-02-23",
     "description": "Successfully attended the taqelah! Lightning Talks 2026 conference",
     "skills": ["Quality Engineering", "Test Automation", "AI Testing"],
-    "issuedBy": "taqelah! Community",
-    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-2026-ATT-001"
+    "issuedBy": "taqelah!",
+    "credentialUrl": "https://taqelah.sg/certificates/verify.html?id=TQLH-ATT-Y9U4I7OP"
   }
 ]
