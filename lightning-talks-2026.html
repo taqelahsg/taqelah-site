@@ -146,6 +146,70 @@
             50% { transform: translate(100px, -100px) scale(1.5); opacity: 0.6; }
         }
 
+        /* Keynote Tab Styles */
+        .keynote-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+            justify-content: center;
+        }
+        .keynote-tab {
+            padding: 0.5rem 1.25rem;
+            border-radius: 9999px;
+            font-weight: 700;
+            font-size: 0.875rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            background: rgba(255,255,255,0.1);
+            color: #93c5fd;
+        }
+        .keynote-tab:hover:not(.active) {
+            background: rgba(255,255,255,0.2);
+        }
+        .keynote-tab.active.tab-red {
+            background: #E10600;
+            color: white;
+            border-color: #E10600;
+        }
+        .keynote-tab.active.tab-blue {
+            background: #3b82f6;
+            color: white;
+            border-color: #3b82f6;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .keynote-content-area {
+            min-height: 280px;
+        }
+        .keynote-header {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .keynote-title-section {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+        .keynote-role {
+            min-height: 3.5rem;
+        }
+        @media (min-width: 1024px) {
+            .keynote-role {
+                min-height: 3rem;
+            }
+        }
+
         /* Animated Classes */
         .float-animation { animation: float 6s ease-in-out infinite; }
         .float-delayed { animation: float-delayed 8s ease-in-out infinite; }
@@ -1014,8 +1078,8 @@
                     <div class="mb-20">
                         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 max-w-5xl mx-auto">
                             <!-- Pradeep Soundararajan -->
-                            <div class="glass-card-dark rounded-3xl p-8 lg:p-10 border-2 border-[#E10600]/40 card-hover card-3d pulse-glow">
-                                <div class="text-center mb-6">
+                            <div id="pradeep-card" class="glass-card-dark rounded-3xl p-8 lg:p-10 border-2 border-[#E10600]/40 card-hover card-3d pulse-glow">
+                                <div class="text-center keynote-header">
                                     <div class="w-40 h-40 lg:w-48 lg:h-48 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-[#E10600]/50 shadow-2xl transform hover:scale-105 transition-transform">
                                         <img src="assets/images/speakers/pradeep.jpeg"
                                              alt="Pradeep Soundararajan"
@@ -1025,26 +1089,60 @@
                                     <div class="inline-block px-4 py-1 bg-[#E10600] rounded-full mb-3">
                                         <span class="text-white font-black text-xs uppercase tracking-wider">Keynote Speaker</span>
                                     </div>
-                                    <h3 class="text-2xl lg:text-3xl font-black text-white mb-2 glow-text">
-                                        Pradeep Soundararajan
-                                    </h3>
-                                    <p class="text-yellow-300 font-semibold text-lg">
-                                        Founder & CEO, Moolya
-                                    </p>
+                                    <div class="keynote-title-section">
+                                        <h3 class="text-2xl lg:text-3xl font-black text-white mb-2 glow-text">
+                                            Pradeep Soundararajan
+                                        </h3>
+                                        <p class="text-yellow-300 font-semibold text-lg keynote-role">
+                                            Founder & CEO, Moolya
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="text-blue-200 leading-relaxed text-base lg:text-lg">
-                                    <p class="mb-4">
-                                        Renowned testing thought leader and consultant with over two decades of experience revolutionizing software testing practices globally.
-                                    </p>
-                                    <p>
-                                        Known for innovative approaches to testing and quality, Pradeep has mentored countless testers worldwide and shaped the future of the testing community.
-                                    </p>
+
+                                <!-- Tabs -->
+                                <div class="keynote-tabs">
+                                    <button class="keynote-tab active tab-red" data-tab="talk" onclick="switchTab('pradeep-card', 'talk')">The Talk</button>
+                                    <button class="keynote-tab tab-red" data-tab="about" onclick="switchTab('pradeep-card', 'about')">About</button>
+                                </div>
+
+                                <!-- Tab Content Area -->
+                                <div class="keynote-content-area">
+                                    <!-- Talk Tab -->
+                                    <div id="pradeep-card-talk" class="tab-content active">
+                                        <div class="p-4 bg-gradient-to-r from-[#E10600]/20 to-orange-500/20 rounded-xl border border-[#E10600]/30">
+                                            <h4 class="text-lg font-black text-[#E10600] mb-2">🎯 De-fragmenting AI in Testing</h4>
+                                            <p class="text-blue-200 text-sm leading-relaxed">
+                                                You are in the beginning of 2026. 2025 has been brutal on you in terms of keeping you on the edge of trying to make you learn everything possible about AI. Your brain CPU overclocked and disk has been fragmented quite a lot by hearing and learning multiple things about AI. You are confused how to bring all of this accumulation of knowledge and skills to use in practicality. Should you fail to bring this defragmentation - too many bad sectors get created in your mind and hampers your ability to learn in the future and wonder why despite all the skills and knowledge you fail to grow and frustration sets in.
+                                            </p>
+                                            <p class="text-blue-200 text-sm leading-relaxed mt-2">
+                                                In this talk, Pradeep Soundararajan, who sees the world from the moon and observes himself and others as a tiny spec on a beautiful ball with the drama of AI that has been happening - will present simple, coherent thoughts on de-fragmenting AI in Testing.
+                                            </p>
+                                            <p class="text-blue-200 text-sm leading-relaxed mt-2">
+                                                As an example - he will speak about the difference between learning AI to build something versus learning AI to operate it to solving a problem. Knowing this difference will free up a lot of people. He wishes a lot more people get this message because there are immensely talented people in this world of testing but they all seem to roam around like zombies heading (learning) in all directions (whatever it thrown at them to learn) without a clarity as to why they are heading that way. At least that's how it looks from the moon.
+                                            </p>
+                                            <p class="text-blue-200 text-sm leading-relaxed mt-2">
+                                                Pradeep has 20 minutes to say this. After that the moon moves to a different constellation. Would you be there to catch a glimpse of the view from the moon?
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- About Tab -->
+                                    <div id="pradeep-card-about" class="tab-content">
+                                        <div class="text-blue-200 leading-relaxed text-base lg:text-lg">
+                                            <p class="mb-4">
+                                                Renowned testing thought leader and consultant with over two decades of experience revolutionizing software testing practices globally. He is the author of Buddha in Testing and Growth Driven Testing.
+                                            </p>
+                                            <p>
+                                                Known for innovative approaches to testing and quality, Pradeep has mentored countless testers worldwide and shaped the future of the testing community.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Unmesh Gundecha -->
-                            <div class="glass-card-dark rounded-3xl p-8 lg:p-10 border-2 border-blue-500/40 card-hover card-3d pulse-glow">
-                                <div class="text-center mb-6">
+                            <div id="unmesh-card" class="glass-card-dark rounded-3xl p-8 lg:p-10 border-2 border-blue-500/40 card-hover card-3d pulse-glow">
+                                <div class="text-center keynote-header">
                                     <div class="w-40 h-40 lg:w-48 lg:h-48 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-blue-500/50 shadow-2xl transform hover:scale-105 transition-transform">
                                         <img src="assets/images/speakers/unmesh.jpeg"
                                              alt="Unmesh Gundecha"
@@ -1054,23 +1152,48 @@
                                     <div class="inline-block px-4 py-1 bg-blue-600 rounded-full mb-3">
                                         <span class="text-white font-black text-xs uppercase tracking-wider">Keynote Speaker</span>
                                     </div>
-                                    <h3 class="text-2xl lg:text-3xl font-black text-white mb-2 glow-text">
-                                        Unmesh Gundecha
-                                    </h3>
-                                    <p class="text-yellow-300 font-semibold text-lg">
-                                        Head, Cloud Platform Engineering
-                                    </p>
-                                    <p class="text-yellow-300 font-medium">
-                                        Standard Chartered
-                                    </p>
+                                    <div class="keynote-title-section">
+                                        <h3 class="text-2xl lg:text-3xl font-black text-white mb-2 glow-text">
+                                            Unmesh Gundecha
+                                        </h3>
+                                        <p class="text-yellow-300 font-semibold text-lg keynote-role">
+                                            Head, Cloud Platform Engineering, Standard Chartered
+                                        </p>
+                                    </div>
                                 </div>
-                                <div class="text-blue-200 leading-relaxed text-base lg:text-lg">
-                                    <p class="mb-4">
-                                        Author of "Selenium Testing Tools Cookbook" and leading expert in test automation and quality engineering with global impact.
-                                    </p>
-                                    <p>
-                                        Currently leads Cloud Platform Engineering at Standard Chartered, helping organizations implement effective test automation strategies and build high-performing QA teams for the AI era.
-                                    </p>
+
+                                <!-- Tabs -->
+                                <div class="keynote-tabs">
+                                    <button class="keynote-tab active tab-blue" data-tab="talk" onclick="switchTab('unmesh-card', 'talk')">The Talk</button>
+                                    <button class="keynote-tab tab-blue" data-tab="about" onclick="switchTab('unmesh-card', 'about')">About</button>
+                                </div>
+
+                                <!-- Tab Content Area -->
+                                <div class="keynote-content-area">
+                                    <!-- Talk Tab -->
+                                    <div id="unmesh-card-talk" class="tab-content active">
+                                        <div class="p-4 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-xl border border-blue-500/30">
+                                            <h4 class="text-lg font-black text-blue-400 mb-2">🎯 The Next-Gen Tester: Navigating the Era of Artificial Intelligence</h4>
+                                            <p class="text-blue-200 text-sm leading-relaxed">
+                                                As AI becomes embedded across software development, testers are no longer grappling with what the technology can do, but with how their role should evolve alongside it. Code, tests, and workflows can now be generated at scale, making execution faster and cheaper than ever. Yet higher automation has not automatically translated into higher confidence. The real challenge has shifted from running tests to interpreting signals, framing risk, and deciding what truly matters.
+                                            </p>
+                                            <p class="text-blue-200 text-sm leading-relaxed mt-2">
+                                                This talk introduces a practical operating model for testers in the AI era, clarifying which responsibilities must remain human-owned, where AI can effectively amplify thinking, and what work should be fully delegated. Rather than focusing on tools or trends, it helps experienced testers re-anchor their value around judgment, intent, and decision-making. In an environment where AI is widely available, sustained relevance comes from applying it deliberately—and knowing where human accountability cannot be automated.
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <!-- About Tab -->
+                                    <div id="unmesh-card-about" class="tab-content">
+                                        <div class="text-blue-200 leading-relaxed text-base lg:text-lg">
+                                            <p class="mb-4">
+                                                Author of "Selenium Testing Tools Cookbook" and leading expert in test automation and quality engineering with global impact.
+                                            </p>
+                                            <p>
+                                                Currently leads Cloud Platform Engineering at Standard Chartered, helping organizations implement effective test automation strategies and build high-performing QA teams for the AI era.
+                                            </p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -1439,26 +1562,53 @@
 
                         <!-- Keynote 1 - Left -->
                         <div class="timeline-item left keynote mb-8">
-                            <div class="glass-card-dark rounded-2xl p-6 border border-[#E10600]/40 card-hover flex items-center gap-4 flex-row-reverse">
-                                <img src="/assets/images/speakers/pradeep.jpeg" alt="Pradeep Soundararajan" class="w-20 h-20 rounded-xl object-cover ring-2 ring-[#E10600]/50">
-                                <div class="text-right flex-1">
-                                    <div class="inline-block px-3 py-1 bg-[#E10600]/30 rounded-full text-xs font-bold text-red-300 mb-2">🎤 KEYNOTE</div>
-                                    <div class="text-xl font-bold text-[#E10600]">12:09 <span class="text-xs text-blue-300 font-normal">• 20 min</span></div>
-                                    <h4 class="font-bold text-white text-lg mt-1">Pradeep Soundararajan</h4>
-                                    <p class="text-yellow-300 text-sm font-medium">Founder & CEO, Moolya</p>
+                            <div class="glass-card-dark rounded-2xl p-6 border border-[#E10600]/40 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4 flex-row-reverse">
+                                    <img src="/assets/images/speakers/pradeep.jpeg" alt="Pradeep Soundararajan" class="w-20 h-20 rounded-xl object-cover ring-2 ring-[#E10600]/50">
+                                    <div class="text-right flex-1">
+                                        <div class="flex items-center justify-end gap-2">
+                                            <div class="inline-block px-3 py-1 bg-[#E10600]/30 rounded-full text-xs font-bold text-red-300">🎤 KEYNOTE</div>
+                                            <svg class="w-4 h-4 text-red-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <div class="text-xl font-bold text-[#E10600] mt-2">12:09 <span class="text-xs text-blue-300 font-normal">• 20 min</span></div>
+                                        <h4 class="font-bold text-white text-lg mt-1">Pradeep Soundararajan</h4>
+                                        <p class="text-yellow-300 text-sm font-medium">Founder & CEO, Moolya</p>
+                                        <p class="text-blue-200 text-sm mt-1">De-fragmenting AI in Testing</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description text-right">
+                                    <div class="pt-4 border-t border-[#E10600]/30 text-sm text-blue-100 leading-relaxed space-y-3 mt-4">
+                                        <p>You are in the beginning of 2026. 2025 has been brutal on you in terms of keeping you on the edge of trying to make you learn everything possible about AI. Your brain CPU overclocked and disk has been fragmented quite a lot by hearing and learning multiple things about AI.</p>
+                                        <p>In this talk, Pradeep Soundararajan, who sees the world from the moon and observes himself and others as a tiny spec on a beautiful ball with the drama of AI that has been happening - will present simple, coherent thoughts on de-fragmenting AI in Testing.</p>
+                                        <p>As an example - he will speak about the difference between learning AI to build something versus learning AI to operate it to solving a problem. Knowing this difference will free up a lot of people.</p>
+                                        <p class="text-red-300 italic">Pradeep has 20 minutes to say this. After that the moon moves to a different constellation. Would you be there to catch a glimpse of the view from the moon?</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
 
                         <!-- Keynote 2 - Right -->
                         <div class="timeline-item right keynote mb-8">
-                            <div class="glass-card-dark rounded-2xl p-6 border border-blue-500/40 card-hover flex items-center gap-4">
-                                <img src="/assets/images/speakers/unmesh.jpeg" alt="Unmesh Gundecha" class="w-20 h-20 rounded-xl object-cover ring-2 ring-blue-500/50">
-                                <div class="flex-1">
-                                    <div class="inline-block px-3 py-1 bg-blue-600/30 rounded-full text-xs font-bold text-blue-300 mb-2">🎤 KEYNOTE</div>
-                                    <div class="text-xl font-bold text-blue-400">12:30 <span class="text-xs text-blue-300 font-normal">• 20 min</span></div>
-                                    <h4 class="font-bold text-white text-lg mt-1">Unmesh Gundecha</h4>
-                                    <p class="text-yellow-300 text-sm font-medium">Head, Cloud Platform Engineering, Standard Chartered</p>
+                            <div class="glass-card-dark rounded-2xl p-6 border border-blue-500/40 card-hover timeline-talk" onclick="this.classList.toggle('expanded')">
+                                <div class="flex items-center gap-4">
+                                    <img src="/assets/images/speakers/unmesh.jpeg" alt="Unmesh Gundecha" class="w-20 h-20 rounded-xl object-cover ring-2 ring-blue-500/50">
+                                    <div class="flex-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="inline-block px-3 py-1 bg-blue-600/30 rounded-full text-xs font-bold text-blue-300">🎤 KEYNOTE</div>
+                                            <svg class="w-4 h-4 text-blue-400 expand-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/></svg>
+                                        </div>
+                                        <div class="text-xl font-bold text-blue-400 mt-2">12:30 <span class="text-xs text-blue-300 font-normal">• 20 min</span></div>
+                                        <h4 class="font-bold text-white text-lg mt-1">Unmesh Gundecha</h4>
+                                        <p class="text-yellow-300 text-sm font-medium">Head, Cloud Platform Engineering, Standard Chartered</p>
+                                        <p class="text-blue-200 text-sm mt-1">The Next-Gen Tester: Navigating the Era of AI</p>
+                                    </div>
+                                </div>
+                                <div class="talk-description">
+                                    <div class="pt-4 border-t border-blue-500/30 text-sm text-blue-100 leading-relaxed space-y-3 mt-4">
+                                        <p>As AI becomes embedded across software development, testers are no longer grappling with what the technology can do, but with how their role should evolve alongside it. Code, tests, and workflows can now be generated at scale, making execution faster and cheaper than ever. Yet higher automation has not automatically translated into higher confidence.</p>
+                                        <p>This talk introduces a practical operating model for testers in the AI era, clarifying which responsibilities must remain human-owned, where AI can effectively amplify thinking, and what work should be fully delegated.</p>
+                                        <p class="text-blue-300 italic">In an environment where AI is widely available, sustained relevance comes from applying it deliberately—and knowing where human accountability cannot be automated.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -2514,6 +2664,20 @@
                 timelineObserver.observe(item);
             });
         });
+    </script>
+
+    <!-- Keynote Tab Switching -->
+    <script>
+        function switchTab(cardId, tabName) {
+            const card = document.getElementById(cardId);
+            // Hide all tab contents
+            card.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+            // Deactivate all tabs
+            card.querySelectorAll('.keynote-tab').forEach(t => t.classList.remove('active'));
+            // Activate selected tab and content
+            card.querySelector(`[data-tab="${tabName}"]`).classList.add('active');
+            document.getElementById(`${cardId}-${tabName}`).classList.add('active');
+        }
     </script>
 
 </body>
