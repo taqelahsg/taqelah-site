@@ -1,0 +1,74 @@
+{
+  "workshopId": "agentic-playwright-framework",
+  "workshopName": "Agentic Playwright Framework Workshop",
+  "batches": [
+    {
+      "batchNumber": 1,
+      "date": "2025-01",
+      "averageRating": 4.5,
+      "totalReviews": 6,
+      "feedback": [
+        {
+          "id": 1,
+          "name": "Anonymous Participant",
+          "role": "Senior Test Engineer",
+          "company": "Singapore Tourism Board",
+          "avatar": null,
+          "isAnonymous": true,
+          "rating": 5,
+          "quote": "This is very informative and beginner-friendly. The clear explanations with examples and hands-on exercises make learning effective and useful overall."
+        },
+        {
+          "id": 2,
+          "name": "Anonymous Participant",
+          "role": "Software QA",
+          "company": "Singapore Tourism Board",
+          "avatar": null,
+          "isAnonymous": true,
+          "rating": 4,
+          "quote": "Useful and informative but can improve in timing."
+        },
+        {
+          "id": 3,
+          "name": "Anonymous Participant",
+          "role": "QA Manager",
+          "company": "Cognizant",
+          "avatar": null,
+          "isAnonymous": true,
+          "rating": 5,
+          "quote": "Fantastic workshop—clear, practical, and very well-structured. Covering everything from fundamentals to advanced agentic coding in a single day was impressive, and the team's effort in organizing the space and logistics made the experience seamless."
+        },
+        {
+          "id": 4,
+          "name": "Kevin Tan",
+          "role": "Senior Quality Engineer",
+          "company": "Cognizant",
+          "avatar": "/assets/images/workshop/Kevin_Tan.png",
+          "isAnonymous": false,
+          "rating": 5,
+          "quote": "The workshop gave a clear and practical view of how Playwright, AI, and modern testing frameworks fit together. It was hands-on and challenging, but very useful in understanding how testing is evolving beyond traditional automation. A good learning experience overall."
+        },
+        {
+          "id": 5,
+          "name": "Magesh Kumar Chinnakannan",
+          "role": "Engineering Manager",
+          "company": "PayPal",
+          "avatar": "/assets/images/workshop/Magesh_Kumar_Chinnakannan.png",
+          "isAnonymous": false,
+          "rating": 4,
+          "quote": "Kudos to Syam, Akshay, and the TAQELAH team for an excellent session that seamlessly covered everything from fundamentals to advanced agentic coding in a single day. The workshop was well-structured, engaging, and delivered with impressive clarity. The effort put into the end-to-end experience, including venue and logistics, is truly appreciated."
+        },
+        {
+          "id": 6,
+          "name": "Rashmi Sanjeev",
+          "role": "Testing Specialist",
+          "company": "Julius Baer",
+          "avatar": "/assets/images/workshop/Rashmi_Sanjeev.png",
+          "isAnonymous": false,
+          "rating": 4,
+          "quote": "Very well organized and great workshop. The repo shared before the workshop was helpful to understand the basics and kickstart the 1-day session. All the topics covered and the lab sessions were really helpful and best was saved for the last - the agentic AI-powered coding. Thank you Syam, Akshay and taqelah team for this wonderful workshop!"
+        }
+      ]
+    }
+  ]
+}

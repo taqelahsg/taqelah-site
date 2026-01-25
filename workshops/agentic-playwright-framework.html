@@ -979,6 +979,270 @@
             </div>
         </section>
 
+        <!-- Participant Feedback Section -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-white">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">What Participants Say</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                        Real feedback from our workshop participants
+                    </p>
+                </div>
+
+                <!-- Carousel container -->
+                <div class="relative">
+                    <!-- Navigation buttons -->
+                    <button id="feedback-prev" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed hidden md:flex">
+                        <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                        </svg>
+                    </button>
+                    <button id="feedback-next" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 z-10 w-12 h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-50 disabled:cursor-not-allowed hidden md:flex">
+                        <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+
+                    <!-- Feedback cards carousel -->
+                    <div class="overflow-hidden md:mx-8">
+                        <div id="feedback-container" class="flex transition-transform duration-300 ease-in-out">
+                            <!-- Loading state -->
+                            <div class="w-full text-center py-12">
+                                <div class="animate-pulse text-gray-400">Loading feedback...</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Dots indicator -->
+                    <div id="feedback-dots" class="flex justify-center mt-8 gap-2"></div>
+                </div>
+
+                <!-- Overall Rating Summary -->
+                <div id="feedback-summary" class="mt-12 bg-gradient-to-br from-[#E10600]/5 to-white rounded-xl p-8 border border-[#E10600]/20 text-center">
+                    <div class="flex items-center justify-center mb-4" id="summary-stars"></div>
+                    <p id="summary-rating" class="text-3xl font-bold text-[#0B0B0B] mb-2"></p>
+                    <p id="summary-count" class="text-gray-600"></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Workshop Feedback Script -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                fetch('/data/workshop-feedback.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        const container = document.getElementById('feedback-container');
+                        const dotsContainer = document.getElementById('feedback-dots');
+                        const prevBtn = document.getElementById('feedback-prev');
+                        const nextBtn = document.getElementById('feedback-next');
+
+                        // Collect all feedback from all batches
+                        let allFeedback = [];
+                        let totalRating = 0;
+                        let totalReviews = 0;
+
+                        data.batches.forEach(batch => {
+                            batch.feedback.forEach(item => {
+                                allFeedback.push({ ...item, batchNumber: batch.batchNumber });
+                                totalRating += item.rating;
+                                totalReviews++;
+                            });
+                        });
+
+                        const averageRating = (totalRating / totalReviews).toFixed(1);
+
+                        // Shuffle feedback array (Fisher-Yates algorithm)
+                        for (let i = allFeedback.length - 1; i > 0; i--) {
+                            const j = Math.floor(Math.random() * (i + 1));
+                            [allFeedback[i], allFeedback[j]] = [allFeedback[j], allFeedback[i]];
+                        }
+
+                        container.innerHTML = '';
+
+                        // Generate star SVG
+                        const starSvg = (filled) => `<svg class="w-5 h-5 ${filled ? 'text-yellow-400' : 'text-gray-300'}" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>`;
+
+                        const largeStarSvg = (filled) => `<svg class="w-8 h-8 ${filled ? 'text-yellow-400' : 'text-gray-300'}" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>`;
+
+                        const largeHalfStarSvg = () => `<svg class="w-8 h-8" viewBox="0 0 20 20">
+                            <defs>
+                                <linearGradient id="halfGradient">
+                                    <stop offset="50%" stop-color="#FACC15"/>
+                                    <stop offset="50%" stop-color="#D1D5DB"/>
+                                </linearGradient>
+                            </defs>
+                            <path fill="url(#halfGradient)" d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+                        </svg>`;
+
+                        const generateStars = (rating) => {
+                            let stars = '';
+                            for (let i = 1; i <= 5; i++) {
+                                stars += starSvg(i <= rating);
+                            }
+                            return stars;
+                        };
+
+                        // Render each feedback card
+                        allFeedback.forEach(item => {
+                            let avatarHtml;
+                            if (item.isAnonymous || !item.avatar) {
+                                avatarHtml = `
+                                    <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#E10600]/20 to-[#E10600]/10 flex items-center justify-center mr-4 flex-shrink-0">
+                                        <svg class="w-7 h-7 text-[#E10600]/60" fill="currentColor" viewBox="0 0 20 20">
+                                            <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                                        </svg>
+                                    </div>`;
+                            } else {
+                                avatarHtml = `<img src="${item.avatar}" alt="${item.name}" class="w-14 h-14 rounded-full object-cover border-2 border-[#E10600]/20 mr-4 flex-shrink-0">`;
+                            }
+
+                            let roleHtml = '';
+                            if (item.role && item.company) {
+                                roleHtml = `
+                                    <p class="text-sm text-gray-600">${item.role}</p>
+                                    <p class="text-sm text-[#E10600]">${item.company}</p>`;
+                            } else if (item.role) {
+                                roleHtml = `<p class="text-sm text-gray-600">${item.role}</p>`;
+                            } else if (item.company) {
+                                roleHtml = `<p class="text-sm text-[#E10600]">${item.company}</p>`;
+                            } else {
+                                roleHtml = `<p class="text-sm text-gray-500">Batch ${item.batchNumber} Attendee</p>`;
+                            }
+
+                            const card = document.createElement('div');
+                            card.className = 'w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3';
+                            card.innerHTML = `
+                                <div class="bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-md p-6 border border-gray-100 flex flex-col h-full">
+                                    <div class="flex items-center mb-4">
+                                        ${avatarHtml}
+                                        <div class="min-w-0">
+                                            <h4 class="font-bold text-[#0B0B0B] truncate">${item.name}</h4>
+                                            ${roleHtml}
+                                        </div>
+                                    </div>
+                                    <div class="flex mb-3">
+                                        ${generateStars(item.rating)}
+                                    </div>
+                                    <p class="text-gray-700 flex-grow italic">"${item.quote}"</p>
+                                </div>
+                            `;
+                            container.appendChild(card);
+                        });
+
+                        // Carousel logic
+                        let currentIndex = 0;
+                        const getItemsPerView = () => {
+                            if (window.innerWidth >= 1024) return 3;
+                            if (window.innerWidth >= 768) return 2;
+                            return 1;
+                        };
+
+                        const getTotalPages = () => Math.ceil(allFeedback.length / getItemsPerView());
+
+                        const updateCarousel = () => {
+                            const itemsPerView = getItemsPerView();
+                            const totalPages = getTotalPages();
+                            const offset = currentIndex * (100 / itemsPerView);
+                            container.style.transform = `translateX(-${offset}%)`;
+
+                            // Update buttons
+                            prevBtn.disabled = currentIndex === 0;
+                            nextBtn.disabled = currentIndex >= allFeedback.length - itemsPerView;
+
+                            // Update dots
+                            dotsContainer.innerHTML = '';
+                            for (let i = 0; i < totalPages; i++) {
+                                const dot = document.createElement('button');
+                                const isActive = Math.floor(currentIndex / itemsPerView) === i;
+                                dot.className = `w-3 h-3 rounded-full transition-colors ${isActive ? 'bg-[#E10600]' : 'bg-gray-300 hover:bg-gray-400'}`;
+                                dot.addEventListener('click', () => {
+                                    currentIndex = i * itemsPerView;
+                                    updateCarousel();
+                                });
+                                dotsContainer.appendChild(dot);
+                            }
+                        };
+
+                        prevBtn.addEventListener('click', () => {
+                            if (currentIndex > 0) {
+                                currentIndex--;
+                                updateCarousel();
+                            }
+                        });
+
+                        nextBtn.addEventListener('click', () => {
+                            const itemsPerView = getItemsPerView();
+                            if (currentIndex < allFeedback.length - itemsPerView) {
+                                currentIndex++;
+                                updateCarousel();
+                            }
+                        });
+
+                        window.addEventListener('resize', () => {
+                            const itemsPerView = getItemsPerView();
+                            if (currentIndex > allFeedback.length - itemsPerView) {
+                                currentIndex = Math.max(0, allFeedback.length - itemsPerView);
+                            }
+                            updateCarousel();
+                        });
+
+                        // Touch/swipe support for mobile
+                        let touchStartX = 0;
+                        let touchEndX = 0;
+                        const carouselWrapper = container.parentElement;
+
+                        carouselWrapper.addEventListener('touchstart', (e) => {
+                            touchStartX = e.changedTouches[0].screenX;
+                        }, { passive: true });
+
+                        carouselWrapper.addEventListener('touchend', (e) => {
+                            touchEndX = e.changedTouches[0].screenX;
+                            const swipeThreshold = 50;
+                            const diff = touchStartX - touchEndX;
+
+                            if (Math.abs(diff) > swipeThreshold) {
+                                const itemsPerView = getItemsPerView();
+                                if (diff > 0 && currentIndex < allFeedback.length - itemsPerView) {
+                                    // Swipe left - next
+                                    currentIndex++;
+                                    updateCarousel();
+                                } else if (diff < 0 && currentIndex > 0) {
+                                    // Swipe right - previous
+                                    currentIndex--;
+                                    updateCarousel();
+                                }
+                            }
+                        }, { passive: true });
+
+                        updateCarousel();
+
+                        // Update summary with half-star support
+                        let summaryStars = '';
+                        const fullStars = Math.floor(averageRating);
+                        const hasHalfStar = (averageRating - fullStars) >= 0.25 && (averageRating - fullStars) < 0.75;
+                        const roundUp = (averageRating - fullStars) >= 0.75;
+
+                        for (let i = 1; i <= 5; i++) {
+                            if (i <= fullStars || (roundUp && i <= fullStars + 1)) {
+                                summaryStars += largeStarSvg(true);
+                            } else if (i === fullStars + 1 && hasHalfStar) {
+                                summaryStars += largeHalfStarSvg();
+                            } else {
+                                summaryStars += largeStarSvg(false);
+                            }
+                        }
+                        document.getElementById('summary-stars').innerHTML = summaryStars;
+                        document.getElementById('summary-rating').textContent = `${averageRating}/5 Average Rating`;
+                        document.getElementById('summary-count').textContent = `Based on ${totalReviews} participant reviews`;
+                    })
+                    .catch(error => {
+                        console.error('Error loading workshop feedback:', error);
+                        document.getElementById('feedback-container').innerHTML = '<div class="w-full text-center py-12 text-gray-500">Unable to load feedback</div>';
+                    });
+            });
+        </script>
+
         <!-- FAQ Section -->
         <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
             <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
