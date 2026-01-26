@@ -67,6 +67,16 @@
           "isAnonymous": false,
           "rating": 4,
           "quote": "Very well organized and great workshop. The repo shared before the workshop was helpful to understand the basics and kickstart the 1-day session. All the topics covered and the lab sessions were really helpful and best was saved for the last - the agentic AI-powered coding. Thank you Syam, Akshay and taqelah team for this wonderful workshop!"
+        },
+        {
+          "id": 7,
+          "name": "Anonymous Participant",
+          "role": "Senior Staff Engineer",
+          "company": "Equinix",
+          "avatar": null,
+          "isAnonymous": true,
+          "rating": 5,
+          "quote": "Great content and presentation. Hands on exercise during the session gave more confidence to the audience."
         }
       ]
     }
