@@ -77,6 +77,16 @@
           "isAnonymous": true,
           "rating": 5,
           "quote": "Great content and presentation. Hands on exercise during the session gave more confidence to the audience."
+        },
+        {
+          "id": 8,
+          "name": "Vaishnavi Suresh",
+          "role": "Test Analyst",
+          "company": "Tescom",
+          "avatar": "/assets/images/workshop/Vaishavi_Suresh.png",
+          "isAnonymous": false,
+          "rating": 4,
+          "quote": "Found it incredibly insightful. The session provided a solid foundation and I especially appreciate the hands-on exercises that helped reinforce key concepts. I came with few knowledge on the topic but I left with a lot of knowledge and I can use those to improvise during my everyday work. Thank you Syam!"
         }
       ]
     }
