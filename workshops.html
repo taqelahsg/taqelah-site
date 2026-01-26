@@ -135,6 +135,11 @@
                     <!-- Workshops will be loaded from JSON -->
                 </div>
 
+                <!-- Feedback Section for Serving Soon workshops -->
+                <div id="servingSoonFeedback" class="hidden mt-12">
+                    <!-- Feedback will be loaded dynamically -->
+                </div>
+
                 <!-- Empty State -->
                 <div id="servingSoonEmpty" class="hidden text-center py-16 px-4 bg-gray-50 rounded-xl border border-gray-200">
                     <div class="inline-block p-4 bg-gray-100 rounded-full mb-4">
@@ -281,11 +286,237 @@
                         document.getElementById('servingSoonContainer').classList.add('hidden');
                         document.getElementById('servingSoonEmpty').classList.remove('hidden');
                     }
+
+                    // Load feedback for workshops that have it
+                    const workshopsWithFeedback = data.servingSoon.filter(w => w.feedbackFile);
+                    if (workshopsWithFeedback.length > 0) {
+                        loadWorkshopFeedback(workshopsWithFeedback);
+                    }
                 })
                 .catch(error => {
                     console.error('Error loading workshops:', error);
                 });
         });
+
+        // Load and display feedback for workshops
+        function loadWorkshopFeedback(workshops) {
+            const feedbackContainer = document.getElementById('servingSoonFeedback');
+
+            workshops.forEach(workshop => {
+                fetch(workshop.feedbackFile)
+                    .then(response => response.json())
+                    .then(feedbackData => {
+                        // Collect all feedback from all batches
+                        let allFeedback = [];
+                        let totalRating = 0;
+                        let totalReviews = 0;
+
+                        feedbackData.batches.forEach(batch => {
+                            batch.feedback.forEach(item => {
+                                allFeedback.push({ ...item, batchNumber: batch.batchNumber });
+                                totalRating += item.rating;
+                                totalReviews++;
+                            });
+                        });
+
+                        if (allFeedback.length > 0) {
+                            const averageRating = (totalRating / totalReviews).toFixed(1);
+
+                            // Shuffle feedback
+                            for (let i = allFeedback.length - 1; i > 0; i--) {
+                                const j = Math.floor(Math.random() * (i + 1));
+                                [allFeedback[i], allFeedback[j]] = [allFeedback[j], allFeedback[i]];
+                            }
+
+                            feedbackContainer.classList.remove('hidden');
+                            feedbackContainer.innerHTML = createFeedbackCarousel(workshop, allFeedback, averageRating, totalReviews);
+                            initFeedbackCarousel(allFeedback.length);
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error loading feedback:', error);
+                    });
+            });
+        }
+
+        // Create feedback carousel HTML
+        function createFeedbackCarousel(workshop, feedbackItems, averageRating, totalReviews) {
+            const starSvg = (filled) => `<svg class="w-5 h-5 ${filled ? 'text-yellow-400' : 'text-gray-300'}" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>`;
+
+            const generateStars = (rating) => {
+                let stars = '';
+                for (let i = 1; i <= 5; i++) {
+                    stars += starSvg(i <= rating);
+                }
+                return stars;
+            };
+
+            const feedbackCardsHTML = feedbackItems.map((item, index) => {
+                let avatarHtml;
+                if (item.isAnonymous || !item.avatar) {
+                    avatarHtml = `
+                        <div class="w-14 h-14 rounded-full bg-gradient-to-br from-[#E10600]/20 to-[#E10600]/10 flex items-center justify-center flex-shrink-0">
+                            <svg class="w-7 h-7 text-[#E10600]/60" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"/>
+                            </svg>
+                        </div>`;
+                } else {
+                    avatarHtml = `<img src="${item.avatar}" alt="${item.name}" class="w-14 h-14 rounded-full object-cover border-2 border-[#E10600]/20 flex-shrink-0">`;
+                }
+
+                let roleHtml = '';
+                if (item.role && item.company) {
+                    roleHtml = `<p class="text-sm text-gray-600">${item.role}</p><p class="text-sm text-[#E10600]">${item.company}</p>`;
+                } else if (item.role) {
+                    roleHtml = `<p class="text-sm text-gray-600">${item.role}</p>`;
+                } else if (item.company) {
+                    roleHtml = `<p class="text-sm text-[#E10600]">${item.company}</p>`;
+                } else {
+                    roleHtml = `<p class="text-sm text-gray-500">Workshop Attendee</p>`;
+                }
+
+                return `
+                    <div class="feedback-card w-full md:w-1/2 lg:w-1/3 flex-shrink-0 px-3">
+                        <div class="bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-lg p-6 border border-gray-100 h-full flex flex-col">
+                            <div class="flex items-center gap-4 mb-4">
+                                ${avatarHtml}
+                                <div class="min-w-0">
+                                    <h4 class="font-bold text-[#0B0B0B] truncate">${item.name}</h4>
+                                    ${roleHtml}
+                                </div>
+                            </div>
+                            <div class="flex mb-3">
+                                ${generateStars(item.rating)}
+                            </div>
+                            <p class="text-gray-700 flex-grow italic leading-relaxed">"${item.quote}"</p>
+                        </div>
+                    </div>
+                `;
+            }).join('');
+
+            return `
+                <div class="border-t border-gray-200 pt-12">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl sm:text-3xl font-bold text-[#0B0B0B] mb-2">What Participants Say</h3>
+                        <p class="text-gray-600">Real feedback from our workshop attendees</p>
+                    </div>
+
+                    <!-- Carousel container -->
+                    <div class="relative">
+                        <!-- Navigation buttons -->
+                        <button id="feedback-prev-btn" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 md:-translate-x-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+                            </svg>
+                        </button>
+                        <button id="feedback-next-btn" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 md:translate-x-4 z-10 w-10 h-10 md:w-12 md:h-12 bg-white rounded-full shadow-lg border border-gray-200 flex items-center justify-center hover:bg-gray-50 transition-colors disabled:opacity-30 disabled:cursor-not-allowed">
+                            <svg class="w-5 h-5 md:w-6 md:h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+
+                        <!-- Carousel track -->
+                        <div class="overflow-hidden mx-6 md:mx-10">
+                            <div id="feedback-track" class="flex transition-transform duration-300 ease-in-out">
+                                ${feedbackCardsHTML}
+                            </div>
+                        </div>
+
+                        <!-- Dots indicator -->
+                        <div id="feedback-dots" class="flex justify-center mt-6 gap-2"></div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Initialize carousel functionality
+        function initFeedbackCarousel(totalItems) {
+            const track = document.getElementById('feedback-track');
+            const prevBtn = document.getElementById('feedback-prev-btn');
+            const nextBtn = document.getElementById('feedback-next-btn');
+            const dotsContainer = document.getElementById('feedback-dots');
+
+            let currentIndex = 0;
+
+            const getItemsPerView = () => {
+                if (window.innerWidth >= 1024) return 3;
+                if (window.innerWidth >= 768) return 2;
+                return 1;
+            };
+
+            const updateCarousel = () => {
+                const itemsPerView = getItemsPerView();
+                const maxIndex = Math.max(0, totalItems - itemsPerView);
+
+                if (currentIndex > maxIndex) currentIndex = maxIndex;
+
+                const offset = currentIndex * (100 / itemsPerView);
+                track.style.transform = `translateX(-${offset}%)`;
+
+                // Update buttons
+                prevBtn.disabled = currentIndex === 0;
+                nextBtn.disabled = currentIndex >= maxIndex;
+
+                // Update dots
+                const totalDots = Math.ceil(totalItems / itemsPerView);
+                const activeDot = Math.floor(currentIndex / itemsPerView);
+
+                dotsContainer.innerHTML = '';
+                for (let i = 0; i < totalDots; i++) {
+                    const dot = document.createElement('button');
+                    dot.className = `w-2.5 h-2.5 rounded-full transition-all ${i === activeDot ? 'bg-[#E10600] w-6' : 'bg-gray-300 hover:bg-gray-400'}`;
+                    dot.addEventListener('click', () => {
+                        currentIndex = i * itemsPerView;
+                        updateCarousel();
+                    });
+                    dotsContainer.appendChild(dot);
+                }
+            };
+
+            prevBtn.addEventListener('click', () => {
+                if (currentIndex > 0) {
+                    currentIndex--;
+                    updateCarousel();
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                const itemsPerView = getItemsPerView();
+                const maxIndex = Math.max(0, totalItems - itemsPerView);
+                if (currentIndex < maxIndex) {
+                    currentIndex++;
+                    updateCarousel();
+                }
+            });
+
+            // Touch/swipe support
+            let touchStartX = 0;
+            let touchEndX = 0;
+
+            track.parentElement.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+            }, { passive: true });
+
+            track.parentElement.addEventListener('touchend', (e) => {
+                touchEndX = e.changedTouches[0].screenX;
+                const diff = touchStartX - touchEndX;
+                const itemsPerView = getItemsPerView();
+                const maxIndex = Math.max(0, totalItems - itemsPerView);
+
+                if (Math.abs(diff) > 50) {
+                    if (diff > 0 && currentIndex < maxIndex) {
+                        currentIndex++;
+                        updateCarousel();
+                    } else if (diff < 0 && currentIndex > 0) {
+                        currentIndex--;
+                        updateCarousel();
+                    }
+                }
+            }, { passive: true });
+
+            window.addEventListener('resize', updateCarousel);
+            updateCarousel();
+        }
 
         function renderWorkshops(workshops, containerId, showDetailsButton) {
             const container = document.getElementById(containerId);
