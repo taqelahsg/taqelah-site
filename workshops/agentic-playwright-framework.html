@@ -1011,13 +1011,6 @@
                     <div id="feedback-dots" class="flex justify-center mt-8 gap-2"></div>
                 </div>
 
-                <!-- Overall Rating Summary -->
-                <div id="feedback-summary" class="mt-12 bg-gradient-to-br from-[#E10600]/5 to-white rounded-xl p-8 border border-[#E10600]/20 text-center">
-                    <div class="flex items-center justify-center mb-4" id="summary-stars"></div>
-                    <p id="summary-rating" class="text-3xl font-bold text-[#0B0B0B] mb-2"></p>
-                    <p id="summary-count" class="text-gray-600"></p>
-                </div>
-
                 <!-- Rating Legend -->
                 <div class="mt-8 bg-gradient-to-br from-gray-50 to-white rounded-2xl p-8 border border-gray-200 shadow-sm">
                     <h4 class="text-xl font-bold text-[#0B0B0B] mb-6 text-center">How We Rate</h4>
@@ -1302,25 +1295,6 @@
                         }, { passive: true });
 
                         updateCarousel();
-
-                        // Update summary with half-star support
-                        let summaryStars = '';
-                        const fullStars = Math.floor(averageRating);
-                        const hasHalfStar = (averageRating - fullStars) >= 0.25 && (averageRating - fullStars) < 0.75;
-                        const roundUp = (averageRating - fullStars) >= 0.75;
-
-                        for (let i = 1; i <= 5; i++) {
-                            if (i <= fullStars || (roundUp && i <= fullStars + 1)) {
-                                summaryStars += largeStarSvg(true);
-                            } else if (i === fullStars + 1 && hasHalfStar) {
-                                summaryStars += largeHalfStarSvg();
-                            } else {
-                                summaryStars += largeStarSvg(false);
-                            }
-                        }
-                        document.getElementById('summary-stars').innerHTML = summaryStars;
-                        document.getElementById('summary-rating').textContent = `${averageRating}/5 Average Rating`;
-                        document.getElementById('summary-count').textContent = `Based on ${totalReviews} participant reviews`;
                     })
                     .catch(error => {
                         console.error('Error loading workshop feedback:', error);
@@ -1328,6 +1302,78 @@
                     });
             });
         </script>
+
+        <!-- We're Listening & Improving Section -->
+        <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+                <!-- Header -->
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl sm:text-4xl font-bold text-[#0B0B0B] mb-4">We're Listening & Improving</h2>
+                    <p class="text-lg text-gray-600 max-w-2xl mx-auto">Based on previous attendee feedback, here's what we're improving for upcoming workshops.</p>
+                </div>
+
+                <!-- Cards Grid - First Row (3 cards) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-6 lg:mb-8">
+                    <!-- Card 1: Visual Module Hooks -->
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 hover:shadow-lg transition-shadow h-full">
+                        <div class="w-12 h-12 bg-[#E10600]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">Visual Module Hooks</h3>
+                        <p class="text-gray-600">Adding architectural diagrams and visual overviews at the beginning of each module to set context and boost engagement.</p>
+                    </div>
+
+                    <!-- Card 2: Updated Prerequisites -->
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 hover:shadow-lg transition-shadow h-full">
+                        <div class="w-12 h-12 bg-[#E10600]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">Updated Prerequisites</h3>
+                        <p class="text-gray-600">Adding Docker to Module 1 prerequisites with alternatives (Podman, Colima) for participants in restricted corporate environments.</p>
+                    </div>
+
+                    <!-- Card 3: Prioritized Lab Exercises -->
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 hover:shadow-lg transition-shadow h-full">
+                        <div class="w-12 h-12 bg-[#E10600]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">Prioritized Lab Exercises</h3>
+                        <p class="text-gray-600">Marking exercises as "Must-Try" (essential, in-session) vs "Optional" (self-paced, offline) for better time management.</p>
+                    </div>
+                </div>
+
+                <!-- Cards Grid - Second Row (2 cards centered) -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+                    <!-- Card 4: Extended Workshop Format -->
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 hover:shadow-lg transition-shadow h-full">
+                        <div class="w-12 h-12 bg-[#E10600]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">Extended Workshop Format</h3>
+                        <p class="text-gray-600">Introducing guided post-workshop lab exercises and practice challenges so participants can apply concepts at their own pace after the session.</p>
+                    </div>
+
+                    <!-- Card 5: Improved Timing -->
+                    <div class="bg-white rounded-xl shadow-md p-6 lg:p-8 border border-gray-100 hover:shadow-lg transition-shadow h-full">
+                        <div class="w-12 h-12 bg-[#E10600]/10 rounded-lg flex items-center justify-center mb-4">
+                            <svg class="w-6 h-6 text-[#E10600]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold text-[#0B0B0B] mb-2">Improved Timing</h3>
+                        <p class="text-gray-600">Better pacing throughout the workshop with optimized time allocation for each module and adequate breaks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- FAQ Section -->
         <section class="py-12 sm:py-16 lg:py-20 bg-gray-50">
