@@ -442,6 +442,50 @@
         .timeline-talk {
             cursor: pointer;
         }
+
+        /* Speaker Bio Expand */
+        .speaker-bio {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.6s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
+            opacity: 0;
+            margin-top: 0;
+        }
+        .speaker-bio-card.expanded .speaker-bio {
+            max-height: 3000px;
+            opacity: 1;
+            margin-top: 12px;
+            overflow: visible;
+        }
+        .speaker-bio-card {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .speaker-bio-card:hover {
+            box-shadow: 0 0 30px rgba(139, 92, 246, 0.3);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+        .speaker-bio-card .expand-icon {
+            transition: transform 0.3s ease;
+        }
+        .speaker-bio-card.expanded .expand-icon {
+            transform: rotate(180deg);
+        }
+        .read-bio-hint {
+            font-size: 0.75rem;
+            color: rgba(139, 92, 246, 0.8);
+            margin-top: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        .speaker-bio-card:hover .read-bio-hint {
+            color: rgba(139, 92, 246, 1);
+        }
+        .speaker-bio-card.expanded .read-bio-hint {
+            display: none;
+        }
+        .speaker-bio p {
+            line-height: 1.7;
+        }
         .timeline-talk .expand-icon {
             transition: transform 0.3s ease;
         }
@@ -1213,7 +1257,7 @@
 
                         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                             <!-- Priyank Shah -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/priyank-shah.jpg" alt="Priyank Shah" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-purple-500 to-blue-500 flex items-center justify-center text-white text-4xl font-black\'>PS</div>'">
@@ -1221,17 +1265,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Priyank Shah</h4>
                                 <p class="text-yellow-300 text-sm font-medium">Lead Software Engineer</p>
                                 <p class="text-blue-300 text-sm mb-3">Carousell</p>
-                                <a href="https://www.linkedin.com/in/priyankshahqa/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/priyankshahqa/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">RAG + n8n: The Powerhouse for Context-Aware Test Case Generation</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">RAG + n8n: The Powerhouse for Context-Aware Test Case Generation</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Priyank is a Quality Engineering leader with 18+ years of experience, currently a Lead Quality Engineer at Carousell. He leads scalable automation and CI/CD quality strategies across complex systems and diverse tech stacks. Passionate about building strong teams and quality-driven culture, he actively mentors engineers and helps organisations ship faster with confidence.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Chitransh Shrivastava -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/chitransh-shrivastava.png" alt="Chitransh Shrivastava" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-4xl font-black\'>CS</div>'">
@@ -1239,17 +1289,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Chitransh Shrivastava</h4>
                                 <p class="text-yellow-300 text-sm font-medium">QA Engineer</p>
                                 <p class="text-blue-300 text-sm mb-3">Metacube Software</p>
-                                <a href="https://www.linkedin.com/in/chitranshshrivastava29/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/chitranshshrivastava29/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Web3 & Blockchain Testing: What QA Needs to Rethink</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Web3 & Blockchain Testing: What QA Needs to Rethink</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>I'm Chitransh Shrivastava, a Quality Assurance Engineer based in Jaipur, India. I'm passionate about testing and have gained hands-on experience across diverse domains. Beyond work, I enjoy simple joys like naps, sunshine, and a comforting cup of chai, and I express my creativity through sketching and drawing. I love attending testing meetups and giving back to the testing community in any way I can. As a community builder and core member of the Jaipur QA Community, I'm dedicated to collaboration and growth among fellow testers.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Mesut Durukal -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/mesut-durukal.jpg" alt="Mesut Durukal" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center text-white text-4xl font-black\'>MD</div>'">
@@ -1257,17 +1313,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Mesut Durukal</h4>
                                 <p class="text-yellow-300 text-sm font-medium">Senior QA Automation Engineer</p>
                                 <p class="text-blue-300 text-sm mb-3">Indeed</p>
-                                <a href="https://www.linkedin.com/in/mesutdurukal/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/mesutdurukal/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Using Mutation Testing to Expose Your Tests' Hidden Weaknesses</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Using Mutation Testing to Expose Your Tests' Hidden Weaknesses</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Mesut brings nearly 20 years of expertise in Quality Assurance, Test Automation and CI/CD integration for continuous testing, as well as in defining test strategies and leading the end-to-end testing lifecycle to ensure successful, high-quality outcomes. He has strong proficiency in CMMI, Agile, and PMP methodologies, with experience spanning key roles in multinational projects across several domains. Beyond his leadership roles, Mesut is also a frequent international speaker, Best Presentation Award winner, and an active program committee member for various industry events.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Srinivasan Sekar & Sai Krishna -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="flex justify-center gap-4 mb-6">
                                     <div class="text-center">
                                         <div class="w-28 h-28 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl mx-auto mb-2">
@@ -1288,22 +1350,35 @@
                                 <p class="text-yellow-300 text-sm font-medium">Directors of Engineering</p>
                                 <p class="text-blue-300 text-sm mb-3">LambdaTest</p>
                                 <div class="flex justify-center gap-4 mb-4">
-                                    <a href="https://www.linkedin.com/in/srinivasan-sekar/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm">
+                                    <a href="https://www.linkedin.com/in/srinivasan-sekar/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm" onclick="event.stopPropagation()">
                                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                         Srini
                                     </a>
-                                    <a href="https://www.linkedin.com/in/sai-krishna-3755407b/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm">
+                                    <a href="https://www.linkedin.com/in/sai-krishna-3755407b/" target="_blank" rel="noopener" class="inline-flex items-center gap-1 text-blue-400 hover:text-blue-300 text-sm" onclick="event.stopPropagation()">
                                         <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                         Sai
                                     </a>
                                 </div>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Supercharging Appium with MCP: Context-Aware Mobile Test Automation</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Supercharging Appium with MCP: Context-Aware Mobile Test Automation</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left space-y-4">
+                                        <div>
+                                            <h5 class="text-purple-300 font-bold mb-2">Srinivasan Sekar (Srini)</h5>
+                                            <p>I'm a passionate technologist and leader in software testing and automation. As Director of Engineering at TestMu AI, I drive innovation in cloud-based testing platforms serving millions of developers worldwide. My open source journey began with Appium, where I became a core maintainer and helped architect Appium 2.0. I've created plugins like Device Farm, Wait Plugin, and Gestures Plugin used by millions globally. Recently, I pioneered Model Context Protocol (MCP) servers for mobile automation, bridging AI and testing workflows. As an international speaker, I've presented at 25+ conferences including SeleniumConf, AppiumConf, FOSDEM, and Agile India, sharing insights on mobile automation and testing innovation.</p>
+                                        </div>
+                                        <div>
+                                            <h5 class="text-purple-300 font-bold mb-2">Sai Krishna</h5>
+                                            <p>I'm a passionate technologist and engineering leader specializing in software testing and automation. As Director of Engineering at TestMu AI, I lead innovation in cloud-based testing platforms that support millions of developers worldwide. My open-source journey began with Appium, where I became a core maintainer and played a key role in architecting Appium 2.0. I've built widely adopted plugins such as Device Farm, Wait Plugin, and Gestures Plugin, used by teams across the globe. More recently, I've been pioneering Model Context Protocol (MCP) servers for mobile automation, helping bridge AI-driven systems with modern testing workflows. I'm also the author of Appium Insights, a practical guide to building scalable and effective mobile automation strategies. As an international speaker, I've presented at 25+ global conferences, including SeleniumConf and AppiumConf, sharing real-world insights on automation, open source, and engineering excellence.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Rahul Parwal -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/rahul-parwal.png" alt="Rahul Parwal" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-yellow-500 to-orange-500 flex items-center justify-center text-white text-4xl font-black\'>RP</div>'">
@@ -1311,17 +1386,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Rahul Parwal</h4>
                                 <p class="text-yellow-300 text-sm font-medium">Specialist</p>
                                 <p class="text-blue-300 text-sm mb-3">ifm group of companies</p>
-                                <a href="https://www.linkedin.com/in/rahul-parwal/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/rahul-parwal/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Productize Yourself as a Tester - Your Authenticity Is the Only Moat</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Productize Yourself as a Tester - Your Authenticity Is the Only Moat</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Rahul Parwal is a Test Specialist, Speaker, Author, Ambassador, and Community Evangelist. Recipient of the Jerry Weinberg Testing Excellence Award and EuroSTAR Best Tutorial 2025. Author, Course creator, and part-time YouTuber helping testers worldwide think better, test smarter, and build real-world skills through practical insights.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Santhosh Tuppad -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/santhosh-tuppad.jpg" alt="Santhosh Tuppad" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-red-500 to-pink-500 flex items-center justify-center text-white text-4xl font-black\'>ST</div>'">
@@ -1329,17 +1410,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Santhosh Tuppad</h4>
                                 <p class="text-yellow-300 text-sm font-medium">Test Advocate</p>
                                 <p class="text-blue-300 text-sm mb-3">ElevenXN Technologies</p>
-                                <a href="https://www.linkedin.com/in/santhosh-tuppad-338b7412/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/santhosh-tuppad-338b7412/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Shift Everywhere: When Testers, Hackers & GPTs Team Up</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Shift Everywhere: When Testers, Hackers & GPTs Team Up</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Santhosh Tuppad: A Student of the Craft. Santhosh began his journey as a curious teenager and evolved into a recognized White-Hat Ethical Hacker. He treats security as a puzzle, focused on protecting the people behind the technology. A frequent speaker at international summits like Agile Testing Days Germany and TestIstanbul, he shares insights on application security and the hacker mindset. His work has been honored with awards such as the People's Choice Award at the Romania Testing Conference and Best Speaker at the STeP-In Summit. Santhosh co-founded Moolya Software Testing and TestInsane, advocating for testing as an intellectual, exploratory pursuit. A dedicated "Privacy Fighter" and OWASP Cheat Sheet contributor, he helps set global security standards. Today, he works independently, enjoying the journey while guiding businesses toward safer software.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Nikhil Bhandari -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/nikhil-bhandari.jpg" alt="Nikhil Bhandari" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-indigo-500 to-purple-500 flex items-center justify-center text-white text-4xl font-black\'>NB</div>'">
@@ -1347,17 +1434,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Nikhil Bhandari</h4>
                                 <p class="text-yellow-300 text-sm font-medium">VP - Quality Engineering</p>
                                 <p class="text-blue-300 text-sm mb-3">Moniepoint Inc.</p>
-                                <a href="https://www.linkedin.com/in/nikhilbhandari/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/nikhilbhandari/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Beyond the Script - Practical Software Test Automation Techniques</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Beyond the Script - Practical Software Test Automation Techniques</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Nikhil Bhandari is a seasoned Quality Engineering leader with nearly two decades of experience driving excellence in software testing and automation at scale. Throughout his career, he has led high-performing QA teams within major global technology organizations, focusing on building robust quality cultures and modernizing testing lifecycles. An expert in architecting scalable frameworks across web, mobile, and desktop platforms, he is a prominent advocate for open-source solutions and modernizing quality lifecycles. As a recognized thought leader in the testing community, Nikhil spoke at prestigious international conferences. He is passionate about sharing his insights on automation architecture, code quality, and the evolution of Quality Engineering. He holds a degree in Engineering and remains committed to advancing the craft of software testing through innovation and community engagement.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Ashutosh Bhatawadekar -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/ashutosh-bhatawadekar.jpg" alt="Ashutosh Bhatawadekar" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-teal-500 to-green-500 flex items-center justify-center text-white text-4xl font-black\'>AB</div>'">
@@ -1365,17 +1458,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Ashutosh Bhatawadekar</h4>
                                 <p class="text-yellow-300 text-sm font-medium">Engagement Director | CIO Advisory</p>
                                 <p class="text-blue-300 text-sm mb-3">Tata Consultancy Services</p>
-                                <a href="https://www.linkedin.com/in/ashutosh-bhatawadekar/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/ashutosh-bhatawadekar/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Future of QA in an AI World</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Future of QA in an AI World</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Visionary digital leader with 28 years of global experience driving enterprise-wide transformation for Fortune 500 clients across BFSI, Media, Automotive, Telecom, and Technology sectors. Proven expertise in digital governance, operating model design, and data & AI strategy to deliver measurable business outcomes. Recognized as a NEXT100 CIO 2023 and global keynote speaker, with a track record of shifting organizations from output-driven to outcome-driven models using OKRs, KPIs, and value streams. Adept at building high-performing cultures, enabling board-level digital strategy, and leveraging Gen AI to enhance decision-making and innovation.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Sparsh Shrivastava -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/sparsh-shrivastava.png" alt="Sparsh Shrivastava" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-cyan-500 to-blue-500 flex items-center justify-center text-white text-4xl font-black\'>SS</div>'">
@@ -1383,17 +1482,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Sparsh Shrivastava</h4>
                                 <p class="text-yellow-300 text-sm font-medium">QA Automation Specialist</p>
                                 <p class="text-blue-300 text-sm mb-3">One Click LCA</p>
-                                <a href="https://www.linkedin.com/in/sparsh-shrivastava-qa/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/sparsh-shrivastava-qa/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Shift-Right Testing: When Production Becomes Your Test Environment</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Shift-Right Testing: When Production Becomes Your Test Environment</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Sparsh Shrivastava works as a QA Automation Specialist. Sparsh enjoy building automation frameworks, utilities, and solutions that actually make testing simpler—not complicated. Alongside my work, he is actively engage in tech meetups and contribute as a community leader at the Jaipur QA Community.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Ujjwal Kumar Singh -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/ujjwal-kumar-singh.jpg" alt="Ujjwal Kumar Singh" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-amber-500 to-yellow-500 flex items-center justify-center text-white text-4xl font-black\'>US</div>'">
@@ -1401,17 +1506,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Ujjwal Kumar Singh</h4>
                                 <p class="text-yellow-300 text-sm font-medium">SDET</p>
                                 <p class="text-blue-300 text-sm mb-3">Skeps</p>
-                                <a href="https://www.linkedin.com/in/ujjwal-k-singh/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/ujjwal-k-singh/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Test Analytics Without Decisions Is Just Reporting</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Test Analytics Without Decisions Is Just Reporting</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Ujjwal is a software tester with experience in understanding product behavior and improving quality. Ujjwal interested in learning from real-world issues, exploring testing practices, and sharing practical insights with the testing community. He also enjoy reading and writing in his free time.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Tran Thuy Nha Truc -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/tran-thuy-nha-truc.jpg" alt="Tran Thuy Nha Truc" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-pink-500 to-rose-500 flex items-center justify-center text-white text-4xl font-black\'>TT</div>'">
@@ -1419,17 +1530,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Tran Thuy Nha Truc</h4>
                                 <p class="text-yellow-300 text-sm font-medium">Senior Quality Engineer</p>
                                 <p class="text-blue-300 text-sm mb-3">TMA Solutions</p>
-                                <a href="https://www.linkedin.com/in/truc1911/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/truc1911/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Testing AI-based Systems: Why Traditional QA Fails and What Comes Next</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Testing AI-based Systems: Why Traditional QA Fails and What Comes Next</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Tran Thuy Nha Truc has a diverse background in various industries such as construction consulting, statistics reporting, accounting, and data analysis. Currently working as a Senior Engineer at TMA Solutions, Truc has held positions such as Business Analyst at FXD VN, Site Office Manager at Flagstick GCCM, and Senior Statistician at CESTI. With a Bachelor's degree in Mathematical Economics from the University of Economics Hochiminh and a certification in Business Research Methods and Data Analysis from the Entrepreneurship Development Institute of India, Truc brings a strong analytical and technical skillset to the table.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Goh Chun Lin -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/goh-chun-lin.png" alt="Goh Chun Lin" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-emerald-500 to-green-500 flex items-center justify-center text-white text-4xl font-black\'>GC</div>'">
@@ -1437,17 +1554,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Goh Chun Lin</h4>
                                 <p class="text-yellow-300 text-sm font-medium">Senior Cloud Software Engineer</p>
                                 <p class="text-blue-300 text-sm mb-3">.NET Foundation</p>
-                                <a href="https://www.linkedin.com/in/gohchunlin/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/gohchunlin/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Performance Testing via Simulation</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Performance Testing via Simulation</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Chun Lin is a Senior Cloud Software Engineer and .NET Foundation member specialising in cloud architecture, observability, and the development of high-integrity AI agents for global IoT fleets. As the Grafana Community Lead for Singapore, he bridges the gap between infrastructure metrics and app performance to ensure system reliability at scale. He is the creator of the open-source libraries SNA and SilverAi, focusing on using deterministic logic and mathematical simulation to solve complex scaling and safety challenges.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Pavan Teja -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/pavan-teja.jpg" alt="Pavan Teja" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-violet-500 to-purple-500 flex items-center justify-center text-white text-4xl font-black\'>PT</div>'">
@@ -1455,17 +1578,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Pavan Teja</h4>
                                 <p class="text-yellow-300 text-sm font-medium">Lead QA Engineer</p>
                                 <p class="text-blue-300 text-sm mb-3">NCS Group</p>
-                                <a href="https://www.linkedin.com/in/pavan-teja-m-072689142/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/pavan-teja-m-072689142/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">The Human Edge in Testing AI Models</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">The Human Edge in Testing AI Models</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Pavan Teja Mallojjala is a seasoned Lead Quality Assurance Engineer at NCS Group, where he spearheads Manual and Automation testing teams, driving excellence in Payments, Collections, and Pharmacy domains. With a rich background in Banking and Healthcare, Pavan brings a unique blend of technical expertise and business acumen to the forefront. As a certified ISTQB CTFL, TOSCA Automation Specialist, he has demonstrated mastery in testing methodologies and tools. His credentials also include the AI-Enabled Foundation Course (Gold Level) and Certified Scrum Product Owner certifications. At the intersection of human insight and AI innovation, Pavan will share compelling perspectives on "The Human Edge in Testing AI Models", illuminating the critical role of human judgment in shaping AI-driven testing landscapes.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Shashwat Nagayach -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/shashwat-nagayach.jpg" alt="Shashwat Nagayach" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-sky-500 to-blue-500 flex items-center justify-center text-white text-4xl font-black\'>SN</div>'">
@@ -1473,17 +1602,23 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Shashwat Nagayach</h4>
                                 <p class="text-yellow-300 text-sm font-medium">Sr. QA Manager</p>
                                 <p class="text-blue-300 text-sm mb-3">Asymbl</p>
-                                <a href="https://www.linkedin.com/in/shashwat-nagayach/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/shashwat-nagayach/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Future Skills for Testers</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Future Skills for Testers</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Shashwat Nagayach is a software testing professional, QA community builder, and speaker with 13+ years of experience and a strong interest in automation and AI in testing. He serves as a Chapter Lead at The Test Tribe and is a core member of the Jaipur QA Community, actively contributing to knowledge sharing through events and meetups. A passionate learner and mentor, Shashwat believes in practical testing, collaboration, and continuous improvement within the QA ecosystem.</p>
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Jency Stella -->
-                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card">
+                            <div class="glass-card-dark rounded-3xl p-8 border border-purple-500/30 card-hover text-center speaker-card speaker-bio-card" onclick="this.classList.toggle('expanded')">
                                 <div class="w-40 h-40 mx-auto mb-6 rounded-2xl overflow-hidden ring-4 ring-purple-500/50 shadow-2xl">
                                     <img src="assets/images/speakers/2026-lightning-talks/jency-stella.png" alt="Jency Stella" class="w-full h-full object-cover"
                                          onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-fuchsia-500 to-pink-500 flex items-center justify-center text-white text-4xl font-black\'>JS</div>'">
@@ -1491,12 +1626,18 @@
                                 <h4 class="font-bold text-white text-xl mb-2">Jency Stella</h4>
                                 <p class="text-yellow-300 text-sm font-medium">Quality Engineering Associate Manager</p>
                                 <p class="text-blue-300 text-sm mb-3">Accenture</p>
-                                <a href="https://www.linkedin.com/in/jency-stella/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4">
+                                <a href="https://www.linkedin.com/in/jency-stella/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-blue-400 hover:text-blue-300 text-sm mb-4" onclick="event.stopPropagation()">
                                     <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
                                     LinkedIn
                                 </a>
                                 <div class="pt-4 border-t border-white/10">
-                                    <p class="text-blue-200 text-sm leading-relaxed">Testing Reimagined: The Age of Intelligence</p>
+                                    <p class="text-blue-200 text-sm leading-relaxed mb-2">Testing Reimagined: The Age of Intelligence</p>
+                                    <p class="read-bio-hint">Read bio ↓</p>
+                                </div>
+                                <div class="speaker-bio">
+                                    <div class="pt-4 border-t border-purple-500/30 text-sm text-blue-100 leading-relaxed text-left">
+                                        <p>Jency is an ardent Software Tester and has been investigating the line between Software and Testing for the past 9+years. Her love affair with 'Software Testing' began years ago, starting from an 'ETL Test Engineer' to currently 'Lead QA Engineer' in the role of a passionate 'API Tester' at "Billennium IT Services (M) SDN. BHD.". She loves to spend time exploring the concepts and interesting facts about Software Testing. She is fond of sharing her experiences by blogging and participating in tech communities. Jency is an ISTQB Certified Test Manager. Other interesting facts about Jency - MOM of a 4year old Superhero | Certified Mentor | Community Contributor | Occasional YouTuber.</p>
+                                    </div>
                                 </div>
                             </div>
                         </div>
