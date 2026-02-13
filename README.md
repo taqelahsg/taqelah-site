@@ -303,7 +303,7 @@ The site includes multiple hero section variants optimized for small screens. He
 ```
 Singapore's QA Community
 Connect, learn, and grow with testing professionals
-[1,200+ Members] [50+ Events] [15+ Sponsors]
+[1,400+ Members] [50+ Events] [15+ Sponsors]
 ```
 
 ### Variant 2: Value Proposition
@@ -316,7 +316,7 @@ Join Singapore's fastest-growing testing community
 ### Variant 3: Problem-Solution
 ```
 Testing Shouldn't Be Lonely
-Connect with 1,200+ QA pros in Singapore
+Connect with 1,400+ QA pros in Singapore
 [Find Your Tribe]
 ```
 
