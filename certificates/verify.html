@@ -226,6 +226,94 @@
             background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, transparent 50%);
             pointer-events: none;
         }
+
+        /* ===== Lightning Speaker Theme ===== */
+        .lightning-theme .certificate-frame {
+            background: linear-gradient(145deg, #0a0e27 0%, #1a1040 40%, #0d1333 100%);
+            box-shadow:
+                0 25px 50px -12px rgba(0, 0, 0, 0.5),
+                0 0 0 1px rgba(59, 130, 246, 0.3),
+                inset 0 0 120px rgba(59, 130, 246, 0.05);
+        }
+        .lightning-theme .certificate-border {
+            border-color: rgba(250, 204, 21, 0.4);
+        }
+        .lightning-theme .certificate-border::before {
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+        .lightning-theme .corner-ornament svg {
+            fill: rgba(250, 204, 21, 0.3);
+        }
+        .lightning-theme .watermark {
+            color: rgba(59, 130, 246, 0.06);
+        }
+        .lightning-theme .fancy-divider::before,
+        .lightning-theme .fancy-divider::after {
+            background: linear-gradient(90deg, transparent, rgba(250, 204, 21, 0.5), transparent);
+        }
+
+        /* Text color overrides for dark background */
+        .lightning-theme .cert-subtitle { color: #94a3b8 !important; }
+        .lightning-theme .cert-intro { color: #94a3b8 !important; }
+        .lightning-theme .cert-name { color: #f1f5f9 !important; }
+        .lightning-theme .cert-name-underline {
+            background: linear-gradient(90deg, #3b82f6, #facc15, #3b82f6) !important;
+            height: 3px !important;
+        }
+        .lightning-theme .cert-description { color: #cbd5e1 !important; }
+        .lightning-theme .cert-event-name { color: #facc15 !important; }
+        .lightning-theme .cert-event-date { color: #94a3b8 !important; }
+        .lightning-theme .cert-label { color: #64748b !important; }
+        .lightning-theme .cert-value { color: #e2e8f0 !important; }
+        .lightning-theme .cert-id-bg {
+            background: rgba(255, 255, 255, 0.1) !important;
+            color: #e2e8f0 !important;
+        }
+        .lightning-theme .cert-border-section { border-color: rgba(250, 204, 21, 0.2) !important; }
+        .lightning-theme .cert-dashed-border { border-color: rgba(59, 130, 246, 0.3) !important; }
+
+        /* Lightning Seal */
+        .lightning-theme .seal {
+            background: linear-gradient(145deg, #1e40af 0%, #3b82f6 30%, #1e40af 60%, #1e3a8a 100%);
+            box-shadow:
+                0 4px 20px rgba(59, 130, 246, 0.5),
+                0 0 40px rgba(59, 130, 246, 0.2),
+                inset 0 2px 4px rgba(255, 255, 255, 0.2);
+            animation: electricPulse 3s ease-in-out infinite;
+        }
+        .lightning-theme .seal::before { border-color: rgba(250, 204, 21, 0.3); }
+        .lightning-theme .seal-inner {
+            background: linear-gradient(145deg, #3b82f6 0%, #1e40af 100%);
+        }
+        .lightning-theme .seal-inner svg { color: #facc15 !important; }
+        .lightning-theme .seal-inner p { color: #facc15 !important; }
+        .lightning-theme .ribbon-left,
+        .lightning-theme .ribbon-right {
+            background: linear-gradient(180deg, #1e40af 0%, #1e3a8a 100%);
+        }
+
+        @keyframes electricPulse {
+            0%, 100% { box-shadow: 0 4px 20px rgba(59, 130, 246, 0.4), 0 0 40px rgba(59, 130, 246, 0.15); }
+            50% { box-shadow: 0 4px 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(59, 130, 246, 0.25); }
+        }
+
+        /* Lightning bolt decorations */
+        .lightning-bolt-decor {
+            position: absolute;
+            opacity: 0.35;
+            pointer-events: none;
+            z-index: 1;
+        }
+        .lightning-bolt-tl { top: 30px; left: 30px; width: 80px; height: 130px; transform: rotate(-15deg); }
+        .lightning-bolt-tr { top: 30px; right: 30px; width: 80px; height: 130px; transform: rotate(15deg) scaleX(-1); }
+        .lightning-bolt-bl { bottom: 30px; left: 30px; width: 70px; height: 110px; transform: rotate(15deg); }
+        .lightning-bolt-br { bottom: 30px; right: 30px; width: 70px; height: 110px; transform: rotate(-15deg) scaleX(-1); }
+
+        .lightning-theme .lightning-badge {
+            background: rgba(250, 204, 21, 0.15) !important;
+            color: #facc15 !important;
+            border-color: rgba(250, 204, 21, 0.3) !important;
+        }
     </style>
 </head>
 <body class="font-body antialiased text-[#0B0B0B] bg-white overflow-x-hidden" data-page="certificates">
@@ -319,7 +407,7 @@
                 </div>
 
                 <!-- Certificate Card -->
-                <div x-show="!loading && certificate" class="max-w-4xl mx-auto">
+                <div x-show="!loading && certificate" class="max-w-4xl mx-auto" :class="{ 'lightning-theme': certificate && certificate.certificateType === 'lightning-speaker' }">
 
                     <!-- Verified Badge -->
                     <div class="text-center mb-8">
@@ -350,6 +438,32 @@
                             <svg viewBox="0 0 100 100"><path d="M0,0 L100,0 L100,20 L20,20 L20,100 L0,100 Z"/></svg>
                         </div>
 
+                        <!-- Lightning Bolt Decorations (lightning-speaker only) -->
+                        <template x-if="certificate && certificate.certificateType === 'lightning-speaker'">
+                            <div>
+                                <div class="lightning-bolt-decor lightning-bolt-tl">
+                                    <svg viewBox="0 0 64 128" fill="currentColor" class="text-yellow-400 w-full h-full">
+                                        <path d="M36 0L12 56h16L8 128l48-72H36L56 0H36z"/>
+                                    </svg>
+                                </div>
+                                <div class="lightning-bolt-decor lightning-bolt-tr">
+                                    <svg viewBox="0 0 64 128" fill="currentColor" class="text-yellow-400 w-full h-full">
+                                        <path d="M36 0L12 56h16L8 128l48-72H36L56 0H36z"/>
+                                    </svg>
+                                </div>
+                                <div class="lightning-bolt-decor lightning-bolt-bl">
+                                    <svg viewBox="0 0 64 128" fill="currentColor" class="text-blue-400 w-full h-full">
+                                        <path d="M36 0L12 56h16L8 128l48-72H36L56 0H36z"/>
+                                    </svg>
+                                </div>
+                                <div class="lightning-bolt-decor lightning-bolt-br">
+                                    <svg viewBox="0 0 64 128" fill="currentColor" class="text-blue-400 w-full h-full">
+                                        <path d="M36 0L12 56h16L8 128l48-72H36L56 0H36z"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </template>
+
                         <!-- Watermark -->
                         <div class="watermark">taqelah!</div>
 
@@ -357,13 +471,16 @@
                             <!-- Logo & Organization -->
                             <div class="mb-8">
                                 <img src="/assets/images/logo.png" alt="taqelah! logo" class="h-20 mx-auto mb-4">
-                                <p class="text-sm uppercase tracking-[0.2em] text-gray-500 font-medium">Singapore's Own Most Vibrant Testing Community</p>
+                                <p class="text-sm uppercase tracking-[0.2em] text-gray-500 font-medium cert-subtitle">Singapore's Own Most Vibrant Testing Community</p>
                             </div>
 
                             <!-- Decorative Divider -->
                             <div class="fancy-divider mb-8">
-                                <svg class="w-6 h-6 text-[#E10600]" fill="currentColor" viewBox="0 0 24 24">
+                                <svg x-show="!certificate || certificate.certificateType !== 'lightning-speaker'" class="w-6 h-6 text-[#E10600]" fill="currentColor" viewBox="0 0 24 24">
                                     <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                </svg>
+                                <svg x-show="certificate && certificate.certificateType === 'lightning-speaker'" class="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                                 </svg>
                             </div>
 
@@ -374,7 +491,7 @@
                                     :class="certificate ? {
                                         'bg-blue-50 text-blue-700 border border-blue-200': certificate.certificateType === 'attendance',
                                         'bg-purple-50 text-purple-700 border border-purple-200': certificate.certificateType === 'meetup-speaker',
-                                        'bg-amber-50 text-amber-700 border border-amber-200': certificate.certificateType === 'lightning-speaker',
+                                        'bg-amber-50 text-amber-700 border border-amber-200 lightning-badge': certificate.certificateType === 'lightning-speaker',
                                         'bg-emerald-50 text-emerald-700 border border-emerald-200': certificate.certificateType === 'workshop',
                                         'bg-rose-50 text-rose-700 border border-rose-200': certificate.certificateType === 'volunteer'
                                     } : {}"
@@ -383,16 +500,16 @@
                             </div>
 
                             <!-- Formal Intro -->
-                            <p class="text-gray-500 text-lg mb-4 font-light">This is to certify that</p>
+                            <p class="text-gray-500 text-lg mb-4 font-light cert-intro">This is to certify that</p>
 
                             <!-- Recipient Name -->
                             <div class="mb-8">
-                                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-0 pb-2" x-text="certificate.recipientName"></h1>
-                                <div style="margin-top: 20px;" class="mx-auto w-64 h-0.5 bg-[#E10600]"></div>
+                                <h1 class="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-800 mb-0 pb-2 cert-name" x-text="certificate.recipientName"></h1>
+                                <div style="margin-top: 20px;" class="mx-auto w-64 h-0.5 bg-[#E10600] cert-name-underline"></div>
                             </div>
 
                             <!-- Description -->
-                            <p class="text-lg text-gray-600 mb-2 max-w-2xl mx-auto leading-relaxed" x-text="certificate.description"></p>
+                            <p class="text-lg text-gray-600 mb-2 max-w-2xl mx-auto leading-relaxed cert-description" x-text="certificate.description"></p>
 
                             <!-- Talk Title (for speakers) -->
                             <p x-show="certificate.talkTitle" class="text-xl text-gray-700 font-medium italic mb-6">
@@ -401,8 +518,8 @@
 
                             <!-- Event Name Highlight -->
                             <div class="mb-8">
-                                <p class="font-display text-2xl sm:text-3xl font-semibold text-[#E10600]" x-text="certificate.eventName"></p>
-                                <p class="text-gray-500 mt-2" x-text="formatDate(certificate.eventDate)"></p>
+                                <p class="font-display text-2xl sm:text-3xl font-semibold text-[#E10600] cert-event-name" x-text="certificate.eventName"></p>
+                                <p class="text-gray-500 mt-2 cert-event-date" x-text="formatDate(certificate.eventDate)"></p>
                             </div>
 
                             <!-- Skills -->
@@ -416,19 +533,22 @@
                             </div>
 
                             <!-- Seal and Signature Section -->
-                            <div class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 pt-8 border-t border-gray-200">
+                            <div class="flex flex-col sm:flex-row items-center justify-center gap-8 sm:gap-16 pt-8 border-t border-gray-200 cert-border-section">
                                 <!-- Issued Date -->
                                 <div class="text-center">
-                                    <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2">Date Issued</p>
-                                    <p class="font-semibold text-gray-700" x-text="formatDate(certificate.issueDate)"></p>
+                                    <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2 cert-label">Date Issued</p>
+                                    <p class="font-semibold text-gray-700 cert-value" x-text="formatDate(certificate.issueDate)"></p>
                                 </div>
 
                                 <!-- Seal -->
                                 <div class="seal mx-8">
                                     <div class="seal-inner">
                                         <div class="text-center px-2">
-                                            <svg class="w-10 h-10 text-amber-900 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                                            <svg x-show="!certificate || certificate.certificateType !== 'lightning-speaker'" class="w-10 h-10 text-amber-900 mx-auto" fill="currentColor" viewBox="0 0 24 24">
                                                 <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                                            </svg>
+                                            <svg x-show="certificate && certificate.certificateType === 'lightning-speaker'" class="w-10 h-10 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
                                             </svg>
                                             <p class="text-[10px] font-bold text-amber-900 uppercase tracking-widest mt-1">Verified</p>
                                         </div>
@@ -439,20 +559,20 @@
 
                                 <!-- Issuing Authority -->
                                 <div class="text-center">
-                                    <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2">Issued By</p>
-                                    <p class="font-semibold text-gray-700" x-text="certificate.issuedBy"></p>
+                                    <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2 cert-label">Issued By</p>
+                                    <p class="font-semibold text-gray-700 cert-value" x-text="certificate.issuedBy"></p>
                                 </div>
                             </div>
 
                             <!-- Certificate ID and QR Code -->
-                            <div class="mt-10 pt-6 border-t border-dashed border-gray-300">
+                            <div class="mt-10 pt-6 border-t border-dashed border-gray-300 cert-dashed-border">
                                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6 sm:gap-10">
                                     <div class="text-center">
-                                        <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-1">Credential ID</p>
-                                        <p class="font-mono text-sm font-bold text-gray-800 bg-gray-100 px-4 py-2 rounded" x-text="certificate.id"></p>
+                                        <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-1 cert-label">Credential ID</p>
+                                        <p class="font-mono text-sm font-bold text-gray-800 bg-gray-100 px-4 py-2 rounded cert-id-bg" x-text="certificate.id"></p>
                                     </div>
                                     <div class="text-center">
-                                        <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2">Scan to Verify</p>
+                                        <p class="text-xs uppercase tracking-[0.15em] text-gray-400 mb-2 cert-label">Scan to Verify</p>
                                         <img id="qrcode" class="bg-white p-2 rounded-lg shadow-sm border border-gray-200" width="96" height="96" alt="QR Code for verification" />
                                     </div>
                                 </div>
@@ -630,9 +750,10 @@
                     const element = document.getElementById('certificate-content');
 
                     try {
+                        const isLightning = this.certificate.certificateType === 'lightning-speaker';
                         const canvas = await html2canvas(element, {
                             scale: 2,
-                            backgroundColor: '#fefefe',
+                            backgroundColor: isLightning ? '#0a0e27' : '#fefefe',
                             useCORS: true,
                             allowTaint: true,
                             logging: false
