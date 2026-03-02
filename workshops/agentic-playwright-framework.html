@@ -1466,12 +1466,25 @@
                     <!-- FAQ 7 -->
                     <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
                         <button @click="openFaq = openFaq === 7 ? null : 7" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
-                            <h3 class="text-lg font-bold text-[#0B0B0B] pr-8">How can I contact the organizer for more information?</h3>
+                            <h3 class="text-lg font-bold text-[#0B0B0B] pr-8">Will I get an invoice after payment for company reimbursement?</h3>
                             <svg class="w-6 h-6 text-[#E10600] transition-transform flex-shrink-0" :class="{ 'rotate-180': openFaq === 7 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
                             </svg>
                         </button>
                         <div x-show="openFaq === 7" x-collapse class="px-6 pb-6">
+                            <p class="text-gray-700">Yes, we will provide a receipt after payment that you can submit to claim your learning budget in your company.</p>
+                        </div>
+                    </div>
+
+                    <!-- FAQ 8 -->
+                    <div class="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden">
+                        <button @click="openFaq = openFaq === 8 ? null : 8" class="w-full text-left p-6 hover:bg-gray-50 transition-colors flex items-center justify-between">
+                            <h3 class="text-lg font-bold text-[#0B0B0B] pr-8">How can I contact the organizer for more information?</h3>
+                            <svg class="w-6 h-6 text-[#E10600] transition-transform flex-shrink-0" :class="{ 'rotate-180': openFaq === 7 }" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+                            </svg>
+                        </button>
+                        <div x-show="openFaq === 8" x-collapse class="px-6 pb-6">
                             <p class="text-gray-700">Have questions or need clarification? Feel free to reach out to us at <a href="mailto:taqelahsg@gmail.com" class="text-[#E10600] font-semibold hover:underline">taqelahsg@gmail.com</a>. We're here to help and will respond to your inquiries promptly.</p>
                         </div>
                     </div>
