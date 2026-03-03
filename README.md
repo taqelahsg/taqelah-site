@@ -4,6 +4,50 @@ Mobile-first, responsive static website for Singapore's own most vibrant testing
 
 **taqelah!** stands for **Test Automation & Quality Engineering, Lah!** - a name that blends technical excellence with Singaporean charm.
 
+## 🧪 Playwright Workshop - Prerequisites
+
+This repo contains the prerequisites for the **Agentic Playwright Framework Workshop**. Please follow the instructions below to set up your environment before the workshop.
+
+### Part 1: TypeScript Examples, Node.js & Visual Studio Code
+
+The repo contains TypeScript examples that we will use during the workshop. To get started:
+
+1. **Install Node.js** (v18 or later recommended)
+   - Download from [https://nodejs.org/](https://nodejs.org/)
+   - Verify installation: `node -v` and `npm -v`
+
+2. **Install Visual Studio Code**
+   - Download from [https://code.visualstudio.com/](https://code.visualstudio.com/)
+   - Recommended extensions:
+     - [Playwright Test for VS Code](https://marketplace.visualstudio.com/items?itemName=ms-playwright.playwright)
+     - [TypeScript](https://marketplace.visualstudio.com/items?itemName=ms-vscode.vscode-typescript-next)
+
+3. **Clone this repository and install dependencies**
+   ```bash
+   git clone <repo-url>
+   cd <repo-folder>
+   npm install
+   ```
+
+### Part 2: Install PlayPI (Local API Testing Backend)
+
+We will use [PlayPI](https://github.com/abhivaikar/PlayPI) during the workshop to test API tests using a backend service. PlayPI is a localhost-based backend service that provides RESTful, GraphQL, gRPC, and WebSocket APIs for testing — no internet required, no API keys needed.
+
+1. **Install Docker** (required for PlayPI)
+   - Download from [https://www.docker.com/products/docker-desktop/](https://www.docker.com/products/docker-desktop/)
+
+2. **Clone and run PlayPI**
+   ```bash
+   git clone https://github.com/abhivaikar/PlayPI.git
+   cd PlayPI
+   docker-compose up
+   ```
+
+3. **Verify PlayPI is running**
+   - Open [http://localhost:3000](http://localhost:3000) in your browser to access the PlayPI dashboard
+
+---
+
 ## 🎯 Features
 
 - **Mobile-First Design**: Optimized for 320px → 1440px+ screens
